@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국립중앙박물관</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style-index.css">
+    <link rel="stylesheet" href="./font/font.css">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./common.css">
@@ -15,6 +19,102 @@
   <title>국립중앙박물관</title>
 </head>
 <body>
+    <a class="skip-nav" href="#main-content">본문 바로가기</a>
+
+    <main id="main-content">
+        <section class="exhibition-section section" aria-labelledby="exhibition-title">
+            <div class="inner">
+                <div class="section-heading">
+                    <h2 id="exhibition-title">전시</h2>
+                </div>
+
+                <div class="exhibition-layout">
+                    <article class="featured-exhibition">
+                        <a href="#" class="exhibition-card">
+                            <div class="poster">
+                                <img src="./images/Poster_section/poster-main/poster-main-1.svg"
+                                    alt="어메이징 타일랜드: 태국미술명품전 포스터">
+                            </div>
+                            <div class="exhibition-info">
+                                <div class="badge-list">
+                                    <span class="badge1">현재전시</span>
+                                    <span class="badge2">특별전시</span>
+                                </div>
+                                <h3>어메이징 타일랜드: 태국미술명품전</h3>
+                                <span class="m-time">2026.06.23~2026.09.06</span>
+                                <p> 매혹적이지만 아직 우리에게 미지의 세계로 남아 있는 태국의 역사와 미술을 국내에 처음으로 소개합니다.
+                                    동남아시아 대륙의 한가운데 위치한 태국은 예로부터 여러 곳에서 온 사람과 문화가 만나는 길목이었습니다.
+                                    이곳에서는 먼 옛날 다양한 민족의 문화가 꽃피었고, 13세기부터 타이족이 세운 왕국이 번영했으며,
+                                    오늘날까지 왕실과 불교를 중심으로 특색 있는 문화를 만들고 있습니다.
+                                </p>
+                                <span class="text-more">More <span aria-hidden="true">↗</span></span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <div class="exhibition-list-wrap">
+                        <ul class="exhibition-list">
+                            <li>
+                                <a href="#">
+                                    <div class="poster">
+                                        <img src="./images/Poster_section/poster-sub/poster-serve-2.svg"
+                                            alt="추사 김정희와 그의 동반자 전시 포스터">
+                                    </div>
+                                    <div class="card-info">
+                                        <span class="badge3">예정전시</span>
+                                        <span class="badge2">테마전시</span>
+                                        <h3>추사 김정희와 그의 동반자</h3>
+                                        <span class="s-time">2026.08.11~2026.11.22</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="poster">
+                                        <img src="./images/Poster_section/poster-sub/poster-serve-3.svg"
+                                            alt="단원 김홍도, 시대를 그리다 전시 포스터">
+                                    </div>
+                                    <div class="card-info">
+                                        <span class="badge1">현재전시</span>
+                                        <span class="badge2">테마전시</span>
+                                        <h3>단원 김홍도, 시대를 그리다</h3>
+                                        <span class="s-time">2025.11.11~2028.12.31</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="poster">
+                                        <img src="./images/Poster_section/poster-sub/poster-serve-4.svg"
+                                            alt="우리들의 밥상 전시 포스터">
+                                    </div>
+                                    <div class="card-info">
+                                        <span class="badge1">현재전시</span>
+                                        <span class="badge2">특별전시</span>
+                                        <h3>우리들의 밥상</h3>
+                                        <span class="s-time">2026.07.01~2026.10.25</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="slider-control">
+                            <button type="button" class="slider-button" aria-label="이전 전시" disabled>
+                                <img src="./images/icon/Arrow-L-bk.svg" alt="" aria-hidden="true">
+                            </button>
+                            <span class="page-number">
+                                <strong>1</strong>
+                                <span aria-hidden="true"> · </span>
+                                <span class="M-number">14</span>
+                            </span>
+                            <button type="button" class="slider-button" aria-label="다음 전시">
+                                <img src="./images/icon/Arrow-R-bk.svg" alt="" aria-hidden="true">
+                            </button>
+                            <span class="progress-track" aria-hidden="true">
+                                <span class="progress-value"></span>
+                            </span>
+                        </div>
+                    </div>
     
     <main>
         <section class="online-exhibition-wrap">
@@ -391,6 +491,8 @@
             </div>
         </section>
     </main>
+</body>
+
     
 </body>
 
