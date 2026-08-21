@@ -73,4 +73,19 @@ body {
     --Secondary-color: #3F0B9F;
     --Typo-Primary: #222222;
     --Typo-Secondary: #666666;
+/* 5. 비밀번호 표시/숨김 눈모양 아이콘 제거 (Edge 브라우저) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* 스크롤 숨기기 */
+html, body {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari, Opera */
 }
