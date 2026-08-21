@@ -111,7 +111,7 @@
 
     .inner-right .notice-list .notice-wrap .notice-type {
         border-radius: 1.2em;
-        width: 5.2em;
+        width: 50px;
     }
 
     .inner-right .notice-list .notice-wrap .notice-type > p {
@@ -121,6 +121,11 @@
     .inner-right .notice-list .notice-wrap {
         overflow: hidden;
     }
-
+    .inner-right .notice-list .notice-wrap .notice-title {
+        max-width: 370px;
+        white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
 
 }
