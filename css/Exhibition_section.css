@@ -23,7 +23,7 @@
 
 .section-heading h2 {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .exhibition-section {}
@@ -99,7 +99,7 @@
     overflow: hidden;
     color: var(--Typo-Primary);
     text-overflow: ellipsis;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 140%;
     margin-bottom: 10px;
 }
@@ -112,16 +112,33 @@
 
 }
 
-.exhibition-list-wrap {}
-
 .exhibition-list {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 56px;
-    align-items: start;
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
     padding: 0;
     margin: 0;
+}
+
+.exhibition-list>li {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.exhibition-list>li>a {
+    display: block;
+    width: 100%;
+}
+
+.exhibition-list .poster {
+    width: 100%;
+}
+
+.exhibition-list .poster img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .card-info {
@@ -133,7 +150,7 @@
     align-items: center;
     background: var(--Primary-color);
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .card-info .badge2 {
@@ -142,7 +159,7 @@
     padding: 3px 9px;
     align-items: center;
     color: var(--Typo-Primary);
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .card-info .badge3 {
@@ -150,12 +167,12 @@
     align-items: center;
     background: var(--Secondary-color);
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .card-info h3 {
     padding-top: 10px;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.4;
@@ -163,7 +180,7 @@
 
 .exhibition-list .s-time {
     color: var(--Typo-Secondary);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 140%;
 }
@@ -183,7 +200,11 @@
 }
 
 .page-number {
-    color: var(--Typo-Primary)
+    color: var(--Typo-Primary);
+}
+
+.page-number>.M-number {
+    color: #D5D5D5;
 }
 
 .progress-track {
