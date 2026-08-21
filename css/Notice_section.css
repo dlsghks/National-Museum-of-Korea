@@ -27,7 +27,7 @@
 }
 
 .inner-left .section-title {
-    font-size: clamp(32px,3vw,48px);
+    font-size: clamp(32px, 3vw, 48px);
 }
 
 .inner-left div>a {
@@ -72,7 +72,8 @@
 
 .inner-right .notice-list .notice-wrap .notice-type {
     background: var(--Secondary-color);
-    border-radius:1.56em ;
+    border-radius: 1.56em;
+    margin-left: 13px;
     color: #fff;
     padding: 0.25em 0.63em;
 }
@@ -80,6 +81,3 @@
 .inner-right .notice-list .notice-wrap .notice-title {
     width: 859px;
 }
-
-
-
