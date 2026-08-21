@@ -1,0 +1,311 @@
+:root {
+    --Primary-color: #243B66;
+    --Secondary-color: #3F0B9F;
+
+    --Typo-Primary: #222222;
+    --Typo-Secondary: #666666;
+
+    --inner-width: 1400px;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 18px;
+    color: #000;
+}
+
+.inner {
+    max-width: var(--inner-width);
+    background-color: rgba(255, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+.footer-top {
+    position: relative;
+    background: #fff;
+    padding: 42px 0 37px;
+}
+
+.footer-bottom {
+    background: var(--Primary-color);
+    color: #fff;
+    padding: 58px 0;
+}
+
+.footer-top h3 {
+    width: 300px;
+
+    margin: 0 0 24px;
+
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.sitemap-list {
+    display: flex;
+    gap: 50px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.sitemap-list>li {
+    width: 180px;
+    flex: 1;
+    position: relative;
+}
+
+.sitemap-list>li>a {
+    display: block;
+    align-items: center;
+    position: relative;
+    padding-bottom: 7px;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sitemap-list>li>a span {
+    position: relative;
+}
+
+.sitemap-list>li>a span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: 0.3s;
+}
+
+.sitemap-list>li>a:hover span::after {
+    width: 180px;
+}
+
+.sitemap-list>li>a:hover {
+    font-weight: 500;
+}
+
+.site-sub {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid var(--Typo-Secondary);
+    display: none;
+    z-index: 10;
+}
+
+.site-sub li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--Typo-Secondary);
+}
+
+.site-sub li a {
+    display: block;
+    padding: 5px 12px;
+    color: var(--Typo-Primary);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.sitemap-btn {
+    display: flex;
+    align-items: center;
+}
+
+.sitemap-btn .arrow-down,
+.sitemap-btn .arrow-up {
+    width: 12px;
+    height: 12px;
+    margin-top: 8px;
+}
+
+.sitemap-btn img {
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    object-fit: contain;
+}
+
+.sitemap-btn .arrow-up {
+    display: none;
+}
+
+.sitemap-list>li.active .site-sub {
+    display: block;
+}
+
+.sitemap-list>li.active .arrow-down {
+    display: none;
+}
+
+.sitemap-list>li.active .arrow-up {
+    display: block;
+}
+
+
+.top-btn {
+    position: absolute;
+    right: 36px;
+    bottom: 24px;
+}
+
+.top-btn a {
+    display: block;
+}
+
+.top-btn img {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.footer-bottom .inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer-bottom-left {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    width: 260px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    display: block;
+    width: 205px;
+    height: auto;
+}
+
+.footer-inpo {
+    padding-top: 1px;
+}
+
+.policy {
+    margin: 0;
+}
+
+.policy ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.policy li:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.policy a {
+    color: #fff;
+    font-size: 13px;
+}
+
+.address p {
+    margin: 0;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.footer-bottom-right {
+    position: relative;
+    width: 500px;
+    height: 100px;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.sns-list {
+    position: absolute;
+    top: 0;
+    left: 15%;
+}
+
+.sns-list ul {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.sns-list a {
+    display: block;
+}
+
+.sns-list img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.museum-family {
+    position: absolute;
+    top: 1px;
+    right: 0;
+}
+
+.museum-family>a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 135px;
+    height: 29px;
+    padding: 0 10px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.museum-family-list {
+    display: none;
+}
+
+.mark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.mark ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.mark img {
+    display: block;
+    height: 32px;
+    width: auto;
+}
