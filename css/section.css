@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --Primary-color: #243B66;
     --Secondary-color: #3F0B9F;
 
@@ -6,7 +6,7 @@
     --Typo-Secondary: #666666;
 
     --inner-width: 1400px;
-}
+} */
 
 .inner {
     max-width: var(--inner-width);
@@ -177,15 +177,17 @@
 
 .slider-counter .current {
     color: #222222;
-    font-weight: 400;
+    font-size: 16px;
 }
 
 .slider-counter .dot {
-    color: #000;
+    color: #222222;
+    font-size: 16px;
 }
 
 .slider-counter .total {
-    color: #000;
+    color: #D5D5D5;
+    font-size: 16px;
 }
 
 .slider-counter button {
