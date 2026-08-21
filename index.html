@@ -9,14 +9,512 @@
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/font/font.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style-index.css">
+    <link rel="stylesheet" href="./css/Exhibition_section.css">
     <link rel="stylesheet" href="/css/section.css">
     <link rel="stylesheet" href="/css/event-section.css">
     <link rel="stylesheet" href="/css/Notice_section.css">
 </head>
 
 <body>
+    <header class="header">
+    <div class="header-top Type-PC">
+      <div class="header-inner inner">
+        <ul class="header-top-gnb">
+          <li><a href="#" class="top-gnb-item">로그인</a></li>
+          <li>
+            <div class="select-box select-box-lang">
+              <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list">KOR</button>
+              <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
+                <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
+                <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
+                <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="header-inner inner">
+        <div class="header-left">
+          <h1 class="header-logo"><a href="#" ><img src="/images/logo/logo-W.svg" alt="국립중앙박물관 로고"></a></h1>
+          <nav class="header-gnb" aria-label="주 메뉴">
+            <ul class="gnb-main">
+              <li class="gnb-main-list">
+                <a href="#">관람</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">관람안내</a></li>
+                  <li class="gnb-sub-list"><a href="#">예약</a></li>
+                  <li class="gnb-sub-list"><a href="#">전시해설</a></li>
+                  <li class="gnb-sub-list"><a href="#">편의시설</a></li>
+                  <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
+                </ul>
+              </li>
+              <li class="gnb-main-list">
+                <a href="#">전시</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">상실전시</a></li>
+                  <li class="gnb-sub-list"><a href="#">특별전시</a></li>
+                  <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
+                  <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
+                </ul>
+              </li>
+              <li class="gnb-main-list">
+                <a href="#">소장품</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">소장품 검색</a></li>
+                  <li class="gnb-sub-list"><a href="#">대표 소장품</a></li>
+                  <li class="gnb-sub-list"><a href="#">국보 · 보물</a></li>
+                  <li class="gnb-sub-list"><a href="#">디지털 소장품</a></li>
+                </ul>
+              </li>
+              <li class="gnb-main-list">
+                <a href="#">문화행사 · 교육</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">행사 · 공연</a></li>
+                  <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
+                  <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
+                </ul>
+              </li>
+              <li class="gnb-main-list">
+                <a href="#">학술</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">학술행사</a></li>
+                  <li class="gnb-sub-list"><a href="#">연구 자료</a></li>
+                  <li class="gnb-sub-list"><a href="#">정기간행물</a></li>
+                  <li class="gnb-sub-list"><a href="#">도서관</a></li>
+                </ul>
+              </li>
+              <li class="gnb-main-list">
+                <a href="#">소식</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">공지사항</a></li>
+                  <li class="gnb-sub-list"><a href="#">보도자료</a></li>
+                  <li class="gnb-sub-list"><a href="#">채용 · 공고</a></li>
+                  <li class="gnb-sub-list"><a href="#">이벤트 · 참여</a></li>
+                </ul>
+              </li>
+              <li class="gnb-main-list">
+                <a href="#">박물관 소개</a>
+                <ul class="gnb-sub">
+                  <li class="gnb-sub-list"><a href="#">박물관 개요</a></li>
+                  <li class="gnb-sub-list"><a href="#">역사 · 연혁</a></li>
+                  <li class="gnb-sub-list"><a href="#">조직</a></li>
+                  <li class="gnb-sub-list"><a href="#">시설안내</a></li>
+                  <li class="gnb-sub-list"><a href="#">미션 · 비전</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button type="button" class="button-search Type-PC" aria-label="검색" aria-haspopup="true"></button>
+          <!-- 모바일 -->
+          <button type="button" class="button-m-menu Type-Mobile" aria-label="메뉴" aria-haspopup="true">
+            <div class="menu-item">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
     <main>
+
+        <div class="main">
+            <div class="main-video">
+                <video src="/images/Main_section/media/video/main_video.mp4" autoplay muted loop playsinline
+                    aria-label="국립박물관 소개 영상"></video>
+            </div>
+
+            <div class="inner">
+                <div class="video-control">
+                    <div class="control-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="control-button">
+                        <button type="button" class="button-play" aria-label="영상 일시정지">
+                            <img src="./images/Main_section/images/main_video_pause.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="main-info">
+                    <dl class="info-bar">
+                        <div class="info-bar-list">
+                            <dt class="bar-list-tit info-icon-1">박물관 운영시간</dt>
+                            <dd class="bar-list-cont">
+                                <div class="cont-txt">
+                                    <p>월/화/목/금/일 <span class="time"><time datetime="09:00">9:00</time>~<time
+                                                datetime="17:30">17:30</time></span></p>
+                                    <p>수/토 <span class="time"><time datetime="09:00">9:00</time>~<time
+                                                datetime="21:00">21:00</time></span></p>
+                                </div>
+                                <p class="cont-notice"><span aria-hidden="true">*</span>입장 마감은 폐관 30분 전 완료. 폐관유도는 폐관 10분
+                                    전부터 실시.</p>
+                            </dd>
+                        </div>
+                        <div class="info-bar-line" aria-hidden="true"></div>
+                        <div class="info-bar-list">
+                            <dt class="bar-list-tit info-icon-2">관람료</dt>
+                            <dd class="bar-list-cont">
+                                <div class="cont-txt">
+                                    <p><strong>무료</strong> / 특별전시는 유료</p>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                    <div class="info-button">
+                        <a class="button-reservation info-icon-3" href="#">예약하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main id="main-content">
+            <section class="exhibition-section section" aria-labelledby="exhibition-title">
+                <div class="inner">
+                    <div class="section-heading">
+                        <h2 id="exhibition-title">전시</h2>
+                    </div>
+
+                    <div class="exhibition-layout">
+                        <article class="featured-exhibition">
+                            <a href="#" class="exhibition-card">
+                                <div class="poster">
+                                    <img src="/images/Poster_section/poster-main/poster-main-1.svg"
+                                        alt="어메이징 타일랜드: 태국미술명품전 포스터">
+                                </div>
+                                <div class="exhibition-info">
+                                    <div class="badge-list">
+                                        <span class="badge1">현재전시</span>
+                                        <span class="badge2">특별전시</span>
+                                    </div>
+                                    <h3>어메이징 타일랜드: 태국미술명품전</h3>
+                                    <span class="m-time">2026.06.23~2026.09.06</span>
+                                    <p> 매혹적이지만 아직 우리에게 미지의 세계로 남아 있는 태국의 역사와 미술을 국내에 처음으로 소개합니다.
+                                        동남아시아 대륙의 한가운데 위치한 태국은 예로부터 여러 곳에서 온 사람과 문화가 만나는 길목이었습니다.
+                                        이곳에서는 먼 옛날 다양한 민족의 문화가 꽃피었고, 13세기부터 타이족이 세운 왕국이 번영했으며,
+                                        오늘날까지 왕실과 불교를 중심으로 특색 있는 문화를 만들고 있습니다.
+                                    </p>
+                                    <span class="text-more">More <span aria-hidden="true">↗</span></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <div class="exhibition-list-wrap">
+                            <ul class="exhibition-list">
+                                <li>
+                                    <a href="#">
+                                        <div class="poster">
+                                            <img src="./images/Poster_section/poster-sub/poster-serve-2.svg" alt="추사 김정희와 그의 동반자 전시 포스터">
+                                        </div>
+                                        <div class="card-info">
+                                            <span class="badge3">예정전시</span>
+                                            <span class="badge2">테마전시</span>
+                                            <h3>추사 김정희와 그의 동반자</h3>
+                                            <span class="s-time">2026.08.11~2026.11.22</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="poster">
+                                            <img src="./images/Poster_section/poster-sub/poster-serve-3.svg"
+                                                alt="단원 김홍도, 시대를 그리다 전시 포스터">
+                                        </div>
+                                        <div class="card-info">
+                                            <span class="badge1">현재전시</span>
+                                            <span class="badge2">테마전시</span>
+                                            <h3>단원 김홍도, 시대를 그리다</h3>
+                                            <span class="s-time">2025.11.11~2028.12.31</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="poster">
+                                            <img src="./images/Poster_section/poster-sub/poster-serve-4.svg" alt="우리들의 밥상 전시 포스터">
+                                        </div>
+                                        <div class="card-info">
+                                            <span class="badge1">현재전시</span>
+                                            <span class="badge2">특별전시</span>
+                                            <h3>우리들의 밥상</h3>
+                                            <span class="s-time">2026.07.01~2026.10.25</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        <div class="slider-control">
+                            <button type="button" class="slider-button" aria-label="이전 전시" disabled>
+                                <img src="./images/icon/Arrow-L-bk.svg" alt="" aria-hidden="true">
+                            </button>
+                            <span class="page-number">
+                                <strong>1</strong>
+                                <span aria-hidden="true"> · </span>
+                                <span class="M-number">14</span>
+                            </span>
+                            <button type="button" class="slider-button" aria-label="다음 전시">
+                                <img src="./images/icon/Arrow-R-bk.svg" alt="" aria-hidden="true">
+                            </button>
+                            <span class="progress-track" aria-hidden="true">
+                                <span class="progress-value"></span>
+                            </span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section class="online-exhibition-wrap">
+            <div class="title-box">
+                <h2 class="section-title">온라인 전시관</h2>
+            </div>
+
+            <div class="online-contents-wrap swiper">
+                <ul class="online-contents-list swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="img-box"><img src="/images/Online_section/online-thumbnail-01.svg" alt="">
+                                <button type="button" class="play-btn" aria-label="온라인 전시 재생"><img
+                                        src="/images/Online_section/icon/play-btn.png" alt=""></button>
+                            </div>
+                            <div class="text-box">
+                                <h3>어흥, 호랑이 - 용맹하게, 신통하게, 유쾌하게</h3>
+                                <p>#미디어아트 #국립중앙박물관 #호랑이</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="img-box"><img src="/images/Online_section/online-thumbnail-02.svg" alt="">
+                                <button type="button" class="play-btn" aria-label="온라인 전시 재생"><img
+                                        src="/images/Online_section/icon/play-btn.png" alt=""></button>
+                            </div>
+                            <div class="text-box">
+                                <h3>화조영모, 어느 고양이의 하루</h3>
+                                <p>#파노라마 #신사임당 #Treasure</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="img-box"><img src="/images/Online_section/online-thumbnail-03.svg" alt="">
+                                <button type="button" class="play-btn" aria-label="온라인 전시 재생"><img
+                                        src="/images/Online_section/icon/play-btn.png" alt=""></button>
+                            </div>
+                            <div class="text-box">
+                                <h3>왕의 행차, 백성과 함께하다</h3>
+                                <p>#정조 #파노라마 #온라인</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="img-box"><img src="/images/Online_section/online-thumbnail-04.svg" alt="">
+                                <button type="button" class="play-btn" aria-label="온라인 전시 재생"><img
+                                        src="/images/Online_section/icon/play-btn.png" alt=""></button>
+                            </div>
+                            <div class="text-box">
+                                <h3>영혼의 여정, 아득한 윤회의 길을 걷다</h3>
+                                <p>#아미타불 #지장보살 #온라인</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="img-box"><img src="/images/Online_section/online-thumbnail-05.svg" alt="">
+                                <button type="button" class="play-btn" aria-label="온라인 전시 재생"><img
+                                        src="/images/Online_section/icon/play-btn.png" alt=""></button>
+                            </div>
+                            <div class="text-box">
+                                <h3>금강산에 오르다</h3>
+                                <p>#파노라마 #미디어아트 #정선</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="img-box"><img src="/images/Online_section/online-thumbnail-06.svg" alt="">
+                                <button type="button" class="play-btn" aria-label="온라인 전시 재생"><img
+                                        src="/images/Online_section/icon/play-btn.png" alt=""></button>
+                            </div>
+                            <div class="text-box">
+                                <h3>강산에 펼친 풍요로운 세상, 강산무진도</h3>
+                                <p>#파노라마 #Endless #미디어아트</p>
+                            </div>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="online-control">
+                <div class="progress-bar">
+                    <span class="progress"></span>
+                </div>
+
+                <div class="slider-counter">
+                    <button type="button" class="prev-btn" aria-label="이전 전시"><img src="/images/icon/Arrow-L-bk.svg"
+                            alt=""></button>
+
+                    <span class="current">1</span>
+                    <span class="dot">·</span>
+                    <span class="total">6</span>
+
+                    <button type="button" class="next-btn" aria-label="다음 전시"><img src="/images/icon/Arrow-R-bk.svg"
+                            alt=""></button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="inner">
+                <h2>문화행사</h2>
+                <ul class="main-event">
+                    <li>
+                        <a href="#">
+                            <div class="imgbox">
+                                <img src="/images/Event_section/main-event1.svg" alt="국중박 분장놀이 전국편 포스터">
+                                <div class="event-detail">
+                                    <div class="detail-list">
+                                        <div>
+                                            <p class="e-detail">장소</p>
+                                            <p class="details">국립중앙박물관 열린마당</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">시간</p>
+                                            <p class="details">9:30~17:30</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">입장료</p>
+                                            <p class="details">무료</p>
+                                        </div>
+                                    </div>
+                                    <span class="more-btn">More<img src="/images/icon/More_Arrow.svg" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-box">
+                                <span class="event-ing">행사중</span>
+                                <p class="event-title">2026 국중박 분장놀이 전국편</p>
+                                <p class="event-date">2026-06-08 ~ 2026-09-19</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="imgbox">
+                                <img src="/images/Event_section/main-event2.svg"
+                                    alt="2026년 문화향연 나의 박물관(MYSEUM) : 타악 포스터">
+                                <div class="event-detail">
+                                    <div class="detail-list">
+                                        <div>
+                                            <p class="e-detail">장소</p>
+                                            <p class="details">지역 국립박물관</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">시간</p>
+                                            <p class="details">오후 3시</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">입장료</p>
+                                            <p class="details">무료</p>
+                                        </div>
+                                    </div>
+                                    <span class="more-btn">More<img src="/images/icon/More_Arrow.svg" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-box">
+                                <div>
+                                    <span class="event-ing">행사중</span>
+                                    <span class="event-region">전국</span>
+                                </div>
+                                <p class="event-title">2026년 지역 국립박물관 문화향연 &lt;나의 박물관(MYSEUM) : 타악&gt;</p>
+                                <p class="event-date">2026-05-03 ~ 2026-11-14</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="imgbox">
+                                <img src="/images/Event_section/main-event3.svg" alt="2026년 박물관문화향연 포스터">
+                                <div class="event-detail">
+                                    <div class="detail-list">
+                                        <div>
+                                            <p class="e-detail">장소</p>
+                                            <p class="details">국립중앙박물관 대강당</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">시간</p>
+                                            <p class="details">오후3시 </p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">입장료</p>
+                                            <p class="details">무료</p>
+                                        </div>
+                                    </div>
+                                    <span class="more-btn">More<img src="/images/icon/More_Arrow.svg" alt="">
+                                    </span>
+
+                                </div>
+                            </div>
+                            <div class="text-box">
+                                <span class="event-ing">행사중</span>
+                                <p class="event-title">2026년 박물관문화향연</p>
+                                <p class="event-date">2026-04-18 ~ 2026-10-31</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="imgbox">
+                                <img src="/images/Event_section/main-event4.svg" alt="나의 박물관(MYSEUM) : 타악 그루브앤드 포스터">
+                                <div class="event-detail">
+                                    <div class="detail-list">
+                                        <div>
+                                            <p class="e-detail">장소</p>
+                                            <p class="details">국립청주박물관</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">시간</p>
+                                            <p class="details">오후 3시</p>
+                                        </div>
+                                        <div>
+                                            <p class="e-detail">입장료</p>
+                                            <p class="details">무료</p>
+                                        </div>
+                                    </div>
+                                    <span class="more-btn">More<img src="/images/icon/More_Arrow.svg" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-box">
+                                <div>
+                                    <span class="event-ing">행사중</span>
+                                    <span class="event-region">청주</span>
+                                </div>
+                                <p class="event-title">나의 박물관(MYSEUM) : 타악 &lt;국립청주박물관 - 그루브앤드&gt;</p>
+                                <p class="event-date">2026-08-01 ~ 2026-08-01</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <section class="notice-inner">
             <div class="inner">
                 <div class="inner-left">
@@ -111,7 +609,159 @@
         </section>
     </main>
 
+
+    <footer class="footer">
+    <div class="footer-top">
+      <div class="inner">
+        <div class="footer-link-tit">
+          <p>세계와 소통하는 문화공관,</p> 
+          <p>국립중앙박물관입니다.</p>
+        </div>
+        <ul class="footer-link-wrap">
+          <li>
+            <div class="footer-link">
+              <button class="link-btn" aria-expanded="false" aria-controls="link-list-1">
+                교육 서비스
+              </button>
+              <ul id="link-list-1" class="link-list">
+                <li class="link-list-opt"><a href="#">교육플랫폼 모두(MODU)</a></li>
+                <li class="link-list-opt"><a href="#">학예사 자격증</a></li>
+                <li class="link-list-opt"><a href="#">어린이박물관</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="footer-link">
+              <button class="link-btn" aria-expanded="false" aria-controls="link-list-2">
+                디지털 콘텐츠
+              </button>
+              <ul id="link-list-2" class="link-list">
+                <li class="link-list-opt"><a href="#">e뮤지엄</a></li>
+                <li class="link-list-opt"><a href="#">외규장각 의궤 원문</a></li>
+                <li class="link-list-opt"><a href="#">조선총독부박물관 문서</a></li>
+                <li class="link-list-opt"><a href="#">유리건판</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="footer-link">
+              <button class="link-btn" aria-expanded="false" aria-controls="link-list-3">
+                박물관 서비스
+              </button>
+              <ul id="link-list-3" class="link-list">
+                <li class="link-list-opt"><a href="#">박물관상품관</a></li>
+                <li class="link-list-opt"><a href="#">박물관신문</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="footer-link">
+              <button class="link-btn" aria-expanded="false" aria-controls="link-list-4">
+                참여 프로그램
+              </button>  
+              <ul id="link-list-4" class="link-list">
+                <li class="link-list-opt"><a href="#">청년멘토</a></li> 
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="inner">
+        <div class="footer-left">
+          <p class="footer-logo"><img src="/images/logo/logo-W.svg" alt="국립중앙박물관 로고"></p>
+
+          <div class="footer-nav">
+            <ul class="footer-nav-list">
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">저작권정책</a></li>
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">클린신고센터</a></li>
+            </ul>
+
+            <address>
+              <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
+              <p>대표전화 <a href="tel:02-2077-9000" class="tel">02-2077-9000</a></p>
+              <p>&copy; National Museum of Korea.</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-right-top">
+            <ul class="footer-sns">
+              <li class="sns-facebook"><a href="#" aria-label="페이스북"><img src="/images/footer/sns_facebook_pri.svg" alt=""></a></li>
+              <li class="sns-instagram"><a href="#" aria-label="인스타그램"><img src="/images/footer/sns_instagram_pri.svg" alt=""></a></li>
+              <li class="sns-naver"><a href="#" aria-label="블로그"><img src="/images/footer/sns_naver_pri.svg" alt=""></a></li>
+              <li class="sns-youtube"><a href="#" aria-label="유투브"><img src="/images/footer/sns_youtube_pri.svg" alt=""></a></li>
+              <li class="sns-twitter"><a href="#" aria-label="엑스(구 트위터)"><img src="/images/footer/sns_twitter_pri.svg" alt=""></a></li>
+            </ul>
+
+            <div class="footer-family">
+              <button class="link-btn" aria-haspopup="true" aria-expanded="false" aria-controls="link-list-5">
+                소속 박물관
+              </button>  
+              <div class="link-list-cover">
+                <div class="link-list-scroll">
+                  <ul id="link-list-5" class="link-list">
+                    <li class="link-list-opt"><a href="#">국립경주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립광주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립전주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립대구박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립부여박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립공주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립진주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립청주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립김해박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립제주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립춘천박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립나주박물관</a></li> 
+                    <li class="link-list-opt"><a href="#">국립익산박물관</a></li> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-right-bottom">
+            <ul class="footer-marks">
+              <li><a href="#"><img src="/images/footer/footer_web_access.svg" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)"></a></li>
+              <li><a href="#"><img src="/images/footer/footer_kogl.svg" alt="OPEN 공공누리 공공저작물 자유이용허락"></a></li>
+            </ul>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper('.online-contents-wrap', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 72,
+        centeredSlides: true,
+
+        navigation: {
+            prevEl: '.prev-btn',
+            nextEl: '.next-btn',
+        },
+
+        on: {
+            init: function () {
+                document.querySelector('.current').textContent = this.realIndex + 1;
+                document.querySelector('.total').textContent = this.slides.length;
+            },
+
+            slideChange: function () {
+                document.querySelector('.current').textContent = this.realIndex + 1;
+            }
+        }
+    });
+</script>
 
 </html>
