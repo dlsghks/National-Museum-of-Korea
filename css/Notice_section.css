@@ -37,6 +37,7 @@ body {
 
 .inner-left .section-title {
     font-size: clamp(32px,3vw,48px);
+    font-weight: 600;
 }
 
 .inner-left div>a {
