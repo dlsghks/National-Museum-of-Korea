@@ -8,12 +8,6 @@
     --inner-width: 1400px;
 }
 
-body {
-    font-family: "Pretendard", sans-serif;
-    font-size: 18px;
-    color: #000;
-}
-
 .inner {
     max-width: var(--inner-width);
     /* background-color: rgba(255, 0, 0, 0.1); */
@@ -29,7 +23,7 @@ body {
 .section-title {
     margin: 0;
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .online-exhibition-wrap {
