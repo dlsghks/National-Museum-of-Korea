@@ -85,8 +85,8 @@
     width: 859px;
 }
 
-@media screen and (max-width:1199px) {
-    .notice-inner .inner{
+@media screen and (max-width:1279px) {
+    .notice-inner .inner {
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -97,38 +97,87 @@
         width: 3em;
     }
 
-    
+
 }
 
 @media screen and (max-width:767px) {
-    .notice-inner .inner{
+    .notice-inner .inner {
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
 
+    .inner-right .notice-tab>li>a {
+        padding: 0 13px;
+        font-size: 1em;
+    }
 
-    .notice-inner .section-title{
+
+    .notice-inner .section-title {
         font-size: 32px;
     }
 
     .inner-right .notice-list .notice-wrap .notice-type {
         border-radius: 1.2em;
-        width: 50px;
+        white-space: nowrap;
     }
 
-    .inner-right .notice-list .notice-wrap .notice-type > p {
+    .inner-right .notice-list .notice-wrap .notice-type>p {
         margin: 0 auto;
     }
 
     .inner-right .notice-list .notice-wrap {
         overflow: hidden;
     }
+
     .inner-right .notice-list .notice-wrap .notice-title {
         max-width: 370px;
         white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media screen and (max-width:480px) {
+
+    .notice-inner .inner {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .inner-right .notice-tab>li>a {
+        padding: 0 13px;
+        font-size: 0.9em;
+    }
+
+
+    .notice-inner .section-title {
+        font-size: 2em;
+    }
+
+    .inner-right .notice-list .notice-wrap .notice-type {
+        border-radius: 1.2em;
+        white-space: nowrap;
+        font-size: 0.7em;
+    }
+
+    
+
+    .inner-right .notice-list .notice-wrap .notice-type>p {
+        margin: 0 auto;
+    }
+
+    .inner-right .notice-list .notice-wrap {
+        overflow: hidden;
+    }
+
+    .inner-right .notice-list .notice-wrap .notice-title {
+        max-width: 370px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 }
