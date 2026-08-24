@@ -13,7 +13,7 @@
     position: relative;
 
     /* 배경 이미지 */
-    background-image: url(/images/Notice_section/Notice_background_img.svg);
+    background-image: url(../images/Notice_section/Notice_background_img.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
