@@ -27,7 +27,7 @@
 /**************************************************************/
 /*************************** header ***************************/
 .header {position: fixed; width: 100%; background: rgba(0,0,0,.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; z-index: 10;}
-.header::before {content: ''; width: 100%; height: 260px; position: absolute; top: 100%; left: 0; background: #fff; visibility: hidden; opacity: 0; transition: .3s ease-in-out; border-top: 1px solid #eee;}
+.header::before {content: ''; width: 100%; height: 0; position: absolute; top: 100%; left: 0; background: #fff; visibility: hidden; transition: .3s ease-in-out; border-top: 1px solid #eee;}
 .header a {display: block;}
 .header-inner {display: flex;}
 /***** header-top *****/
@@ -56,8 +56,9 @@
 .header-gnb .gnb-main-list {position: relative;}
 .header-gnb .gnb-main-list > a {padding: 1.2em 1.25em; position: relative; overflow: hidden;}
 .header-gnb .gnb-main-list > a::after {content: ''; position: absolute; bottom: 0; left: 50%; background: var(--color-pri); width: 90%; height: 5px; transition: .3s ease-in-out; transform: translate(-50%, 100%); opacity: 0;}
-.header-gnb .gnb-sub {height: 260px; min-width: 110px; position: absolute; top: 100%; left: 0; padding-block-start: .9em; color: var(--color-typo-sec); font-size: 1rem; line-height: 2.8em; white-space: nowrap; visibility: hidden; opacity: 0; transition: .3s ease-in-out;}
-.header-gnb .gnb-sub-list > a {padding-inline: 1.25em; transition: .2s ease-in-out;}
+.header-gnb .gnb-sub {height: 0; min-width: 110px; position: absolute; top: 100%; left: 0; padding-block-start: .9em; color: var(--color-typo-sec); font-size: 1rem; line-height: 2.8em; white-space: nowrap; visibility: hidden; opacity: 0; transition: .3s ease-in-out;}
+.header-gnb:hover .gnb-sub {height: 260px;}
+.header-gnb .gnb-sub-list > a {transition: .2s ease-in-out;}
 .button-search {width: 24px; height: 24px; background: url(../images/header/search_w.svg) no-repeat center / contain;}
 
 @media screen and (min-width: 1280px) {
@@ -65,12 +66,12 @@
   .header-gnb .gnb-main-list:hover > a::after {transform: translate(-50%, 0); opacity: 1;}
   .header-gnb .gnb-sub-list > a:hover {color: var(--color-sec); font-weight: var(--font-w-SB);}
   /* header-gnb:hover */
-  .header:has(.header-gnb:hover) {background-color: #fff; color: var(--color-typo-pri);}
-  .header:has(.header-gnb:hover)::before,
-  .header-gnb:hover .gnb-sub {visibility: visible; opacity: 1;}
-  .header:has(.header-gnb:hover) .select-btn::after {background-image: url(../images/header/select_arrow_bk.svg);}
-  .header:has(.header-gnb:hover) .header-top-gnb > li:first-of-type:after {background: rgba(0,0,0,.5);}
-  .header:has(.header-gnb:hover) .button-search {background-image: url(../images/header/search_bk.svg);}
+  .header.on {background-color: #fff; color: var(--color-typo-pri);}
+  .header.on::before,
+  .header.on .header-gnb .gnb-sub {visibility: visible; opacity: 1; height: 260px;}
+  .header.on .select-btn::after {background-image: url(../images/header/select_arrow_bk.svg);}
+  .header.on .header-top-gnb > li:first-of-type:after {background: rgba(0,0,0,.5);}
+  .header.on .button-search {background-image: url(../images/header/search_bk.svg);}
 }
 
 .Type-Mobile {display: none;}
@@ -84,7 +85,7 @@
 /* video-control */
 .video-control {display: flex; align-items: center; gap: 0.563em;}
 .control-progress {width: 52px; height: 12px; background-color: rgba(255,255,255,.7); position: relative; border-radius: 5px;}
-.progress-bar {width: 60%; height: 100%; position: absolute; left: 0; top: 0; background-color: #94B8FF; border-radius: inherit;}
+.control-progress .progress-bar {width: 60%; height: 100%; position: absolute; left: 0; top: 0; background-color: #94B8FF; border-radius: inherit;}
 
 /* main-info */
 .main-info {display: flex; justify-content: space-between; background: rgba(255, 255, 255, .8);}
@@ -126,6 +127,7 @@
 /* hover */
 .footer-link:hover .link-btn {--color-typo-sec: var(--color-typo-pri);}
 .footer-link:hover .link-btn::after {opacity: 1; visibility: visible; transform: translateY(0);}
+.footer-link.on {z-index: 5;}
 .footer-link.on .link-btn {background-color: #967951; color: #fff; border: 1px solid #967951;}
 .footer-link.on .link-list {opacity: 1; visibility: visible; transform: translateY(0); transition: .3s ease-in-out;}
 .footer-link.on .link-btn::after {background-image: url(../images/footer/site_arrow_w.svg); opacity: 1; visibility: visible; transform: translateY(0) rotate(-180deg);}
