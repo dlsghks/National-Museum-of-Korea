@@ -16,7 +16,10 @@
     background-image: url(/images/Notice_section/Notice_background_img.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 100%;
+    background-size: cover;
+
+    z-index: 0;
+
 }
 
 .notice-inner .inner {
