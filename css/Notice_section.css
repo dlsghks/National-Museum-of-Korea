@@ -11,7 +11,6 @@
 .notice-inner {
     position: relative;
 
-    /* 배경 이미지 */
     background-image: url(../images/Notice_section/Notice_background_img.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -21,13 +20,13 @@
 }
 
 .notice-inner .inner {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0 5%;
-    
+    max-width: var(--inner-width);
+    margin: 0 auto;
+
     display: flex;
     justify-content: space-between;
+
+    min-width: 0;
 }
 
 .inner-left .section-title {
@@ -114,9 +113,22 @@
    1279px
 ========================= */
 
+@media screen and (min-width: 1280px) {
+    .inner-right {
+        width: 1045px;
+        flex-shrink: 0;
+    }
+}
+
+
+
 @media screen and (max-width: 1279px) {
 
     .notice-inner .inner {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+
         flex-direction: column;
         gap: 40px;
     }
