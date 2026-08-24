@@ -1,8 +1,9 @@
+const header = document.querySelector('.header');
 const headerGnb = document.querySelector('.header-gnb');
 const logoImg = document.querySelector('.header-logo img');
 const mobileBtn = document.querySelector('.button-m-menu');
 const linkBtn = document.querySelector('.link-btn');
-const footerLinks = document.querySelectorAll('.footer-link');
+const footerLinks = document.querySelectorAll('.footer-link')
 // 1280px 이상일 때만 true를 반환하는 미디어 쿼리 설정
 const pcMedia = window.matchMedia('(min-width: 1280px)');
 
@@ -10,12 +11,14 @@ const pcMedia = window.matchMedia('(min-width: 1280px)');
 headerGnb.addEventListener('mouseenter', () =>{
   if (pcMedia.matches) {
     logoImg.src = './images/header/logo_bk.svg';
+    header.classList.add('on');
   }
 })
 
 headerGnb.addEventListener('mouseleave', () =>{
   if (pcMedia.matches) {
     logoImg.src = './images/header/logo_w.svg';
+    header.classList.remove('on');
   }
 })
 
