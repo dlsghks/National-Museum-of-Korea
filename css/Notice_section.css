@@ -23,7 +23,7 @@
     max-width: var(--inner-width);
     margin: 0 auto;
     display: flex;
-    gap: 182px;
+    justify-content: space-between;
 }
 
 .inner-left .section-title {
