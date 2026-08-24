@@ -1271,23 +1271,46 @@
 <script>
     var swiper = new Swiper('.online-contents-wrap', {
         loop: true,
-        slidesPerView: 'auto',
-        spaceBetween: 72,
-        centeredSlides: true,
+
+        // 모바일
+        slidesPerView: '1',
+        spaceBetween: 20,
+        centeredSlides: false,
 
         navigation: {
             prevEl: '.prev-btn',
             nextEl: '.next-btn',
         },
 
+        breakpoints: {
+
+            // 아이패드 768 ~ 1279px
+            768: {
+                slidesPerView: '1.25',
+                spaceBetween: 50,
+                centeredSlides: false,
+            },
+
+            // PC 1280px 이상
+            1280: {
+                slidesPerView: 'auto',
+                spaceBetween: 72,
+                centeredSlides: true,
+            }
+
+        },
+
         on: {
             init: function () {
-                document.querySelector('.current').textContent = this.realIndex + 1;
-                document.querySelector('.total').textContent = this.slides.length;
+                document.querySelector('.current').textContent =
+                    this.realIndex + 1;
+
+                document.querySelector('.total').textContent = 6;
             },
 
             slideChange: function () {
-                document.querySelector('.current').textContent = this.realIndex + 1;
+                document.querySelector('.current').textContent =
+                    this.realIndex + 1;
             }
         }
     });
