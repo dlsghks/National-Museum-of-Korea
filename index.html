@@ -107,6 +107,21 @@
                                 </ul>
                             </li>
                         </ul>
+
+                        <ul class="header-top-gnb Type-Mobile">
+                          <li><a href="#" class="top-gnb-item">로그인</a></li>
+                          <li>
+                            <div class="select-box select-box-lang">
+                              <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list">KOR</button>
+                              <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                                <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
                     </nav>
                 </div>
                 <div class="header-right">
@@ -1271,23 +1286,46 @@
 <script>
     var swiper = new Swiper('.online-contents-wrap', {
         loop: true,
-        slidesPerView: 'auto',
-        spaceBetween: 72,
-        centeredSlides: true,
+
+        // 모바일
+        slidesPerView: '1',
+        spaceBetween: 20,
+        centeredSlides: false,
 
         navigation: {
             prevEl: '.prev-btn',
             nextEl: '.next-btn',
         },
 
+        breakpoints: {
+
+            // 아이패드 768 ~ 1279px
+            768: {
+                slidesPerView: '1.25',
+                spaceBetween: 50,
+                centeredSlides: false,
+            },
+
+            // PC 1280px 이상
+            1280: {
+                slidesPerView: 'auto',
+                spaceBetween: 72,
+                centeredSlides: true,
+            }
+
+        },
+
         on: {
             init: function () {
-                document.querySelector('.current').textContent = this.realIndex + 1;
-                document.querySelector('.total').textContent = this.slides.length;
+                document.querySelector('.current').textContent =
+                    this.realIndex + 1;
+
+                document.querySelector('.total').textContent = 6;
             },
 
             slideChange: function () {
-                document.querySelector('.current').textContent = this.realIndex + 1;
+                document.querySelector('.current').textContent =
+                    this.realIndex + 1;
             }
         }
     });
