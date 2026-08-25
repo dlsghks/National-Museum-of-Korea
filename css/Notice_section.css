@@ -6,24 +6,27 @@
     --Typo-Secondary: #666666;
 
     --inner-width: 1400px;
-
 }
 
 .notice-inner {
     position: relative;
 
-    /* 배경 이미지 */
-    background-image: url(/images/Notice_section/Notice_background_img.svg);
+    background-image: url(../images/Notice_section/Notice_background_img.svg);
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 100%;
+    background-size: cover;
+
+    z-index: 0;
 }
 
 .notice-inner .inner {
     max-width: var(--inner-width);
     margin: 0 auto;
+
     display: flex;
-    gap: 182px;
+    justify-content: space-between;
+
+    min-width: 0;
 }
 
 .inner-left .section-title {
@@ -35,12 +38,16 @@
     align-items: center;
 }
 
-/* .inner-right {} */
+/* =========================
+   Notice Tab
+========================= */
 
 .inner-right .notice-tab {
     display: flex;
     gap: 10px;
     margin-bottom: 16px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .inner-right .notice-tab>li>a {
@@ -52,6 +59,10 @@
     font-weight: 700;
 }
 
+/* =========================
+   Notice List
+========================= */
+
 .inner-right .notice-list li a:hover .notice-title {
     text-decoration: underline;
     font-weight: 500;
@@ -60,72 +71,117 @@
 
 .inner-right .notice-list li a {
     height: 110px;
+
     display: flex;
+
     border-bottom: 1px solid #d5d5d5;
 }
 
 .inner-right .notice-list .notice-wrap {
     display: flex;
-    gap: 1em;
     align-items: center;
+    gap: 1em;
+
+    flex: 1;
+    min-width: 0;
 }
 
 .inner-right .notice-list .notice-wrap .notice-type {
+    flex-shrink: 0;
+
     background: var(--Secondary-color);
     border-radius: 1.56em;
+
     margin-left: 13px;
+
     color: #fff;
     padding: 0.25em 0.63em;
+
+    white-space: nowrap;
 }
 
 .inner-right .notice-list .notice-wrap .notice-title {
-    width: 859px;
+    flex: 1;
+    min-width: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-@media screen and (max-width:1199px) {
-    .notice-inner .inner{
-        display: flex;
+/* =========================
+   1279px
+========================= */
+
+@media screen and (min-width: 1280px) {
+    .inner-right {
+        width: 1045px;
+        flex-shrink: 0;
+    }
+}
+
+
+
+@media screen and (max-width: 1279px) {
+
+    .notice-inner .inner {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+
         flex-direction: column;
         gap: 40px;
     }
 
     .inner-right .notice-list .notice-wrap .notice-type {
         border-radius: 1.2em;
-        width: 3em;
+        white-space: nowrap;
     }
-
-    
 }
 
-@media screen and (max-width:767px) {
-    .notice-inner .inner{
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
+/* =========================
+   767px
+========================= */
+
+@media screen and (max-width: 767px) {
+
+    .inner-right .notice-tab>li>a {
+        padding: 0 13px;
+        font-size: 1em;
     }
 
-
-    .notice-inner .section-title{
+    .notice-inner .section-title {
         font-size: 32px;
     }
 
     .inner-right .notice-list .notice-wrap .notice-type {
         border-radius: 1.2em;
-        width: 50px;
-    }
-
-    .inner-right .notice-list .notice-wrap .notice-type > p {
-        margin: 0 auto;
-    }
-
-    .inner-right .notice-list .notice-wrap {
-        overflow: hidden;
-    }
-    .inner-right .notice-list .notice-wrap .notice-title {
-        max-width: 370px;
         white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     }
 
+    .inner-right .notice-list li a {
+        justify-content: space-between;
+    }
+}
+
+/* =========================
+   480px
+========================= */
+
+@media screen and (max-width: 480px) {
+
+    .inner-right .notice-tab>li>a {
+        padding: 0 13px;
+        font-size: 0.9em;
+    }
+
+    .notice-inner .section-title {
+        font-size: 2em;
+    }
+
+    .inner-right .notice-list .notice-wrap .notice-type {
+        border-radius: 1.2em;
+        font-size: 0.7em;
+        white-space: nowrap;
+    }
 }

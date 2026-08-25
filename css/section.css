@@ -18,6 +18,7 @@
 .title-box {
     margin-bottom: 20px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .section-title {
@@ -27,13 +28,16 @@
 }
 
 .online-exhibition-wrap {
-    background-image: url(/images/Online_section/background.svg);
+    background-image: url(../images/Online_section/background.svg);
     background-repeat: repeat;
     background-size: auto;
     overflow: hidden;
     width: 100%;
-    max-width: none;
+    height: 90vh;
     padding: 93px 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
@@ -66,11 +70,12 @@
     transition: width 0.1s ease, height 0.1s ease;
 }
 
-.online-contents-list>li.swiper-slide-active .img-box{
+.online-contents-list>li.swiper-slide-active .img-box {
     width: 1045px;
     height: 587px;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
+
 .online-contents-list>li .img-box>img {
     width: 100%;
     height: 100%;
@@ -146,6 +151,7 @@
     align-items: center;
     justify-content: center;
     gap: 14px;
+    flex-shrink: 0;
 }
 
 .progress-bar {
@@ -206,4 +212,235 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+    .online-exhibition-wrap {
+        width: 100%;
+        height: 75vh;
+        min-height: 600px;
+        padding: 50px 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .title-box {
+        margin-bottom: 35px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .online-contents-wrap {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .online-contents-list {
+        height: auto;
+        align-items: center;
+    }
+
+    /*  슬라이드 자체 */
+    .online-contents-list > li {
+    width: 80vw !important;
+    max-width: none !important;
+    height: auto !important;
+    flex-shrink: 0;
+}
+
+    /*  이미지 박스 */
+    .online-contents-list>li .img-box,
+    .online-contents-list>li.swiper-slide-active .img-box {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .online-contents-list>li>a {
+        display: block;
+        width: 100%;
+    }
+
+    .online-contents-list>li .img-box>img {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    /* 아이패드에서는 텍스트 항상 표시 */
+    .online-contents-list>li .text-box {
+        width: 100%;
+        padding: 18px 0 0;
+        opacity: 1;
+        visibility: visible;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .online-contents-list>li .text-box h3 {
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .online-contents-list>li .text-box p {
+        margin: 6px 0 0;
+        font-size: 0.875em;
+    }
+
+    .play-btn {
+        width: 90px;
+        height: 90px;
+    }
+
+    .online-control {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .online-exhibition-wrap {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 40px 0 25px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        overflow: hidden;
+    }
+
+    .title-box {
+        margin-bottom: 20px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    /* 모바일 제목 크기 유지 */
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .online-contents-wrap {
+        width: 100%;
+        height: auto !important;
+        overflow: hidden;
+    }
+
+    .online-contents-list {
+        height: auto !important;
+        align-items: flex-start;
+    }
+
+    /* 첫 번째 콘텐츠 다음 콘텐츠 일부 노출 */
+    .online-contents-list > li {
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .online-contents-list > li > a {
+        width: 100%;
+    }
+
+    /* 이미지 */
+    .online-contents-list > li .img-box,
+    .online-contents-list > li.swiper-slide-active .img-box {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+
+        aspect-ratio: 16 / 9;
+
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .online-contents-list > li .img-box > img {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    /* 텍스트 크기는 아이패드와 동일하게 */
+    .online-contents-list > li .text-box {
+        width: 100%;
+        padding: 0.7em 0 0;
+
+        font-size: 1em;
+
+        text-align: center;
+
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .online-contents-list > li .text-box h3 {
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 1.35;
+    }
+
+    .online-contents-list > li .text-box p {
+        margin: 0.25em 0 0;
+        font-size: 0.875em;
+        line-height: 1.4;
+    }
+
+    /* 모바일 플레이 버튼 */
+    .play-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* 카운터만 표시 */
+    .online-control {
+        display: flex;
+        width: auto;
+        margin: 8px auto 0;
+        justify-content: center;
+    }
+
+    .progress-bar{
+        display: none;
+    }
+
+    .slider-counter{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .slider-counter .current{
+        font-size: 16px;
+    }
+
+    .slider-counter .dot{
+        font-size: 16px;
+    }
+
+    .slider-counter .total{
+        font-size: 16px;
+    }
+
+    .slider-counter button{
+        width: 20px;
+        height: 20px;
+    }
 }
