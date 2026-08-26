@@ -135,12 +135,12 @@
 .online-contents-list>li .text-box h3 {
     margin: 0;
     font-weight: 400;
-    font-size: 34px;
+    font-size: 1.5em;
 }
 
 .online-contents-list>li .text-box p {
     margin: 4px 0 0;
-    font-size: 16px;
+    font-size: 0.9em;
     font-weight: 400;
 }
 
@@ -218,8 +218,8 @@
 
     .online-exhibition-wrap {
         width: 100%;
-        height: 75vh;
-        min-height: 600px;
+        height: 60vh;
+        min-height: 400px;
         padding: 50px 0;
         overflow: hidden;
         display: flex;
@@ -234,7 +234,8 @@
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2em;
+        padding: 10px 0;
     }
 
     .online-contents-wrap {
@@ -285,17 +286,17 @@
         opacity: 1;
         visibility: visible;
         text-align: center;
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     .online-contents-list>li .text-box h3 {
         margin: 0;
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     .online-contents-list>li .text-box p {
         margin: 6px 0 0;
-        font-size: 0.875em;
+        font-size: 0.95em;
     }
 
     .play-btn {
@@ -331,7 +332,8 @@
 
     /* 모바일 제목 크기 유지 */
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2em;
+        padding: 10px 0;
     }
 
     .online-contents-wrap {
@@ -377,12 +379,12 @@
         object-fit: cover;
     }
 
-    /* 텍스트 크기는 아이패드와 동일하게 */
+    /* 텍스트 */
     .online-contents-list > li .text-box {
         width: 100%;
         padding: 0.7em 0 0;
 
-        font-size: 1em;
+        font-size: 1.1em;
 
         text-align: center;
 
@@ -392,14 +394,14 @@
 
     .online-contents-list > li .text-box h3 {
         margin: 0;
-        font-size: 1.5em;
-        font-weight: 400;
+        font-size: 1.1em;
+        font-weight: 500;
         line-height: 1.35;
     }
 
     .online-contents-list > li .text-box p {
         margin: 0.25em 0 0;
-        font-size: 0.875em;
+        font-size: 0.8em;
         line-height: 1.4;
     }
 
@@ -428,19 +430,19 @@
     }
 
     .slider-counter .current{
-        font-size: 16px;
+        font-size: 0.9em;
     }
 
     .slider-counter .dot{
-        font-size: 16px;
+        font-size: 0.9em;
     }
 
     .slider-counter .total{
-        font-size: 16px;
+        font-size: 0.9em;
     }
 
     .slider-counter button{
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 }
