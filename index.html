@@ -1358,13 +1358,27 @@
     });
 
     const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-        spaceBetween: 65,
+        slidesPerView: 1.8,
+        spaceBetween: 50,
+        centeredSlides: true,
         speed: 600,
         loop: true,
-        initialSlide: 1,
         allowTouchMove: true,
+
+        breakpoints: {
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+                centeredSlides: false
+            },
+
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 65,
+                initialSlide: 1,
+                centeredSlides: false
+            },
+        },
     });
 
     const sliderButtons = document.querySelectorAll('.slider-button');
@@ -1381,8 +1395,13 @@
 
     function updateSliderInfo() {
         const realIndex = exhibitionSwiper.realIndex;
-        const currentPage = realIndex === 0 ? totalSlides : realIndex;
+
+        const currentPage = window.innerWidth >= 1024
+            ? (realIndex === 0 ? totalSlides : realIndex)
+            : realIndex + 1;
+
         currentNumber.textContent = currentPage;
+
         const progress = (currentPage / totalSlides) * 100;
         progressValue.style.width = progress + '%';
     }
@@ -1390,7 +1409,6 @@
     nextButton.addEventListener('click', function () {
         featuredSwiper.slideNext(600);
         exhibitionSwiper.slideNext(600);
-
     });
 
     prevButton.addEventListener('click', function () {
