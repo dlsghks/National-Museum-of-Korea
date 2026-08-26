@@ -109,18 +109,23 @@
                         </ul>
 
                         <ul class="header-top-gnb Type-Mobile">
-                          <li><a href="#" class="top-gnb-item">로그인</a></li>
-                          <li>
-                            <div class="select-box select-box-lang">
-                              <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list">KOR</button>
-                              <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
-                                <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
-                                <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
-                                <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
-                                <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
-                              </ul>
-                            </div>
-                          </li>
+                            <li><a href="#" class="top-gnb-item">로그인</a></li>
+                            <li>
+                                <div class="select-box select-box-lang">
+                                    <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                        aria-expanded="false" aria-controls="lang-list">KOR</button>
+                                    <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                                        <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span>
+                                        </li>
+                                        <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span>
+                                        </li>
+                                        <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span>
+                                        </li>
+                                        <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -603,6 +608,20 @@
                                 <li class="swiper-slide">
                                     <a href="#">
                                         <div class="poster">
+                                            <img src="./images/Poster_section/poster-sub/poster-serve-1.svg"
+                                                alt="어메이징 타일랜드:태국 미술 명품전">
+                                        </div>
+                                        <div class="card-info">
+                                            <span class="badge1">현재전시</span>
+                                            <span class="badge2">특별전시</span>
+                                            <h3>어메이징 타일랜드:태국 미술 명품전</h3>
+                                            <span class="s-time">2026.06.23~2026.09.06</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="poster">
                                             <img src="./images/Poster_section/poster-sub/poster-serve-2.svg"
                                                 alt="추사 김정희와 그의 동반자 전시 포스터">
                                         </div>
@@ -785,7 +804,7 @@
                             </ul>
 
                             <div class="slider-control">
-                                <button type="button" class="slider-button" aria-label="이전 전시" disabled>
+                                <button class="slider-button exhibition-prev">
                                     <img src="./images/icon/Arrow-L-bk.svg" alt="" aria-hidden="true">
                                 </button>
                                 <span class="page-number">
@@ -793,7 +812,7 @@
                                     <span aria-hidden="true"> · </span>
                                     <span class="M-number">14</span>
                                 </span>
-                                <button type="button" class="slider-button" aria-label="다음 전시">
+                                <button class="slider-button exhibition-next">
                                     <img src="./images/icon/Arrow-R-bk.svg" alt="" aria-hidden="true">
                                 </button>
                                 <span class="progress-track" aria-hidden="true">
@@ -1335,25 +1354,56 @@
     const featuredSwiper = new Swiper('.M-exhibition-layout', {
         slidesPerView: 1,
         speed: 600,
+        loop: true,
     });
 
     const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
         slidesPerView: 3,
         slidesPerGroup: 1,
-        spaceBetween: 56,
+        spaceBetween: 65,
         speed: 600,
-
-        navigation: {
-            prevEl: '.slider-button:first-child',
-            nextEl: '.slider-button:nth-of-type(2)',
-        },
-
-        on: {
-            slideChange: function () {
-                featuredSwiper.slideTo(this.activeIndex);
-            }
-        }
+        loop: true,
+        initialSlide: 1,
+        allowTouchMove: true,
     });
+
+    const sliderButtons = document.querySelectorAll('.slider-button');
+    const prevButton = sliderButtons[0];
+    const nextButton = sliderButtons[1];
+
+    const currentNumber = document.querySelector('.page-number strong');
+
+    const totalNumber = document.querySelector('.M-number');
+
+    const progressValue = document.querySelector('.progress-value');
+
+    const totalSlides = Number(totalNumber.textContent);
+
+    function updateSliderInfo() {
+        const realIndex = exhibitionSwiper.realIndex;
+        const currentPage = realIndex === 0 ? totalSlides : realIndex;
+        currentNumber.textContent = currentPage;
+        const progress = (currentPage / totalSlides) * 100;
+        progressValue.style.width = progress + '%';
+    }
+
+    nextButton.addEventListener('click', function () {
+        featuredSwiper.slideNext(600);
+        exhibitionSwiper.slideNext(600);
+
+    });
+
+    prevButton.addEventListener('click', function () {
+        featuredSwiper.slidePrev(600);
+        exhibitionSwiper.slidePrev(600);
+    });
+
+    exhibitionSwiper.on('slideChange', function () {
+        updateSliderInfo();
+    });
+
+    updateSliderInfo();
+
 </script>
 
 </html>
