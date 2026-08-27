@@ -175,3 +175,23 @@ function setProgress(e) {
 videoPlayBtn.addEventListener('click', videoPlay);
 video.addEventListener('timeupdate', videoPlayProgress); // 재생 시간 변경 이벤트
 videoProgress.addEventListener('click', setProgress);
+
+// 아이폰 영상재생
+if (video) {
+  // 아이폰 필수 속성 강제 지정
+  video.muted = true;
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  // 메타데이터가 로드된 후 비디오 재생
+  video.addEventListener('loadedmetadata', () => {
+    video.play().catch(error => {
+      console.log('자동재생 차단됨:', error);
+    });
+  });
+
+  // 이미 로드된 상태일 경우 바로 재생
+  if (video.readyState >= 1) {
+    video.play().catch(error => {});
+  }
+}
