@@ -145,54 +145,57 @@
 }
 
 .online-control {
-    width: 380px;
-    margin: 18px auto 0;
+    width: 806px;
+    margin: 20px auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 10px;
     flex-shrink: 0;
 }
 
 .progress-bar {
+    order: 2;
     position: relative;
-    width: 220px;
+    flex: 1;
+    width: auto;
     height: 2px;
 
-    background: #666;
+    background: #ddd;
 }
 
 .progress-bar .progress {
     position: absolute;
     top: 0;
     left: 0;
-    width: 16%;
-    height: 2px;
+    width: 16.6667%;
+    height: 100%;
     background: #000;
     transition: width 0.3s ease;
 }
 
 .slider-counter {
+    order: 1;
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 13px;
+    font-size: 14px;
     color: #666;
 }
 
 .slider-counter .current {
     color: #222222;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .slider-counter .dot {
     color: #222222;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .slider-counter .total {
     color: #D5D5D5;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .slider-counter button {
@@ -214,6 +217,7 @@
     object-fit: contain;
 }
 
+/* 아이패드 */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 
     .online-exhibition-wrap {
@@ -305,10 +309,42 @@
     }
 
     .online-control {
-        display: none;
+        display: flex;
+        width: 80vw;
+        margin: 20px auto 0;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .online-control .progress-bar{
+        order: 2;
+        position: relative;
+        flex: 1 1 auto;
+        width: auto;
+        min-height: 2px;
+        height: 2px !important;
+        background: #ddd;
+    }
+
+    .online-control .progress-bar .progress{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 16.6667%;
+        min-height: 2px;
+        height: 2px !important;
+        background: #222222;
+        transition: width 0.3s ease;
+    }
+
+    .slider-counter{
+        order: 1;
+        flex-shrink: 0;
     }
 }
 
+/* 모바일 */
 @media screen and (max-width: 767px) {
 
     .online-exhibition-wrap {
@@ -382,7 +418,7 @@
     /* 텍스트 */
     .online-contents-list > li .text-box {
         width: 100%;
-        padding: 0.7em 0 0;
+        padding: 0.8em 0 0;
 
         font-size: 1.1em;
 
@@ -414,35 +450,51 @@
     /* 카운터만 표시 */
     .online-control {
         display: flex;
-        width: auto;
-        margin: 8px auto 0;
-        justify-content: center;
-    }
-
-    .progress-bar{
-        display: none;
+        width: calc(100% - 40px);
+        padding: 10px 0;
+        margin: 12px auto 0;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
     }
 
     .slider-counter{
+        order: 1;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 5px;
+        flex-shrink: 0;
     }
 
     .slider-counter .current{
-        font-size: 0.9em;
+        font-size: 14px;
     }
 
     .slider-counter .dot{
-        font-size: 0.9em;
+        font-size: 14px;
     }
 
     .slider-counter .total{
-        font-size: 0.9em;
+        font-size: 14px;
     }
 
     .slider-counter button{
-        width: 15px;
+        width: 8px;
         height: 15px;
+    }
+
+    .progress-bar{
+        order: 2;
+        position: relative;
+        flex: 1;
+        width: auto;
+        height: 2px;
+        background: #ddd;
+        display: block;
+    }
+
+    .progress-bar .progress{
+        width: 16.6667%;
+        height: 2px;
     }
 }
