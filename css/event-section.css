@@ -63,7 +63,7 @@ section>.inner {
     flex-direction: column;
     gap: 16px;
     padding-top: 130px;
-    padding-left: 60px;
+    padding-left: clamp(30px, 8vw, 60px);
     line-height: 1.3em;
     
 }
