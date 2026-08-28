@@ -171,6 +171,9 @@
 
 
 @media screen and (max-width: 1279px) {
+    .notice-inner{
+        padding: 40px 0;
+    }
 
     .notice-inner .inner {
         width: 100%;
