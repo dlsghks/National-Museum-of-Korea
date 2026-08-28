@@ -32,7 +32,7 @@
                                 <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
                             </ul>
                         </div>
-                    </li>
+                    <!-- </li> -->
                 </ul>
             </div>
         </div>
@@ -169,8 +169,9 @@
 
         <div class="main">
             <div class="main-video">
-                <video src="./images/Main_section/media/video/main_video.mp4" autoplay muted loop playsinline
-                    aria-label="국립박물관 소개 영상"></video>
+                <video autoplay muted loop playsinline webkit-playsinline aria-label="국립박물관 소개 영상">
+                  <source src="./images/Main_section/media/video/main_video.mp4" type="video/mp4">
+                </video>
             </div>
 
             <div class="inner">
@@ -1327,8 +1328,7 @@
     var swiper = new Swiper('.online-contents-wrap', {
         loop: true,
 
-        // 모바일
-        slidesPerView: '1',
+        slidesPerView: 1,
         spaceBetween: 20,
         centeredSlides: false,
 
@@ -1339,14 +1339,14 @@
 
         breakpoints: {
 
-            // 아이패드 768 ~ 1279px
+            // 아이패드
             768: {
-                slidesPerView: '1.25',
+                slidesPerView: 'auto',
                 spaceBetween: 50,
-                centeredSlides: false,
+                centeredSlides: true,
             },
 
-            // PC 1280px 이상
+            // PC
             1280: {
                 slidesPerView: 'auto',
                 spaceBetween: 72,
@@ -1357,18 +1357,29 @@
 
         on: {
             init: function () {
-                document.querySelector('.current').textContent =
-                    this.realIndex + 1;
-
-                document.querySelector('.total').textContent = 6;
+                updateOnlineSlider(this);
             },
 
             slideChange: function () {
-                document.querySelector('.current').textContent =
-                    this.realIndex + 1;
+                updateOnlineSlider(this);
             }
         }
     });
+
+
+    function updateOnlineSlider(swiper) {
+
+        const current = swiper.realIndex + 1;
+        const total = 6;
+
+        document.querySelector('.current').textContent = current;
+        document.querySelector('.total').textContent = total;
+
+        const progress = (current / total) * 100;
+
+        document.querySelector('.progress').style.width =
+            progress + '%';
+    }
 </script>
 
 <script>
