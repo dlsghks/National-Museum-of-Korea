@@ -1101,11 +1101,11 @@
                 <div class="inner-right">
                     <div class="notice-tab-wrap">
                         <ul class="notice-tab">
-                            <li class="active"><a href="#">알림</a></li>
-                            <li><a href="#">소식</a></li>
-                            <li><a href="#">고시/공고</a></li>
-                            <li><a href="#">채용정보</a></li>
-                            <li><a href="#">보도자료</a></li>
+                            <li><button type="button" data-text="알림" class="active">알림</button></li>
+                            <li><button type="button" data-text="소식">소식</button></li>
+                            <li><button type="button" data-text="고시/공고">고시/공고</button></li>
+                            <li><button type="button" data-text="채용정보">채용정보</button></li>
+                            <li><button type="button" data-text="보도자료">보도자료</button></li>
                         </ul>
                     </div>
                     <hr>
@@ -1185,7 +1185,7 @@
         <div class="footer-top">
             <div class="inner">
                 <div class="footer-link-tit">
-                    <p>세계와 소통하는 문화공관,</p>
+                    <p>세계와 소통하는 문화공간,</p>
                     <p>국립중앙박물관입니다.</p>
                 </div>
                 <ul class="footer-link-wrap">
@@ -1455,6 +1455,20 @@
     });
 
     updateSliderInfo();
+
+    // 알림 탭 메뉴 
+
+    const activeButton = document.querySelectorAll(".notice-tab button")
+
+    activeButton.forEach(function (button){
+        button.addEventListener("click", function(){
+            activeButton.forEach(function(button){
+                button.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        })
+    })
 
 </script>
 
