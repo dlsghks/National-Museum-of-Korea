@@ -383,7 +383,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 72px;
+        gap: 46px;
         /* 메인 전시와 오른쪽 서브 카드 사이 간격 */
         width: 100%;
         padding: 0 50px;
@@ -394,7 +394,7 @@
     /* [메인 전시] 왼쪽 카드 영역 - 슬라이드 잘림 및 자식 요소 삐져나옴 방지 */
     .M-exhibition-layout {
         display: block !important;
-        width: 560px;
+        /* width: 560px; */
         max-width: calc(100% - 220px);
         flex-shrink: 1;
         overflow: hidden !important;
@@ -454,7 +454,7 @@
     /* [오른쪽 전시] 서브 카드 영역 (1개만 노출) */
     .exhibition-list-wrap {
         display: block !important;
-        width: 180px;
+        width: 179px;
         /* 카드 1개 너비 */
         flex-shrink: 0;
         overflow: visible;
@@ -468,13 +468,6 @@
         align-items: flex-start;
         padding: 0;
         margin: 0;
-    }
-
-    .exhibition-list>.swiper-slide,
-    .exhibition-list>li {
-        width: 180px !important;
-        flex-shrink: 0;
-        margin-right: 0 !important;
     }
 
     .exhibition-list .poster {
