@@ -289,6 +289,9 @@
 
 /* 반응형 버전 */
 @media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
 
     .section-heading h2 {
         font-size: 32px;
@@ -374,33 +377,47 @@
         padding-left: 0;
     }
 
-    /* 전체 전시 레이아웃 (중앙 정렬 및 여백) */
+    /* 전체 전시 레이아웃: 화살표 배치를 위한 기준점 설정 */
     .exhibition-layout {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 75px;
-        /* 메인 전시와 오른쪽 전시 사이 간격 */
+        gap: 72px;
+        /* 메인 전시와 오른쪽 서브 카드 사이 간격 */
         width: 100%;
-        padding: 0 46px;
-        /* 양 끝 화살표가 들어갈 공간 확보 */
+        padding: 0 50px;
+        /* 좌우 화살표가 들어갈 여백 확보 */
         box-sizing: border-box;
     }
 
-    /* [메인 전시] 왼쪽 카드 영역 (기존 비율 그대로 유지) */
+    /* [메인 전시] 왼쪽 카드 영역 - 슬라이드 잘림 및 자식 요소 삐져나옴 방지 */
     .M-exhibition-layout {
         display: block !important;
         width: 560px;
         max-width: calc(100% - 220px);
         flex-shrink: 1;
-        overflow: hidden;
+        overflow: hidden !important;
+        /* 다음 슬라이드가 보이는 현상 완벽 차단 */
         position: relative;
+        box-sizing: border-box;
         box-shadow: 0 9px 19.6px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .M-exhibition-layout .swiper-wrapper {
+        box-sizing: border-box;
+    }
+
+    /* 슬라이드 자체 너비를 부모 영역에 100% 정확히 맞춤 */
+    .M-exhibition-layout .swiper-slide {
+        width: 100% !important;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .featured-exhibition {
         width: 100%;
+        box-sizing: border-box;
     }
 
     .featured-exhibition .poster {
@@ -416,8 +433,7 @@
     }
 
     .exhibition-info {
-        /* width: 50%; */
-        padding-right: 40px;
+        padding-right: 30px;
         box-sizing: border-box;
     }
 
@@ -439,9 +455,12 @@
     .exhibition-list-wrap {
         display: block !important;
         width: 180px;
-        /* 카드 1개 너비로 제한 */
+        /* 카드 1개 너비 */
         flex-shrink: 0;
-        overflow: hidden;
+        overflow: visible;
+        /* 컨트롤러 위치 탈출을 위해 필요 */
+        position: static;
+        /* 기준점 해제하여 .exhibition-layout 기준이 되도록 설정 */
     }
 
     .exhibition-list {
@@ -454,7 +473,6 @@
     .exhibition-list>.swiper-slide,
     .exhibition-list>li {
         width: 180px !important;
-        /* Swiper 자바스크립트 인라인 폭 덮어쓰기 */
         flex-shrink: 0;
         margin-right: 0 !important;
     }
@@ -483,57 +501,61 @@
         font-size: 12px;
     }
 
-    /* [슬라이더 컨트롤] 좌/우 화살표 세로 중앙 배치 */
+    /* [슬라이더 컨트롤] 전체 너비 유지 및 수직 중앙 배치 */
     .slider-control {
         position: absolute;
         top: 50%;
+        /* 수직 기준 중앙 */
         left: 0;
-        right: 0;
+        transform: translateY(-50%);
+        /* 수직 중앙 정렬 */
         width: 100%;
+        /* 양 끝 배치를 위해 전체 너비 유지 */
         height: 0;
+        /* 높이를 0으로 만들어 레이아웃 영역 침범 방지 */
         margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transform: translateY(-50%);
         pointer-events: none;
+        /* 슬라이더 클릭 방해 금지 */
         z-index: 20;
     }
 
-    /* 화살표 버튼 배치 및 클릭 가능 설정 */
+    /* 좌/우 화살표 버튼 위치 */
     .slider-control .slider-button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
         padding: 0;
         margin: 0;
         background: transparent;
         border: none;
         cursor: pointer;
         pointer-events: auto;
+        /* 버튼 클릭 허용 */
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .slider-control .slider-button img {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         display: block;
     }
 
     .slider-control .exhibition-prev {
         left: 0;
+        /* .exhibition-layout의 가장 왼쪽 끝 배치 */
     }
 
     .slider-control .exhibition-next {
         right: 0;
+        /* .exhibition-layout의 가장 오른쪽 끝 배치 */
     }
 
-    /* [요소 제거] 숫자 및 프로그레스 바 숨김 */
+    /* iPad 버전에서 페이지 번호 및 프로그레스 바 숨김 */
     .slider-control .page-number,
     .slider-control .progress-track {
         display: none !important;
