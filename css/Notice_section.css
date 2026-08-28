@@ -44,20 +44,31 @@
 
 .inner-right .notice-tab {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 25px;
+
     margin-bottom: 16px;
+
     white-space: nowrap;
     overflow: hidden;
 }
 
-.inner-right .notice-tab>li>a {
-    padding: 0 13px;
-    font-size: 1.5em;
+.inner-right .notice-tab li {
+    position: relative;
+    flex-shrink: 0;
 }
 
-.inner-right .notice-tab .active {
+.inner-right .notice-tab li>button {
+    padding: 0 5px;
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+
+.inner-right .notice-tab li>.active {
     font-weight: 700;
 }
+
+
 
 /* =========================
    Notice List
@@ -145,7 +156,7 @@
 
 @media screen and (max-width: 767px) {
 
-    .inner-right .notice-tab>li>a {
+    .inner-right .notice-tab>li>button {
         padding: 0 13px;
         font-size: 1em;
     }
@@ -169,8 +180,8 @@
 ========================= */
 
 @media screen and (max-width: 480px) {
-
-    .inner-right .notice-tab>li>a {
+    
+    .inner-right .notice-tab>li>button {
         padding: 0 13px;
         font-size: 0.9em;
     }
