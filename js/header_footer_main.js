@@ -5,9 +5,15 @@ const mobileBtn = document.querySelector('.button-m-menu');
 const linkBtn = document.querySelector('.link-btn');
 const footerLinks = document.querySelectorAll('.footer-link');
 const gnbMainLists = document.querySelectorAll('.gnb-main-list');
+// 비디오
+const video = document.getElementById("video");
+const videoPlayBtn = document.getElementById("video-paly");
+const videoPlayBtnImg = document.querySelector("#video-paly img");
+const videoProgress = document.getElementById("video-progress");
+const videoProgressBar = document.getElementById("video-progress-bar");
 // 1280px 이상일 때만 true를 반환하는 미디어 쿼리 설정
 const pcMedia = window.matchMedia('(min-width: 1280px)');
-let isGnbHovered = false;
+
 
 function updateLogo() {
   const isScrolled = window.scrollY > 50;
@@ -69,6 +75,13 @@ mobileBtn.addEventListener('click', () =>{
   } else {
     // 닫힐 때는 즉시 변경
     updateLogo();
+
+    // 모바일 메뉴가 닫힐 때 열려있던 모든 서브메뉴(otherItem)도 닫기
+    gnbMainLists.forEach((item) => {
+      setTimeout(() => {
+        item.classList.remove('on');
+      }, 500)
+    });
   }
 })
 // 
@@ -118,3 +131,67 @@ footerLinks.forEach((item) => {
   });
 
 });
+
+// 바깥 영역(다른 곳) 클릭 시 열려있는 모든 footerLink 팝업 닫기
+document.addEventListener('click', (e) => {
+  // 클릭한 요소가 .footer-link 내부가 아니라면 on 클래스 제거
+  if (!e.target.closest('.footer-link')) {
+    footerLinks.forEach((item) => {
+      item.classList.remove('on');
+    });
+  }
+});
+
+// 비디오
+// 1. 재생 / 일시정지 토글
+function videoPlay() {
+  if (video.paused) {
+    video.play();
+    videoPlayBtnImg.src = './images/Main_section/images/main_video_pause.svg'; // 일시정지 아이콘
+  } else {
+    video.pause();
+    videoPlayBtnImg.src = './images/Main_section/images/main_video_play.svg'; // 재생 아이콘
+  }
+}
+
+// 2. 영상 진행에 따른 진행바 업데이트
+function videoPlayProgress() {
+  // (현재시간 / 전체시간) * 100 = 진행 퍼센트
+  const percent = (video.currentTime / video.duration) * 100;
+  videoProgressBar.style.width = `${percent}%`;
+}
+
+// 3. 진행바 클릭 시 해당 위치로 이동하는 함수 추가
+function setProgress(e) {
+  // videoProgress 기준 클릭한 X 위치 / 전체 너비
+  const clickX = e.offsetX;
+  const width = videoProgress.clientWidth;
+
+  // 클릭한 비율에 맞게 비디오 재생 시간 이동
+  video.currentTime = (clickX / width) * video.duration;
+}
+
+// 이벤트 리스너 연결
+videoPlayBtn.addEventListener('click', videoPlay);
+video.addEventListener('timeupdate', videoPlayProgress); // 재생 시간 변경 이벤트
+videoProgress.addEventListener('click', setProgress);
+
+// 아이폰 영상재생
+if (video) {
+  // 아이폰 필수 속성 강제 지정
+  video.muted = true;
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  // 메타데이터가 로드된 후 비디오 재생
+  video.addEventListener('loadedmetadata', () => {
+    video.play().catch(error => {
+      console.log('자동재생 차단됨:', error);
+    });
+  });
+
+  // 이미 로드된 상태일 경우 바로 재생
+  if (video.readyState >= 1) {
+    video.play().catch(error => {});
+  }
+}
