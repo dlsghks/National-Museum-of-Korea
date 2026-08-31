@@ -175,11 +175,11 @@ section>.inner {
 @media (max-width: 1199px) {
 
     section {
-        padding: clamp(90px, 10vw, 140px) 0;
+        padding: 0;
     }
 
     section>.inner {
-        padding: 30px 32px;
+        padding: 40px 20px;
     }
 
     .main-event {
@@ -235,17 +235,13 @@ section>.inner {
 ========================= */
 @media (max-width: 767px) {
 
-    section {
-        padding: 70px 0;
-    }
+   
 
     section h2 {
         font-size: 32px;
     }
 
-    section>.inner {
-        padding: 20px 16px;
-    }
+    
 
     .main-event {
         padding: 40px 0;
