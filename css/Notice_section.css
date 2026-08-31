@@ -41,16 +41,34 @@
 /* =========================
    Notice Tab
 ========================= */
+.inner-right .notice-tab-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.inner-right .notice-tab-wrap::-webkit-scrollbar {
+    display: none;
+}
 
 .inner-right .notice-tab {
     display: flex;
     align-items: center;
-    gap: 25px;
-
+    gap: 32px;
     margin-bottom: 16px;
-
     white-space: nowrap;
-    overflow: hidden;
+    margin-left: 15px;
+}
+
+.inner-right .notice-tab::-webkit-scrollbar {
+    display: visible;
+}
+
+.inner-right .notice-tab {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .inner-right .notice-tab li {
@@ -59,13 +77,32 @@
 }
 
 .inner-right .notice-tab li>button {
-    padding: 0 5px;
-    font-size: 1.5em;
+    padding: 0;
+    font-size: 1.25rem;
+    color: var(--Typo-Secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
     white-space: nowrap;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-right .notice-tab li>button::after {
+    content: attr(data-text);
+    height: 0;
+    font-weight: 700;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
 }
 
 .inner-right .notice-tab li>.active {
     font-weight: 700;
+    color: var(--Typo-Primary);
 }
 
 
@@ -134,6 +171,9 @@
 
 
 @media screen and (max-width: 1279px) {
+    .notice-inner{
+        padding: 40px 0;
+    }
 
     .notice-inner .inner {
         width: 100%;
@@ -155,6 +195,11 @@
 ========================= */
 
 @media screen and (max-width: 767px) {
+
+    .inner-right .notice-tab {
+        margin-left: 7px;
+        gap: 20px;
+    }
 
     .inner-right .notice-tab>li>button {
         padding: 0 13px;
@@ -180,7 +225,10 @@
 ========================= */
 
 @media screen and (max-width: 480px) {
-    
+    .inner-right .notice-tab {
+        gap: 16px;
+    }
+
     .inner-right .notice-tab>li>button {
         padding: 0 13px;
         font-size: 0.9em;
