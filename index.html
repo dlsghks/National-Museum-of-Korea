@@ -1426,7 +1426,8 @@
                 spaceBetween: 25,
                 centeredSlides: true
             },
-            // iPad (768px ~ 1024px) : 카드를 1개만 노출하고 2번째 슬라이드부터 시작
+
+            // iPad (769px ~ 1024px)
             769: {
                 slidesPerView: 1,
                 spaceBetween: 0,
@@ -1434,6 +1435,7 @@
                 centeredSlides: false
             },
 
+            // PC
             1025: {
                 slidesPerView: 3,
                 spaceBetween: 48,
@@ -1448,9 +1450,7 @@
     const nextButton = sliderButtons[1];
 
     const currentNumber = document.querySelector('.page-number strong');
-
     const totalNumber = document.querySelector('.M-number');
-
     const progressValue = document.querySelector('.progress-value');
 
     const totalSlides = Number(totalNumber.textContent);
