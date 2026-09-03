@@ -16,7 +16,7 @@
 
 /* online */
 .title-box {
-    margin-bottom: 20px;
+    margin:0 0 43px;
     text-align: center;
     flex-shrink: 0;
 }
@@ -34,7 +34,7 @@
     overflow: hidden;
     width: 100%;
     height: 90vh;
-    padding: 93px 0 35px;
+    padding: 70px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,14 +134,14 @@
 
 .online-contents-list>li .text-box h3 {
     margin: 0;
-    font-weight: 400;
-    font-size: 1.5em;
+    font-weight: 600;
+    font-size: 34px;
 }
 
 .online-contents-list>li .text-box p {
     margin: 4px 0 0;
-    font-size: 0.9em;
-    font-weight: 400;
+    font-size: 16px;
+    color: #666;
 }
 
 .online-control {
@@ -224,7 +224,7 @@
         width: 100%;
         height: 60vh;
         min-height: 400px;
-        padding: 50px 0;
+        padding: 40px 0;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -232,14 +232,14 @@
     }
 
     .title-box {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
         text-align: center;
         flex-shrink: 0;
     }
 
     .section-title {
         font-size: 2em;
-        padding: 10px 0;
+        padding: 0;
     }
 
     .online-contents-wrap {
@@ -295,12 +295,14 @@
 
     .online-contents-list>li .text-box h3 {
         margin: 0;
-        font-size: 1.3em;
+        font-size: 1.18em;
+        font-weight: 600;
     }
 
     .online-contents-list>li .text-box p {
-        margin: 6px 0 0;
-        font-size: 0.95em;
+        margin: 3px 0 0;
+        font-size: 0.8em;
+        color: #666;
     }
 
     .play-btn {
@@ -430,15 +432,16 @@
 
     .online-contents-list > li .text-box h3 {
         margin: 0;
-        font-size: 1.1em;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 600;
         line-height: 1.35;
     }
 
     .online-contents-list > li .text-box p {
-        margin: 0.25em 0 0;
-        font-size: 0.8em;
+        margin: 1.5px 0 0;
+        font-size: 13px;
         line-height: 1.4;
+        color: #666;
     }
 
     /* 모바일 플레이 버튼 */
