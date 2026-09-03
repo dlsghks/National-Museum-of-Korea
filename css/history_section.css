@@ -1,0 +1,375 @@
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.history-hero {
+    position: relative;
+    width: 100%;
+    padding: 140px 0 100px;
+    background-image: url('../images/history_section/history-main.JPG');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.history-hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 19, 31, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.history-hero__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 상단 뱃지 */
+.history-hero__badge {
+    display: inline-block;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: var(--font-w-M); /* style.css 500 */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #f5d0d4;
+    background-color: rgba(221, 18, 39, 0.2);
+    border: 1px solid rgba(221, 18, 39, 0.4);
+    border-radius: 50px;
+}
+
+/* 히어로 타이틀 */
+.history-hero__title {
+    font-size: 52px;
+    font-weight: var(--font-w-B); /* style.css 700 */
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: #ffffff;
+    word-break: keep-all;
+}
+
+/* 서브 설명 문구 */
+.history-hero__desc {
+    font-size: 18px;
+    font-weight: var(--font-w-L); /* style.css 300 */
+    line-height: 1.7;
+    color: #a0aec0;
+    word-break: keep-all;
+}
+
+.history-hero__desc .pc-only {
+    display: block;
+}
+
+/* ==========================================================================
+   Navigation Bar (Sticky)
+   ========================================================================== */
+.history-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fdf2f3;
+    border-bottom: 1px solid #f5d0d4;
+}
+
+.history-nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px;
+}
+
+.history-nav__item a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: var(--font-w-M); /* style.css 500 */
+    color: var(--color-typo-sec); /* #666666 */
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.history-nav__item.active a,
+.history-nav__item a:hover {
+    color: #fff;
+    background-color: #DD1227; /* 기존 포인트 레드 */
+    font-weight: var(--font-w-B); /* style.css 700 */
+}
+
+/* ==========================================================================
+   History Content Area
+   ========================================================================== */
+.history-content {
+    padding-block: 100px;
+}
+
+.history-section {
+    margin-bottom: 240px;
+}
+
+.history-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Layout (3-Column System) */
+.history-section__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   1. Left Side (Sticky Visual Box)
+   -------------------------------------------------------------------------- */
+.history-left {
+    width: 42%;
+    position: sticky;
+    top: 120px;
+}
+
+.history-left__sticky {
+    width: 100%;
+}
+
+/* 왼쪽 년도 타이틀: 공용 브랜드 메인 컬러 var(--color-pri) 적용 */
+.history-period__years {
+    font-size: 54px;
+    font-weight: var(--font-w-ExB); /* style.css 800 */
+    color: var(--color-pri); /* #243B66 네이비 */
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -0.04em;
+}
+
+.history-period__sub {
+    font-size: 16px;
+    font-weight: var(--font-w-M); /* style.css 500 */
+    color: var(--color-typo-sec); /* #666666 */
+    margin-bottom: 30px;
+}
+
+/* Visual Image Frame */
+.history-visual {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.history-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.history-images__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transform: scale(1);
+}
+
+.history-images__item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.history-images__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 이미지 하단 캡션: 서체 전용 컬러 적용 */
+.history-caption {
+    font-size: 15px;
+    font-weight: var(--font-w-M); /* style.css 500 */
+    color: var(--color-typo-sec); /* #666666 */
+}
+
+/* --------------------------------------------------------------------------
+   2. Center Line & Active Marker
+   -------------------------------------------------------------------------- */
+.history-center {
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 46%;
+    top: 0;
+    bottom: 0;
+}
+
+.history-timeline__line {
+    position: relative;
+    width: 2px;
+    height: 100%;
+    background-color: #eee;
+}
+
+/* 중앙 타임라인 포인트 및 그래디언트: 기존 포인트 레드 (#DD1227) 유지 */
+.history-timeline__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background: linear-gradient(180deg, rgba(221, 18, 39, 0.2) 0%, #DD1227 100%);
+    box-shadow: 0 0 8px rgba(221, 18, 39, 0.6);
+}
+
+.history-timeline__active-dot {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    width: 14px;
+    height: 14px;
+    background-color: #DD1227;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(221, 18, 39, 0.5);
+}
+
+.history-timeline__active-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(221, 18, 39, 0.4);
+    transform: translate(-50%, -50%);
+    animation: timelinePulse 1.8s infinite ease-out;
+}
+
+@keyframes timelinePulse {
+    0% {
+        width: 14px;
+        height: 14px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 36px;
+        height: 36px;
+        opacity: 0;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. Right Side (Event List)
+   -------------------------------------------------------------------------- */
+.history-right {
+    width: 44%;
+}
+
+.history-list {
+    padding-top: 10px;
+    padding-bottom: 200px;
+}
+
+.history-event {
+    margin-bottom: 45px;
+    opacity: 0.6; /* 비활성 텍스트 가독성을 위해 불투명도 약간 상향 조정 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.history-event.active {
+    opacity: 1;
+    transform: translateX(6px);
+}
+
+.history-event:last-child {
+    margin-bottom: 0;
+} 
+
+/* 기본 타임라인 날짜: 메인 브랜드 컬러 var(--color-pri) */
+.history-event time {
+    display: block;
+    font-size: 18px;
+    font-weight: var(--font-w-B); /* style.css 700 */
+    color: var(--color-pri); /* #243B66 네이비 */
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* 활성화된 타임라인 날짜: 포인트 레드 (#DD1227) 강조 */
+.history-event.active time {
+    color: #DD1227;
+}
+
+/* 이벤트 설명 본문: 공용 텍스트 컬러 var(--color-typo-pri) */
+.history-event p {
+    font-size: 16px;
+    font-weight: var(--font-w-M); /* style.css 500 */
+    color: var(--color-typo-pri); /* #222222 */
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Responsive (Tablet & Mobile)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+    .history-hero {
+        padding: 100px 20px 70px;
+    }
+
+    .history-hero__title {
+        font-size: 36px;
+    }
+
+    .history-hero__desc {
+        font-size: 15px;
+    }
+
+    .history-hero__desc .pc-only {
+        display: none;
+    }
+
+    .history-section__inner {
+        flex-direction: column;
+    }
+
+    .history-left,
+    .history-right {
+        width: 100%;
+    }
+
+    .history-center {
+        display: none;
+    }
+
+    .history-left__sticky {
+        position: relative;
+        top: 0;
+    }
+
+    .history-nav__list {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+}
