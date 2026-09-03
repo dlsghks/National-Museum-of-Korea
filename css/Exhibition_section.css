@@ -311,8 +311,9 @@
 @media (max-width: 768px) {
 
     .section {
-        padding: 40px 0;
+        padding: 0;
     }
+
 
     .section-heading h2 {
         font-size: 32px;
@@ -380,15 +381,15 @@
    ========================================================= */
 
 @media (min-width: 769px) and (max-width: 819px) {
-
-    .exhibition-section {
-        padding: 100px 0;
+    .section {
+        padding: 0;
     }
+
 
     .exhibition-section .inner {
         width: 100%;
         max-width: 100%;
-        padding: 0 40px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -552,13 +553,13 @@
 @media (min-width: 820px) and (max-width: 821px) {
 
     .exhibition-section {
-        padding: 40px 0;
+        padding: 100px 0;
     }
 
     .exhibition-section .inner {
         width: 100%;
         max-width: 100%;
-        padding: 0 40px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -711,14 +712,18 @@
 
 @media (min-width: 822px) and (max-width: 1024px) {
 
-    .exhibition-section {
-        padding: 100px 0;
+    .exhibition-section>.inner {
+        padding: 0;
+    }
+
+    .section {
+        padding: 40px 0;
     }
 
     .exhibition-section .inner {
         width: 100%;
         max-width: 100%;
-        padding: 0 40px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -880,6 +885,11 @@
    ========================================================= */
 
 @media (min-width: 1025px) {
+
+    .section {
+        padding: 40px 0;
+    }
+
 
     .exhibition-layout {
         display: flex;

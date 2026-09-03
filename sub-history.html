@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국립중앙박물관 발자취</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./font/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/history_section.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top Type-PC">
+            <div class="header-inner inner">
+                <ul class="header-top-gnb">
+                    <li><a href="#" class="top-gnb-item">로그인</a></li>
+                    <li>
+                        <div class="select-box select-box-lang">
+                            <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                aria-expanded="false" aria-controls="lang-list">KOR</button>
+                            <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                                <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
+                            </ul>
+                        </div>
+                        <!-- </li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-inner inner">
+                <div class="header-left">
+                    <h1 class="header-logo"><a href="#"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></a></h1>
+                    <nav class="header-gnb" aria-label="주 메뉴">
+                        <ul class="gnb-main">
+                            <li class="gnb-main-list">
+                                <a href="#">관람</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">관람안내</a></li>
+                                        <li class="gnb-sub-list"><a href="#">예약</a></li>
+                                        <li class="gnb-sub-list"><a href="#">전시해설</a></li>
+                                        <li class="gnb-sub-list"><a href="#">편의시설</a></li>
+                                        <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">전시</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">상실전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">특별전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">소장품</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">소장품 검색</a></li>
+                                        <li class="gnb-sub-list"><a href="#">대표 소장품</a></li>
+                                        <li class="gnb-sub-list"><a href="#">국보 · 보물</a></li>
+                                        <li class="gnb-sub-list"><a href="#">디지털 소장품</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">문화행사 · 교육</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">행사 · 공연</a></li>
+                                        <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
+                                        <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">학술</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">학술행사</a></li>
+                                        <li class="gnb-sub-list"><a href="#">연구 자료</a></li>
+                                        <li class="gnb-sub-list"><a href="#">정기간행물</a></li>
+                                        <li class="gnb-sub-list"><a href="#">도서관</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">소식</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">공지사항</a></li>
+                                        <li class="gnb-sub-list"><a href="#">보도자료</a></li>
+                                        <li class="gnb-sub-list"><a href="#">채용 · 공고</a></li>
+                                        <li class="gnb-sub-list"><a href="#">이벤트 · 참여</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">박물관 소개</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">박물관 개요</a></li>
+                                        <li class="gnb-sub-list"><a href="#">역사 · 연혁</a></li>
+                                        <li class="gnb-sub-list"><a href="#">조직</a></li>
+                                        <li class="gnb-sub-list"><a href="#">시설안내</a></li>
+                                        <li class="gnb-sub-list"><a href="#">미션 · 비전</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="header-top-gnb Type-Mobile">
+                            <li><a href="#" class="top-gnb-item">로그인</a></li>
+                            <li>
+                                <div class="select-box select-box-lang">
+                                    <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                        aria-expanded="false" aria-controls="lang-list">KOR</button>
+                                    <div>
+                                        <ul id="lang-list" class="select-list" role="listbox"
+                                            aria-labelledby="lang-btn">
+                                            <li class="select-list-opt" role="option" aria-selected="true">
+                                                <span>KOR</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>ENG</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>JPN</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>CHN</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <button type="button" class="button-search Type-PC" aria-label="검색" aria-haspopup="true"></button>
+                    <!-- 모바일 -->
+                    <button type="button" class="button-m-menu Type-Mobile" aria-label="메뉴" aria-haspopup="true">
+                        <div class="menu-item">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="history-hero">
+            <div class="history-hero__bg"></div>
+            <div class="history-hero__inner inner">
+                <span class="history-hero__badge">National Museum of Korea</span>
+                <h1 class="history-hero__title">국립중앙박물관 발자취</h1>
+                <p class="history-hero__desc">
+                    국립중앙박물관은 광복 직후 우리 손으로 유물을 보존하기 시작한 이래, 전쟁의 시련을 딛고 세계적인 박물관으로 거듭났습니다.
+                    <br class="pc-only">
+                    소장품 수호의 역사부터 용산에서의 새로운 도약까지, 100여 년을 이어온 박물관의 당당한 역사를 소개합니다.
+                </p>
+            </div>
+        </section>
+
+        <nav class="history-nav">
+            <ul class="history-nav__list inner">
+                <li class="history-nav__item"><a href="#history-1">경복궁 1기</a></li>
+                <li class="history-nav__item"><a href="#history-2">덕수궁 시기</a></li>
+                <li class="history-nav__item"><a href="#history-3">경복궁 2기</a></li>
+                <li class="history-nav__item"><a href="#history-4">경복궁 3기</a></li>
+                <li class="history-nav__item"><a href="#history-5">경복궁 4기</a></li>
+                <li class="history-nav__item"><a href="#history-6">용산 시기</a></li>
+            </ul>
+        </nav>
+
+        <div class="history-content inner">
+
+            <section id="history-1" class="history-section">
+                <div class="history-section__inner">
+                    <div class="history-left">
+                        <div class="history-left__sticky">
+                            <h2 class="history-period__years">1945-1954</h2>
+                            <p class="history-period__sub">경복궁 1기</p>
+                            <div class="history-visual">
+                                <ul class="history-images">
+                                    <li class="history-images__item active">
+                                        <img src="./images/history_section/1945-1953_1.svg" alt="경복궁 1기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/1945-1953_2.svg" alt="경복궁 1기">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="history-caption">경복궁 1기(구 조선총독부박물관, 1945~1953)</p>
+                        </div>
+                    </div>
+
+                    <div class="history-center">
+                        <div class="history-timeline__line">
+                            <span class="history-timeline__progress"></span>
+                            <span class="history-timeline__active-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="history-right">
+                        <ul class="history-list">
+                            <li class="history-event active">
+                                <time datetime="1945-12">1945.12</time>
+                                <p>국립박물관 개관(조선총독부박물관 인수)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1946-04">1946.04</time>
+                                <p>공주분관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1946-04">1946.04</time>
+                                <p>개성박물관을 개성분관으로 흡수</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1946-05">1946.05</time>
+                                <p>경주 호우총과 은령총 발굴조사(최초 발굴조사)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1946-08">1946.08</time>
+                                <p>&lt;중요출토품전&gt; 개최(최초의 특별전)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1949-05">1949.05</time>
+                                <p>&lt;미술강좌&gt; 개설(최초의 사회교육강좌)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1949-12">1949.12</time>
+                                <p>국립박물관 직제 공포(대통령령 제234호)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1950-04">1950.04</time>
+                                <p>국립민속박물관을 남산분관으로 통합</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1950-04">1950.04</time>
+                                <p>한국전쟁으로 소장품 부산으로 임시 이전(광복동 사무실)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1953-08">1953.08</time>
+                                <p>부산에서 경복궁내 청사로 복귀</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1954-01">1954.01</time>
+                                <p>남산분관으로 이전개관</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history-2" class="history-section">
+                <div class="history-section__inner">
+                    <div class="history-left">
+                        <div class="history-left__sticky">
+                            <h2 class="history-period__years">1955-1971</h2>
+                            <p class="history-period__sub">덕수궁 시기</p>
+                            <div class="history-visual">
+                                <ul class="history-images">
+                                    <li class="history-images__item active">
+                                        <img src="./images/history_section/1955-1972_1.svg" alt="덕수궁 시기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/1955-1972_2.svg" alt="덕수궁 시기">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="history-caption">덕수궁시기(1955~1972)</p>
+                        </div>
+                    </div>
+
+                    <div class="history-center">
+                        <div class="history-timeline__line">
+                            <span class="history-timeline__progress"></span>
+                            <span class="history-timeline__active-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="history-right">
+                        <ul class="history-list">
+                            <li class="history-event active">
+                                <time datetime="1955-06">1955.06</time>
+                                <p>남산분관에서 덕수궁 석조전으로 이전 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1957-12">1957.12</time>
+                                <p>워싱턴 등 미국 8개 도시에서 한국 국보전(masterpieces from korean art) 개최(최초 국외전시)(~1959년 6월까지)
+                                </p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1959-10">1959.10</time>
+                                <p>경주 감은사지 발굴조사(최초 사찰유적 조사)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1960-08">1960.08</time>
+                                <p>&lt;미술자료&gt; 창간(최초 학술지)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1961-01">1961.01</time>
+                                <p>관리과, 고고과, 미술과로 직제 개편</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1968-07">1968.07</time>
+                                <p>문화공보부 발족(대통령령 제3519호)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1969-05">1969.05</time>
+                                <p>덕수궁 미술관 통합</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history-3" class="history-section">
+                <div class="history-section__inner">
+                    <div class="history-left">
+                        <div class="history-left__sticky">
+                            <h2 class="history-period__years">1972-1985</h2>
+                            <p class="history-period__sub">경복궁 2기</p>
+                            <div class="history-visual">
+                                <ul class="history-images">
+                                    <li class="history-images__item active">
+                                        <img src="./images/history_section/1972-1986_1.svg" alt="경복궁 2기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/1972-1986_2.svg" alt="경복궁 2기">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="history-caption">경복궁 2기(현 국립민속박물관, 1972~1986)</p>
+                        </div>
+                    </div>
+
+                    <div class="history-center">
+                        <div class="history-timeline__line">
+                            <span class="history-timeline__progress"></span>
+                            <span class="history-timeline__active-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="history-right">
+                        <ul class="history-list">
+                            <li class="history-event active">
+                                <time datetime="1972-07">1972.07</time>
+                                <p>국립박물관을 국립중앙박물관으로 명칭 변경</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1972-08">1972.08</time>
+                                <p>경복궁으로 신축 이전 개관(현 국립민속박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1972-11">1972.11</time>
+                                <p>국립중앙박물관 직제 개편(사무국과 학예연구실 신설)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1973-10">1973.10</time>
+                                <p>공주분관 이전 개관(공주시 중동)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1974-05">1974.05</time>
+                                <p>&lt;박병래 수집 이조도자전&gt; 개최(최초의 기증유물 특별전)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1975-07">1975.07</time>
+                                <p>경주분관 인왕동으로 이전 개관(현 박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1975-08">1975.08</time>
+                                <p>지방분관을 소속박물관으로 개편</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1976-02">1976.02</time>
+                                <p>보존과학실 개설</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1977-04">1977.04</time>
+                                <p>&lt;국립박물관특설강좌&gt; 개설</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1978-12">1978.12</time>
+                                <p>국립광주박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1979-04">1979.04</time>
+                                <p>국립민속박물관을 중앙박물관 소속으로 흡수</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1980-12">1980.12</time>
+                                <p>동원 이홍근 수집 유물 기증(최대 수량 기증)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1984-11">1984.11</time>
+                                <p>국립진주박물관 개관</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history-4" class="history-section">
+                <div class="history-section__inner">
+                    <div class="history-left">
+                        <div class="history-left__sticky">
+                            <h2 class="history-period__years">1986-1995</h2>
+                            <p class="history-period__sub">경복궁 3기</p>
+                            <div class="history-visual">
+                                <ul class="history-images">
+                                    <li class="history-images__item active">
+                                        <img src="./images/history_section/1986-1996_1.svg" alt="경복궁 3기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/1986-1996_2.svg" alt="경복궁 3기">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="history-caption">경복궁 3기(구 중앙청, 1986~1996)</p>
+                        </div>
+                    </div>
+
+                    <div class="history-center">
+                        <div class="history-timeline__line">
+                            <span class="history-timeline__progress"></span>
+                            <span class="history-timeline__active-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="history-right">
+                        <ul class="history-list">
+                            <li class="history-event active">
+                                <time datetime="1986-08">1986.08</time>
+                                <p>국립중앙박물관 이전 개관(구 중앙청)&lt;토요강좌&gt; 및 &lt;노인문화강좌&gt; 개설</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1987-10">1987.10</time>
+                                <p>국립청주박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1989-07">1989.07</time>
+                                <p>&lt;고고학지&gt; 창간</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1990-04">1990.04</time>
+                                <p>움직이는 박물관 개설(현 찾아가는 박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1990-10">1990.10</time>
+                                <p>국립전주박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1992-10">1992.10</time>
+                                <p>국립민속박물관 분리 직제 개편</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1993-08">1993.08</time>
+                                <p>국립부여박물관 이전 개관(현 박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1993-10">1993.10</time>
+                                <p>&lt;미술사학지&gt; 창간</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1994-12">1994.12</time>
+                                <p>국립대구박물관 개관</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history-5" class="history-section">
+                <div class="history-section__inner">
+                    <div class="history-left">
+                        <div class="history-left__sticky">
+                            <h2 class="history-period__years">1996-2004</h2>
+                            <p class="history-period__sub">경복궁 4기</p>
+                            <div class="history-visual">
+                                <ul class="history-images">
+                                    <li class="history-images__item active">
+                                        <img src="./images/history_section/1996-2004_1.svg" alt="경복궁 4기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/1996-2004_2.svg" alt="경복궁 4기">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="history-caption">경복궁 4기(현 고궁박물관, 1996~2004)</p>
+                        </div>
+                    </div>
+
+                    <div class="history-center">
+                        <div class="history-timeline__line">
+                            <span class="history-timeline__progress"></span>
+                            <span class="history-timeline__active-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="history-right">
+                        <ul class="history-list">
+                            <li class="history-event active">
+                                <time datetime="1996-08">1996.08</time>
+                                <p>국립중앙박물관 홈페이지 개설</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1996-12">1996.12</time>
+                                <p>국립중앙박물관 이전 개관(현 국립고궁박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1997-10">1997.10</time>
+                                <p>용산 새 국립중앙박물관 기공식</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1997-10">1997.10</time>
+                                <p>제 1회 동원학술전국대회 개최</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1998-11">1998.11</time>
+                                <p>국립김해박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="1999-07">1999.07</time>
+                                <p>국립진주박물관 재개관(임진왜란 전문 박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2001-04">2001.04</time>
+                                <p>용산 새 국립중앙박물관 건립업무 국립중앙박물관으로 일원화</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2001-06">2001.06</time>
+                                <p>국립제주박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2001-09">2001.09</time>
+                                <p>직제개정(용산 새 박물관 개관준비위원 41명 증원)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2002-10">2002.10</time>
+                                <p>국립춘천박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2003-03">2003.03</time>
+                                <p>국립중앙박물관 차관급 기관으로 승격</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2003-11">2003.11</time>
+                                <p>직제개정(역사부 신설 19명, 공주박물관 11명 증원)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2004-05">2004.05</time>
+                                <p>국립공주박물관 이전 개관(현 박물관)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2004-10">2004.10</time>
+                                <p>국립중앙박물관 용산 이전을 위한 임시 휴관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2004-11">2004.11</time>
+                                <p>직제개정(박물관 정책과 신설)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history-6" class="history-section">
+                <div class="history-section__inner">
+                    <div class="history-left">
+                        <div class="history-left__sticky">
+                            <h2 class="history-period__years">2005-현재</h2>
+                            <p class="history-period__sub">용산 시기</p>
+                            <div class="history-visual">
+                                <ul class="history-images">
+                                    <li class="history-images__item active">
+                                        <img src="./images/history_section/2005_1.svg" alt="용산 시기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/2005_2.svg" alt="용산 시기">
+                                    </li>
+                                    <li class="history-images__item">
+                                        <img src="./images/history_section/2005_3.svg" alt="용산 시기">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="history-caption">용산 시기(2005~)</p>
+                        </div>
+                    </div>
+
+                    <div class="history-center">
+                        <div class="history-timeline__line">
+                            <span class="history-timeline__progress"></span>
+                            <span class="history-timeline__active-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="history-right">
+                        <ul class="history-list">
+                            <li class="history-event active">
+                                <time datetime="2005-08">2005.08</time>
+                                <p>직제개정(교육문화교류단 신설 등 25명 증원)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2005-10">2005.10</time>
+                                <p>새 국립중앙박물관 신축 이전 개관(용산)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2006-04">2006.04</time>
+                                <p>직제개정(고객지원팀 신설)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2007-05">2007.05</time>
+                                <p>워싱턴 등 미국 8개 도시에서 한국 국보전(masterpieces from korean art) 개최(최초 국외전시)(~1959년 6월까지)
+                                </p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2008-03">2008.03</time>
+                                <p>직제개정(박물관정책과를 기획총괄과로 변경)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2010-02">2010.02</time>
+                                <p>워싱턴 등 미국 8개 도시에서 한국 국보전(masterpieces from korean art) 개최(최초 국외전시)(~1959년 6월까지)
+                                </p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2010-12">2010.12</time>
+                                <p>직제개정(연구기획부 신설, 고고부와 역사부를 통합하여 고고역사부 신설, 사업기획과, 전시팀, 교육팀을 문화사업과, 전시과, 교육과로 변경)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2012-09">2012.09</time>
+                                <p>직제개정(문화사업과와 국제교류홍보과를 통합하여 문화교류홍보과 신설)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2013-09">2013.09</time>
+                                <p>직제개정(디자인팀 신설)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2013-11">2013.11</time>
+                                <p>국립나주박물관 개관</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2015-07">2015.07</time>
+                                <p>직제개정(어린이박물관팀을 어린이박물관과로 변경)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2015-12">2015.12</time>
+                                <p>직제개정(미륵사지유물전시관 신설)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2019-02">2019.02</time>
+                                <p>직제개정(미륵사지유물전시관을 익산박물관으로 개편)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2019-05">2019.05</time>
+                                <p>직제개정(기획총괄과와 연구기획부를 폐지하고 미래전략담당관과 박물관정보화과를 신설, 기획운영단을 행정운영단으로 변경)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2020-06">2020.06</time>
+                                <p>직제개정(관리과, 아시아부를 시설관리과, 세계문화부로 변경)</p>
+                            </li>
+                            <li class="history-event">
+                                <time datetime="2020-12">2020.12</time>
+                                <p>직제개정(박물관정보화과를 디지털박물관과로 변경)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="inner">
+                <div class="footer-link-tit">
+                    <p>세계와 소통하는 문화공간,</p>
+                    <p>국립중앙박물관입니다.</p>
+                </div>
+                <ul class="footer-link-wrap">
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-1">
+                                교육 서비스
+                            </button>
+                            <ul id="link-list-1" class="link-list">
+                                <li class="link-list-opt"><a href="#">교육플랫폼 모두(MODU)</a></li>
+                                <li class="link-list-opt"><a href="#">학예사 자격증</a></li>
+                                <li class="link-list-opt"><a href="#">어린이박물관</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-2">
+                                디지털 콘텐츠
+                            </button>
+                            <ul id="link-list-2" class="link-list">
+                                <li class="link-list-opt"><a href="#">e뮤지엄</a></li>
+                                <li class="link-list-opt"><a href="#">외규장각 의궤 원문</a></li>
+                                <li class="link-list-opt"><a href="#">조선총독부박물관 문서</a></li>
+                                <li class="link-list-opt"><a href="#">유리건판</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-3">
+                                박물관 서비스
+                            </button>
+                            <ul id="link-list-3" class="link-list">
+                                <li class="link-list-opt"><a href="#">박물관상품관</a></li>
+                                <li class="link-list-opt"><a href="#">박물관신문</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-4">
+                                참여 프로그램
+                            </button>
+                            <ul id="link-list-4" class="link-list">
+                                <li class="link-list-opt"><a href="#">청년멘토</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner">
+                <div class="footer-left">
+                    <p class="footer-logo"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></p>
+
+                    <div class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">이메일무단수집거부</a></li>
+                            <li><a href="#">저작권정책</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">클린신고센터</a></li>
+                        </ul>
+
+                        <address>
+                            <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
+                            <p>대표전화 <a href="tel:02-2077-9000" class="tel">02-2077-9000</a></p>
+                            <p>&copy; National Museum of Korea.</p>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-right-top">
+                        <ul class="footer-sns">
+                            <li class="sns-facebook"><a href="#" aria-label="페이스북"><img
+                                        src="./images/footer/sns_facebook_pri.svg" alt=""></a></li>
+                            <li class="sns-instagram"><a href="#" aria-label="인스타그램"><img
+                                        src="./images/footer/sns_instagram_pri.svg" alt=""></a></li>
+                            <li class="sns-naver"><a href="#" aria-label="블로그"><img
+                                        src="./images/footer/sns_naver_pri.svg" alt=""></a></li>
+                            <li class="sns-youtube"><a href="#" aria-label="유투브"><img
+                                        src="./images/footer/sns_youtube_pri.svg" alt=""></a></li>
+                            <li class="sns-twitter"><a href="#" aria-label="엑스(구 트위터)"><img
+                                        src="./images/footer/sns_twitter_pri.svg" alt=""></a></li>
+                        </ul>
+
+                        <div class="footer-family">
+                            <button class="link-btn" aria-haspopup="true" aria-expanded="false"
+                                aria-controls="link-list-5">
+                                소속 박물관
+                            </button>
+                            <div class="link-list-cover">
+                                <div class="link-list-scroll">
+                                    <ul id="link-list-5" class="link-list">
+                                        <li class="link-list-opt"><a href="#">국립경주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립광주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립전주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립대구박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립부여박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립공주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립진주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립청주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립김해박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립제주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립춘천박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립나주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립익산박물관</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-right-bottom">
+                        <ul class="footer-marks">
+                            <li><a href="#"><img src="./images/footer/footer_web_access.svg"
+                                        alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)"></a></li>
+                            <li><a href="#"><img src="./images/footer/footer_kogl.svg" alt="OPEN 공공누리 공공저작물 자유이용허락"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="./js/header_footer_main.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".history-section");
+
+            sections.forEach((section) => {
+                const listContainer = section.querySelector(".history-list");
+                const events = section.querySelectorAll(".history-event");
+                const images = section.querySelectorAll(".history-images__item");
+                const dot = section.querySelector(".history-timeline__active-dot");
+                const progressLine = section.querySelector(".history-timeline__progress");
+
+                // 스크롤 바 및 원 포인트 위치 완전 동기화 함수
+                const updateDot = (target) => {
+                    if (!target || !dot || !progressLine) return;
+
+                    const timeEl = target.querySelector("time");
+
+                    // .history-list 기준으로 정확한 Y축 상대 위치 계산
+                    const listRect = listContainer.getBoundingClientRect();
+                    const timeRect = timeEl.getBoundingClientRect();
+
+                    // time 요소를 기준으로 원 포인트가 Y축 중앙에 오도록 위치 계산
+                    const targetTop = (timeRect.top - listRect.top) + (timeRect.height / 2);
+
+                    // 원 포인트와 라인의 높이를 완전 동일한 Y 좌표값으로 애니메이션
+                    gsap.to(dot, {
+                        top: `${targetTop}px`,
+                        duration: 0.35,
+                        ease: "power2.out"
+                    });
+
+                    gsap.to(progressLine, {
+                        height: `${targetTop}px`,
+                        duration: 0.35,
+                        ease: "power2.out"
+                    });
+                };
+
+                // 이벤트 항목 활성화 및 이미지/포인트 갱신
+                function activate(index) {
+                    events.forEach((ev, i) => {
+                        ev.classList.toggle("active", i === index);
+                    });
+
+                    // 포인트와 스크롤바 위치 업데이트
+                    updateDot(events[index]);
+
+                    // 스크롤 위치에 맞춰 이미지 순차 변경 (원본 레이아웃 크기 유지)
+                    if (images.length > 1) {
+                        const step = Math.ceil(events.length / images.length);
+                        const imageIdx = Math.min(Math.floor(index / step), images.length - 1);
+
+                        images.forEach((img, i) => {
+                            img.classList.toggle("active", i === imageIdx);
+                        });
+                    }
+                }
+
+                // 개별 이벤트 감지 스크롤 트리거
+                events.forEach((ev, idx) => {
+                    ScrollTrigger.create({
+                        trigger: ev,
+                        start: "top 50%",
+                        end: "bottom 50%",
+                        onEnter: () => activate(idx),
+                        onEnterBack: () => activate(idx)
+                    });
+                });
+
+                // 섹션 하단까지 스크롤 시 잠시 머물렀다 다음 섹션으로 이동 (딜레이 효과)
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "bottom 85%",
+                    end: "bottom bottom",
+                    snap: {
+                        snapTo: 1,
+                        duration: 0.6,
+                        delay: 0.8, // 스크롤 다 내리고 0.8초 후 다음 섹션으로 이동
+                        ease: "power2.inOut"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
