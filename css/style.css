@@ -26,12 +26,12 @@
 
 /**************************************************************/
 /*************************** header ***************************/
-.header {position: fixed; width: 100%; background: rgba(0,0,0,.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; z-index: 10; transition: .3s ease-in-out;}
+.header {position: fixed; width: 100%; background: rgba(0,0,0,.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; z-index: 10; transition: .3s ease-in-out; z-index: 100;}
 .header::before {content: ''; width: 100%; height: 0; position: absolute; top: 100%; left: 0; background: #fff; visibility: hidden; transition: .3s ease-in-out; border-block: 1px solid #eee;}
 .header a {display: block;}
 .header-inner {display: flex;}
 /***** header-top *****/
-.header-top {max-height: 30px; padding-block-start: 0.625rem; transition: .3s ease-in-out; overflow: hidden;}
+.header-top {max-height: 30px; padding-block-start: 0.625rem; transition: .3s ease-in-out;}
 .header-top .header-inner {justify-content: flex-end;}
 .header-top-gnb {display: flex; font-size: 0.9375rem;}
 .header-top-gnb > li {position: relative; font-size: 0.875rem;}
@@ -82,7 +82,7 @@
 }
 
 /* is_scroll */
-.header.is_scroll {background-color: #fff; color: var(--color-typo-pri);}
+.header.is_scroll {background-color: #fff; color: var(--color-typo-pri); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}
 .header.is_scroll .header-top {max-height: 0; padding: 0; transform: scaleY(0);}
 .header.is_scroll .button-m-menu:not(.on) .menu-item > span {background-color: var(--color-typo-pri);}
 
@@ -124,7 +124,7 @@
 /**************************************************************/
 /*************************** footer ***************************/
 /* footer-top */
-.footer-top {padding-block: 2.5rem;}
+.footer-top {padding-block: 2.5rem; border-top: 1px solid #d4d4d4;}
 .footer-top .inner {max-width: 1030px;}
 .footer-link-tit {font-size: clamp(1.25rem, 1.71vw, 1.5rem); font-weight: var(--font-w-SB); margin-bottom: 3.125rem;}
 .footer-link-wrap {display: flex; justify-content: space-between; gap: 1.25rem;}
@@ -265,3 +265,7 @@
   .info-bar-list {gap: 0.938em;}
   .bar-list-cont .cont-notice {margin-top: .5em;}
 }
+
+
+/* Scroll Snap */
+/* .container {width: 100%; height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth;} */
