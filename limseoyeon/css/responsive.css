@@ -1,0 +1,835 @@
+/* ==================================================
+   TABLET
+   768px ~ 1024px
+================================================== */
+
+@media (max-width: 1024px) {
+
+    /* -------------------------
+       전체
+    ------------------------- */
+
+    body {
+        width: 100%;
+        padding-top: 180px;
+        padding-bottom: 80px;
+    }
+
+    main {
+        width: calc(100% - 60px);
+        max-width: none;
+    }
+
+
+    /* -------------------------
+       브레드크럼
+    ------------------------- */
+
+    .breadcrumb {
+        top: 120px;
+    }
+
+
+    /* -------------------------
+       탭
+    ------------------------- */
+
+    .pagetab {
+        width: 300px;
+        height: 52px;
+        font-size: 22px;
+    }
+
+    .pagetab>ul {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pagetab>ul::before {
+        width: 50%;
+        height: 100%;
+    }
+
+    .pagetab>ul.perform-active::before {
+        transform: translateX(100%);
+    }
+
+    .pagetab>ul>li {
+        width: 50%;
+        height: 100%;
+    }
+
+    .pagetab>ul>li>a {
+        width: 100%;
+        height: 52px;
+    }
+
+
+    /* -------------------------
+       행사 / 공연 영역
+    ------------------------- */
+
+    .event-content-wrap,
+    .perform-content-wrap {
+        margin-top: 80px;
+    }
+
+
+    /* -------------------------
+       검색창
+    ------------------------- */
+
+    .search-box {
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        left: auto;
+
+        width: auto;
+
+        display: flex;
+        gap: 3px;
+    }
+
+    .search-box>input {
+        width: 270px;
+        height: 40px;
+    }
+
+    .search-box>button {
+        width: 56px;
+        height: 40px;
+    }
+
+    /* -------------------------
+       콘텐츠
+    ------------------------- */
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        gap: 30px;
+
+        width: 100%;
+    }
+
+
+    /* -------------------------
+       필터
+    ------------------------- */
+
+    .filter {
+        flex: 0 0 230px;
+        width: 230px;
+
+        max-height: 60vh;
+    }
+
+    .filter>h2 {
+        width: 100%;
+        height: 52px;
+
+        font-size: 19px;
+    }
+
+    .filter-category {
+        width: 100%;
+        min-height: 44px;
+
+        font-size: 17px;
+    }
+
+    .filter-list>li {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .filter-list label {
+        font-size: 15px;
+    }
+
+    .filter-list input {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    /* -------------------------
+       결과
+    ------------------------- */
+
+    .result {
+
+        flex: 1;
+        min-width: 0;
+
+        width: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+
+    }
+
+
+    /* -------------------------
+       선택된 필터
+    ------------------------- */
+
+    .selected-filter {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    /* -------------------------
+       결과 헤더
+    ------------------------- */
+
+    .result-header {
+        width: 100%;
+    }
+
+
+    /* -------------------------
+       카드
+       2열
+    ------------------------- */
+
+    .content-list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        column-gap: 30px;
+        row-gap: 36px;
+
+        padding: 0 0 40px;
+    }
+
+    .content-list>li {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .content-list>li>a {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .content-list>li>a>img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 225 / 318;
+
+        object-fit: cover;
+    }
+
+
+    /* -------------------------
+       카드 호버 제거
+    ------------------------- */
+
+    .content-detail {
+        display: none;
+    }
+
+    .content-list>li>a:hover .content-detail {
+        opacity: 0;
+    }
+
+    .content-list>li>a:hover .content-title {
+        text-decoration: none;
+    }
+
+
+    /* -------------------------
+       카드 글자
+    ------------------------- */
+
+    .content-title {
+        font-size: 16px;
+    }
+
+    .content-date {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        font-size: 13px;
+    }
+
+
+    /* -------------------------
+       페이지네이션
+    ------------------------- */
+
+    .pagination {
+        position: static;
+        width: fit-content;
+        height: 24px;
+        margin: 10px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+
+    /* -------------------------
+       모바일 요소 숨김
+    ------------------------- */
+
+    .mobile-filter-btn {
+        display: none;
+    }
+
+    .filter-close {
+        display: none;
+    }
+}
+
+/* ==================================================
+   MOBILE
+   ~767px
+================================================== */
+
+@media (max-width: 900px) {
+
+    /* ==================================================
+       전체
+    ================================================== */
+
+    body {
+        width: 100%;
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
+
+    main {
+        width: calc(100% - 30px);
+        max-width: none;
+    }
+
+
+    /* ==================================================
+       브레드크럼
+    ================================================== */
+
+    .breadcrumb {
+        top: 75px;
+    }
+
+    .breadcrumb>ol {
+        font-size: 12px;
+    }
+
+    .breadcrumb>ol>li::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* ==================================================
+       행사 / 공연 영역
+    ================================================== */
+
+    .event-content-wrap,
+    .perform-content-wrap {
+        position: relative;
+        margin-top: 50px;
+    }
+
+
+    /* ==================================================
+       검색창
+    ================================================== */
+
+    .search-box {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 3px;
+    }
+
+    .search-box>input {
+        width: auto;
+        flex: 1;
+        height: 40px;
+        box-sizing: border-box;
+    }
+
+    .search-box>button {
+        width: 52px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+
+    /* ==================================================
+       콘텐츠
+    ================================================== */
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        padding-top: 0;
+    }
+
+
+    /* ==================================================
+       모바일 필터 버튼
+    ================================================== */
+
+
+    .mobile-filter-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: var(--Primary-color);
+        z-index: 3;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+
+    .mobile-filter-btn img {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    /* 필터 열렸을 때 버튼 숨김 */
+
+    .mobile-filter-btn.filter-btn-hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+    }
+
+
+    .filter-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    body.mobile-filter-active .event-content-wrap.tab-active .filter-overlay,
+    body.mobile-filter-active .perform-content-wrap.tab-active .filter-overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    /* ==================================================
+       모바일 필터 패널
+    ================================================== */
+
+    .filter {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 0;
+        z-index: 2;
+        width: auto;
+        max-height: 80vh;
+        overflow-y: auto;
+        display: block;
+        border-radius: 20px 20px 0 0;
+        background-color: rgba(0, 0, 0, .15);
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, .15);
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+    }
+
+    .filter-list {
+        background: #fff;
+    }
+
+
+
+
+
+
+    /* -------------------------
+       필터 열림
+    ------------------------- */
+
+    body.mobile-filter-active .event-content-wrap.tab-active .filter,
+    body.mobile-filter-active .perform-content-wrap.tab-active .filter {
+        transform: translateY(0);
+    }
+
+
+
+
+
+
+    /* ==================================================
+       필터 제목
+    ================================================== */
+
+    .filter>h2 {
+        width: 100%;
+        height: 55px;
+        padding: 20px 15px 20px 20px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 17px;
+    }
+
+
+    /* 필터 아이콘 + 글자 */
+
+    .filter>h2>span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+
+    /* ==================================================
+       닫기 버튼
+    ================================================== */
+
+    .filter-close {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #fff;
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+
+    /* ==================================================
+       필터 카테고리
+    ================================================== */
+
+    .filter-category {
+        width: 100%;
+        height: 48px;
+        padding: 16px 25px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .filter-category img {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+
+
+    /* ==================================================
+       필터 리스트
+    ================================================== */
+
+
+
+    .filter-list>li {
+        width: 100%;
+        height: 44px;
+        padding: 12px 25px;
+        box-sizing: border-box;
+    }
+
+
+    /* 지역 박물관 */
+
+    .filter-list>li>ul {
+        height: 220px;
+    }
+
+    .filter-list>li>ul>li {
+        height: 44px;
+        padding: 0 12px;
+    }
+
+
+    /* ==================================================
+       결과 영역
+    ================================================== */
+
+    .result {
+        order: 2;
+        width: 100%;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    /* ==================================================
+       선택된 필터
+    ================================================== */
+
+    .selected-filter {
+        width: 100%;
+        max-width: none;
+        min-height: 60px;
+        max-height: 100px;
+        box-sizing: border-box;
+        padding: 9px 10px;
+        gap: 8px;
+    }
+
+    .reset-btn {
+        width: 80px;
+        height: 30px;
+        flex-shrink: 0;
+        font-size: 14px;
+        padding: 0 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .reset-btn img {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    .filter-tags {
+        max-height: 80px;
+        gap: 5px 6px;
+        overflow-y: auto;
+    }
+
+    .filter-tag {
+        height: 27px;
+        padding: 0 8px;
+        font-size: 13px;
+        gap: 5px;
+    }
+
+
+    /* ==================================================
+       결과 헤더
+    ================================================== */
+
+    .result-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .result-count {
+        font-size: 14px;
+    }
+
+    #event-sort,
+    #perform-sort {
+        width: 90px;
+        height: 27px;
+        font-size: 13px;
+    }
+
+
+    /* ==================================================
+       카드
+       2열
+    ================================================== */
+
+    .content-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 15px;
+        row-gap: 35px;
+        padding: 0 0 80px;
+    }
+
+    .content-list>li {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .content-list>li>a {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* ==================================================
+       카드 이미지
+    ================================================== */
+
+    .content-list>li>a>img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 225 / 318;
+        object-fit: cover;
+    }
+
+
+    /* ==================================================
+       카드 상세
+    ================================================== */
+
+    .content-detail {
+        display: none;
+    }
+
+
+    /* ==================================================
+       카드 텍스트
+    ================================================== */
+
+    .content-text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .content-title {
+        font-size: 17px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .content-date {
+        font-size: 15px;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    /* ==================================================
+       페이지네이션
+    ================================================== */
+
+    .pagination {
+        position: static;
+        width: fit-content;
+        height: 24px;
+        margin: 10px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .pagination-list button {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 767px) {
+    
+    .pagetab {
+        width: 240px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .pagetab>ul {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pagetab>ul::before {
+        width: 50%;
+        height: 100%;
+    }
+
+    .pagetab>ul.perform-active::before {
+        transform: translateX(100%);
+    }
+
+    .pagetab>ul>li {
+        width: 50%;
+        height: 100%;
+    }
+
+    .pagetab>ul>li>a {
+        width: 100%;
+        height: 45px;
+    }
+
+    .selected-filter {
+
+        min-height: 52px;
+    }
+
+    .reset-btn {
+        width: 75px;
+        padding: 0px;
+        font-size: 13px;
+    }
+
+    .reset-btn img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .filter-tag {
+        font-size: 12px;
+    }
+
+    .content-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-title {
+        font-size: 16px;
+    }
+
+    .content-date {
+        font-size: 14px;
+    }
+}
