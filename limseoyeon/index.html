@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행사 &middot; 공연</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/event-performance.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+    <main>
+        <!-- 브레드크럼 -->
+        <nav class="breadcrumb" aria-label="현재 위치">
+            <ol>
+                <li>
+                    <a href="#">
+                        <img src="./images-sub/icon/page-home.svg" alt="홈 페이지로 가기">
+                    </a>
+                </li>
+                <li><a href="#">문화행사·교육</a></li>
+                <li><a href="#">행사·공연</a></li>
+                <li>
+                    <span class="breadcrumb-current">행사</span>
+                </li>
+            </ol>
+        </nav>
+
+        <h1 class="sr-only">행사·공연</h1>
+
+        <!-- 행사 / 공연 탭 -->
+        <nav class="pagetab">
+            <ul>
+                <li>
+                    <a href="#" class="tab-active">행사</a>
+                </li>
+                <li>
+                    <a href="#">공연</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 모바일 필터 버튼 -->
+        <button type="button" class="mobile-filter-btn" aria-label="필터 열기">
+            <img src="./images-sub/icon/filter-filter.svg" alt="">
+        </button>
+
+
+        <!-- ==================================================
+             행사
+        ================================================== -->
+
+
+        <div class="event-content-wrap tab-active">
+            <div class="filter-overlay"></div>
+
+            <!-- 행사 검색 -->
+            <form class="search-box">
+                <label for="event-name" class="sr-only">행사명 검색</label>
+                <input type="text" id="event-name" placeholder="행사명">
+
+                <button type="submit" id="event-search">
+                    <img src="./images-sub/icon/search.svg" alt="">
+                </button>
+            </form>
+
+
+
+
+            <div class="content">
+
+                <!-- 행사 필터 -->
+                <aside class="filter">
+
+                    <h2>
+                        <span>
+                            <img src="./images-sub/icon/filter-filter.svg" alt="필터">
+                            필터
+                        </span>
+
+                        <button type="button" class="filter-close" aria-label="필터 닫기">
+                            ×
+                        </button>
+                    </h2>
+
+                    <ul>
+
+                        <!-- 기간 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>기간</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+                                <li>
+                                    <input type="checkbox" id="event-past" name="event-period" value="past">
+                                    <label for="event-past">지난행사</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="event-current" name="event-period" value="current">
+                                    <label for="event-current">현재행사</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="event-upcoming" name="event-period" value="upcoming">
+                                    <label for="event-upcoming">예정행사</label>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <!-- 행사 프로그램 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>행사 프로그램</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+                                <li>
+                                    <input type="checkbox" id="museum-cultural-performance" name="event-program"
+                                        value="museum-cultural-performance">
+                                    <label for="museum-cultural-performance">박물관문화향연</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="museum-series" name="event-program"
+                                        value="museum-series">
+                                    <label for="museum-series">박물관 속 시리즈</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="museum-history-culture-class" name="event-program"
+                                        value="museum-history-culture-class">
+                                    <label for="museum-history-culture-class">박물관역사문화교실</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="culture-day" name="event-program" value="culture-day">
+                                    <label for="culture-day">문화가 있는 날</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="exhibition-related-event" name="event-program"
+                                        value="exhibition-related-event">
+                                    <label for="exhibition-related-event">전시 연계 행사</label>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <!-- 시간 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>시간</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+                                <li>
+                                    <input type="checkbox" id="morning" name="event-time" value="morning">
+                                    <label for="morning">오전</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="afternoon" name="event-time" value="afternoon">
+                                    <label for="afternoon">오후</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="night" name="event-time" value="night">
+                                    <label for="night">저녁</label>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <!-- 장소 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>장소</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+
+                                <li>
+                                    <input type="checkbox" id="national-museum" name="event-place"
+                                        value="national-museum">
+                                    <label for="national-museum">국립중앙박물관</label>
+                                </li>
+
+                                <!-- 지역 국립박물관 -->
+                                <li>
+                                    <button type="button" class="list-category-btn filter-category"
+                                        aria-expanded="false">
+
+                                        <span class="list-category">지역국립박물관</span>
+
+                                        <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                    </button>
+
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" id="gyeongju" name="event-place" value="gyeongju">
+                                            <label for="gyeongju">국립경주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="gwangju" name="event-place" value="gwangju">
+                                            <label for="gwangju">국립광주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="jeonju" name="event-place" value="jeonju">
+                                            <label for="jeonju">국립전주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="daegu" name="event-place" value="daegu">
+                                            <label for="daegu">국립대구박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="buyeo" name="event-place" value="buyeo">
+                                            <label for="buyeo">국립부여박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="gongju" name="event-place" value="gongju">
+                                            <label for="gongju">국립공주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="jinju" name="event-place" value="jinju">
+                                            <label for="jinju">국립진주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="cheongju" name="event-place" value="cheongju">
+                                            <label for="cheongju">국립청주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="gimhae" name="event-place" value="gimhae">
+                                            <label for="gimhae">국립김해박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="jeju" name="event-place" value="jeju">
+                                            <label for="jeju">국립제주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="chuncheon" name="event-place" value="chuncheon">
+                                            <label for="chuncheon">국립춘천박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="naju" name="event-place" value="naju">
+                                            <label for="naju">국립나주박물관</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="iksan" name="event-place" value="iksan">
+                                            <label for="iksan">국립익산박물관</label>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="online" name="event-place" value="online">
+                                    <label for="online">온라인</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="other" name="event-place" value="other">
+                                    <label for="other">기타</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <!-- 가격 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>가격</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+                                <li>
+                                    <input type="checkbox" id="event-free" name="event-price" value="free">
+                                    <label for="event-free">무료</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="event-paid" name="event-price" value="paid">
+                                    <label for="event-paid">유료</label>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </aside>
+
+
+                <!-- 행사 결과 -->
+                <section class="result">
+
+                    <div class="selected-filter">
+                        <button type="button" class="reset-btn">
+                            초기화
+                            <img src="./images-sub/icon/filter-reset.svg" alt="">
+                        </button>
+
+                        <div class="filter-tags"></div>
+                    </div>
+
+
+                    <div class="result-header">
+                        <p class="result-count">
+                            총 <strong>8</strong>개의 결과
+                        </p>
+
+                        <div class="result-sort">
+                            <label for="event-sort" class="sr-only">정렬 기준</label>
+
+                            <select id="event-sort" name="event-sort">
+                                <option value="latest">최신순</option>
+                                <option value="oldest">오래된순</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <ul class="content-list">
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event1.svg" alt="박물관 문화향연">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 대강당</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">2026년 박물관문화향연</h3>
+                                    <span class="content-date">2026-04-18 ~ 2026-10-31</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event2.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">지역 국립박물관</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        2026년 지역 국립박물관 문화향연 &lt;나의 박물관(MYSEUM) : 타악&gt;
+                                    </h3>
+
+                                    <span class="content-date">2026-05-03 ~ 2026-11-14</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event3.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립박물관</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">9:30~17:30</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">2026 국중박 분장놀이 전국편</h3>
+                                    <span class="content-date">2026-06-08 ~ 2026-09-19</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event4.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립청주박물관</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        나의 박물관(MYSEUM) : 타악 &lt;국립청주박물관 - 그루브앤드&gt;
+                                    </h3>
+
+                                    <span class="content-date">2026-08-01 ~ 2026-08-01</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event5.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 대강당</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        박물관문화향연 &lt;국립심포니오케스트라 아카데미&gt;
+                                    </h3>
+
+                                    <span class="content-date">2026-08-08 ~ 2026-08-08</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event6.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 대강당</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 5시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        박물관문화향연 &lt;KBS국악관현악단&gt;
+                                    </h3>
+
+                                    <span class="content-date">2026-08-15 ~ 2026-08-15</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event7.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 열린마당</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        박물관문화향연 &lt;국립무용단&gt;
+                                    </h3>
+
+                                    <span class="content-date">2026-09-05 ~ 2026-09-05</span>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/event/event8.svg" alt="">
+
+                                <div class="content-detail">
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립전주박물관</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">무료</span>
+                                    </div>
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        나의 박물관(MYSEUM) : 타악 &lt;국립전주박물관 - 사맛디&gt;
+                                    </h3>
+
+                                    <span class="content-date">2026-09-26 ~ 2026-09-26</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                    <nav class="pagination" aria-label="페이지 이동">
+
+                        <button type="button" aria-label="이전 페이지">
+                            <img src="./images-sub/icon/arrow-left.svg" alt="">
+                        </button>
+
+                        <ol class="pagination-list">
+                            <li>
+                                <button type="button" aria-current="page">1</button>
+                            </li>
+                        </ol>
+
+                        <button type="button" aria-label="다음 페이지">
+                            <img src="./images-sub/icon/arrow-double.svg" alt="">
+                        </button>
+
+                    </nav>
+
+                </section>
+            </div>
+        </div>
+
+
+
+        <!-- ==================================================
+             공연
+        ================================================== -->
+
+        <div class="perform-content-wrap">
+            <div class="filter-overlay"></div>
+
+            <!-- 공연 검색 -->
+            <form class="search-box">
+                <label for="perform-name" class="sr-only">공연명 검색</label>
+
+                <input type="text" id="perform-name" placeholder="공연명">
+
+
+                <button type="submit" id="perform-search">
+                    <img src="./images-sub/icon/search.svg" alt="">
+                </button>
+            </form>
+
+            <div class="content">
+
+                <!-- 공연 필터 -->
+                <aside class="filter">
+
+                    <h2>
+                        <span>
+                            <img src="./images-sub/icon/filter-filter.svg" alt="필터">
+                            필터
+                        </span>
+
+                        <button type="button" class="filter-close" aria-label="필터 닫기">
+                            ×
+                        </button>
+                    </h2>
+
+                    <ul>
+
+                        <!-- 기간 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>기간</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+
+                                <li>
+                                    <input type="checkbox" id="perform-past" name="perform-period" value="past">
+                                    <label for="perform-past">지난공연</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="perform-current" name="perform-period" value="current">
+                                    <label for="perform-current">현재공연</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="perform-upcoming" name="perform-period" value="upcoming">
+                                    <label for="perform-upcoming">예정공연</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <!-- 장르 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>장르</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+
+                                <li>
+                                    <input type="checkbox" id="music" name="genre" value="music">
+                                    <label for="music">음악</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="gugak" name="genre" value="gugak">
+                                    <label for="gugak">국악</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="dance" name="genre" value="dance">
+                                    <label for="dance">무용</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="theater-musical" name="genre" value="theater-musical">
+                                    <label for="theater-musical">연극 · 뮤지컬</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="traditional-art" name="genre" value="traditional-art">
+                                    <label for="traditional-art">전통예술</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="etc" name="genre" value="etc">
+                                    <label for="etc">복합 · 기타</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <!-- 예매 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>예매</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+
+                                <li>
+                                    <input type="checkbox" id="reservation-available" name="reservation"
+                                        value="available">
+                                    <label for="reservation-available">예매 가능</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="reservation-closed" name="reservation" value="closed">
+                                    <label for="reservation-closed">예매 마감</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="reservation-soldout" name="reservation" value="soldout">
+                                    <label for="reservation-soldout">매진</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <!-- 관람연령 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>관람연령</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+
+                                <li>
+                                    <input type="checkbox" id="age-all" name="age" value="all">
+                                    <label for="age-all">전체 관람가</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="age-child" name="age" value="child">
+                                    <label for="age-child">영유아 · 어린이</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="age-youth" name="age" value="youth">
+                                    <label for="age-youth">청소년</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="age-adult" name="age" value="adult">
+                                    <label for="age-adult">성인</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <!-- 가격 -->
+                        <li>
+                            <button type="button" class="filter-category" aria-expanded="false">
+                                <span>가격</span>
+                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            </button>
+
+                            <ul class="filter-list">
+
+                                <li>
+                                    <input type="checkbox" id="price-under-30000" name="perform-price"
+                                        value="under-30000">
+                                    <label for="price-under-30000">3만원 이하</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="price-30000-50000" name="perform-price"
+                                        value="30000-50000">
+                                    <label for="price-30000-50000">3~5만원</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="price-50000-70000" name="perform-price"
+                                        value="50000-70000">
+                                    <label for="price-50000-70000">5~7만원</label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="price-over-70000" name="perform-price"
+                                        value="over-70000">
+                                    <label for="price-over-70000">7만원 초과</label>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                </aside>
+
+
+                <!-- 공연 결과 -->
+                <section class="result">
+
+                    <div class="selected-filter">
+
+                        <button type="button" class="reset-btn">
+                            초기화
+                            <img src="./images-sub/icon/filter-reset.svg" alt="">
+                        </button>
+
+                        <div class="filter-tags"></div>
+
+                    </div>
+
+
+                    <div class="result-header">
+
+                        <p class="result-count">
+                            총 <strong>8</strong>개의 결과
+                        </p>
+
+                        <div class="result-sort">
+                            <label for="perform-sort" class="sr-only">정렬 기준</label>
+
+                            <select id="perform-sort" name="perform-sort">
+                                <option value="latest">최신순</option>
+                                <option value="oldest">오래된순</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <ul class="content-list">
+
+                        <!-- 공연 1 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform1.svg" alt="더 아카이브: 뮤지컬의 순간들 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 5시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">R석 88,000원</span>
+                                        <span class="detail">S석 50,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        더 아카이브: 뮤지컬의 순간들
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-06-27 ~ 2026-06-28
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 2 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform2.svg" alt="유물로 읽는 삶 21세기, 어른으로 살아가는 법 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">전석 30,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        유물로 읽는 삶 &lt;21세기, 어른으로 살아가는 법&gt;
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-06-17 ~ 2026-06-18
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 3 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform3.svg" alt="뮤지엄 모먼트 유물로 만나는 흑역사 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">10시 30분</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">전석 30,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        뮤지엄 모먼트 &lt;유물로 만나는 흑역사&gt;
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-06-10 ~ 2026-06-11
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 4 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform4.svg" alt="가족뮤지컬 태권, 날아올라 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">요일별 상이</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">VIP석 77,000원</span>
+                                        <span class="detail">R석 88,000원</span>
+                                        <span class="detail">S석 50,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        가족뮤지컬 &lt;태권, 날아올라&gt;
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-04-04 ~ 2026-05-31
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 5 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform5.svg" alt="토닥토닥 예술나눔 천상열차분야지도 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 3시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">33,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        토닥토닥 예술나눔 &lt;천상열차분야지도&gt;
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-03-08 ~ 2026-03-08
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 6 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform6.svg" alt="토닥토닥 예술나눔 춤추는 유물 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 6시 30분</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">R석 50,000원</span>
+                                        <span class="detail">S석 30,000원</span>
+                                        <span class="detail">A석 20,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        토닥토닥 예술나눔 &lt;춤추는 유물&gt;
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-03-06 ~ 2026-03-06
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 7 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform7.svg" alt="토닥토닥 예술나눔 세계의 춤, 하나의 무대 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 7시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">전석 30,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        토닥토닥 예술나눔 &lt;세계의 춤, 하나의 무대&gt;
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-03-04 ~ 2026-03-04
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+
+                        <!-- 공연 8 -->
+                        <li>
+                            <a href="#">
+                                <img src="./images-sub/perform/perform8.svg" alt="더 아카이브: 뮤지컬의 순간들 포스터">
+
+                                <div class="content-detail">
+
+                                    <div>
+                                        <span class="detail-list">장소</span>
+                                        <span class="detail">국립중앙박물관 극장 용</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">시간</span>
+                                        <span class="detail">오후 5시</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="detail-list">입장료</span>
+                                        <span class="detail">VIP석 77,000원</span>
+                                        <span class="detail">R석 66,000원</span>
+                                        <span class="detail">S석 44,000원</span>
+                                        <span class="detail">A석 33,000원</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-text">
+                                    <h3 class="content-title">
+                                        더 아카이브: 뮤지컬의 순간들
+                                    </h3>
+
+                                    <span class="content-date">
+                                        2026-06-27 ~ 2026-06-28
+                                    </span>
+                                </div>
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                    <!-- 공연 페이지네이션 -->
+                    <nav class="pagination" aria-label="페이지 이동">
+
+                        <button type="button" aria-label="이전 페이지">
+                            <img src="./images-sub/icon/arrow-left.svg" alt="">
+                        </button>
+
+                        <ol class="pagination-list">
+                            <li>
+                                <button type="button" aria-current="page">1</button>
+                            </li>
+                        </ol>
+
+                        <button type="button" aria-label="다음 페이지">
+                            <img src="./images-sub/icon/arrow-double.svg" alt="">
+                        </button>
+
+                    </nav>
+
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="./js/event-performance.js"></script>
+</body>
+
+</html>
