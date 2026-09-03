@@ -1,6 +1,15 @@
+
 /* =========================================================
    행사 · 공연 공통
 ========================================================= */
+
+:root {
+    --Primary-color: #233A6C;
+    --text-color: #222;
+    --gray-color: #666;
+    --border-color: #757575;
+    
+}
 
 /* 두 영역 기본 숨김 */
 .event-content-wrap,
@@ -18,6 +27,42 @@
 
 
 /* =========================================================
+   Layout
+========================================================= */
+
+body {
+    width: 100%;
+    max-width: 1624px;
+    margin: 0 auto;
+    padding-top: 246px;
+    padding-bottom: 117px;
+}
+
+main {
+    width: 100%;
+    max-width: 1394px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   Accessibility
+========================================================= */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================================
    Breadcrumb
 ========================================================= */
 
@@ -26,7 +71,7 @@
     top: 176px;
 }
 
-.breadcrumb>ol {
+.breadcrumb > ol {
     display: flex;
     align-items: center;
 
@@ -34,14 +79,14 @@
     color: var(--gray-color);
 }
 
-.breadcrumb>ol>li {
+.breadcrumb > ol > li {
     display: flex;
     align-items: center;
 }
 
-.breadcrumb>ol>li:nth-child(2)::before,
-.breadcrumb>ol>li:nth-child(3)::before,
-.breadcrumb>ol>li:nth-child(4)::before {
+.breadcrumb > ol > li:nth-child(2)::before,
+.breadcrumb > ol > li:nth-child(3)::before,
+.breadcrumb > ol > li:nth-child(4)::before {
     content: "";
 
     display: block;
@@ -67,7 +112,7 @@
     font-weight: 500;
 }
 
-.pagetab>ul {
+.pagetab > ul {
     position: relative;
 
     display: flex;
@@ -76,7 +121,7 @@
     height: 100%;
 }
 
-.pagetab>ul::before {
+.pagetab > ul::before {
     content: "";
 
     position: absolute;
@@ -93,11 +138,11 @@
     transition: transform 0.5s ease;
 }
 
-.pagetab>ul.perform-active::before {
+.pagetab > ul.perform-active::before {
     transform: translateX(100%);
 }
 
-.pagetab>ul>li {
+.pagetab > ul > li {
     position: relative;
 
     width: 50%;
@@ -106,7 +151,7 @@
     z-index: 1;
 }
 
-.pagetab>ul>li>a {
+.pagetab > ul > li > a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,7 +164,7 @@
     color: #222;
 }
 
-.pagetab>ul>li>a.tab-active {
+.pagetab > ul > li > a.tab-active {
     color: #fff;
 }
 
@@ -134,11 +179,10 @@
     right: 0;
 
     display: flex;
-
     gap: 3px;
 }
 
-.search-box>input {
+.search-box > input {
     width: 367px;
     height: 40px;
 
@@ -146,11 +190,9 @@
 
     border: 1px solid var(--border-color);
     border-radius: 4px;
-
-    box-sizing: border-box;
 }
 
-.search-box>button {
+.search-box > button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,6 +200,7 @@
     width: 72px;
     height: 40px;
 
+    color: #fff;
     background-color: var(--Primary-color);
     border-radius: 4px;
 }
@@ -170,6 +213,7 @@
 .content {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 }
 
 
@@ -179,15 +223,13 @@
 
 .filter {
     width: 250px;
-
     flex: 0 0 250px;
 
     transform: translateY(195px);
 }
 
-
 /* 필터 제목 */
-.filter>h2 {
+.filter > h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -197,8 +239,6 @@
 
     padding: 0 15px;
 
-    box-sizing: border-box;
-
     font-size: 18px;
     font-weight: 500;
 
@@ -207,15 +247,13 @@
 }
 
 /* 필터 아이콘 + 글자 */
-.filter>h2>span {
+.filter > h2 > span {
     display: flex;
     align-items: center;
-
     gap: 7px;
 }
 
-/* 모바일 필터 닫기 버튼
-   PC / 태블릿에서는 숨김 */
+/* 모바일 필터 닫기 */
 .filter-close {
     display: none;
 
@@ -230,12 +268,8 @@
     color: #fff;
     background: transparent;
 
-    border: 0;
-
     font-size: 28px;
     line-height: 1;
-
-    cursor: pointer;
 }
 
 
@@ -253,29 +287,21 @@
 
     padding: 0 15px;
 
-    box-sizing: border-box;
-
     font-size: 18px;
     font-weight: 500;
 
     background: #fff;
-
     border: 0.5px solid var(--border-color);
-
-    cursor: pointer;
 }
 
 .filter-category[aria-expanded="true"] {
     color: #fff;
-
     background-color: var(--Primary-color);
-
     border-color: var(--Primary-color);
 }
 
-.filter-category[aria-expanded="true"]+.filter-list {
+.filter-category[aria-expanded="true"] + .filter-list {
     margin-bottom: 5px;
-    
 }
 
 
@@ -289,13 +315,11 @@
     margin: 0;
     padding: 0;
 
-    list-style: none;
-
     border-left: 0.5px solid var(--border-color);
     border-right: 0.5px solid var(--border-color);
 }
 
-.filter-list>li {
+.filter-list > li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -303,10 +327,7 @@
     width: 250px;
     height: 50px;
 
-    padding-left: 15px;
-    padding-right: 16px;
-
-    box-sizing: border-box;
+    padding: 0 16px 0 15px;
 
     border-top: 0.5px solid var(--border-color);
 
@@ -314,23 +335,29 @@
     font-weight: 500;
 }
 
-.filter-list:last-child {
+/* 필터 목록의 마지막 영역에 하단선 */
+.filter-list {
     border-bottom: 2px solid #222;
 }
 
 
 /* 체크박스 */
-.filter-list>li>input[type="checkbox"] {
+
+.filter-list > li > input[type="checkbox"] {
     order: 2;
 
     width: 14px;
     height: 14px;
 
     margin: 0;
+
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
 }
 
 /* 라벨 */
-.filter-list>li>label {
+.filter-list > li > label {
     order: 1;
 
     font-size: 16px;
@@ -348,7 +375,7 @@
     font-size: 16px;
 }
 
-.filter-list>li:has(> .filter-category) {
+.filter-list > li:has(> .filter-category) {
     display: block;
 
     width: 100%;
@@ -360,12 +387,16 @@
 }
 
 .list-category-btn {
+    display: flex;
+    align-items: center;
+
     width: 100%;
     height: 50px;
 
     padding: 0 15px;
 
     color: #222;
+    background: #fff;
 
     border: 0;
     border-top: 0.5px solid var(--border-color);
@@ -373,7 +404,7 @@
 
 
 /* 지역국립박물관 내부 목록 */
-.filter-list>li>ul {
+.filter-list > li > ul {
     display: none;
 
     width: 100%;
@@ -381,10 +412,6 @@
 
     margin: 0;
     padding: 0;
-
-    box-sizing: border-box;
-
-    list-style: none;
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -394,7 +421,7 @@
     scrollbar-gutter: stable;
 }
 
-.filter-list>li>ul>li {
+.filter-list > li > ul > li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -404,28 +431,30 @@
 
     padding: 0 15px;
 
-    box-sizing: border-box;
-
     border-bottom: 0.5px solid var(--border-color);
 
     font-size: 16px;
     font-weight: 500;
 }
 
-.filter-list>li>ul>li:last-child {
+.filter-list > li > ul > li:last-child {
     border-bottom: 0;
 }
 
-.filter-list>li>ul>li>input[type="checkbox"] {
+.filter-list > li > ul > li > input[type="checkbox"] {
     order: 2;
 
     width: 14px;
     height: 14px;
 
     margin: 0;
+
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
 }
 
-.filter-list>li>ul>li>label {
+.filter-list > li > ul > li > label {
     order: 1;
 
     font-size: 16px;
@@ -436,17 +465,16 @@
 
 
 /* 지역국립박물관 스크롤바 */
-.filter-list>li>ul::-webkit-scrollbar {
+.filter-list > li > ul::-webkit-scrollbar {
     width: 10px;
 }
 
-.filter-list>li>ul::-webkit-scrollbar-track {
+.filter-list > li > ul::-webkit-scrollbar-track {
     background: #fff;
 }
 
-.filter-list>li>ul::-webkit-scrollbar-thumb {
+.filter-list > li > ul::-webkit-scrollbar-thumb {
     background: var(--Primary-color);
-
     border-radius: 2px;
 }
 
@@ -469,11 +497,9 @@
 
     padding: 12px 20px;
 
-    box-sizing: border-box;
-
     border-radius: 5px;
 
-    background-color: #FAF8F4;
+    background-color: #faf8f4;
 }
 
 
@@ -496,7 +522,6 @@
     background-color: #fff;
 
     font-size: 16px;
-
     white-space: nowrap;
 }
 
@@ -528,7 +553,6 @@
 
 .filter-tags::-webkit-scrollbar-thumb {
     background: #ccc;
-
     border-radius: 3px;
 }
 
@@ -561,6 +585,9 @@
     display: flex;
     flex-direction: column;
 
+    flex: 1;
+    min-width: 0;
+
     gap: 15px;
 
     padding-top: 60px;
@@ -590,30 +617,29 @@
 .content-list {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
     gap: 56px;
 
     padding-bottom: 58px;
 }
 
-.content-list>li>a {
+.content-list > li > a {
     position: relative;
 
     display: flex;
     flex-direction: column;
 
-    width: 225px;
-    height: 402px;
+    width: 100%;
 
     gap: 10px;
 }
 
-.content-list>li>a>img {
+.content-list > li > a > img {
     display: block;
 
-    width: 225px;
-    height: 318px;
+    width: 100%;
+    aspect-ratio: 225 / 318;
 
     object-fit: cover;
 }
@@ -624,19 +650,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    flex-wrap: wrap;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    align-content: center;
 
-    width: 225px;
-    height: 318px;
+    width: 100%;
+    aspect-ratio: 225 / 318;
 
     gap: 6px;
-
-    box-sizing: border-box;
 
     padding: 20px;
 
@@ -651,7 +674,7 @@
     transition: opacity 0.5s ease;
 }
 
-.content-detail>div {
+.content-detail > div {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -668,11 +691,11 @@
 
 
 /* PC hover */
-.content-list>li>a:hover .content-detail {
+.content-list > li > a:hover .content-detail {
     opacity: 1;
 }
 
-.content-list>li>a:hover .content-title {
+.content-list > li > a:hover .content-title {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -729,9 +752,240 @@
 
 /* =========================================================
    모바일 필터 버튼
-   기본적으로 숨김
 ========================================================= */
 
 .mobile-filter-btn {
     display: none;
 }
+
+
+/* =========================================================
+   Tablet
+   1024px ~ 1279px
+========================================================= */
+
+@media (max-width: 1279px) {
+
+    body {
+        padding: 180px 40px 80px;
+    }
+
+    main {
+        max-width: 100%;
+    }
+
+    .breadcrumb {
+        top: 125px;
+    }
+
+    .content {
+        gap: 30px;
+    }
+
+    .filter {
+        width: 220px;
+        flex-basis: 220px;
+    }
+
+    .filter > h2,
+    .filter-category,
+    .filter-list > li {
+        width: 220px;
+    }
+
+    .content-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px 25px;
+    }
+
+    .search-box > input {
+        width: 280px;
+    }
+}
+
+
+/* =========================================================
+   Mobile
+   ~767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+    body {
+        padding: 130px 20px 60px;
+    }
+
+    .breadcrumb {
+        position: static;
+
+        margin-bottom: 30px;
+    }
+
+    .breadcrumb > ol {
+        font-size: 13px;
+    }
+
+    .breadcrumb > ol > li:nth-child(2)::before,
+    .breadcrumb > ol > li:nth-child(3)::before,
+    .breadcrumb > ol > li:nth-child(4)::before {
+        width: 18px;
+        height: 18px;
+
+        background-size: 18px;
+    }
+
+
+    /* 행사 / 공연 탭 */
+    .pagetab {
+        width: 100%;
+        max-width: 360px;
+        height: 52px;
+
+        font-size: 22px;
+    }
+
+
+    /* 검색 */
+    .search-box {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 20px;
+    }
+
+    .search-box > input {
+        width: auto;
+        flex: 1;
+    }
+
+    .search-box > button {
+        width: 60px;
+        flex-shrink: 0;
+    }
+
+
+    /* 콘텐츠 */
+    .content {
+        display: block;
+    }
+
+
+    /* 모바일 필터 버튼 */
+    .mobile-filter-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 45px;
+
+        margin-top: 20px;
+
+        color: #fff;
+        background-color: var(--Primary-color);
+
+        border-radius: 4px;
+    }
+
+
+    /* 모바일 필터 */
+    .filter {
+        display: none;
+
+        width: 100%;
+        transform: none;
+    }
+
+    .filter.mobile-filter-open {
+        display: block;
+    }
+
+    .filter > h2,
+    .filter-category,
+    .filter-list > li {
+        width: 100%;
+    }
+
+    .filter-close {
+        display: flex;
+    }
+
+
+    /* 결과 영역 */
+    .result {
+        width: 100%;
+
+        padding-top: 30px;
+    }
+
+    .result-header {
+        gap: 10px;
+    }
+
+
+    /* 선택된 필터 */
+    .selected-filter {
+        align-items: flex-start;
+
+        gap: 10px;
+
+        max-height: 150px;
+
+        padding: 12px;
+    }
+
+    .reset-btn {
+        width: 80px;
+        flex-shrink: 0;
+
+        font-size: 14px;
+    }
+
+    .filter-tags {
+        max-height: 120px;
+    }
+
+
+    /* 카드 */
+    .content-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 30px 15px;
+
+        padding-bottom: 40px;
+    }
+
+    .content-list > li > a {
+        gap: 8px;
+    }
+
+    .content-title {
+        font-size: 16px;
+    }
+
+    .content-date {
+        font-size: 14px;
+    }
+
+    .content-detail {
+        padding: 15px;
+
+        font-size: 13px;
+    }
+
+    .detail {
+        font-size: 14px;
+    }
+
+
+    /* 모바일에서는 hover 효과를 사용하지 않음 */
+    .content-list > li > a:hover .content-detail {
+        opacity: 0;
+    }
+
+    .content-list > li > a:hover .content-title {
+        text-decoration: none;
+    }
+}
+

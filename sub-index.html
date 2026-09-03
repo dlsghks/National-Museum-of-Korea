@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
+    <title>관람 안내</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/Exhibition_section.css">
     <link rel="stylesheet" href="./css/Notice_section.css">
     <link rel="stylesheet" href="./css/section.css">
-    <link rel="stylesheet" href="./css/login-style.css">
+    <link rel="stylesheet" href="./css/sub-style.css">
 </head>
 
 <body>
@@ -146,7 +146,6 @@
 
     <main>
         <div class="inner">
-            <!-- 현재 위치 -->
             <div class="page-header">
                 <nav class="nav-location" aria-label="현재 위치">
                     <ul>
@@ -155,15 +154,15 @@
                                 <img src="./images/info/home.svg" alt="메인페이지로 이동">
                             </a>
                         </li>
-                        <li><a href="#">마이페이지</a></li>
-                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">관람</a></li>
+                        <li><a href="#">관람 안내</a></li>
                     </ul>
                 </nav>
             </div>
-            <!-- 페이지 제목 -->
-            <div class="login-top">
-                <div class="login-title">
-                    <h2>로그인</h2>
+
+            <div class="info-top">
+                <div class="info-title">
+                    <h2>관람 안내</h2>
                     <div class="page-link">
                         <ul>
                             <li>
@@ -184,59 +183,217 @@
                         </ul>
                     </div>
                 </div>
-                <p><strong>국립중앙박물관</strong>에 오신 여러분을 환영합니다.</p>
+                <p>
+                    역사와 문화가 살아 숨쉬고, 과거와 현재, 미래가 공존하는 감동의 공간인
+                    <strong>국립중앙박물관</strong>에 오신 것을 환영합니다.
+                </p>
+                <img src="./images/info/museum.svg" alt="국립중앙박물관 전경">
             </div>
 
-            <!-- 로그인 / 회원가입 -->
-            <div class="login-wrap">
-                <!-- 로그인 -->
-                <div class="login-box">
-                    <h3>회원 로그인</h3>
-                    <p>모든 서비스를 제한없이 이용하시려면 로그인해주세요.</p>
-                    <form action="" class="login-form">
-                        <div class="input-wrap">
-                            <label for="user-id">아이디</label>
-                            <input type="text" id="user-id" placeholder="아이디 입력">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="user-password">비밀번호</label>
-                            <input type="password" id="user-password" placeholder="비밀번호 입력">
-                        </div>
-                        <div class="login-option">
-                            <label for="save-id">
-                                <input type="checkbox">
-                                <span>아이디 저장</span>
-                            </label>
-                            <div class="login-links">
-                                <a href="#">아이디 찾기</a>
-                                <a href="#">비밀번호 재설정</a>
+            <section class="content">
+                <ul>
+                    <li>
+                        <h2>관람시간</h2>
+                        <dl>
+                            <div>
+                                <dt>월·화·목·금·일</dt>
+                                <dd>09:30 ~ 17:30</dd>
                             </div>
-                        </div>
-                        <button type="submit" class="login-btn">
-                            로그인
-                        </button>
-                    </form>
-                </div>
 
-                <!-- 회원가입 -->
-                <div class="join-box">
-                    <h3>아직 회원이 아니신가요?</h3>
-                    <p>
-                        국립중앙박물관 홈페이지 회원으로 가입하시면<br>
-                        박물관의 다양한 문화 서비스를 편리하게 이용하실 수 있습니다.
-                    </p>
-                    <div class="join-service">
-                        <h4>회원 서비스 안내</h4>
-                        <ul>
-                            <li>박물관의 교육·행사·전시 소식 안내</li>
-                            <li>소장품 및 다양한 문화정보 제공</li>
-                            <li>박물관 프로그램 참여 및 신청</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="join-btn">회원가입</a>
-                </div>
-            </div>
+                            <div>
+                                <dt>수·토</dt>
+                                <dd>09:30 ~ 21:00</dd>
+                            </div>
+
+                            <div>
+                                <dt>입장 마감</dt>
+                                <dd>관람 종료 30분 전</dd>
+                            </div>
+                        </dl>
+                        <p>* 옥외 전시장: 07:00 ~ 22:00</p>
+                        <p>* 여름방학 운영시간은 별도 공지 참고</p>
+
+                    </li>
+                    <li>
+                        <h2>휴관일 및 휴실일</h2>
+                        <dl>
+                            <div>
+                                <dt>휴관일</dt>
+                                <dd>1월 1일, 설·추석 당일</dd>
+                            </div>
+
+                            <div>
+                                <dt>정기 휴실</dt>
+                                <dd>3·6·9·12월 첫째 월요일</dd>
+                            </div>
+                        </dl>
+                        <p>* 야외전시장 정상 운영</p>
+                        <p>* 세부 휴실 일정은 공지사항을 확인해 주세요.</p>
+                    </li>
+                    <li>
+                        <h2>관람료</h2>
+                        <dl>
+                            <div>
+                                <dt>무료</dt>
+                                <dd>상설전시·어린이박물관</dd>
+                            </div>
+
+                            <div>
+                                <dt>유료</dt>
+                                <dd>특별전시
+                                    (전시에 따라 상이)</dd>
+                            </div>
+
+                            <div>
+                                <dt>관람권 구매</dt>
+                                <dd>특별전시실 1 앞 매표소
+                                    특별전시실 2 입구</dd>
+                            </div>
+
+                            <div>
+                                <dt>판매시간</dt>
+                                <dd>관람 종료 30분 전</dd>
+                            </div>
+                        </dl>
+                    </li>
+                    <li>
+                        <h2>관람 문의</h2>
+                        <p class="content-label">관람 및 예약 관련 문의</p>
+                        <dl>
+                            <div>
+                                <dt>대표번호:</dt>
+                                <dd>
+                                    <a href="tel:02-2077-9000">02-2077-9000
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <p>* 학생단체 관람은 사전예약 후 이용 가능합니다.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="note">
+                <h2>관람시 유의사항</h2>
+                <ul>
+                    <li>
+                        <div class="note-title">
+                            <h3>작품은 눈으로 감상하기</h3>
+                            <img src="./images/info/hand.svg" alt="">
+                        </div>
+                        <p>작품 보호를 위해 전시물에 손을 대거나 기대는 행동은 삼가 주세요.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>조용한 관람하기</h3>
+                            <img src="./images/info/volume-x.svg" alt="">
+                        </div>
+                        <p>휴대전화는 무음 또는 진동으로 설정하고, 뛰거나 큰 소리로 대화하는 행동은 자제해 주세요.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>촬영 규정 지키기</h3>
+                            <img src="./images/info/camera-off.svg" alt="">
+                        </div>
+                        <p>플래시, 삼각대, 셀카봉, 짐벌 사용 및 상업적 촬영은 금지됩니다. 일부 전시는 촬영이 제한될 수 있습니다.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>반입 물품 안내</h3>
+                            <img src="./images/info/backpack.svg" alt="">
+                        </div>
+                        <p>음식물 반입은 제한됩니다. 배낭 및 대형 가방은 1층 물품보관함을 이용해 주세요.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>반려동물 출입 제한</h3>
+                            <img src="./images/info/x.svg" alt="">
+                        </div>
+                        <p>안내견을 제외한 반려동물은 박물관 내부에 출입할 수 없습니다.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>쾌적한 관람 환경</h3>
+                            <img src="./images/info/smoking-no.svg" alt="">
+                        </div>
+                        <p>박물관 전 구역은 금연구역입니다. 자전거, 킥보드, 인라인, 스케이트보드 등 이동수단은 이용할 수 없습니다.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>안전한 관람 복장</h3>
+                            <img src="./images/info/shoe.svg" alt="">
+                        </div>
+                        <p>슬리퍼나 바퀴달린 신발 등 안전에 위험이 있는 복장은 입장이 제한될 수 있습니다.</p>
+                    </li>
+                    <li>
+                        <div class="note-title">
+                            <h3>보안검색 안내</h3>
+                            <img src="./images/info/shield.svg" alt="">
+                        </div>
+                        <p>문화유산 보호와 안전한 관람을 위해 입장 전 보안검색이 실시됩니다. 협조 부탁드립니다.</p>
+                    </li>
+                </ul>
+            </section>
         </div>
+
+        <section class="service">
+            <div class="service-inner">
+                <h2>자주 찾는 서비스</h2>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="service-title">
+                                <img src="./images/info/calendar.svg" alt="" class="service-icon">
+                                <h3>예약</h3>
+                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                            </div>
+                        </a>
+                        <p>사전예약 및 예매를 이용해 보세요.</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="service-title">
+                                <img src="./images/info/headset.svg" alt="" class="service-icon">
+                                <h3>전시해설</h3>
+                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                            </div>
+                        </a>
+                        <p>도슨트 프로그램을 확인하세요.</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="service-title">
+                                <img src="./images/info/accessible.svg" alt="" class="service-icon">
+                                <h3>편의시설</h3>
+                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                            </div>
+                        </a>
+                        <p>편의시설 위치를 확인하세요.</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="service-title">
+                                <img src="./images/info/map-pin.svg" alt="" class="service-icon">
+                                <h3>오시는 길</h3>
+                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                            </div>
+                        </a>
+                        <p>교통 및 주차 정보를 확인하세요</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="service-title">
+                                <img src="./images/info//map.svg" alt="" class="service-icon">
+                                <h3>층별 안내</h3>
+                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                            </div>
+                        </a>
+                        <p>전시실 위치를 확인하세요.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer">
@@ -372,5 +529,160 @@
         </div>
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<script src="./js/header_footer_main.js"></script>
+
+<script>
+    var swiper = new Swiper('.online-contents-wrap', {
+        loop: true,
+
+        slidesPerView: 1,
+        spaceBetween: 20,
+        centeredSlides: false,
+
+        navigation: {
+            prevEl: '.prev-btn',
+            nextEl: '.next-btn',
+        },
+
+        breakpoints: {
+
+            // 아이패드
+            768: {
+                slidesPerView: 'auto',
+                spaceBetween: 50,
+                centeredSlides: true,
+            },
+
+            // PC
+            1280: {
+                slidesPerView: 'auto',
+                spaceBetween: 72,
+                centeredSlides: true,
+            }
+
+        },
+
+        on: {
+            init: function () {
+                updateOnlineSlider(this);
+            },
+
+            slideChange: function () {
+                updateOnlineSlider(this);
+            }
+        }
+    });
+
+
+    function updateOnlineSlider(swiper) {
+
+        const current = swiper.realIndex + 1;
+        const total = 6;
+
+        document.querySelector('.current').textContent = current;
+        document.querySelector('.total').textContent = total;
+
+        const progress = (current / total) * 100;
+
+        document.querySelector('.progress').style.width =
+            progress + '%';
+    }
+</script>
+
+<script>
+    const featuredSwiper = new Swiper('.M-exhibition-layout', {
+        slidesPerView: 1,
+        speed: 600,
+        loop: true,
+    });
+
+    const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
+        slidesPerView: 1.8,
+        spaceBetween: 20,
+        centeredSlides: true,
+        speed: 600,
+        loop: true,
+        allowTouchMove: true,
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1.8,
+                spaceBetween: 25,
+                centeredSlides: true
+            },
+
+            // iPad (769px ~ 1024px)
+            769: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                initialSlide: 1,
+                centeredSlides: false
+            },
+
+            // PC
+            1025: {
+                slidesPerView: 3,
+                spaceBetween: 48,
+                initialSlide: 1,
+                centeredSlides: false
+            },
+        },
+    });
+
+    const sliderButtons = document.querySelectorAll('.slider-button');
+    const prevButton = sliderButtons[0];
+    const nextButton = sliderButtons[1];
+
+    const currentNumber = document.querySelector('.page-number strong');
+    const totalNumber = document.querySelector('.M-number');
+    const progressValue = document.querySelector('.progress-value');
+
+    const totalSlides = Number(totalNumber.textContent);
+
+    function updateSliderInfo() {
+        const realIndex = exhibitionSwiper.realIndex;
+
+        const currentPage = window.innerWidth >= 1024
+            ? (realIndex === 0 ? totalSlides : realIndex)
+            : realIndex + 1;
+
+        currentNumber.textContent = currentPage;
+
+        const progress = (currentPage / totalSlides) * 100;
+        progressValue.style.width = progress + '%';
+    }
+
+    nextButton.addEventListener('click', function () {
+        featuredSwiper.slideNext(600);
+        exhibitionSwiper.slideNext(600);
+    });
+
+    prevButton.addEventListener('click', function () {
+        featuredSwiper.slidePrev(600);
+        exhibitionSwiper.slidePrev(600);
+    });
+
+    exhibitionSwiper.on('slideChange', function () {
+        updateSliderInfo();
+    });
+
+    updateSliderInfo();
+
+    // 알림 탭 메뉴 
+
+    const activeButton = document.querySelectorAll(".notice-tab button")
+
+    activeButton.forEach(function (button) {
+        button.addEventListener("click", function () {
+            activeButton.forEach(function (button) {
+                button.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        })
+    })
+
+</script>
 
 </html>
