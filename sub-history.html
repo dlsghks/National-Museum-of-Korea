@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/history_section.css">
+    <link rel="icon" href="./images/favicon.png">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -51,7 +52,7 @@
                                         <li class="gnb-sub-list"><a href="#">예약</a></li>
                                         <li class="gnb-sub-list"><a href="#">전시해설</a></li>
                                         <li class="gnb-sub-list"><a href="#">편의시설</a></li>
-                                        <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
+                                        <li class="gnb-sub-list"><a href="#">오오는 길</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -59,7 +60,7 @@
                                 <a href="#">전시</a>
                                 <div class="gnb-sub-wrap">
                                     <ul class="gnb-sub">
-                                        <li class="gnb-sub-list"><a href="#">상실전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">상설전시</a></li>
                                         <li class="gnb-sub-list"><a href="#">특별전시</a></li>
                                         <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
                                         <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
@@ -667,7 +668,7 @@
                                 <p>직제개정(미륵사지유물전시관을 익산박물관으로 개편)</p>
                             </li>
                             <li class="history-event">
-                                <time datetime="2019-05">2019.05</p>
+                                <time datetime="2019-05">2019.05</time>
                                 <p>직제개정(기획총괄과와 연구기획부를 폐지하고 미래전략담당관과 박물관정보화과를 신설, 기획운영단을 행정운영단으로 변경)</p>
                             </li>
                             <li class="history-event">
@@ -827,8 +828,137 @@
         gsap.registerPlugin(ScrollTrigger);
 
         window.addEventListener("load", () => {
+            const header = document.querySelector(".header");
+            const headerTop = document.querySelector(".header-top");
+            const historyNav = document.querySelector(".history-nav");
+            const navList = document.querySelector(".history-nav__list");
             const sections = document.querySelectorAll(".history-section");
+            const navItems = document.querySelectorAll(".history-nav__item");
 
+            // [탭 중앙 정렬 함수]
+            const scrollTabToCenter = (activeItem) => {
+                if (!navList || !activeItem) return;
+
+                // 스크롤 가능한 상태인지 확인 (모바일/태블릿 반응형 구간)
+                const isScrollable = navList.scrollWidth > navList.clientWidth;
+                if (!isScrollable) return;
+
+                const navRect = navList.getBoundingClientRect();
+                const itemRect = activeItem.getBoundingClientRect();
+
+                // 현재 아이템의 중앙 위치 - navContainer의 중앙 위치
+                const scrollLeft = navList.scrollLeft + (itemRect.left - navRect.left) - (navList.clientWidth / 2) + (itemRect.width / 2);
+
+                navList.scrollTo({
+                    left: scrollLeft,
+                    behavior: 'smooth'
+                });
+            };
+
+            // [동적 오프셋 정확한 계산 함수]
+            const updateOffsets = () => {
+                if (!header || !historyNav) return;
+
+                if (header.classList.contains("is_active")) return;
+
+                const fullHeaderHeight = header.offsetHeight;
+                const headerTopHeight = headerTop ? headerTop.offsetHeight : 0;
+
+                const collapsedHeaderHeight = header.classList.contains("is_scroll")
+                    ? fullHeaderHeight
+                    : fullHeaderHeight - headerTopHeight;
+
+                historyNav.style.top = `${collapsedHeaderHeight}px`;
+
+                const navHeight = historyNav.offsetHeight;
+                const totalOffset = collapsedHeaderHeight + navHeight;
+
+                // CSS 변수 갱신
+                document.documentElement.style.setProperty('--nav-offset', `${totalOffset}px`);
+
+                // 반응형 구분에 따른 left-sticky-top 오프셋 설정
+                if (window.innerWidth <= 1024) {
+                    // 모바일: 여백 없이 탭 바로 아래에 밀착 고정
+                    document.documentElement.style.setProperty('--left-sticky-top', `${totalOffset}px`);
+                } else {
+                    // PC: 20px 여백 유지
+                    document.documentElement.style.setProperty('--left-sticky-top', `${totalOffset + 20}px`);
+                }
+
+                if (window.innerWidth <= 1024 && navList) {
+                    navList.style.overflowX = "auto";
+                    navList.style.scrollbarWidth = "auto";
+                }
+
+                ScrollTrigger.refresh();
+            };
+
+            // 초기 계산 실행
+            updateOffsets();
+
+            // 리사이즈 시 오프셋 재계산
+            window.addEventListener("resize", updateOffsets);
+
+            // 1. 연혁 섹션 스크롤 감지 및 탭 active 처리
+            sections.forEach((section) => {
+                const sectionId = section.getAttribute("id");
+
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: () => {
+                        const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset')) || 120;
+                        return `top ${offset}px`;
+                    },
+                    end: () => {
+                        const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset')) || 120;
+                        return `bottom ${offset}px`;
+                    },
+                    onToggle: (self) => {
+                        if (self.isActive) {
+                            navItems.forEach((item) => {
+                                const link = item.querySelector("a");
+                                if (link && link.getAttribute("href") === `#${sectionId}`) {
+                                    item.classList.add("active");
+                                    scrollTabToCenter(item); // 탭 활성화 시 화면 중앙으로 이동
+                                } else {
+                                    item.classList.remove("active");
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            // 탭 클릭 시 부드러운 스크롤 및 중앙 정렬
+            navItems.forEach((item) => {
+                const link = item.querySelector("a");
+                if (!link) return;
+
+                link.addEventListener("click", (e) => {
+                    const targetId = link.getAttribute("href");
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        e.preventDefault();
+
+                        // 해당 탭을 액티브 상태로 변경 및 중앙 정렬
+                        navItems.forEach(i => i.classList.remove("active"));
+                        item.classList.add("active");
+                        scrollTabToCenter(item);
+
+                        // 해당 섹션 위치 계산 후 부드럽게 스크롤
+                        const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset')) || 120;
+                        const targetPosition = window.pageYOffset + targetSection.getBoundingClientRect().top - offset + 2;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // 2. 타임라인 진행선 및 이미지 동기화
             sections.forEach((section) => {
                 const listContainer = section.querySelector(".history-list");
                 const events = section.querySelectorAll(".history-event");
@@ -837,9 +967,12 @@
                 const progressLine = section.querySelector(".history-timeline__progress");
 
                 const updateDot = (target) => {
-                    if (!target || !dot || !progressLine) return;
+                    if (window.innerWidth <= 1024) return;
+                    if (!target || !dot || !progressLine || !listContainer) return;
 
                     const timeEl = target.querySelector("time");
+                    if (!timeEl) return;
+
                     const listRect = listContainer.getBoundingClientRect();
                     const timeRect = timeEl.getBoundingClientRect();
 
@@ -865,7 +998,7 @@
 
                     updateDot(events[index]);
 
-                    if (images.length > 1) {
+                    if (images.length > 0) {
                         const step = Math.ceil(events.length / images.length);
                         const imageIdx = Math.min(Math.floor(index / step), images.length - 1);
 
@@ -885,9 +1018,6 @@
                     });
                 });
             });
-
-            // 이미지 로드 후 위치 재계산
-            ScrollTrigger.refresh();
         });
     </script>
 </body>
