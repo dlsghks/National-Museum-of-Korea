@@ -189,7 +189,7 @@
         </div>
 
         <div class="relic-page inner">
-            <div class="search-wrap">
+            <!-- <div class="search-wrap">
                 <div class="input-wrap">
                     <label for="search">검색하기</label>
                     <input type="text" id="search">
@@ -206,14 +206,21 @@
                     <p>초기화</p>
                     <img src="./images/icon/clear.svg" alt="">
                 </button>
-            </div>
+            </div> -->
 
             <div class="relic-wrap">
                 <div class="filter-wrap">
 
                     <div class="filter-top">
-                        <span>필터</span>
-                        <button type="button" class="filter-close-btn" aria-label="필터 닫기"></button>
+                        <div class="input-wrap">
+                            <label for="search">검색하기</label>
+                            <input type="text" id="search">
+                        </div>
+                        <div class="btn-wrap">
+                            <button>
+                                <img src="./images/icon/search_w.svg" alt="">
+                            </button>
+                        </div>
                     </div>
 
                     <div class="filter-button-wrap">
@@ -698,6 +705,12 @@
                 </div>
 
                 <div class="relic-list-wrap">
+                    <div class="filter-list-wrap">
+                        <button class="clear-btn">
+                            <p>초기화</p>
+                            <img src="./images/icon/clear.svg" alt="">
+                        </button>
+                    </div>
                     <div class="relic-list">
 
                         <div class="relic">
@@ -1081,149 +1094,10 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
 <script src="./js/header_footer_main.js"></script>
-<script>
-    const filterButton = document.querySelectorAll(".filter-button");
-    const optionButton = document.querySelectorAll(".filter-list button");
 
-    filterButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            const filterList = button.nextElementSibling;
-            filterList.classList.toggle("active");
-            button.classList.toggle("active");
-        });
-    });
+<script src="./js/sub-relic.js"></script>
 
-    optionButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            button.classList.toggle("active");
-        });
-    });
-
-
-
-    // ================= 페이지네이션 스크립트 =================
-    const totalPages = 20; // 전체 페이지 수
-    let currentPage = 1;
-
-    const pageList = document.querySelector(".page-list");
-
-    const firstButton = document.querySelector(".page-first");
-    const prevButton = document.querySelector(".page-prev");
-    const nextButton = document.querySelector(".page-next");
-    const lastButton = document.querySelector(".page-last");
-
-    // 페이지네이션 렌더링 함수
-    function renderPagination() {
-        pageList.innerHTML = "";
-
-        let startPage;
-        let endPage;
-
-        /* 페이지 숫자 범위 계산 */
-        if (totalPages <= 5) {
-            startPage = 1;
-            endPage = totalPages;
-        } else if (currentPage <= 3) {
-            startPage = 1;
-            endPage = 5;
-        } else if (currentPage >= totalPages - 2) {
-            startPage = totalPages - 4;
-            endPage = totalPages;
-        } else {
-            startPage = currentPage - 2;
-            endPage = currentPage + 2;
-        }
-
-        /* 페이지 숫자 DOM 생성 */
-        for (let page = startPage; page <= endPage; page++) {
-            const li = document.createElement("li");
-
-            if (page === currentPage) {
-                // 현재 페이지 (strong)
-                const strong = document.createElement("strong");
-                strong.textContent = page;
-                strong.setAttribute("aria-current", "page");
-                li.appendChild(strong);
-            } else {
-                // 다른 페이지 (button)
-                const button = document.createElement("button");
-                button.type = "button";
-                button.textContent = page;
-                button.addEventListener("click", () => {
-                    goToPage(page);
-                });
-                li.appendChild(button);
-            }
-
-            pageList.appendChild(li);
-        }
-
-        /* 이전/다음 버튼 활성화 및 비활성화 처리 */
-        firstButton.disabled = currentPage === 1;
-        prevButton.disabled = currentPage === 1;
-        nextButton.disabled = currentPage === totalPages;
-        lastButton.disabled = currentPage === totalPages;
-    }
-
-    /* 이벤트 리스너 등록 */
-    firstButton.addEventListener("click", () => {
-        goToPage(1);
-    });
-
-    prevButton.addEventListener("click", () => {
-        if (currentPage > 1) {
-            goToPage(currentPage - 1);
-        }
-    });
-
-    nextButton.addEventListener("click", () => {
-        if (currentPage < totalPages) {
-            goToPage(currentPage + 1);
-        }
-    });
-
-    lastButton.addEventListener("click", () => {
-        goToPage(totalPages);
-    });
-
-    /* 페이지 이동 처리 함수 */
-    function goToPage(page) {
-        if (page < 1 || page > totalPages) {
-            return;
-        }
-        currentPage = page;
-        renderPagination();
-
-        console.log("현재 페이지:", currentPage);
-    }
-
-    // 💡 [핵심] 최초 페이지 진입 시 페이지네이션 생성 실행
-    renderPagination();
-
-    const floatingBtn = document.querySelector(".floating-filter-btn");
-    const filterWrap = document.querySelector(".filter-wrap");
-    const filterOverlay = document.querySelector(".filter-overlay");
-    const filterCloseBtn = document.querySelector(".filter-close-btn");
-
-    // 필터 열기 함수
-    function openFilter() {
-        filterWrap.classList.add("active");
-        filterOverlay.classList.add("active");
-        document.body.style.overflow = "hidden"; // 배경 스크롤 방지
-    }
-
-    // 필터 닫기 함수
-    function closeFilter() {
-        filterWrap.classList.remove("active");
-        filterOverlay.classList.remove("active");
-        document.body.style.overflow = ""; // 스크롤 원복
-    }
-
-    // 이벤트 리스너 등록
-    if (floatingBtn) floatingBtn.addEventListener("click", openFilter);
-    if (filterOverlay) filterOverlay.addEventListener("click", closeFilter);
-    if (filterCloseBtn) filterCloseBtn.addEventListener("click", closeFilter);
-</script>
 
 </html>
