@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="./css/Exhibition_section.css">
     <link rel="stylesheet" href="./css/Notice_section.css">
     <link rel="stylesheet" href="./css/section.css">
-    <link rel="stylesheet" href="./css/sub-style.css">
+    <link rel="stylesheet" href="./css/info-style.css">
+    <link rel="icon" href="./images/favicon.png">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
         <div class="header-top Type-PC">
             <div class="header-inner inner">
                 <ul class="header-top-gnb">
-                    <li><a href="#" class="top-gnb-item">로그인</a></li>
+                    <li><a href="./sub-login.html" class="top-gnb-item">로그인</a></li>
                     <li>
                         <div class="select-box select-box-lang">
                             <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
@@ -32,98 +33,121 @@
                                 <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
                             </ul>
                         </div>
-                    </li>
+                        <!-- </li> -->
                 </ul>
             </div>
         </div>
         <div class="header-bottom">
             <div class="header-inner inner">
                 <div class="header-left">
-                    <h1 class="header-logo"><a href="#"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></a></h1>
+                    <h1 class="header-logo"><a href="./index.html"><img src="./images/logo/logo-W.svg"
+                                alt="국립중앙박물관 로고"></a></h1>
                     <nav class="header-gnb" aria-label="주 메뉴">
                         <ul class="gnb-main">
                             <li class="gnb-main-list">
                                 <a href="#">관람</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">관람안내</a></li>
-                                    <li class="gnb-sub-list"><a href="#">예약</a></li>
-                                    <li class="gnb-sub-list"><a href="#">전시해설</a></li>
-                                    <li class="gnb-sub-list"><a href="#">편의시설</a></li>
-                                    <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="./sub-info.html">관람안내</a></li>
+                                        <li class="gnb-sub-list"><a href="#">예약</a></li>
+                                        <li class="gnb-sub-list"><a href="#">전시해설</a></li>
+                                        <li class="gnb-sub-list"><a href="#">편의시설</a></li>
+                                        <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="gnb-main-list">
                                 <a href="#">전시</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">상실전시</a></li>
-                                    <li class="gnb-sub-list"><a href="#">특별전시</a></li>
-                                    <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
-                                    <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="./sub_collection.html">상실전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">특별전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="gnb-main-list">
                                 <a href="#">소장품</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">소장품 검색</a></li>
-                                    <li class="gnb-sub-list"><a href="#">대표 소장품</a></li>
-                                    <li class="gnb-sub-list"><a href="#">국보 · 보물</a></li>
-                                    <li class="gnb-sub-list"><a href="#">디지털 소장품</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">소장품 검색</a></li>
+                                        <li class="gnb-sub-list"><a href="#">대표 소장품</a></li>
+                                        <li class="gnb-sub-list"><a href="./sub-relic.html">국보 · 보물</a></li>
+                                        <li class="gnb-sub-list"><a href="#">디지털 소장품</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="gnb-main-list">
                                 <a href="#">문화행사 · 교육</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">행사 · 공연</a></li>
-                                    <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
-                                    <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="./sub-event-performanc-index.html">행사 · 공연</a>
+                                        </li>
+                                        <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
+                                        <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="gnb-main-list">
                                 <a href="#">학술</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">학술행사</a></li>
-                                    <li class="gnb-sub-list"><a href="#">연구 자료</a></li>
-                                    <li class="gnb-sub-list"><a href="#">정기간행물</a></li>
-                                    <li class="gnb-sub-list"><a href="#">도서관</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">학술행사</a></li>
+                                        <li class="gnb-sub-list"><a href="#">연구 자료</a></li>
+                                        <li class="gnb-sub-list"><a href="#">정기간행물</a></li>
+                                        <li class="gnb-sub-list"><a href="#">도서관</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="gnb-main-list">
                                 <a href="#">소식</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">공지사항</a></li>
-                                    <li class="gnb-sub-list"><a href="#">보도자료</a></li>
-                                    <li class="gnb-sub-list"><a href="#">채용 · 공고</a></li>
-                                    <li class="gnb-sub-list"><a href="#">이벤트 · 참여</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">공지사항</a></li>
+                                        <li class="gnb-sub-list"><a href="#">보도자료</a></li>
+                                        <li class="gnb-sub-list"><a href="#">채용 · 공고</a></li>
+                                        <li class="gnb-sub-list"><a href="#">이벤트 · 참여</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="gnb-main-list">
                                 <a href="#">박물관 소개</a>
-                                <ul class="gnb-sub">
-                                    <li class="gnb-sub-list"><a href="#">박물관 개요</a></li>
-                                    <li class="gnb-sub-list"><a href="#">역사 · 연혁</a></li>
-                                    <li class="gnb-sub-list"><a href="#">조직</a></li>
-                                    <li class="gnb-sub-list"><a href="#">시설안내</a></li>
-                                    <li class="gnb-sub-list"><a href="#">미션 · 비전</a></li>
-                                </ul>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">박물관 개요</a></li>
+                                        <li class="gnb-sub-list"><a href="./sub-history.html">역사 · 연혁</a></li>
+                                        <li class="gnb-sub-list"><a href="#">조직</a></li>
+                                        <li class="gnb-sub-list"><a href="#">시설안내</a></li>
+                                        <li class="gnb-sub-list"><a href="#">미션 · 비전</a></li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
 
                         <ul class="header-top-gnb Type-Mobile">
-                            <li><a href="#" class="top-gnb-item">로그인</a></li>
+                            <li><a href="./sub-login.html" class="top-gnb-item">로그인</a></li>
                             <li>
                                 <div class="select-box select-box-lang">
-                                    <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
-                                        aria-expanded="false" aria-controls="lang-list">KOR</button>
-                                    <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
-                                        <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span>
-                                        </li>
-                                        <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span>
-                                        </li>
-                                        <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span>
-                                        </li>
-                                        <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span>
-                                        </li>
-                                    </ul>
+                                    <button id="lang-btn-m" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                        aria-expanded="false" aria-controls="lang-list-m">KOR</button>
+                                    <div>
+                                        <ul id="lang-list-m" class="select-list" role="listbox"
+                                            aria-labelledby="lang-btn-m">
+                                            <li class="select-list-opt" role="option" aria-selected="true">
+                                                <span>KOR</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>ENG</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>JPN</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>CHN</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -145,23 +169,8 @@
     </header>
 
     <main>
-        <div class="inner">
-            <section class="banner">
-            <!-- 브레드크럼 -->
-            <nav class="breadcrumb" aria-label="현재 위치">
-                <ol>
-                    <li>
-                        <a href="#">
-                            <img src="./images/icon/page-home.svg" alt="홈 페이지로 가기">
-                        </a>
-                    </li>
-                    <li><a href="#">관람</a></li>
-                    <!-- <li><a href="#">행사·공연</a></li> -->
-                    <li>
-                        <span class="breadcrumb-current">관람안내</span>
-                    </li>
-                </ol>
-            </nav>
+        <section class="banner">
+
 
             <div class="banner-top">
                 <div class="banner-title">
@@ -173,38 +182,22 @@
                 </div>
             </div>
         </section>
-            <div class="page-header">
-            </div>
-
-            <!-- <div class="info-top"> -->
-                <!-- <div class="info-title"> -->
-                    <!-- <h2>관람 안내</h2> -->
-                    <!-- <div class="page-link">
-                        <ul>
-                            <li>
-                                <button type="button" aria-label="스크랩">
-                                    <img src="./images/info/scrap.png" alt="">
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" aria-label="인쇄">
-                                    <img src="./images/info/print.svg" alt="">
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" aria-label="공유">
-                                    <img src="./images/info/send.svg" alt="">
-                                </button>
-                            </li>
-                        </ul>
-                    </div> -->
-                <!-- </div>
-                <p>
-                    역사와 문화가 살아 숨쉬고, 과거와 현재, 미래가 공존하는 감동의 공간인
-                    <strong>국립중앙박물관</strong>에 오신 것을 환영합니다.
-                </p>
-                <img src="./images/info/museum.svg" alt="국립중앙박물관 전경">
-            </div> -->
+        <div class="inner">
+            <!-- 브레드크럼 -->
+            <nav class="breadcrumb" aria-label="현재 위치">
+                <ol>
+                    <li>
+                        <a href="#">
+                            <img src="./images-sub/icon/page-home.svg" alt="홈 페이지로 가기">
+                        </a>
+                    </li>
+                    <li><a href="#">관람</a></li>
+                    <!-- <li><a href="#">행사·공연</a></li> -->
+                    <li>
+                        <span class="breadcrumb-current">관람안내</span>
+                    </li>
+                </ol>
+            </nav>
 
             <section class="content">
                 <ul>
@@ -361,7 +354,7 @@
                             <div class="service-title">
                                 <img src="./images/info/calendar.svg" alt="" class="service-icon">
                                 <h3>예약</h3>
-                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                                <!-- <img src="./images/icon/arrow-right.svg" alt="" class="arrow-icon"> -->
                             </div>
                         </a>
                         <p>사전예약 및 예매를 이용해 보세요.</p>
@@ -371,7 +364,7 @@
                             <div class="service-title">
                                 <img src="./images/info/headset.svg" alt="" class="service-icon">
                                 <h3>전시해설</h3>
-                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                                <!-- <img src="./images/info/arrow.svg" alt="" class="arrow-icon"> -->
                             </div>
                         </a>
                         <p>도슨트 프로그램을 확인하세요.</p>
@@ -381,7 +374,7 @@
                             <div class="service-title">
                                 <img src="./images/info/accessible.svg" alt="" class="service-icon">
                                 <h3>편의시설</h3>
-                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                                <!-- <img src="./images/info/arrow.svg" alt="" class="arrow-icon"> -->
                             </div>
                         </a>
                         <p>편의시설 위치를 확인하세요.</p>
@@ -391,7 +384,7 @@
                             <div class="service-title">
                                 <img src="./images/info/map-pin.svg" alt="" class="service-icon">
                                 <h3>오시는 길</h3>
-                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                                <!-- <img src="./images/info/arrow.svg" alt="" class="arrow-icon"> -->
                             </div>
                         </a>
                         <p>교통 및 주차 정보를 확인하세요</p>
@@ -401,7 +394,7 @@
                             <div class="service-title">
                                 <img src="./images/info//map.svg" alt="" class="service-icon">
                                 <h3>층별 안내</h3>
-                                <img src="./images/info/arrow.svg" alt="" class="arrow-icon">
+                                <!-- <img src="./images/info/arrow.svg" alt="" class="arrow-icon"> -->
                             </div>
                         </a>
                         <p>전시실 위치를 확인하세요.</p>

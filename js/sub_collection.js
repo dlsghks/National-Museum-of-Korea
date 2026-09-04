@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function setupTab(tab) {
     const mapWrap = tab.querySelector(".map"); 
-    const mapImg = tab.querySelector(".map-img img");
+    const mapImg = tab.querySelector(".map-img-cover");
     const galleryList = tab.querySelectorAll(".gallery-list");
     const gallery = tab.querySelector(".gallery");
 
@@ -117,4 +117,20 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // 이미지번호 모션
+  const dataNums = document.querySelectorAll(".map-txt > li");
+
+  dataNums.forEach((item)=> {
+    const itemDataNum = item.dataset.num;
+    const numTargets = document.querySelectorAll(`.map-img-cover .map-txt-num[data-num-target="${itemDataNum}"]`);
+
+    item.addEventListener("mouseenter", ()=> {
+      numTargets.forEach(target => target.classList.add("on"));
+    })
+
+    item.addEventListener("mouseleave", () => {
+      numTargets.forEach((target) => target.classList.remove("on"));
+    });
+  })
 });
