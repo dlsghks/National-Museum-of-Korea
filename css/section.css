@@ -1,12 +1,24 @@
-/* :root {
-    --Primary-color: #243B66;
-    --Secondary-color: #3F0B9F;
-
-    --Typo-Primary: #222222;
-    --Typo-Secondary: #666666;
-
+:root {
+    /* size */
     --inner-width: 1400px;
-} */
+
+    /* font */
+    --font-main: 'Pretendard', sans-serif;
+    --font-w-ExL: 200;
+    --font-w-L: 300;
+    --font-w-R: 400;
+    --font-w-M: 500;
+    --font-w-SB: 600;
+    --font-w-B: 700;
+    --font-w-ExB: 800;
+    --font-w-BK: 900;
+
+    /* color */
+    --color-pri: #243B66;
+    --color-sec: #3F0B9F;
+    --color-typo-pri: #222222;
+    --color-typo-sec: #666666;
+}
 
 .inner {
     max-width: var(--inner-width);
