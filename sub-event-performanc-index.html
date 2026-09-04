@@ -152,11 +152,11 @@
                     <button type="button" class="button-search Type-PC" aria-label="검색" aria-haspopup="true"></button>
                     <!-- 모바일 -->
                     <button type="button" class="button-m-menu Type-Mobile" aria-label="메뉴" aria-haspopup="true">
-                        <div class="menu-item">
+                        <span class="menu-item">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </div>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -235,242 +235,248 @@
             <div class="content">
 
                 <!-- 행사 필터 -->
-                <aside class="filter">
+                <div class="filter-motion">
+                    <aside class="filter">
 
-                    <h2>
-                        <span>
-                            <img src="./images-sub/icon/filter-filter.svg" alt="필터">
-                            필터
-                        </span>
+                        <h2>
+                            <span>
+                                <img src="./images-sub/icon/filter-filter.svg" alt="필터">
+                                필터
+                            </span>
 
-                        <button type="button" class="filter-close" aria-label="필터 닫기">
-                            ×
-                        </button>
-                    </h2>
-
-                    <ul>
-
-                        <!-- 기간 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>기간</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
+                            <button type="button" class="filter-close" aria-label="필터 닫기">
+                                ×
                             </button>
+                        </h2>
 
-                            <ul class="filter-list">
-                                <li>
-                                    <input type="checkbox" id="event-past" name="event-period" value="past">
-                                    <label for="event-past">지난행사</label>
-                                </li>
+                        <ul>
 
-                                <li>
-                                    <input type="checkbox" id="event-current" name="event-period" value="current">
-                                    <label for="event-current">현재행사</label>
-                                </li>
+                            <!-- 기간 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>기간</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
 
-                                <li>
-                                    <input type="checkbox" id="event-upcoming" name="event-period" value="upcoming">
-                                    <label for="event-upcoming">예정행사</label>
-                                </li>
-                            </ul>
-                        </li>
+                                <ul class="filter-list">
+                                    <li>
+                                        <input type="checkbox" id="event-past" name="event-period" value="past">
+                                        <label for="event-past">지난행사</label>
+                                    </li>
 
+                                    <li>
+                                        <input type="checkbox" id="event-current" name="event-period" value="current">
+                                        <label for="event-current">현재행사</label>
+                                    </li>
 
-                        <!-- 행사 프로그램 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>행사 프로그램</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
-
-                            <ul class="filter-list">
-                                <li>
-                                    <input type="checkbox" id="museum-cultural-performance" name="event-program"
-                                        value="museum-cultural-performance">
-                                    <label for="museum-cultural-performance">박물관문화향연</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="museum-series" name="event-program"
-                                        value="museum-series">
-                                    <label for="museum-series">박물관 속 시리즈</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="museum-history-culture-class" name="event-program"
-                                        value="museum-history-culture-class">
-                                    <label for="museum-history-culture-class">박물관역사문화교실</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="culture-day" name="event-program" value="culture-day">
-                                    <label for="culture-day">문화가 있는 날</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="exhibition-related-event" name="event-program"
-                                        value="exhibition-related-event">
-                                    <label for="exhibition-related-event">전시 연계 행사</label>
-                                </li>
-                            </ul>
-                        </li>
+                                    <li>
+                                        <input type="checkbox" id="event-upcoming" name="event-period" value="upcoming">
+                                        <label for="event-upcoming">예정행사</label>
+                                    </li>
+                                </ul>
+                            </li>
 
 
-                        <!-- 시간 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>시간</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
+                            <!-- 행사 프로그램 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>행사 프로그램</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
 
-                            <ul class="filter-list">
-                                <li>
-                                    <input type="checkbox" id="morning" name="event-time" value="morning">
-                                    <label for="morning">오전</label>
-                                </li>
+                                <ul class="filter-list">
+                                    <li>
+                                        <input type="checkbox" id="museum-cultural-performance" name="event-program"
+                                            value="museum-cultural-performance">
+                                        <label for="museum-cultural-performance">박물관문화향연</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="afternoon" name="event-time" value="afternoon">
-                                    <label for="afternoon">오후</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="museum-series" name="event-program"
+                                            value="museum-series">
+                                        <label for="museum-series">박물관 속 시리즈</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="night" name="event-time" value="night">
-                                    <label for="night">저녁</label>
-                                </li>
-                            </ul>
-                        </li>
+                                    <li>
+                                        <input type="checkbox" id="museum-history-culture-class" name="event-program"
+                                            value="museum-history-culture-class">
+                                        <label for="museum-history-culture-class">박물관역사문화교실</label>
+                                    </li>
 
+                                    <li>
+                                        <input type="checkbox" id="culture-day" name="event-program"
+                                            value="culture-day">
+                                        <label for="culture-day">문화가 있는 날</label>
+                                    </li>
 
-                        <!-- 장소 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>장소</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
-
-                            <ul class="filter-list">
-
-                                <li>
-                                    <input type="checkbox" id="national-museum" name="event-place"
-                                        value="national-museum">
-                                    <label for="national-museum">국립중앙박물관</label>
-                                </li>
-
-                                <!-- 지역 국립박물관 -->
-                                <li>
-                                    <button type="button" class="list-category-btn filter-category"
-                                        aria-expanded="false">
-
-                                        <span class="list-category">지역국립박물관</span>
-
-                                        <img src="./images-sub/icon/filter-plus.svg" alt="">
-                                    </button>
-
-                                    <ul>
-                                        <li>
-                                            <input type="checkbox" id="gyeongju" name="event-place" value="gyeongju">
-                                            <label for="gyeongju">국립경주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="gwangju" name="event-place" value="gwangju">
-                                            <label for="gwangju">국립광주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="jeonju" name="event-place" value="jeonju">
-                                            <label for="jeonju">국립전주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="daegu" name="event-place" value="daegu">
-                                            <label for="daegu">국립대구박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="buyeo" name="event-place" value="buyeo">
-                                            <label for="buyeo">국립부여박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="gongju" name="event-place" value="gongju">
-                                            <label for="gongju">국립공주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="jinju" name="event-place" value="jinju">
-                                            <label for="jinju">국립진주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="cheongju" name="event-place" value="cheongju">
-                                            <label for="cheongju">국립청주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="gimhae" name="event-place" value="gimhae">
-                                            <label for="gimhae">국립김해박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="jeju" name="event-place" value="jeju">
-                                            <label for="jeju">국립제주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="chuncheon" name="event-place" value="chuncheon">
-                                            <label for="chuncheon">국립춘천박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="naju" name="event-place" value="naju">
-                                            <label for="naju">국립나주박물관</label>
-                                        </li>
-
-                                        <li>
-                                            <input type="checkbox" id="iksan" name="event-place" value="iksan">
-                                            <label for="iksan">국립익산박물관</label>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="online" name="event-place" value="online">
-                                    <label for="online">온라인</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="other" name="event-place" value="other">
-                                    <label for="other">기타</label>
-                                </li>
-
-                            </ul>
-                        </li>
+                                    <li>
+                                        <input type="checkbox" id="exhibition-related-event" name="event-program"
+                                            value="exhibition-related-event">
+                                        <label for="exhibition-related-event">전시 연계 행사</label>
+                                    </li>
+                                </ul>
+                            </li>
 
 
-                        <!-- 가격 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>가격</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
+                            <!-- 시간 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>시간</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
 
-                            <ul class="filter-list">
-                                <li>
-                                    <input type="checkbox" id="event-free" name="event-price" value="free">
-                                    <label for="event-free">무료</label>
-                                </li>
+                                <ul class="filter-list">
+                                    <li>
+                                        <input type="checkbox" id="morning" name="event-time" value="morning">
+                                        <label for="morning">오전</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="event-paid" name="event-price" value="paid">
-                                    <label for="event-paid">유료</label>
-                                </li>
-                            </ul>
-                        </li>
+                                    <li>
+                                        <input type="checkbox" id="afternoon" name="event-time" value="afternoon">
+                                        <label for="afternoon">오후</label>
+                                    </li>
 
-                    </ul>
-                </aside>
+                                    <li>
+                                        <input type="checkbox" id="night" name="event-time" value="night">
+                                        <label for="night">저녁</label>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!-- 장소 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>장소</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
+
+                                <ul class="filter-list">
+
+                                    <li>
+                                        <input type="checkbox" id="national-museum" name="event-place"
+                                            value="national-museum">
+                                        <label for="national-museum">국립중앙박물관</label>
+                                    </li>
+
+                                    <!-- 지역 국립박물관 -->
+                                    <li>
+                                        <button type="button" class="list-category-btn filter-category"
+                                            aria-expanded="false">
+
+                                            <span class="list-category">지역국립박물관</span>
+
+                                            <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                        </button>
+
+                                        <ul>
+                                            <li>
+                                                <input type="checkbox" id="gyeongju" name="event-place"
+                                                    value="gyeongju">
+                                                <label for="gyeongju">국립경주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="gwangju" name="event-place" value="gwangju">
+                                                <label for="gwangju">국립광주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="jeonju" name="event-place" value="jeonju">
+                                                <label for="jeonju">국립전주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="daegu" name="event-place" value="daegu">
+                                                <label for="daegu">국립대구박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="buyeo" name="event-place" value="buyeo">
+                                                <label for="buyeo">국립부여박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="gongju" name="event-place" value="gongju">
+                                                <label for="gongju">국립공주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="jinju" name="event-place" value="jinju">
+                                                <label for="jinju">국립진주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="cheongju" name="event-place"
+                                                    value="cheongju">
+                                                <label for="cheongju">국립청주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="gimhae" name="event-place" value="gimhae">
+                                                <label for="gimhae">국립김해박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="jeju" name="event-place" value="jeju">
+                                                <label for="jeju">국립제주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="chuncheon" name="event-place"
+                                                    value="chuncheon">
+                                                <label for="chuncheon">국립춘천박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="naju" name="event-place" value="naju">
+                                                <label for="naju">국립나주박물관</label>
+                                            </li>
+
+                                            <li>
+                                                <input type="checkbox" id="iksan" name="event-place" value="iksan">
+                                                <label for="iksan">국립익산박물관</label>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="online" name="event-place" value="online">
+                                        <label for="online">온라인</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="other" name="event-place" value="other">
+                                        <label for="other">기타</label>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <!-- 가격 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>가격</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
+
+                                <ul class="filter-list">
+                                    <li>
+                                        <input type="checkbox" id="event-free" name="event-price" value="free">
+                                        <label for="event-free">무료</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="event-paid" name="event-price" value="paid">
+                                        <label for="event-paid">유료</label>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </aside>
+                </div>
 
 
                 <!-- 행사 결과 -->
@@ -1363,7 +1369,8 @@
         </div>
 
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/event-performance.js"></script>
     <script src="./js/header_footer_main.js"></script>
 </body>

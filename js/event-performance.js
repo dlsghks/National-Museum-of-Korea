@@ -1,8 +1,27 @@
-
 const breadcrumbCurrent = document.querySelector(".breadcrumb-current");
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ==================================================
+       배너 애니메이션
+    ================================================== */
+
+    const bannerText = gsap.timeline();
+
+    bannerText.from(".sub-banner-title h2", {
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+    });
+
+    bannerText.from(".sub-banner-title p", {
+        y: 80,
+        opacity: 0,
+        duration: 0.5,
+    });
+    
     /* ==================================================
        기본 요소
     ================================================== */
@@ -25,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
        필터 아코디언
     ================================================== */
 
-    const filterButtons =
-        document.querySelectorAll(".filter-category");
+    const filterButtons = document.querySelectorAll(".filter-category");
 
     filterButtons.forEach(function (button) {
 
@@ -46,28 +64,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 list.style.display = "none";
 
-                button.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                button.setAttribute("aria-expanded", "false");
 
                 if (icon) {
-                    icon.src =
-                        "./images-sub/icon/filter-plus.svg";
+                    icon.src = "./images-sub/icon/filter-plus.svg";
                 }
 
+                return;
             }
 
 
             /* ------------------------------------------
-               닫혀 있는 카테고리 → 열기
+               같은 레벨의 카테고리만 닫기
             ------------------------------------------ */
 
-            else {
+            // 최상위 필터
+            if (button.parentElement.classList.contains("filter")) {
 
-                /* 다른 카테고리 전부 닫기 */
+                const topLevelButtons =
+                    button.parentElement.querySelectorAll(
+                        ":scope > .filter-category"
+                    );
 
-                filterButtons.forEach(function (otherButton) {
+                topLevelButtons.forEach(function (otherButton) {
+
+                    if (otherButton === button) return;
 
                     const otherList =
                         otherButton.nextElementSibling;
@@ -75,17 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     const otherIcon =
                         otherButton.querySelector("img");
 
-
                     if (otherList) {
                         otherList.style.display = "none";
                     }
-
 
                     otherButton.setAttribute(
                         "aria-expanded",
                         "false"
                     );
-
 
                     if (otherIcon) {
                         otherIcon.src =
@@ -94,21 +112,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 });
 
+            }
 
-                /* 현재 카테고리 열기 */
+            // 하위 필터
+            else {
 
-                list.style.display = "block";
+                const parentList =
+                    button.parentElement.parentElement;
 
-                button.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
+                if (parentList) {
 
-                if (icon) {
-                    icon.src =
-                        "./images-sub/icon/filter-minus.svg";
+                    const childButtons =
+                        parentList.querySelectorAll(
+                            ":scope > li > .filter-category"
+                        );
+
+                    childButtons.forEach(function (otherButton) {
+
+                        if (otherButton === button) return;
+
+                        const otherList =
+                            otherButton.nextElementSibling;
+
+                        const otherIcon =
+                            otherButton.querySelector("img");
+
+                        if (otherList) {
+                            otherList.style.display = "none";
+                        }
+
+                        otherButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        if (otherIcon) {
+                            otherIcon.src =
+                                "./images-sub/icon/filter-plus.svg";
+                        }
+
+                    });
+
                 }
 
+            }
+
+
+            /* ------------------------------------------
+               현재 카테고리 열기
+            ------------------------------------------ */
+
+            list.style.display = "block";
+
+            button.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            if (icon) {
+                icon.src =
+                    "./images-sub/icon/filter-minus.svg";
             }
 
         });
@@ -135,6 +198,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const resetBtn =
             wrap.querySelector(".reset-btn");
+
+
+        /* -------------------------
+           체크박스와 라벨 사이
+           빈 공간 클릭
+        ------------------------- */
+
+        const filterItems =
+            wrap.querySelectorAll(
+                ".filter-list li:has(> input[type='checkbox'])"
+            );
+
+        filterItems.forEach(function (item) {
+
+            item.addEventListener("click", function (e) {
+
+                /* 체크박스나 라벨을 직접 클릭한 경우 */
+                if (
+                    e.target.matches('input[type="checkbox"]') ||
+                    e.target.closest("label")
+                ) {
+                    return;
+                }
+
+                const checkbox =
+                    item.querySelector(
+                        'input[type="checkbox"]'
+                    );
+
+                if (!checkbox) return;
+
+                checkbox.checked = !checkbox.checked;
+
+                checkbox.dispatchEvent(
+                    new Event("change", {
+                        bubbles: true
+                    })
+                );
+
+            });
+
+        });
 
 
         /* -------------------------
@@ -213,10 +318,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (window.innerWidth <= 900) {
 
-                            window.scrollTo({
-                                top: 0,
-                                behavior: "smooth"
-                            });
+                            // 모바일/태블릿 → selected-filter까지 이동
+                            const selectedFilter =
+                                wrap.querySelector(
+                                    ".selected-filter"
+                                );
+
+                            if (selectedFilter) {
+
+                                const selectedFilterTop =
+                                    selectedFilter.getBoundingClientRect().top +
+                                    window.scrollY -
+                                    75;
+
+                                window.scrollTo({
+                                    top: selectedFilterTop,
+                                    behavior: "smooth"
+                                });
+
+                            }
+
+                        } else {
+
+                            // PC → 탭 버튼까지 이동
+                            const pagetab =
+                                document.querySelector(".pagetab");
+
+                            if (pagetab) {
+
+                                const pagetabTop =
+                                    pagetab.getBoundingClientRect().top +
+                                    window.scrollY -
+                                    100;
+
+                                window.scrollTo({
+                                    top: pagetabTop,
+                                    behavior: "smooth"
+                                });
+
+                            }
 
                         }
 
@@ -384,7 +524,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const list =
                     button.nextElementSibling;
 
-
                 if (list) {
                     list.style.display = "none";
                 }
@@ -435,9 +574,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                /*
-                    현재 활성화된 영역 찾기
-                */
+                /* 현재 활성화된 영역 찾기 */
 
                 const activeWrap =
                     document.querySelector(
@@ -451,9 +588,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!activeWrap) return;
 
 
-                /*
-                    현재 활성화된 필터 확인
-                */
+                /* 현재 활성화된 필터 확인 */
 
                 const activeFilter =
                     activeWrap.querySelector(".filter");
@@ -462,23 +597,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!activeFilter) return;
 
 
-                /*
-                    필터 열기
-                */
+                /* 필터 열기 */
 
                 document.body.classList.add(
                     "mobile-filter-active"
                 );
 
 
-                /*
-                    버튼 숨기기
-                */
+                /* 버튼 숨기기 */
 
                 mobileFilterBtn.classList.add(
                     "filter-btn-hidden"
                 );
-
 
                 mobileFilterBtn.setAttribute(
                     "aria-expanded",
@@ -626,4 +756,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
