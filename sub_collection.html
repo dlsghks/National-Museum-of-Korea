@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.png">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/sub_h.css">
+  <link rel="stylesheet" href="./css/sub_collection.css">
 
   <!-- gsap -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-  <title>Document</title>
+  <title>국립중앙박물관 상설 전시</title>
 </head>
 <body>
   <!-- header -->
@@ -124,9 +125,9 @@
               <li><a href="#" class="top-gnb-item">로그인</a></li>
               <li>
                 <div class="select-box select-box-lang">
-                  <button id="lang-btn-m" class="top-gnb-item select-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list-m">KOR</button>
+                  <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-list">KOR</button>
                   <div>
-                    <ul id="lang-list-m" class="select-list" role="listbox" aria-labelledby="lang-btn-m">
+                    <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
                       <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
                       <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
                       <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
@@ -190,7 +191,7 @@
       <section class="tab-content on" id="tab-content-1" role="tabpanel" aria-labelledby="tab-btn-1" tabindex="0" aria-hidden="false">
         <div class="map inner">
           <div class="map-img">
-            <img src="./images/sub_h/map01.svg" alt="1층 평면 안내도">
+            <img src="./images/sub_collection/map01.svg" alt="1층 평면 안내도">
           </div>
           <div class="map-txt-wrap">
             <ul class="map-txt" aria-label="1층 주요 시설 목록">
@@ -206,7 +207,7 @@
         <ul class="gallery inner">
           <li class="gallery-list">
             <a herf="#">
-              <img src="./images/sub_h/room01_1.svg" alt="중·근세관 전경">
+              <img src="./images/sub_collection/room01_1.svg" alt="중·근세관 전경">
               <div class="gallery-text">
                 <h3 class="gallery-tit">중 · 근세관</h3>
                 <p class="gallery-txt">
@@ -217,7 +218,7 @@
           </li>
           <li class="gallery-list">
             <a herf="#">
-              <img src="./images/sub_h/room01_2.svg" alt="선사·고대관 전경">
+              <img src="./images/sub_collection/room01_2.svg" alt="선사·고대관 전경">
               <div class="gallery-text">
                 <h3 class="gallery-tit">선사 · 고대관</h3>
                 <p class="gallery-txt">
@@ -233,7 +234,7 @@
       <section class="tab-content" id="tab-content-2" role="tabpanel" aria-labelledby="tab-btn-2" aria-hidden="true">
         <div class="map inner">
           <div class="map-img">
-            <img src="./images/sub_h/map02.svg" alt="2층 평면 안내도">
+            <img src="./images/sub_collection/map02.svg" alt="2층 평면 안내도">
           </div>
           <div class="map-txt-wrap">
             <ul class="map-txt" aria-label="2층 주요 시설 목록">
@@ -248,7 +249,7 @@
         <ul class="gallery inner">
           <li class="gallery-list">
             <a herf="#">
-              <img src="./images/sub_h/room02_1.svg" alt="서화관 전경">
+              <img src="./images/sub_collection/room02_1.svg" alt="서화관 전경">
               <div class="gallery-text">
                 <h3 class="gallery-tit">서화관</h3>
                 <p class="gallery-txt">
@@ -259,7 +260,7 @@
           </li>
           <li class="gallery-list">
             <a herf="#">
-                <img src="./images/sub_h/room02_2.svg" alt="기증관 전경">
+                <img src="./images/sub_collection/room02_2.svg" alt="기증관 전경">
                 <div class="gallery-text">
                   <h3 class="gallery-tit">기증관</h3>
                   <p class="gallery-txt">
@@ -270,7 +271,7 @@
           </li>
           <li class="gallery-list">
             <a herf="#">
-              <img src="./images/sub_h/room02_3.svg" alt="사유의 방 전경">
+              <img src="./images/sub_collection/room02_3.svg" alt="사유의 방 전경">
               <div class="gallery-text">
                 <h3 class="gallery-tit">사유의 방</h3>
                 <p class="gallery-txt">
@@ -286,7 +287,7 @@
       <section class="tab-content" id="tab-content-3" role="tabpanel" aria-labelledby="tab-btn-3" aria-hidden="true">
         <div class="map inner">
           <div class="map-img">
-            <img src="./images/sub_h/map03.svg" alt="3층 평면 안내도">
+            <img src="./images/sub_collection/map03.svg" alt="3층 평면 안내도">
           </div>
           <div class="map-txt-wrap">
             <ul class="map-txt" aria-label="3층 주요 시설 목록">
@@ -300,7 +301,7 @@
         <ul class="gallery inner">
           <li class="gallery-list">
             <a herf="#">
-              <img src="./images/sub_h/room03_1.svg" alt="조각·공예관 전경">
+              <img src="./images/sub_collection/room03_1.svg" alt="조각·공예관 전경">
               <div class="gallery-text">
                 <h3 class="gallery-tit">조각 · 공예관</h3>
                 <p class="gallery-txt">
@@ -311,7 +312,7 @@
           </li>
           <li class="gallery-list">
             <a herf="#">
-              <img src="./images/sub_h/room03_2.svg" alt="세계문화관 전경">
+              <img src="./images/sub_collection/room03_2.svg" alt="세계문화관 전경">
               <div class="gallery-text">
                 <h3 class="gallery-tit">세계문화관</h3>
                 <p class="gallery-txt">
@@ -452,7 +453,7 @@
   </footer>
 
   <script src="./js/header_footer_main.js"></script>
-  <script src="./js/sub_h.js"></script>
+  <script src="./js/sub_collection.js"></script>
   
 </body>
 </html>

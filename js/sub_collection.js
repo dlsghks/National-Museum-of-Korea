@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const triggerMap = new Map();
 
   function setupTab(tab) {
+    const mapWrap = tab.querySelector(".map"); 
     const mapImg = tab.querySelector(".map-img img");
     const galleryList = tab.querySelectorAll(".gallery-list");
     const gallery = tab.querySelector(".gallery");
@@ -46,8 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 스크롤 진입 시 재생 (모든 탭 동일하게)
     const st = ScrollTrigger.create({
-      trigger: gallery || mapImg || tab,
-      start: "top 85%",
+      trigger: mapWrap  || mapImg || tab,
+      start: "top 60%",
       once: true,
       onEnter: () => tl.play(),
     });
