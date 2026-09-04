@@ -1,89 +1,126 @@
+:root {
+    /* size */
+    --inner-width: 1400px;
+
+    /* font */
+    --font-main: 'Pretendard', sans-serif;
+    --font-w-ExL: 200;
+    --font-w-L: 300;
+    --font-w-R: 400;
+    --font-w-M: 500;
+    --font-w-SB: 600;
+    --font-w-B: 700;
+    --font-w-ExB: 800;
+    --font-w-BK: 900;
+
+    /* color */
+    --color-pri: #243B66;
+    --color-sec: #3F0B9F;
+    --color-typo-pri: #222222;
+    --color-typo-sec: #666666;
+}
+
+/*  */
 .inner {
-    max-width: var(--inner-width);
-    /* background-color: rgba(255, 0, 0, 0.1); */
+    max-width: 1400px;
     margin: 0 auto;
+    /* background-color: rgba(255,0,0,.2);*/
+}
+
+.banner {
+    width: 100%;
+    height: 720px;
+    max-height: 70vh;
+    background: url(../images/info/museum.svg) no-repeat center / cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* .banner::before {content: ''; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,.3);}  */
+.banner>* {
+    position: relative;
+}
+
+.banner-top {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.banner-title {
+    max-width: 990px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2.688em; */
+    text-align: center;
+    /* text-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5); */
+}
+
+.banner-title h2 {
+    font-size: 54px;
+    font-weight: var(--font-w-ExB);
+    line-height: 1.25;
+    margin-bottom: 24px;
+    color: #ffffff;
+    word-break: keep-all;
+}
+
+.banner-title p {
+    font-size: 18px;
+    font-weight: var(--font-w-L);
+    line-height: 1.7;
+}
+
+.breadcrumb {
+    position: absolute;
+    top: 120px;
+    left: 17%;
+}
+
+.breadcrumb>ol {
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    color: #fff;
+}
+
+.breadcrumb>ol>li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb>ol>li:nth-child(2)::before,
+.breadcrumb>ol>li:nth-child(3)::before,
+.breadcrumb>ol>li:nth-child(4)::before {
+    content: "";
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    background: url("../images/icon/arrow-right.svg") no-repeat center;
 }
 
 main {
-    padding-top: 95px;
+    padding-top: 0;
 }
 
 /* 페이지 상단 */
-.page-header {
+/* .page-header {
     position: relative;
     padding-top: 15px;
     padding-bottom: 30px;
-}
+} */
 
-/* 현재 위치 */
-.nav-location ul {
-    display: flex;
-    align-items: center;
-}
 
-.nav-location li {
-    display: flex;
-    align-items: center;
-}
-
-.nav-location li+li::before {
-    content: "";
-    width: 24px;
-    height: 24px;
-    margin: 0 3px;
-    background: url(../images/info/arrow.svg) no-repeat center / contain;
-}
-
-.nav-location img {
-    width: 20px;
-    height: 20px;
-    display: block;
-}
-
-div>.info-top {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-}
-
-/* 관람안내 + 아이콘 */
-.info-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 16px;
-}
-
-.info-title h2 {
-    margin: 0 0 30px 0;
-    font-size: 26px;
-    font-weight: 700;
-}
-
-.page-link ul {
-    margin: 0 0 50px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.page-link button {
-    border: 0;
-    padding: 0;
-    background: none;
-}
-
-.page-link img {
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.info-top p {
-    max-width: 980px;
-    font-size: 34px;
-    margin-bottom: 30px;
-}
 
 /* 관람 정보 */
 .content {

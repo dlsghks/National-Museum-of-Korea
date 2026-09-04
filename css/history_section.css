@@ -4,14 +4,16 @@
 .history-hero {
     position: relative;
     width: 100%;
-    padding: 140px 0 100px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-image: url('../images/history_section/history-main.JPG');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     color: #ffffff;
     text-align: center;
-    overflow: hidden;
 }
 
 .history-hero__bg {
@@ -31,25 +33,11 @@
     margin: 0 auto;
 }
 
-/* 상단 뱃지 */
-.history-hero__badge {
-    display: inline-block;
-    padding: 6px 16px;
-    margin-bottom: 24px;
-    font-size: 13px;
-    font-weight: var(--font-w-M); /* style.css 500 */
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #f5d0d4;
-    background-color: rgba(221, 18, 39, 0.2);
-    border: 1px solid rgba(221, 18, 39, 0.4);
-    border-radius: 50px;
-}
-
 /* 히어로 타이틀 */
 .history-hero__title {
     font-size: 52px;
-    font-weight: var(--font-w-B); /* style.css 700 */
+    font-weight: 700;
+    /* 공용 변수 미적용 시 대비 기본 굵기 명시 */
     line-height: 1.25;
     letter-spacing: -0.03em;
     margin-bottom: 24px;
@@ -60,7 +48,7 @@
 /* 서브 설명 문구 */
 .history-hero__desc {
     font-size: 18px;
-    font-weight: var(--font-w-L); /* style.css 300 */
+    font-weight: 300;
     line-height: 1.7;
     color: #a0aec0;
     word-break: keep-all;
@@ -75,10 +63,15 @@
    ========================================================================== */
 .history-nav {
     position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #fdf2f3;
-    border-bottom: 1px solid #f5d0d4;
+    top: 68px;
+    /* 헤더 높이에 맞게 조정 */
+    z-index: 1100;
+    /* background: var(--color-pri); */
+    background: var(--color-pri);
+    /* background-color: rgba(0,0,0,0.6); */
+    /* border-bottom: 1px solid #f5d0d4; */
+    /* border-bottom: 1px solid #E5EDFA;
+    border-top: 1px solid #E5EDFA; */
 }
 
 .history-nav__list {
@@ -92,8 +85,10 @@
     display: block;
     padding: 12px 20px;
     font-size: 16px;
-    font-weight: var(--font-w-M); /* style.css 500 */
-    color: var(--color-typo-sec); /* #666666 */
+    font-weight: 500;
+    color: #fff;
+    /* color: #666666; */
+    /* 변수 대체 기본값 */
     text-align: center;
     border-radius: 4px;
     transition: all 0.25s ease;
@@ -101,9 +96,10 @@
 
 .history-nav__item.active a,
 .history-nav__item a:hover {
-    color: #fff;
-    background-color: #DD1227; /* 기존 포인트 레드 */
-    font-weight: var(--font-w-B); /* style.css 700 */
+    color: var(--color-pri);
+    /* background-color: #DD1227; */
+    background-color: #fff;
+    font-weight: 700;
 }
 
 /* ==========================================================================
@@ -114,11 +110,19 @@
 }
 
 .history-section {
-    margin-bottom: 240px;
+    padding-bottom: 120px;
+    /* 섹션 하단 간격 조정 */
+    margin-bottom: 120px;
+    /* 섹션 간격 조정 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* 풋터 스타일의 얇은 구분선 추가 */
 }
 
+/* 마지막 연혁 섹션 뒤에는 선과 하단 여백을 제거 */
 .history-section:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 /* Layout (3-Column System) */
@@ -135,28 +139,21 @@
 .history-left {
     width: 42%;
     position: sticky;
-    top: 120px;
+    top: 170px;
 }
 
 .history-left__sticky {
     width: 100%;
 }
 
-/* 왼쪽 년도 타이틀: 공용 브랜드 메인 컬러 var(--color-pri) 적용 */
 .history-period__years {
-    font-size: 54px;
-    font-weight: var(--font-w-ExB); /* style.css 800 */
-    color: var(--color-pri); /* #243B66 네이비 */
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--color-pri);
+    /* 공용변수가 없어도 기본 네이비 색상 보장 */
     line-height: 1;
-    margin-bottom: 12px;
+    margin-bottom: 26px;
     letter-spacing: -0.04em;
-}
-
-.history-period__sub {
-    font-size: 16px;
-    font-weight: var(--font-w-M); /* style.css 500 */
-    color: var(--color-typo-sec); /* #666666 */
-    margin-bottom: 30px;
 }
 
 /* Visual Image Frame */
@@ -173,6 +170,9 @@
     position: relative;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .history-images__item {
@@ -200,11 +200,11 @@
     display: block;
 }
 
-/* 이미지 하단 캡션: 서체 전용 컬러 적용 */
+/* 이미지 하단 캡션 */
 .history-caption {
-    font-size: 15px;
-    font-weight: var(--font-w-M); /* style.css 500 */
-    color: var(--color-typo-sec); /* #666666 */
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-typo-sec)
 }
 
 /* --------------------------------------------------------------------------
@@ -227,7 +227,6 @@
     background-color: #eee;
 }
 
-/* 중앙 타임라인 포인트 및 그래디언트: 기존 포인트 레드 (#DD1227) 유지 */
 .history-timeline__progress {
     position: absolute;
     top: 0;
@@ -271,6 +270,7 @@
         height: 14px;
         opacity: 0.8;
     }
+
     100% {
         width: 36px;
         height: 36px;
@@ -288,11 +288,14 @@
 .history-list {
     padding-top: 10px;
     padding-bottom: 200px;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
 }
 
 .history-event {
     margin-bottom: 45px;
-    opacity: 0.6; /* 비활성 텍스트 가독성을 위해 불투명도 약간 상향 조정 */
+    opacity: 0.6;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -303,29 +306,28 @@
 
 .history-event:last-child {
     margin-bottom: 0;
-} 
+}
 
-/* 기본 타임라인 날짜: 메인 브랜드 컬러 var(--color-pri) */
 .history-event time {
     display: block;
-    font-size: 18px;
-    font-weight: var(--font-w-B); /* style.css 700 */
-    color: var(--color-pri); /* #243B66 네이비 */
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-pri, #243B66);
     margin-bottom: 4px;
     transition: color 0.3s ease;
 }
 
-/* 활성화된 타임라인 날짜: 포인트 레드 (#DD1227) 강조 */
 .history-event.active time {
     color: #DD1227;
+    font-size: 24px;
 }
 
-/* 이벤트 설명 본문: 공용 텍스트 컬러 var(--color-typo-pri) */
 .history-event p {
-    font-size: 16px;
-    font-weight: var(--font-w-M); /* style.css 500 */
-    color: var(--color-typo-pri); /* #222222 */
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-typo-pri, #222222);
     line-height: 1.5;
+    margin: 0;
 }
 
 /* ==========================================================================
@@ -334,6 +336,7 @@
 @media screen and (max-width: 1024px) {
     .history-hero {
         padding: 100px 20px 70px;
+        height: auto;
     }
 
     .history-hero__title {
