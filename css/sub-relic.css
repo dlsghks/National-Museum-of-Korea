@@ -1,7 +1,5 @@
 /* 배너 */
-main{
-    padding-top: 98px;
-}
+
 .banner-wrap {
     position: relative;
 }
@@ -9,36 +7,57 @@ main{
 .banner-wrap .banner>img {
     width: 100vw;
     max-width: 100vw;
+    height: 720px; /* 높이 고정 */
+    object-fit: cover;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%)
 }
 
+
+
+.banner-wrap .channel {
+    position: absolute;
+    top: 98px;
+    display: flex;
+    gap: 0.1em;
+    font-size: 0.94em;
+    align-items: center;
+    color: #fff;
+}
+
+.banner-wrap .channel img{
+    filter: brightness(0) invert();
+}
+
+.banner-wrap .channel .arrow {
+    width: 24px;
+    height: 24px;
+}
+
 .banner-wrap .text-box {
     position: absolute;
-    top: 25%;
-    left: 0;
+    left:50%;
+    top: 50%;
+    transform: translateX(-50%);
+    gap: 24px;
     display: flex;
     flex-direction: column;
     color: #fff;
 }
 
-.banner-wrap .channel {
-    display: flex;
-    gap: 1.25em;
-    font-size: 0.94em;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.banner-wrap .arrow {
-    filter: invert();
-    height: 0.9em;
-}
-
 .banner-wrap .page {
-    font-size: 3em;
-    font-weight: 600;
+    font-size: 3.25em;
+    font-weight: 700;
     margin-bottom: 5px;
+    text-align: center;
+}
+
+.banner-wrap .text-box .dec {
+    font-size: 1.13em;
+    font-weight: 300;
+    line-height: 1.7;
+    text-align: center;
+    word-break: keep-all;
 }
 
 /* 검색창 */
