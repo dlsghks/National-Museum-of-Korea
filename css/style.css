@@ -145,7 +145,7 @@
 .footer-link.on .link-btn::after {background-image: url(../images/footer/site_arrow_w.svg); opacity: 1; visibility: visible; transform: translateY(0) rotate(-180deg);}
 
 /* footer-bottom */
-.footer-bottom {background: var(--color-pri); color: #fff; padding: 3.125rem 0;}
+.footer-bottom {background: var(--color-pri); color: #fff; padding: 3.125rem 0; position: relative; z-index: 10;}
 .footer-bottom .inner {display: flex; justify-content: space-between;}
 .footer-left {display: flex; align-items: center; gap: clamp(3.125rem, 6.42vw, 5.625rem);}
 .footer-logo {width: clamp(130px, 12.85vw, 180px);}
