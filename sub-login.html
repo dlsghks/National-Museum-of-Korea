@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/event-section.css">
+    <link rel="stylesheet" href="./css/Exhibition_section.css">
+    <link rel="stylesheet" href="./css/Notice_section.css">
+    <link rel="stylesheet" href="./css/section.css">
+    <link rel="stylesheet" href="./css/login-style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top Type-PC">
+            <div class="header-inner inner">
+                <ul class="header-top-gnb">
+                    <li><a href="#" class="top-gnb-item">로그인</a></li>
+                    <li>
+                        <div class="select-box select-box-lang">
+                            <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                aria-expanded="false" aria-controls="lang-list">KOR</button>
+                            <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                                <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-inner inner">
+                <div class="header-left">
+                    <h1 class="header-logo"><a href="#"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></a></h1>
+                    <nav class="header-gnb" aria-label="주 메뉴">
+                        <ul class="gnb-main">
+                            <li class="gnb-main-list">
+                                <a href="#">관람</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">관람안내</a></li>
+                                    <li class="gnb-sub-list"><a href="#">예약</a></li>
+                                    <li class="gnb-sub-list"><a href="#">전시해설</a></li>
+                                    <li class="gnb-sub-list"><a href="#">편의시설</a></li>
+                                    <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">전시</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">상실전시</a></li>
+                                    <li class="gnb-sub-list"><a href="#">특별전시</a></li>
+                                    <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
+                                    <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">소장품</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">소장품 검색</a></li>
+                                    <li class="gnb-sub-list"><a href="#">대표 소장품</a></li>
+                                    <li class="gnb-sub-list"><a href="#">국보 · 보물</a></li>
+                                    <li class="gnb-sub-list"><a href="#">디지털 소장품</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">문화행사 · 교육</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">행사 · 공연</a></li>
+                                    <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
+                                    <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">학술</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">학술행사</a></li>
+                                    <li class="gnb-sub-list"><a href="#">연구 자료</a></li>
+                                    <li class="gnb-sub-list"><a href="#">정기간행물</a></li>
+                                    <li class="gnb-sub-list"><a href="#">도서관</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">소식</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">공지사항</a></li>
+                                    <li class="gnb-sub-list"><a href="#">보도자료</a></li>
+                                    <li class="gnb-sub-list"><a href="#">채용 · 공고</a></li>
+                                    <li class="gnb-sub-list"><a href="#">이벤트 · 참여</a></li>
+                                </ul>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">박물관 소개</a>
+                                <ul class="gnb-sub">
+                                    <li class="gnb-sub-list"><a href="#">박물관 개요</a></li>
+                                    <li class="gnb-sub-list"><a href="#">역사 · 연혁</a></li>
+                                    <li class="gnb-sub-list"><a href="#">조직</a></li>
+                                    <li class="gnb-sub-list"><a href="#">시설안내</a></li>
+                                    <li class="gnb-sub-list"><a href="#">미션 · 비전</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="header-top-gnb Type-Mobile">
+                            <li><a href="#" class="top-gnb-item">로그인</a></li>
+                            <li>
+                                <div class="select-box select-box-lang">
+                                    <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                        aria-expanded="false" aria-controls="lang-list">KOR</button>
+                                    <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                                        <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span>
+                                        </li>
+                                        <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span>
+                                        </li>
+                                        <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span>
+                                        </li>
+                                        <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <button type="button" class="button-search Type-PC" aria-label="검색" aria-haspopup="true"></button>
+                    <!-- 모바일 -->
+                    <button type="button" class="button-m-menu Type-Mobile" aria-label="메뉴" aria-haspopup="true">
+                        <div class="menu-item">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="login">
+        <section class="banner">
+            <!-- 브레드크럼 -->
+            <nav class="breadcrumb" aria-label="현재 위치">
+                <ol>
+                    <li>
+                        <a href="#">
+                            <img src="./images/icon/page-home.svg" alt="홈 페이지로 가기">
+                        </a>
+                    </li>
+                    <li><a href="#">마이페이지</a></li>
+                    <!-- <li><a href="#">행사·공연</a></li> -->
+                    <li>
+                        <span class="breadcrumb-current">로그인</span>
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="banner-top">
+                <div class="banner-title">
+                    <h2 class="tit">로그인</h2>
+                    <p class="txt">
+                        국립중앙박물관에 오신 여러분을 환영합니다.
+                        오랜 시간 이어온 우리 문화의 아름다움과 가치를 만나보세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="inner">
+            <!-- 로그인 / 회원가입 -->
+            <div class="login-wrap">
+                <!-- 로그인 -->
+                <div class="login-box">
+                    <h3>회원 로그인</h3>
+                    <p>모든 서비스를 제한없이 이용하시려면 로그인해주세요.</p>
+                    <form action="" class="login-form">
+                        <div class="input-wrap">
+                            <label for="user-id">아이디</label>
+                            <input type="text" id="user-id" placeholder="아이디 입력">
+                        </div>
+                        <div class="input-wrap">
+                            <label for="user-password">비밀번호</label>
+                            <input type="password" id="user-password" placeholder="비밀번호 입력">
+                        </div>
+                        <div class="login-option">
+                            <label for="save-id">
+                                <input type="checkbox">
+                                <span>아이디 저장</span>
+                            </label>
+                            <div class="login-links">
+                                <a href="#">아이디 찾기</a>
+                                <a href="#">비밀번호 재설정</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="login-btn">
+                            로그인
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 회원가입 -->
+                <div class="join-box">
+                    <h3>아직 회원이 아니신가요?</h3>
+                    <p>
+                        국립중앙박물관 홈페이지 회원으로 가입하시면<br>
+                        박물관의 다양한 문화 서비스를 편리하게 이용하실 수 있습니다.
+                    </p>
+                    <div class="join-service">
+                        <h4>회원 서비스 안내</h4>
+                        <ul>
+                            <li>박물관의 교육·행사·전시 소식 안내</li>
+                            <li>소장품 및 다양한 문화정보 제공</li>
+                            <li>박물관 프로그램 참여 및 신청</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="join-btn">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="inner">
+                <div class="footer-link-tit">
+                    <p>세계와 소통하는 문화공간,</p>
+                    <p>국립중앙박물관입니다.</p>
+                </div>
+                <ul class="footer-link-wrap">
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-1">
+                                교육 서비스
+                            </button>
+                            <ul id="link-list-1" class="link-list">
+                                <li class="link-list-opt"><a href="#">교육플랫폼 모두(MODU)</a></li>
+                                <li class="link-list-opt"><a href="#">학예사 자격증</a></li>
+                                <li class="link-list-opt"><a href="#">어린이박물관</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-2">
+                                디지털 콘텐츠
+                            </button>
+                            <ul id="link-list-2" class="link-list">
+                                <li class="link-list-opt"><a href="#">e뮤지엄</a></li>
+                                <li class="link-list-opt"><a href="#">외규장각 의궤 원문</a></li>
+                                <li class="link-list-opt"><a href="#">조선총독부박물관 문서</a></li>
+                                <li class="link-list-opt"><a href="#">유리건판</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-3">
+                                박물관 서비스
+                            </button>
+                            <ul id="link-list-3" class="link-list">
+                                <li class="link-list-opt"><a href="#">박물관상품관</a></li>
+                                <li class="link-list-opt"><a href="#">박물관신문</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-4">
+                                참여 프로그램
+                            </button>
+                            <ul id="link-list-4" class="link-list">
+                                <li class="link-list-opt"><a href="#">청년멘토</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner">
+                <div class="footer-left">
+                    <p class="footer-logo"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></p>
+
+                    <div class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">이메일무단수집거부</a></li>
+                            <li><a href="#">저작권정책</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">클린신고센터</a></li>
+                        </ul>
+
+                        <address>
+                            <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
+                            <p>대표전화 <a href="tel:02-2077-9000" class="tel">02-2077-9000</a></p>
+                            <p>&copy; National Museum of Korea.</p>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-right-top">
+                        <ul class="footer-sns">
+                            <li class="sns-facebook"><a href="#" aria-label="페이스북"><img
+                                        src="./images/footer/sns_facebook_pri.svg" alt=""></a></li>
+                            <li class="sns-instagram"><a href="#" aria-label="인스타그램"><img
+                                        src="./images/footer/sns_instagram_pri.svg" alt=""></a></li>
+                            <li class="sns-naver"><a href="#" aria-label="블로그"><img
+                                        src="./images/footer/sns_naver_pri.svg" alt=""></a></li>
+                            <li class="sns-youtube"><a href="#" aria-label="유투브"><img
+                                        src="./images/footer/sns_youtube_pri.svg" alt=""></a></li>
+                            <li class="sns-twitter"><a href="#" aria-label="엑스(구 트위터)"><img
+                                        src="./images/footer/sns_twitter_pri.svg" alt=""></a></li>
+                        </ul>
+
+                        <div class="footer-family">
+                            <button class="link-btn" aria-haspopup="true" aria-expanded="false"
+                                aria-controls="link-list-5">
+                                소속 박물관
+                            </button>
+                            <div class="link-list-cover">
+                                <div class="link-list-scroll">
+                                    <ul id="link-list-5" class="link-list">
+                                        <li class="link-list-opt"><a href="#">국립경주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립광주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립전주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립대구박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립부여박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립공주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립진주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립청주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립김해박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립제주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립춘천박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립나주박물관</a></li>
+                                        <li class="link-list-opt"><a href="#">국립익산박물관</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-right-bottom">
+                        <ul class="footer-marks">
+                            <li><a href="#"><img src="./images/footer/footer_web_access.svg"
+                                        alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)"></a></li>
+                            <li><a href="#"><img src="./images/footer/footer_kogl.svg" alt="OPEN 공공누리 공공저작물 자유이용허락"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<script src="./js/header_footer_main.js"></script>
+
+<script>
+    var swiper = new Swiper('.online-contents-wrap', {
+        loop: true,
+
+        slidesPerView: 1,
+        spaceBetween: 20,
+        centeredSlides: false,
+
+        navigation: {
+            prevEl: '.prev-btn',
+            nextEl: '.next-btn',
+        },
+
+        breakpoints: {
+
+            // 아이패드
+            768: {
+                slidesPerView: 'auto',
+                spaceBetween: 50,
+                centeredSlides: true,
+            },
+
+            // PC
+            1280: {
+                slidesPerView: 'auto',
+                spaceBetween: 72,
+                centeredSlides: true,
+            }
+
+        },
+
+        on: {
+            init: function () {
+                updateOnlineSlider(this);
+            },
+
+            slideChange: function () {
+                updateOnlineSlider(this);
+            }
+        }
+    });
+
+
+    function updateOnlineSlider(swiper) {
+
+        const current = swiper.realIndex + 1;
+        const total = 6;
+
+        document.querySelector('.current').textContent = current;
+        document.querySelector('.total').textContent = total;
+
+        const progress = (current / total) * 100;
+
+        document.querySelector('.progress').style.width =
+            progress + '%';
+    }
+</script>
+
+<script>
+    const featuredSwiper = new Swiper('.M-exhibition-layout', {
+        slidesPerView: 1,
+        speed: 600,
+        loop: true,
+    });
+
+    const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
+        slidesPerView: 1.8,
+        spaceBetween: 20,
+        centeredSlides: true,
+        speed: 600,
+        loop: true,
+        allowTouchMove: true,
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1.8,
+                spaceBetween: 25,
+                centeredSlides: true
+            },
+
+            // iPad (769px ~ 1024px)
+            769: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                initialSlide: 1,
+                centeredSlides: false
+            },
+
+            // PC
+            1025: {
+                slidesPerView: 3,
+                spaceBetween: 48,
+                initialSlide: 1,
+                centeredSlides: false
+            },
+        },
+    });
+
+    const sliderButtons = document.querySelectorAll('.slider-button');
+    const prevButton = sliderButtons[0];
+    const nextButton = sliderButtons[1];
+
+    const currentNumber = document.querySelector('.page-number strong');
+    const totalNumber = document.querySelector('.M-number');
+    const progressValue = document.querySelector('.progress-value');
+
+    const totalSlides = Number(totalNumber.textContent);
+
+    function updateSliderInfo() {
+        const realIndex = exhibitionSwiper.realIndex;
+
+        const currentPage = window.innerWidth >= 1024
+            ? (realIndex === 0 ? totalSlides : realIndex)
+            : realIndex + 1;
+
+        currentNumber.textContent = currentPage;
+
+        const progress = (currentPage / totalSlides) * 100;
+        progressValue.style.width = progress + '%';
+    }
+
+    nextButton.addEventListener('click', function () {
+        featuredSwiper.slideNext(600);
+        exhibitionSwiper.slideNext(600);
+    });
+
+    prevButton.addEventListener('click', function () {
+        featuredSwiper.slidePrev(600);
+        exhibitionSwiper.slidePrev(600);
+    });
+
+    exhibitionSwiper.on('slideChange', function () {
+        updateSliderInfo();
+    });
+
+    updateSliderInfo();
+
+    // 알림 탭 메뉴 
+
+    const activeButton = document.querySelectorAll(".notice-tab button")
+
+    activeButton.forEach(function (button) {
+        button.addEventListener("click", function () {
+            activeButton.forEach(function (button) {
+                button.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        })
+    })
+
+</script>
+
+</html>
