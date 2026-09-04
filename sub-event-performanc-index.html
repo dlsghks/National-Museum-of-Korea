@@ -219,15 +219,7 @@
         <div class="event-content-wrap tab-active">
             <div class="filter-overlay"></div>
 
-            <!-- 행사 검색 -->
-            <form class="search-box">
-                <label for="event-name" class="sr-only">행사명 검색</label>
-                <input type="text" id="event-name" placeholder="행사명">
 
-                <button type="submit" id="event-search">
-                    <img src="./images-sub/icon/search.svg" alt="">
-                </button>
-            </form>
 
 
 
@@ -237,17 +229,29 @@
                 <!-- 행사 필터 -->
                 <div class="filter-motion">
                     <aside class="filter">
+                        <div class="filter-header">
 
-                        <h2>
-                            <span>
-                                <img src="./images-sub/icon/filter-filter.svg" alt="필터">
-                                필터
-                            </span>
+                            <h2>
+                                <!-- <span>
+                                    <img src="./images-sub/icon/filter-filter.svg" alt="필터">
+                                    필터
+                                </span> -->
 
-                            <button type="button" class="filter-close" aria-label="필터 닫기">
-                                ×
-                            </button>
-                        </h2>
+                                <button type="button" class="filter-close" aria-label="필터 닫기">
+                                    ×
+                                </button>
+                            </h2>
+
+                            <!-- 행사 검색 -->
+                            <form class="search-box">
+                                <label for="event-name" class="sr-only">행사명 검색</label>
+                                <input type="text" id="event-name" placeholder="행사명">
+
+                                <button type="submit" id="event-search">
+                                    <img src="./images-sub/icon/search.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
 
                         <ul>
 
@@ -794,206 +798,217 @@
             <div class="filter-overlay"></div>
 
             <!-- 공연 검색 -->
-            <form class="search-box">
-                <label for="perform-name" class="sr-only">공연명 검색</label>
 
-                <input type="text" id="perform-name" placeholder="공연명">
-
-
-                <button type="submit" id="perform-search">
-                    <img src="./images-sub/icon/search.svg" alt="">
-                </button>
-            </form>
 
             <div class="content">
 
                 <!-- 공연 필터 -->
-                <aside class="filter">
+                <div class="filter-motion">
+                    <aside class="filter">
+                        <div class="filter-header">
+                            <h2>
+                                <!-- <span>
+                                <img src="./images-sub/icon/filter-filter.svg" alt="필터">
+                                필터
+                            </span> -->
 
-                    <h2>
-                        <span>
-                            <img src="./images-sub/icon/filter-filter.svg" alt="필터">
-                            필터
-                        </span>
+                                <button type="button" class="filter-close" aria-label="필터 닫기">
+                                    ×
+                                </button>
+                            </h2>
+                            <!-- 공연검색 -->
+                            <form class="search-box">
+                                <label for="perform-name" class="sr-only">공연명 검색</label>
 
-                        <button type="button" class="filter-close" aria-label="필터 닫기">
-                            ×
-                        </button>
-                    </h2>
-
-                    <ul>
-
-                        <!-- 기간 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>기간</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
-
-                            <ul class="filter-list">
-
-                                <li>
-                                    <input type="checkbox" id="perform-past" name="perform-period" value="past">
-                                    <label for="perform-past">지난공연</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="perform-current" name="perform-period" value="current">
-                                    <label for="perform-current">현재공연</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="perform-upcoming" name="perform-period" value="upcoming">
-                                    <label for="perform-upcoming">예정공연</label>
-                                </li>
-
-                            </ul>
-                        </li>
+                                <input type="text" id="perform-name" placeholder="공연명">
 
 
-                        <!-- 장르 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>장르</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
+                                <button type="submit" id="perform-search">
+                                    <img src="./images-sub/icon/search.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
 
-                            <ul class="filter-list">
+                        <ul>
 
-                                <li>
-                                    <input type="checkbox" id="music" name="genre" value="music">
-                                    <label for="music">음악</label>
-                                </li>
+                            <!-- 기간 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>기간</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
 
-                                <li>
-                                    <input type="checkbox" id="gugak" name="genre" value="gugak">
-                                    <label for="gugak">국악</label>
-                                </li>
+                                <ul class="filter-list">
 
-                                <li>
-                                    <input type="checkbox" id="dance" name="genre" value="dance">
-                                    <label for="dance">무용</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="perform-past" name="perform-period" value="past">
+                                        <label for="perform-past">지난공연</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="theater-musical" name="genre" value="theater-musical">
-                                    <label for="theater-musical">연극 · 뮤지컬</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="perform-current" name="perform-period"
+                                            value="current">
+                                        <label for="perform-current">현재공연</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="traditional-art" name="genre" value="traditional-art">
-                                    <label for="traditional-art">전통예술</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="perform-upcoming" name="perform-period"
+                                            value="upcoming">
+                                        <label for="perform-upcoming">예정공연</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="etc" name="genre" value="etc">
-                                    <label for="etc">복합 · 기타</label>
-                                </li>
-
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
 
 
-                        <!-- 예매 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>예매</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
+                            <!-- 장르 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>장르</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
 
-                            <ul class="filter-list">
+                                <ul class="filter-list">
 
-                                <li>
-                                    <input type="checkbox" id="reservation-available" name="reservation"
-                                        value="available">
-                                    <label for="reservation-available">예매 가능</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="music" name="genre" value="music">
+                                        <label for="music">음악</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="reservation-closed" name="reservation" value="closed">
-                                    <label for="reservation-closed">예매 마감</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="gugak" name="genre" value="gugak">
+                                        <label for="gugak">국악</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="reservation-soldout" name="reservation" value="soldout">
-                                    <label for="reservation-soldout">매진</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="dance" name="genre" value="dance">
+                                        <label for="dance">무용</label>
+                                    </li>
 
-                            </ul>
-                        </li>
+                                    <li>
+                                        <input type="checkbox" id="theater-musical" name="genre"
+                                            value="theater-musical">
+                                        <label for="theater-musical">연극 · 뮤지컬</label>
+                                    </li>
 
+                                    <li>
+                                        <input type="checkbox" id="traditional-art" name="genre"
+                                            value="traditional-art">
+                                        <label for="traditional-art">전통예술</label>
+                                    </li>
 
-                        <!-- 관람연령 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>관람연령</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
+                                    <li>
+                                        <input type="checkbox" id="etc" name="genre" value="etc">
+                                        <label for="etc">복합 · 기타</label>
+                                    </li>
 
-                            <ul class="filter-list">
-
-                                <li>
-                                    <input type="checkbox" id="age-all" name="age" value="all">
-                                    <label for="age-all">전체 관람가</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="age-child" name="age" value="child">
-                                    <label for="age-child">영유아 · 어린이</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="age-youth" name="age" value="youth">
-                                    <label for="age-youth">청소년</label>
-                                </li>
-
-                                <li>
-                                    <input type="checkbox" id="age-adult" name="age" value="adult">
-                                    <label for="age-adult">성인</label>
-                                </li>
-
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
 
 
-                        <!-- 가격 -->
-                        <li>
-                            <button type="button" class="filter-category" aria-expanded="false">
-                                <span>가격</span>
-                                <img src="./images-sub/icon/filter-plus.svg" alt="">
-                            </button>
+                            <!-- 예매 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>예매</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
 
-                            <ul class="filter-list">
+                                <ul class="filter-list">
 
-                                <li>
-                                    <input type="checkbox" id="price-under-30000" name="perform-price"
-                                        value="under-30000">
-                                    <label for="price-under-30000">3만원 이하</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="reservation-available" name="reservation"
+                                            value="available">
+                                        <label for="reservation-available">예매 가능</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="price-30000-50000" name="perform-price"
-                                        value="30000-50000">
-                                    <label for="price-30000-50000">3~5만원</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="reservation-closed" name="reservation"
+                                            value="closed">
+                                        <label for="reservation-closed">예매 마감</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="price-50000-70000" name="perform-price"
-                                        value="50000-70000">
-                                    <label for="price-50000-70000">5~7만원</label>
-                                </li>
+                                    <li>
+                                        <input type="checkbox" id="reservation-soldout" name="reservation"
+                                            value="soldout">
+                                        <label for="reservation-soldout">매진</label>
+                                    </li>
 
-                                <li>
-                                    <input type="checkbox" id="price-over-70000" name="perform-price"
-                                        value="over-70000">
-                                    <label for="price-over-70000">7만원 초과</label>
-                                </li>
+                                </ul>
+                            </li>
 
-                            </ul>
-                        </li>
 
-                    </ul>
-                </aside>
+                            <!-- 관람연령 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>관람연령</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
+
+                                <ul class="filter-list">
+
+                                    <li>
+                                        <input type="checkbox" id="age-all" name="age" value="all">
+                                        <label for="age-all">전체 관람가</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="age-child" name="age" value="child">
+                                        <label for="age-child">영유아 · 어린이</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="age-youth" name="age" value="youth">
+                                        <label for="age-youth">청소년</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="age-adult" name="age" value="adult">
+                                        <label for="age-adult">성인</label>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <!-- 가격 -->
+                            <li>
+                                <button type="button" class="filter-category" aria-expanded="false">
+                                    <span>가격</span>
+                                    <img src="./images-sub/icon/filter-plus.svg" alt="">
+                                </button>
+
+                                <ul class="filter-list">
+
+                                    <li>
+                                        <input type="checkbox" id="price-under-30000" name="perform-price"
+                                            value="under-30000">
+                                        <label for="price-under-30000">3만원 이하</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="price-30000-50000" name="perform-price"
+                                            value="30000-50000">
+                                        <label for="price-30000-50000">3~5만원</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="price-50000-70000" name="perform-price"
+                                            value="50000-70000">
+                                        <label for="price-50000-70000">5~7만원</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="price-over-70000" name="perform-price"
+                                            value="over-70000">
+                                        <label for="price-over-70000">7만원 초과</label>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </aside>
+                </div>
 
 
                 <!-- 공연 결과 -->

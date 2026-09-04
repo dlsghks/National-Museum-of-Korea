@@ -16,7 +16,7 @@
 .perform-content-wrap {
     display: none;
     position: relative;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 /* 현재 선택된 영역만 표시 */
@@ -226,35 +226,70 @@ main {
    검색
 ========================================================= */
 
-.search-box {
+.filter-header {
+    position: relative;
+    width: 250px;
+    height: 61px;
+}
+
+.filter-header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 61px;
+    margin: 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--Primary-color);
+    
+    /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+.filter-header .search-box {
     position: absolute;
-    top: -50px;
-    right: 0;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
 
     display: flex;
-    gap: 3px;
+    align-items: center; /* 추가 */
+    gap: 11px;
+    width: auto;
+    margin: 0;
 }
 
 .search-box>input {
-    width: 367px;
-    height: 40px;
+    width: 190px;
+    height: 37px;
 
-    padding-left: 10px;
+    padding-left: 8px;
+    background-color: rgba(0,0,0, 0.2);
 
-    border: 1px solid var(--border-color);
+    border: 0.2px solid var(--border-color);
     border-radius: 4px;
+    color: rgba(255,255,255,0.8)
+    /* color: rgba(0,0,0,0.3); */
+    /* color:#fff; */
+    /* color: var(--border-color); */
+    
 }
+
+
 
 .search-box>button {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 72px;
+    width: 27px;
     height: 40px;
 
     color: #fff;
-    background-color: var(--Primary-color);
+    /* background-color: var(--Primary-color); */
     border-radius: 4px;
 }
 
@@ -278,7 +313,7 @@ main {
 .filter {
     width: 250px;
     flex: 0 0 250px;
-    margin-top: 179px;
+    margin-top: 2px;
 
     
 }
@@ -646,7 +681,7 @@ main {
 
     gap: 18px;
 
-    padding-top: 40px;
+    /* padding-top: 0px; */
 }
 
 .result-header {
