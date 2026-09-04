@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국립중앙박물관</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./font/font.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sub-relic.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top Type-PC">
+            <div class="header-inner inner">
+                <ul class="header-top-gnb">
+                    <li><a href="#" class="top-gnb-item">로그인</a></li>
+                    <li>
+                        <div class="select-box select-box-lang">
+                            <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                aria-expanded="false" aria-controls="lang-list">KOR</button>
+                            <ul id="lang-list" class="select-list" role="listbox" aria-labelledby="lang-btn">
+                                <li class="select-list-opt" role="option" aria-selected="true"><span>KOR</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>ENG</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>JPN</span></li>
+                                <li class="select-list-opt" role="option" aria-selected="false"><span>CHN</span></li>
+                            </ul>
+                        </div>
+                        <!-- </li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-inner inner">
+                <div class="header-left">
+                    <h1 class="header-logo"><a href="./index.html"><img src="./images/logo/logo-W.svg"
+                                alt="국립중앙박물관 로고"></a></h1>
+                    <nav class="header-gnb" aria-label="주 메뉴">
+                        <ul class="gnb-main">
+                            <li class="gnb-main-list">
+                                <a href="#">관람</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="./sub-index.html">관람안내</a></li>
+                                        <li class="gnb-sub-list"><a href="#">예약</a></li>
+                                        <li class="gnb-sub-list"><a href="#">전시해설</a></li>
+                                        <li class="gnb-sub-list"><a href="#">편의시설</a></li>
+                                        <li class="gnb-sub-list"><a href="#">오시는 길</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">전시</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="./sub_h.html">상실전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">특별전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">온라인 전시</a></li>
+                                        <li class="gnb-sub-list"><a href="#">공간 오감</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">소장품</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">소장품 검색</a></li>
+                                        <li class="gnb-sub-list"><a href="#">대표 소장품</a></li>
+                                        <li class="gnb-sub-list"><a href="./sub-relic.html">국보 · 보물</a></li>
+                                        <li class="gnb-sub-list"><a href="#">디지털 소장품</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">문화행사 · 교육</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="./sub-event-performanc-index.html">행사 · 공연</a>
+                                        </li>
+                                        <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
+                                        <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">학술</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">학술행사</a></li>
+                                        <li class="gnb-sub-list"><a href="#">연구 자료</a></li>
+                                        <li class="gnb-sub-list"><a href="#">정기간행물</a></li>
+                                        <li class="gnb-sub-list"><a href="#">도서관</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">소식</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">공지사항</a></li>
+                                        <li class="gnb-sub-list"><a href="#">보도자료</a></li>
+                                        <li class="gnb-sub-list"><a href="#">채용 · 공고</a></li>
+                                        <li class="gnb-sub-list"><a href="#">이벤트 · 참여</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="gnb-main-list">
+                                <a href="#">박물관 소개</a>
+                                <div class="gnb-sub-wrap">
+                                    <ul class="gnb-sub">
+                                        <li class="gnb-sub-list"><a href="#">박물관 개요</a></li>
+                                        <li class="gnb-sub-list"><a href="./sub-history.html">역사 · 연혁</a></li>
+                                        <li class="gnb-sub-list"><a href="#">조직</a></li>
+                                        <li class="gnb-sub-list"><a href="#">시설안내</a></li>
+                                        <li class="gnb-sub-list"><a href="#">미션 · 비전</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="header-top-gnb Type-Mobile">
+                            <li><a href="./login-index.html" class="top-gnb-item">로그인</a></li>
+                            <li>
+                                <div class="select-box select-box-lang">
+                                    <button id="lang-btn" class="top-gnb-item select-btn" aria-haspopup="listbox"
+                                        aria-expanded="false" aria-controls="lang-list">KOR</button>
+                                    <div>
+                                        <ul id="lang-list" class="select-list" role="listbox"
+                                            aria-labelledby="lang-btn">
+                                            <li class="select-list-opt" role="option" aria-selected="true">
+                                                <span>KOR</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>ENG</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>JPN</span>
+                                            </li>
+                                            <li class="select-list-opt" role="option" aria-selected="false">
+                                                <span>CHN</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <button type="button" class="button-search Type-PC" aria-label="검색" aria-haspopup="true"></button>
+                    <!-- 모바일 -->
+                    <button type="button" class="button-m-menu Type-Mobile" aria-label="메뉴" aria-haspopup="true">
+                        <div class="menu-item">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="banner-wrap inner">
+            <div class="banner">
+                <img src="./images/relic/relic_banner.svg" alt="국보 보물 검색 배너">
+            </div>
+            <div class="channel">
+                <a class="home-channel" href="./index.html">
+                    <img src="./images-sub/icon/page-home.svg" alt="home-icon">
+                </a>
+                <img class="arrow" src="./images-sub/icon/arrow-right.svg" alt="오른쪽 화살표">
+                <div class="second-channel">소장품</div>
+                <img class="arrow" src="./images-sub/icon/arrow-right.svg" alt="오른쪽 화살표">
+                <div>국보 · 보물 검색</div>
+            </div>
+            <div class="text-box">
+                <div class="page">
+                    <h2>국보 · 보물 검색</h2>
+                </div>
+                <div class="dec">국립중앙박물관이 소장한 국보와 보물을 다양한 조건으로 검색해보세요.
+                    유물의 명칭과 시대, 재질 등 원하는 정보를 통해 관심 있는 문화유산을 쉽고 편리하게 찾아볼 수 있습니다.</div>
+            </div>
+        </div>
+
+        <div class="relic-page inner">
+            <div class="search-wrap">
+                <div class="input-wrap">
+                    <label for="search">검색하기</label>
+                    <input type="text" id="search">
+                </div>
+                <div class="btn-wrap">
+                    <button>
+                        <img src="./images/icon/search_w.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-list-wrap">
+                <button class="clear-btn">
+                    <p>초기화</p>
+                    <img src="./images/icon/clear.svg" alt="">
+                </button>
+            </div>
+
+            <div class="relic-wrap">
+                <div class="filter-wrap">
+
+                    <div class="filter-top">
+                        <span>필터</span>
+                        <button type="button" class="filter-close-btn" aria-label="필터 닫기"></button>
+                    </div>
+
+                    <div class="filter-button-wrap">
+                        <button class="filter-button">
+                            <span>국적</span>
+                        </button>
+                        <div class="filter-list">
+                            <ul>
+                                <li><button>한국</button></li>
+                                <li><button>중국</button></li>
+                                <li><button>일본</button></li>
+                                <li><button>아시아</button></li>
+                                <li><button>유럽</button></li>
+                                <li><button>기타</button></li>
+                                <li><button>아메리카</button></li>
+                                <li><button>중동</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-wrap">
+                        <button class="filter-button">
+                            <span>시대</span>
+                        </button>
+                        <div class="filter-list">
+                            <ul>
+                                <li><button>조선</button></li>
+                                <li><button>일제강점</button></li>
+                                <li><button>원</button></li>
+                                <li><button>고려</button></li>
+                                <li><button>청동기</button></li>
+                                <li><button>신라</button></li>
+                                <li><button>시대미상</button></li>
+                                <li><button>통일신라</button></li>
+                                <li><button>백제</button></li>
+                                <li><button>원삼국</button></li>
+                                <li><button>신석기</button></li>
+                                <li><button>낙랑</button></li>
+                                <li><button>삼국</button></li>
+                                <li><button>구석기</button></li>
+                                <li><button>광복이후</button></li>
+                                <li><button>대한제국</button></li>
+                                <li><button>가야</button></li>
+                                <li><button>고구려</button></li>
+                                <li><button>초기철기</button></li>
+                                <li><button>송</button></li>
+                                <li><button>청</button></li>
+                                <li><button>려말선초</button></li>
+                                <li><button>근대</button></li>
+                                <li><button>에도</button></li>
+                                <li><button>라말여초</button></li>
+                                <li><button>야요이</button></li>
+                                <li><button>당</button></li>
+                                <li><button>전국</button></li>
+                                <li><button>남북조</button></li>
+                                <li><button>1945년이후</button></li>
+                                <li><button>전한</button></li>
+                                <li><button>고훈</button></li>
+                                <li><button>후한</button></li>
+                                <li><button>발해</button></li>
+                                <li><button>진</button></li>
+                                <li><button>조몬</button></li>
+                                <li><button>2000년 이후</button></li>
+                                <li><button>명</button></li>
+                                <li><button>모모야마</button></li>
+                                <li><button>나라</button></li>
+                                <li><button>가마쿠라</button></li>
+                                <li><button>무로마치</button></li>
+                                <li><button>하쿠호</button></li>
+                                <li><button>오대</button></li>
+                                <li><button>상</button></li>
+                                <li><button>춘추</button></li>
+                                <li><button>서주</button></li>
+                                <li><button>동진</button></li>
+                                <li><button>신</button></li>
+                                <li><button>남진</button></li>
+                                <li><button>아스카</button></li>
+                                <li><button>수</button></li>
+                                <li><button>헤이안</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-wrap">
+                        <button class="filter-button">
+                            <span>출토지</span>
+                        </button>
+                        <div class="filter-list">
+                            <ul>
+                                <li><button>경기도</button></li>
+                                <li><button>전라남도</button></li>
+                                <li><button>경상북도</button></li>
+                                <li><button>서울특별시</button></li>
+                                <li><button>경상남도</button></li>
+                                <li><button>충청남도</button></li>
+                                <li><button>인천광역시</button></li>
+                                <li><button>부산광역시</button></li>
+                                <li><button>강원도</button></li>
+                                <li><button>충청북도</button></li>
+                                <li><button>전라북도</button></li>
+                                <li><button>대구광역시</button></li>
+                                <li><button>울산광역시</button></li>
+                                <li><button>제주도</button></li>
+                                <li><button>대전광역시</button></li>
+                                <li><button>광주광역시</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-wrap">
+                        <button class="filter-button">
+                            <span>출토지 (시·군·구)</span>
+                        </button>
+                        <div class="filter-list">
+                            <ul>
+                                <li><button>신안군</button></li>
+                                <li><button>화성군</button></li>
+                                <li><button>용인시</button></li>
+                                <li><button>파주시</button></li>
+                                <li><button>경주시</button></li>
+                                <li><button>김포시</button></li>
+                                <li><button>개성부근</button></li>
+                                <li><button>강진군</button></li>
+                                <li><button>안성시</button></li>
+                                <li><button>여주군</button></li>
+                                <li><button>가평군</button></li>
+                                <li><button>오산시</button></li>
+                                <li><button>평택시</button></li>
+                                <li><button>은평구</button></li>
+                                <li><button>광주군</button></li>
+                                <li><button>강동구</button></li>
+                                <li><button>하남시</button></li>
+                                <li><button>남양주시</button></li>
+                                <li><button>고양시</button></li>
+                                <li><button>옹진군</button></li>
+                                <li><button>영도구</button></li>
+                                <li><button>시흥시</button></li>
+                                <li><button>부여군</button></li>
+                                <li><button>동래구</button></li>
+                                <li><button>송파구</button></li>
+                                <li><button>창녕군</button></li>
+                                <li><button>김해시</button></li>
+                                <li><button>공주시</button></li>
+                                <li><button>연천군</button></li>
+                                <li><button>양주군</button></li>
+                                <li><button>종로구</button></li>
+                                <li><button>중구</button></li>
+                                <li><button>양평군</button></li>
+                                <li><button>광진구</button></li>
+                                <li><button>포천군</button></li>
+                                <li><button>이천시</button></li>
+                                <li><button>고령군</button></li>
+                                <li><button>구리시</button></li>
+                                <li><button>천안시</button></li>
+                                <li><button>서구</button></li>
+                                <li><button>울릉군</button></li>
+                                <li><button>청주시</button></li>
+                                <li><button>수원시</button></li>
+                                <li><button>성남시</button></li>
+                                <li><button>춘천시</button></li>
+                                <li><button>고성군</button></li>
+                                <li><button>양산시</button></li>
+                                <li><button>나주시</button></li>
+                                <li><button>강북구</button></li>
+                                <li><button>과천시</button></li>
+                                <li><button>중랑구</button></li>
+                                <li><button>함안군</button></li>
+                                <li><button>강화군</button></li>
+                                <li><button>의성군</button></li>
+                                <li><button>안산시</button></li>
+                                <li><button>평창군</button></li>
+                                <li><button>서산시</button></li>
+                                <li><button>울주군</button></li>
+                                <li><button>강릉시</button></li>
+                                <li><button>부안군</button></li>
+                                <li><button>보령시</button></li>
+                                <li><button>안양시</button></li>
+                                <li><button>군포시</button></li>
+                                <li><button>부천시</button></li>
+                                <li><button>청원군</button></li>
+                                <li><button>보은군</button></li>
+                                <li><button>화성시</button></li>
+                                <li><button>원주시</button></li>
+                                <li><button>충주시</button></li>
+                                <li><button>양양군</button></li>
+                                <li><button>밀양시</button></li>
+                                <li><button>성북구</button></li>
+                                <li><button>남구</button></li>
+                                <li><button>홍천군</button></li>
+                                <li><button>횡성군</button></li>
+                                <li><button>성주군</button></li>
+                                <li><button>영주시</button></li>
+                                <li><button>옥천군</button></li>
+                                <li><button>달성군</button></li>
+                                <li><button>익산시</button></li>
+                                <li><button>안동시</button></li>
+                                <li><button>영천시</button></li>
+                                <li><button>의정부시</button></li>
+                                <li><button>삼척시</button></li>
+                                <li><button>정선군</button></li>
+                                <li><button>철원군</button></li>
+                                <li><button>양구군</button></li>
+                                <li><button>창원시</button></li>
+                                <li><button>영동군</button></li>
+                                <li><button>진주시</button></li>
+                                <li><button>음성군</button></li>
+                                <li><button>상주시</button></li>
+                                <li><button>노원구</button></li>
+                                <li><button>아산시</button></li>
+                                <li><button>김천시</button></li>
+                                <li><button>관악구</button></li>
+                                <li><button>청양군</button></li>
+                                <li><button>제천시</button></li>
+                                <li><button>청도군</button></li>
+                                <li><button>사하구</button></li>
+                                <li><button>서대문구</button></li>
+                                <li><button>예천군</button></li>
+                                <li><button>합천군</button></li>
+                                <li><button>인제군</button></li>
+                                <li><button>화천군</button></li>
+                                <li><button>진천군</button></li>
+                                <li><button>용산구</button></li>
+                                <li><button>산청군</button></li>
+                                <li><button>고창군</button></li>
+                                <li><button>남원시</button></li>
+                                <li><button>장성군</button></li>
+                                <li><button>거창군</button></li>
+                                <li><button>평택군</button></li>
+                                <li><button>성동구</button></li>
+                                <li><button>영월군</button></li>
+                                <li><button>울산시</button></li>
+                                <li><button>장흥군</button></li>
+                                <li><button>정읍시</button></li>
+                                <li><button>양주시</button></li>
+                                <li><button>부평구</button></li>
+                                <li><button>당진군</button></li>
+                                <li><button>제주시</button></li>
+                                <li><button>김해군</button></li>
+                                <li><button>유성구</button></li>
+                                <li><button>예산군</button></li>
+                                <li><button>강서구</button></li>
+                                <li><button>김제시</button></li>
+                                <li><button>괴산군</button></li>
+                                <li><button>함양군</button></li>
+                                <li><button>문경시</button></li>
+                                <li><button>화순군</button></li>
+                                <li><button>홍성군</button></li>
+                                <li><button>장수군</button></li>
+                                <li><button>칠곡군</button></li>
+                                <li><button>연기군</button></li>
+                                <li><button>동해시</button></li>
+                                <li><button>영덕군</button></li>
+                                <li><button>강남구</button></li>
+                                <li><button>전주시</button></li>
+                                <li><button>도봉구</button></li>
+                                <li><button>무안군</button></li>
+                                <li><button>광양시</button></li>
+                                <li><button>금천구</button></li>
+                                <li><button>하동군</button></li>
+                                <li><button>의령군</button></li>
+                                <li><button>동구</button></li>
+                                <li><button>봉화군</button></li>
+                                <li><button>금산군</button></li>
+                                <li><button>논산시</button></li>
+                                <li><button>진해시</button></li>
+                                <li><button>태백시</button></li>
+                                <li><button>남해군</button></li>
+                                <li><button>속초시</button></li>
+                                <li><button>곡성군</button></li>
+                                <li><button>포항시</button></li>
+                                <li><button>서천군</button></li>
+                                <li><button>동대문구</button></li>
+                                <li><button>달서구</button></li>
+                                <li><button>진도군</button></li>
+                                <li><button>완주군</button></li>
+                                <li><button>순창군</button></li>
+                                <li><button>순천시</button></li>
+                                <li><button>마산시</button></li>
+                                <li><button>진안군</button></li>
+                                <li><button>보성군</button></li>
+                                <li><button>단양군</button></li>
+                                <li><button>영등포구</button></li>
+                                <li><button>고흥군</button></li>
+                                <li><button>영암군</button></li>
+                                <li><button>동작구</button></li>
+                                <li><button>여천시</button></li>
+                                <li><button>임실군</button></li>
+                                <li><button>구미시</button></li>
+                                <li><button>양천구</button></li>
+                                <li><button>사천시</button></li>
+                                <li><button>완도군</button></li>
+                                <li><button>북제주군</button></li>
+                                <li><button>영광군</button></li>
+                                <li><button>북구</button></li>
+                                <li><button>태안군</button></li>
+                                <li><button>광산구</button></li>
+                                <li><button>무주군</button></li>
+                                <li><button>동두천시</button></li>
+                                <li><button>경산시</button></li>
+                                <li><button>송탄시</button></li>
+                                <li><button>사상구</button></li>
+                                <li><button>해남군</button></li>
+                                <li><button>군위군</button></li>
+                                <li><button>거제시</button></li>
+                                <li><button>대덕구</button></li>
+                                <li><button>울진군</button></li>
+                                <li><button>목포시</button></li>
+                                <li><button>광명시</button></li>
+                                <li><button>천안군</button></li>
+                                <li><button>남제주군</button></li>
+                                <li><button>구례군</button></li>
+                                <li><button>통영시</button></li>
+                                <li><button>마포구</button></li>
+                                <li><button>서초구</button></li>
+                                <li><button>서귀포시</button></li>
+                                <li><button>담양군</button></li>
+                                <li><button>의왕시</button></li>
+                                <li><button>청송군</button></li>
+                                <li><button>여수시</button></li>
+                                <li><button>부산진구</button></li>
+                                <li><button>삼천포시</button></li>
+                                <li><button>해운대구</button></li>
+                                <li><button>함평군</button></li>
+                                <li><button>여천군</button></li>
+                                <li><button>영양군</button></li>
+                                <li><button>계룡시</button></li>
+                                <li><button>금정구</button></li>
+                                <li><button>구로구</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-wrap">
+                        <button class="filter-button">
+                            <span>재질</span>
+                        </button>
+                        <div class="filter-list">
+                            <ul>
+                                <li><button>도자기</button></li>
+                                <li><button>흙</button></li>
+                                <li><button>유리/보석</button></li>
+                                <li><button>금속</button></li>
+                                <li><button>종이</button></li>
+                                <li><button>돌</button></li>
+                                <li><button>나무</button></li>
+                                <li><button>섬유</button></li>
+                                <li><button>뼈/뿔/조개</button></li>
+                                <li><button>기타</button></li>
+                                <li><button>칠기</button></li>
+                                <li><button>가죽/털</button></li>
+                                <li><button>씨앗</button></li>
+                                <li><button>풀</button></li>
+                                <li><button>합성재질</button></li>
+                                <li><button>광물</button></li>
+                                <li><button>고무</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-wrap">
+                        <button class="filter-button">
+                            <span>재질</span>
+                        </button>
+                        <div class="filter-list">
+                            <ul>
+                                <li><button>유리</button></li>
+                                <li><button>청자</button></li>
+                                <li><button>연질</button></li>
+                                <li><button>백자</button></li>
+                                <li><button>경질</button></li>
+                                <li><button>동합금</button></li>
+                                <li><button>철</button></li>
+                                <li><button>분청</button></li>
+                                <li><button>청동</button></li>
+                                <li><button>청백자</button></li>
+                                <li><button>와질</button></li>
+                                <li><button>잡유</button></li>
+                                <li><button>견</button></li>
+                                <li><button>수골</button></li>
+                                <li><button>흑유</button></li>
+                                <li><button>금동</button></li>
+                                <li><button>합성수지</button></li>
+                                <li><button>은</button></li>
+                                <li><button>양지</button></li>
+                                <li><button>옥</button></li>
+                                <li><button>화강암</button></li>
+                                <li><button>패각</button></li>
+                                <li><button>금</button></li>
+                                <li><button>사암</button></li>
+                                <li><button>갈유</button></li>
+                                <li><button>점판암</button></li>
+                                <li><button>편마암</button></li>
+                                <li><button>백탁유</button></li>
+                                <li><button>수각</button></li>
+                                <li><button>대나무</button></li>
+                                <li><button>마</button></li>
+                                <li><button>옹기</button></li>
+                                <li><button>흑칠</button></li>
+                                <li><button>저</button></li>
+                                <li><button>천목</button></li>
+                                <li><button>동</button></li>
+                                <li><button>연유</button></li>
+                                <li><button>소조</button></li>
+                                <li><button>마노</button></li>
+                                <li><button>수정</button></li>
+                                <li><button>면</button></li>
+                                <li><button>자단목</button></li>
+                                <li><button>조골</button></li>
+                                <li><button>나전</button></li>
+                                <li><button>주석</button></li>
+                                <li><button>안산암</button></li>
+                                <li><button>어골</button></li>
+                                <li><button>황동</button></li>
+                                <li><button>인골</button></li>
+                                <li><button>대리석</button></li>
+                                <li><button>박달나무</button></li>
+                                <li><button>응회암</button></li>
+                                <li><button>저지</button></li>
+                                <li><button>주칠</button></li>
+                                <li><button>혈암</button></li>
+                                <li><button>백동</button></li>
+                                <li><button>석간주</button></li>
+                                <li><button>복합금속</button></li>
+                                <li><button>화각</button></li>
+                                <li><button>오동나무</button></li>
+                                <li><button>백태청유자</button></li>
+                                <li><button>소나무</button></li>
+                                <li><button>합성섬유</button></li>
+                                <li><button>현무암</button></li>
+                                <li><button>삼채</button></li>
+                                <li><button>상아</button></li>
+                                <li><button>호박</button></li>
+                                <li><button>섬록암</button></li>
+                                <li><button>납</button></li>
+                                <li><button>느티나무</button></li>
+                                <li><button>과실</button></li>
+                                <li><button>곡물</button></li>
+                                <li><button>오채</button></li>
+                                <li><button>대모</button></li>
+                                <li><button>볏짚</button></li>
+                                <li><button>피나무</button></li>
+                                <li><button>인모</button></li>
+                                <li><button>비취</button></li>
+                                <li><button>천하석</button></li>
+                                <li><button>먹</button></li>
+                                <li><button>석회암</button></li>
+                                <li><button>알루미늄</button></li>
+                                <li><button>싸리나무</button></li>
+                                <li><button>모직</button></li>
+                                <li><button>코코낫열매</button></li>
+                                <li><button>인주</button></li>
+                                <li><button>고리버들</button></li>
+                                <li><button>감나무</button></li>
+                                <li><button>향나무</button></li>
+                                <li><button>은행나무</button></li>
+                                <li><button>어피</button></li>
+                                <li><button>말총</button></li>
+                                <li><button>배나무</button></li>
+                                <li><button>산호</button></li>
+                                <li><button>등나무</button></li>
+                                <li><button>상지</button></li>
+                                <li><button>석고</button></li>
+                                <li><button>참나무</button></li>
+                                <li><button>표피</button></li>
+                                <li><button>숯</button></li>
+                                <li><button>밤나무</button></li>
+                                <li><button>인조가죽</button></li>
+                                <li><button>밀랍</button></li>
+                                <li><button>원소</button></li>
+                                <li><button>주목</button></li>
+                                <li><button>양피</button></li>
+                                <li><button>느릅나무</button></li>
+                                <li><button>알껍질</button></li>
+                                <li><button>안피지</button></li>
+                                <li><button>가죽나무</button></li>
+                                <li><button>왕골</button></li>
+                                <li><button>밀화</button></li>
+                                <li><button>호도나무</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relic-list-wrap">
+                    <div class="relic-list">
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_01.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>경주 부부총 금귀걸이</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 신라</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_02.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>녹유 뼈단지</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 통일신라</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_03.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>금동관음보살좌상</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_04.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>평양 석암리 금제 띠고리</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 낙랑</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_05.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>청자 참외 모양 병</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_06.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>청동 은입사 물가풍경 무늬 정병</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_07.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>청자 철채 퇴화 앞무늬</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_08.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>백자 철화 포도 원숭이 무늬 항아리</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 조선</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_09.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>금동 반가사유상</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 삼국</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_10.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>금동보살입상</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고구려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_11.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>청자 상감 구름 학무늬 매병</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relic">
+                            <img src="./images/relic/relic_img_12.svg" alt="">
+                            <div class="desc-box">
+                                <div class="desc-box-left">
+                                    <h3>청자 음각 「상약국」명운룡문 합</h3>
+                                    <div class="c-t">
+                                        <p>국적/시대</p>
+                                        <p>한국 - 고려</p>
+                                    </div>
+                                </div>
+                                <div class="desc-box-right">
+                                    <div>
+                                        <a>More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <nav class="pagination" aria-label="페이지 이동">
+                        <button type="button" class="page-first" aria-label="첫 페이지">«</button>
+                        <button type="button" class="page-prev" aria-label="이전 페이지">‹</button>
+
+                        <ul class="page-list">
+                            <!-- JavaScript로 생성 -->
+                        </ul>
+
+                        <button type="button" class="page-next" aria-label="다음 페이지">›</button>
+                        <button type="button" class="page-last" aria-label="마지막 페이지">»</button>
+                    </nav>
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <button type="button" class="floating-filter-btn" aria-label="필터 열기">
+        <img src="./images/icon/filter.svg" alt="필터">
+    </button>
+
+    <div class="filter-overlay"></div>
+
+
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="inner">
+                <div class="footer-link-tit">
+                    <p>세계와 소통하는 문화공관,</p>
+                    <p>국립중앙박물관입니다.</p>
+                </div>
+                <ul class="footer-link-wrap">
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-1">
+                                교육 서비스
+                            </button>
+                            <ul id="link-list-1" class="link-list">
+                                <li class="link-list-opt"><button>교육플랫폼 모두(MODU)</button></li>
+                                <li class="link-list-opt"><button>학예사 자격증</button></li>
+                                <li class="link-list-opt"><button>어린이박물관</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-2">
+                                디지털 콘텐츠
+                            </button>
+                            <ul id="link-list-2" class="link-list">
+                                <li class="link-list-opt"><button>e뮤지엄</button></li>
+                                <li class="link-list-opt"><button>외규장각 의궤 원문</button></li>
+                                <li class="link-list-opt"><button>조선총독부박물관 문서</button></li>
+                                <li class="link-list-opt"><button>유리건판</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-3">
+                                박물관 서비스
+                            </button>
+                            <ul id="link-list-3" class="link-list">
+                                <li class="link-list-opt"><button>박물관상품관</button></li>
+                                <li class="link-list-opt"><button>박물관신문</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-link">
+                            <button class="link-btn" aria-expanded="false" aria-controls="link-list-4">
+                                참여 프로그램
+                            </button>
+                            <ul id="link-list-4" class="link-list">
+                                <li class="link-list-opt"><button>청년멘토</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner">
+                <div class="footer-left">
+                    <p class="footer-logo"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></p>
+
+                    <div class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><button>개인정보처리방침</button></li>
+                            <li><button>이메일무단수집거부</button></li>
+                            <li><button>저작권정책</button></li>
+                            <li><button>이용약관</button></li>
+                            <li><button>클린신고센터</button></li>
+                        </ul>
+
+                        <buttonddress>
+                            <p>04383 서울시 용산구 서빙고로 137(용산동6가 168-6)</p>
+                            <p>대표전화 <button href="tel:02-2077-9000" class="tel">02-2077-9000</button></p>
+                            <p>&copy; National Museum of Korea.</p>
+                            </address>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-right-top">
+                        <ul class="footer-sns">
+                            <li class="sns-facebook"><button aria-label="페이스북"><img
+                                        src="./images/footer/sns_facebook_pri.svg" alt=""></button></li>
+                            <li class="sns-instagram"><button aria-label="인스타그램"><img
+                                        src="./images/footer/sns_instagram_pri.svg" alt=""></button></li>
+                            <li class="sns-naver"><button aria-label="블로그"><img src="./images/footer/sns_naver_pri.svg"
+                                        alt=""></button></li>
+                            <li class="sns-youtube"><button aria-label="유투브"><img
+                                        src="./images/footer/sns_youtube_pri.svg" alt=""></button></li>
+                            <li class="sns-twitter"><button aria-label="엑스(구 트위터)"><img
+                                        src="./images/footer/sns_twitter_pri.svg" alt=""></button></li>
+                        </ul>
+
+                        <div class="footer-family">
+                            <button class="link-btn" aria-haspopup="true" aria-expanded="false"
+                                aria-controls="link-list-5">
+                                소속 박물관
+                            </button>
+                            <div class="link-list-cover">
+                                <div class="link-list-scroll">
+                                    <ul id="link-list-5" class="link-list">
+                                        <li class="link-list-opt"><button>국립경주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립광주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립전주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립대구박물관</button></li>
+                                        <li class="link-list-opt"><button>국립부여박물관</button></li>
+                                        <li class="link-list-opt"><button>국립공주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립진주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립청주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립김해박물관</button></li>
+                                        <li class="link-list-opt"><button>국립제주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립춘천박물관</button></li>
+                                        <li class="link-list-opt"><button>국립나주박물관</button></li>
+                                        <li class="link-list-opt"><button>국립익산박물관</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-right-bottom">
+                        <ul class="footer-marks">
+                            <li><button><img src="./images/footer/footer_web_access.svg"
+                                        alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)"></button></li>
+                            <li><button><img src="./images/footer/footer_kogl.svg"
+                                        alt="OPEN 공공누리 공공저작물 자유이용허락"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<script src="./js/header_footer_main.js"></script>
+<script>
+    const filterButton = document.querySelectorAll(".filter-button");
+    const optionButton = document.querySelectorAll(".filter-list button");
+
+    filterButton.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const filterList = button.nextElementSibling;
+            filterList.classList.toggle("active");
+            button.classList.toggle("active");
+        });
+    });
+
+    optionButton.forEach(function (button) {
+        button.addEventListener("click", function () {
+            button.classList.toggle("active");
+        });
+    });
+
+
+
+    // ================= 페이지네이션 스크립트 =================
+    const totalPages = 20; // 전체 페이지 수
+    let currentPage = 1;
+
+    const pageList = document.querySelector(".page-list");
+
+    const firstButton = document.querySelector(".page-first");
+    const prevButton = document.querySelector(".page-prev");
+    const nextButton = document.querySelector(".page-next");
+    const lastButton = document.querySelector(".page-last");
+
+    // 페이지네이션 렌더링 함수
+    function renderPagination() {
+        pageList.innerHTML = "";
+
+        let startPage;
+        let endPage;
+
+        /* 페이지 숫자 범위 계산 */
+        if (totalPages <= 5) {
+            startPage = 1;
+            endPage = totalPages;
+        } else if (currentPage <= 3) {
+            startPage = 1;
+            endPage = 5;
+        } else if (currentPage >= totalPages - 2) {
+            startPage = totalPages - 4;
+            endPage = totalPages;
+        } else {
+            startPage = currentPage - 2;
+            endPage = currentPage + 2;
+        }
+
+        /* 페이지 숫자 DOM 생성 */
+        for (let page = startPage; page <= endPage; page++) {
+            const li = document.createElement("li");
+
+            if (page === currentPage) {
+                // 현재 페이지 (strong)
+                const strong = document.createElement("strong");
+                strong.textContent = page;
+                strong.setAttribute("aria-current", "page");
+                li.appendChild(strong);
+            } else {
+                // 다른 페이지 (button)
+                const button = document.createElement("button");
+                button.type = "button";
+                button.textContent = page;
+                button.addEventListener("click", () => {
+                    goToPage(page);
+                });
+                li.appendChild(button);
+            }
+
+            pageList.appendChild(li);
+        }
+
+        /* 이전/다음 버튼 활성화 및 비활성화 처리 */
+        firstButton.disabled = currentPage === 1;
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
+        lastButton.disabled = currentPage === totalPages;
+    }
+
+    /* 이벤트 리스너 등록 */
+    firstButton.addEventListener("click", () => {
+        goToPage(1);
+    });
+
+    prevButton.addEventListener("click", () => {
+        if (currentPage > 1) {
+            goToPage(currentPage - 1);
+        }
+    });
+
+    nextButton.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+            goToPage(currentPage + 1);
+        }
+    });
+
+    lastButton.addEventListener("click", () => {
+        goToPage(totalPages);
+    });
+
+    /* 페이지 이동 처리 함수 */
+    function goToPage(page) {
+        if (page < 1 || page > totalPages) {
+            return;
+        }
+        currentPage = page;
+        renderPagination();
+
+        console.log("현재 페이지:", currentPage);
+    }
+
+    // 💡 [핵심] 최초 페이지 진입 시 페이지네이션 생성 실행
+    renderPagination();
+
+    const floatingBtn = document.querySelector(".floating-filter-btn");
+    const filterWrap = document.querySelector(".filter-wrap");
+    const filterOverlay = document.querySelector(".filter-overlay");
+    const filterCloseBtn = document.querySelector(".filter-close-btn");
+
+    // 필터 열기 함수
+    function openFilter() {
+        filterWrap.classList.add("active");
+        filterOverlay.classList.add("active");
+        document.body.style.overflow = "hidden"; // 배경 스크롤 방지
+    }
+
+    // 필터 닫기 함수
+    function closeFilter() {
+        filterWrap.classList.remove("active");
+        filterOverlay.classList.remove("active");
+        document.body.style.overflow = ""; // 스크롤 원복
+    }
+
+    // 이벤트 리스너 등록
+    if (floatingBtn) floatingBtn.addEventListener("click", openFilter);
+    if (filterOverlay) filterOverlay.addEventListener("click", closeFilter);
+    if (filterCloseBtn) filterCloseBtn.addEventListener("click", closeFilter);
+</script>
+
+</html>
