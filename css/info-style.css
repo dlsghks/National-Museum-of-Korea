@@ -31,7 +31,7 @@
     width: 100%;
     height: 720px;
     max-height: 70vh;
-    background: url(../images/info/museum.svg) no-repeat center / cover;
+    background: url(../images/info/in-banner.png) no-repeat center / cover;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -63,7 +63,7 @@
 }
 
 .banner-title h2 {
-    font-size: 54px;
+    font-size: clamp(1.875rem, 3.71vw, 3.25rem);
     font-weight: var(--font-w-ExB);
     line-height: 1.25;
     margin-bottom: 24px;
@@ -72,16 +72,20 @@
 }
 
 .banner-title p {
-    font-size: 18px;
+    max-width: 90%;
+    font-size: clamp(1rem, 1.28vw, 1.125rem);
     font-weight: var(--font-w-L);
     line-height: 1.7;
+    word-break: keep-all;
+    color: #ddd
 }
 
 .breadcrumb {
     position: absolute;
     top: 120px;
-    left: 17%;
 }
+
+.breadcrumb>li>img {}
 
 .breadcrumb>ol {
     display: flex;
@@ -106,21 +110,12 @@
     width: 24px;
     height: 24px;
 
-    background: url("../images/icon/arrow-right.svg") no-repeat center;
+    background: url("../images-sub/icon/arrow-right.svg") no-repeat center;
 }
 
 main {
     padding-top: 0;
 }
-
-/* 페이지 상단 */
-/* .page-header {
-    position: relative;
-    padding-top: 15px;
-    padding-bottom: 30px;
-} */
-
-
 
 /* 관람 정보 */
 .content {
@@ -142,13 +137,13 @@ main {
     margin: 0;
     padding-bottom: 8px;
     border-bottom: 3px solid #666666;
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .content dl {
     margin: 15px 0 0;
-    font-size: 18px;
+    font-size: 100%;
     line-height: 1.1;
 }
 
@@ -172,14 +167,14 @@ main {
 
 .content .content-label {
     margin: 13px 0 0;
-    font-size: 18px;
+    font-size: 100%;
     font-weight: 600;
     color: #111;
 }
 
 .content p {
     margin: 10px 0 0;
-    font-size: 16px;
+    font-size: 100%;
     color: #666666;
     line-height: 0.8;
 }
@@ -197,8 +192,8 @@ main {
 
 .note>h2 {
     margin-bottom: 25px;
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .note>ul {
@@ -231,7 +226,7 @@ main {
 .note-title h3 {
     margin: 27px 0 15px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .note-title img {
@@ -242,7 +237,7 @@ main {
 
 .note p {
     margin: 0;
-    font-size: 16px;
+    font-size: 0.95em;
 }
 
 /* 자주 찾는 서비스 */
@@ -266,8 +261,8 @@ main {
 
 .service h2 {
     margin: 0 0 25px;
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .service ul {
@@ -285,6 +280,8 @@ main {
     margin-bottom: 15px;
     padding-bottom: 2px;
     border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    width: 200px;
 }
 
 .service-icon {
@@ -296,31 +293,65 @@ main {
 .service-title h3 {
     margin: 0;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .service p {
-    font-size: 16px;
+    font-size: 0.95em;
 }
 
-.arrow-icon {
-    width: 30px;
-    height: 30px;
-    margin-left: auto;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
 
 .service-title:hover {
     border-bottom-color: #666666;
 }
 
-.service-title:hover .arrow-icon {
-    transform: translateX(5px);
-}
 
 /* 아이패드 */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
+
+    /* 배너 */
+    .banner {
+        height: 550px;
+        max-height: none;
+    }
+
+    .banner-title {
+        max-width: 800px;
+        padding: 0 40px;
+    }
+
+    .banner-title h2 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .banner-title p {
+        max-width: 90%;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* 브레드크럼 */
+    .breadcrumb {
+        top: 70px;
+    }
+
+    .breadcrumb>ol {
+        font-size: 14px;
+    }
+
+    .breadcrumb>ol>li:nth-child(2)::before,
+    .breadcrumb>ol>li:nth-child(3)::before,
+    .breadcrumb>ol>li:nth-child(4)::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    .breadcrumb>ol>li:first-child img {
+        width: 18px;
+        height: 18px;
+    }
+
 
     .inner {
         width: calc(100% - 80px);
@@ -328,59 +359,10 @@ main {
     }
 
     main {
-        padding-top: 60px;
-    }
-
-    .page-header {
-        padding-top: 10px;
-        padding-bottom: 20px;
-    }
-
-    .nav-location li {
-        font-size: 15px;
-    }
-
-    .nav-location li+li::before {
-        width: 20px;
-        height: 20px;
-        margin: 0 2px;
-    }
-
-    .nav-location img {
-        width: 18px;
-        height: 18px;
-    }
-
-    .info-title h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
-    }
-
-    .page-link ul {
-        margin-bottom: 35px;
-        gap: 12px;
-    }
-
-    .page-link img {
-        width: 21px;
-        height: 21px;
-        display: block;
-    }
-
-    div>.info-top {
-        margin: 0 0 35px;
-        padding: 0 0 35px;
-    }
-
-    .info-top p {
-        max-width: 750px;
-        margin-bottom: 25px;
-        font-size: 27px;
-        line-height: 1.4;
     }
 
     .content {
-        margin: 35px 0;
+        margin:  0 0 35px 0;
         padding: 35px 0;
     }
 
@@ -391,11 +373,19 @@ main {
     }
 
     .content h2 {
-        font-size: 25px;
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+
+
+    .content p {
+        font-size: 14px;
+        line-height: 1.3;
+        margin: 5px 0 0 0;
     }
 
     .content dl {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .content dl>div {
@@ -404,14 +394,10 @@ main {
     }
 
     .content .content-label {
-        margin-top: 10px;
-        font-size: 15px;
+        margin-top: 14px;
+        font-size: 16px;
     }
 
-    .content p {
-        font-size: 14px;
-        line-height: 1.3;
-    }
 
     .note {
         margin: 35px 0;
@@ -420,7 +406,8 @@ main {
 
     .note h2 {
         margin-bottom: 20px;
-        font-size: 25px;
+        font-size: 1.25em;
+        font-weight: 600;
     }
 
     .note ul {
@@ -445,13 +432,13 @@ main {
     }
 
     .note p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.5;
     }
 
     .service {
         height: auto;
-        margin: 35px 0;
+        margin: 35px 0 0 0;
         padding: 35px 0;
     }
 
@@ -466,6 +453,8 @@ main {
     .service h2 {
         margin-bottom: 10px;
         padding-bottom: 2px;
+        font-size: 1.25em;
+        font-weight: 600;
     }
 
     .service ul {
@@ -497,7 +486,7 @@ main {
     }
 
     .service p {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -507,58 +496,55 @@ main {
         width: calc(100% - 40px);
     }
 
-    main {
-        padding-top: 60px;
+    /* 배너 */
+    .banner {
+        height: 420px;
+        max-height: none;
     }
 
-    .page-header {
-        padding-top: 10px;
-        padding-bottom: 20px;
+    .banner-title {
+        width: 100%;
+        padding: 0 30px;
     }
 
-    .nav-location li {
-        font-size: 13px;
-    }
-
-    .nav-location li+li::before {
-        width: 18px;
-        height: 18px;
-        margin: 0 1px;
-    }
-
-    .nav-location img {
-        width: 17px;
-        height: 17px;
-    }
-
-    .info-title h2 {
-        font-size: 22px;
+    .banner-title h2 {
+        font-size: 30px;
         margin-bottom: 15px;
     }
 
-    .page-link ul {
-        gap: 10px;
-        margin-bottom: 25px;
+    .banner-title p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.6;
     }
 
-    .page-link img {
-        width: 20px;
-        height: 20px;
+    /* 브레드크럼 */
+    .breadcrumb {
+        top: 70px;
     }
 
-    div>.info-top {
-        margin-bottom: 30px;
-        padding-bottom: 30px;
+    .breadcrumb>ol {
+        font-size: 13px;
     }
 
-    .info-top p {
-        max-width: none;
-        font-size: 22px;
-        margin-bottom: 20px;
+    .breadcrumb>ol>li:nth-child(2)::before,
+    .breadcrumb>ol>li:nth-child(3)::before,
+    .breadcrumb>ol>li:nth-child(4)::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    .breadcrumb>ol>li:first-child img {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    main {
     }
 
     .content {
-        margin: 30px 0;
+        margin: 0 0 30px 0;
         padding: 30px 0;
     }
 
@@ -568,13 +554,18 @@ main {
     }
 
     .content h2 {
-        font-size: 24px;
+        font-size: 18px;
         padding-bottom: 7px;
+    }
+
+    .content .content-label {
+        margin-top: 14px;
+        font-size: 14px;
     }
 
     .content dl {
         margin-top: 12px;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.4;
     }
 
@@ -595,7 +586,7 @@ main {
 
     .note h2 {
         margin-bottom: 20px;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .note ul {
@@ -610,7 +601,7 @@ main {
 
     .note-title h3 {
         margin: 20px 0 12px;
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .note-title img {
@@ -624,18 +615,19 @@ main {
 
     .service {
         height: auto;
-        margin: 30px 0;
+        margin: 30px 0 0 0;
         padding: 30px 0;
     }
 
     .service-inner {
         width: calc(100% - 40px);
         height: auto;
+        padding: 0 20px;
     }
 
     .service h2 {
         margin: 0 0 25px;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .service ul {
@@ -656,7 +648,7 @@ main {
     }
 
     .service-title h3 {
-        font-size: 17px;
+        font-size: 16px;
         white-space: nowrap;
     }
 

@@ -20,12 +20,13 @@
     --color-typo-sec: #666666;
 }
 
-/*  */
+
+/* 기본 영역 */
 .inner {
     max-width: 1400px;
     margin: 0 auto;
-    /* background-color: rgba(255,0,0,.2);*/
 }
+
 
 /* 베너 */
 .banner {
@@ -38,7 +39,6 @@
     position: relative;
 }
 
-/* .banner::before {content: ''; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,.3);}  */
 .banner>* {
     position: relative;
 }
@@ -58,13 +58,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 2.688em; */
     text-align: center;
-    /* text-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5); */
 }
 
 .banner-title h2 {
-    font-size: 54px;
+    font-size: clamp(1.875rem, 3.71vw, 3.25rem);
     font-weight: var(--font-w-ExB);
     line-height: 1.25;
     margin-bottom: 24px;
@@ -73,21 +71,24 @@
 }
 
 .banner-title p {
-    font-size: 18px;
+    max-width: 90%;
+    font-size: clamp(1rem, 1.28vw, 1.125rem);
     font-weight: var(--font-w-L);
     line-height: 1.7;
+    word-break: keep-all;
+    color: #ddd;
 }
 
+
+/* 브레드크럼 */
 .breadcrumb {
     position: absolute;
     top: 120px;
-    left: 17%;
 }
 
 .breadcrumb>ol {
     display: flex;
     align-items: center;
-
     font-size: 15px;
     color: #fff;
 }
@@ -101,31 +102,34 @@
 .breadcrumb>ol>li:nth-child(3)::before,
 .breadcrumb>ol>li:nth-child(4)::before {
     content: "";
-
     display: block;
-
     width: 24px;
     height: 24px;
-
-    background: url("../images/icon/arrow-right.svg") no-repeat center;
+    background: url("../images-sub/icon/arrow-right.svg") no-repeat center;
 }
+
 
 main {
     padding-top: 0;
 }
 
+
+/* 페이지 상단 */
 .page-header {
     position: relative;
     padding-top: 15px;
     padding-bottom: 30px;
 }
 
+
+/* 로그인 상단 */
 .login-wrap {
     display: flex;
     position: relative;
     margin: 40px 0;
     padding: 40px 0;
 }
+
 
 /* .login-wrap::before {
     content: "";
@@ -137,6 +141,8 @@ main {
     background: #aaa;
 } */
 
+
+/* 로그인 / 회원가입 영역 */
 .login-box,
 .join-box {
     width: 50%;
@@ -159,6 +165,8 @@ main {
     align-items: center;
 }
 
+
+/* 가운데 구분선 */
 .login-wrap::after {
     content: "";
     position: absolute;
@@ -169,31 +177,39 @@ main {
     background: #d5d5d5;
 }
 
+
+/* 로그인 / 회원가입 제목 */
 .login-box h3,
 .join-box h3 {
     margin: 0;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: var(--font-w-B);
 }
 
+
+/* 제목 아래 설명 */
 .login-box>p,
 .join-box>p {
     min-height: 48px;
     margin: 15px 0;
-    font-size: 18px;
+    font-size: 16px;
     color: #666;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+
+/* 로그인 폼 */
 .login-form {
     width: 360px;
     height: 200px;
     margin: 0 auto;
-    display: block
+    display: block;
 }
 
+
+/* 입력 영역 */
 .input-wrap {
     position: relative;
     margin-bottom: 8px;
@@ -212,19 +228,22 @@ main {
     height: 48px;
     padding: 0 15px;
     border: 1px solid #d5d5d5;
-    font-size: 15px;
+    border-radius: 3px;
+    font-size: 14px;
 }
 
 .input-wrap input::placeholder {
     color: #999;
 }
 
+
+/* 로그인 옵션 */
 .login-option {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 15px 0;
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
 }
 
@@ -245,6 +264,8 @@ main {
     border: initial;
 }
 
+
+/* 로그인 링크 */
 .login-links {
     display: flex;
     gap: 18px;
@@ -254,15 +275,18 @@ main {
     color: #666;
 }
 
+
+/* 로그인 버튼 */
 .login-btn {
     width: 100%;
     height: 48px;
     min-height: 48px;
     margin-top: 0;
     border: 0;
+    border-radius: 3px;
     background: #243B66;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -270,19 +294,57 @@ main {
     background: #1b2e50;
 }
 
+/* SNS 간편 로그인 */
+.sns-login {
+    margin-top: 16px;
+}
+
+.sns-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.sns-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.sns-list a {
+    display: block;
+    width: 46px;
+    height: 46px;
+}
+
+.sns-list img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sns-list li:nth-child(3) img {
+    transform: scale(0.8);
+}
+
+
+/* 회원가입 안내 */
 .join-service {
     width: 360px;
     margin: 0 auto 10px;
     padding: 20px;
     background: #f5f5f5;
-    border-radius: 6px;
+    border-radius: 4px;
     text-align: left;
 }
 
 .join-service h4 {
     margin: 0 0 8px;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: var(--font-w-B);
 }
 
 .join-service ul {
@@ -293,7 +355,7 @@ main {
 .join-service li {
     position: relative;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 14px;
     color: #555;
 }
 
@@ -303,6 +365,8 @@ main {
     left: 0;
 }
 
+
+/* 회원가입 버튼 */
 .join-btn {
     display: flex;
     align-items: center;
@@ -311,8 +375,9 @@ main {
     height: 48px;
     margin: auto auto 0;
     border: 1px solid #243B66;
+    border-radius: 3px;
     color: #243B66;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.2s;
 }
 
@@ -321,15 +386,19 @@ main {
     color: #fff;
 }
 
-/* 아이패드 */
+
+/* ==================================================
+   아이패드
+================================================== */
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
+
     .inner {
         width: calc(100% - 80px);
         max-width: none;
     }
 
     main {
-        padding-top: 60px;
     }
 
     .page-header {
@@ -337,91 +406,58 @@ main {
         padding-bottom: 20px;
     }
 
+
     /* 베너 */
     .banner {
         width: 100%;
-        height: 720px;
-        max-height: 70vh;
+        height: 550px;
+        max-height: none;
         background: url(../images/login/banner.png) no-repeat center 70% / cover;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-
-    /* .banner::before {content: ''; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,.3);}  */
-    .banner>* {
-        position: relative;
-    }
-
-    .banner-top {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
     }
 
     .banner-title {
-        max-width: 990px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* gap: 2.688em; */
-        text-align: center;
-        /* text-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5); */
+        max-width: 800px;
+        padding: 0 40px;
     }
 
     .banner-title h2 {
-        font-size: 54px;
-        font-weight: var(--font-w-ExB);
-        line-height: 1.25;
-        margin-bottom: 24px;
-        color: #ffffff;
-        word-break: keep-all;
+        font-size: 42px;
+        margin-bottom: 20px;
     }
 
     .banner-title p {
-        font-size: 18px;
-        font-weight: var(--font-w-L);
-        line-height: 1.7;
+        max-width: 90%;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
-    /* .breadcrumb {
-        top: 120px;
+
+    /* 브레드크럼 */
+    .breadcrumb {
+        top: 100px;
     }
 
     .breadcrumb>ol {
-        display: flex;
-        align-items: center;
-
-        font-size: 12px;
-        color: #fff;
-    }
-
-    .breadcrumb>ol>li {
-        display: flex;
-        align-items: center;
+        font-size: 14px;
     }
 
     .breadcrumb>ol>li:nth-child(2)::before,
     .breadcrumb>ol>li:nth-child(3)::before,
     .breadcrumb>ol>li:nth-child(4)::before {
-        content: "";
+        width: 20px;
+        height: 20px;
+    }
 
-        display: block;
+    .breadcrumb>ol>li:first-child img {
+        width: 18px;
+        height: 18px;
+    }
 
-        width: 24px;
-        height: 24px;
-
-        background: url("../images/icon/arrow-right.svg") no-repeat center;
-    } */
 
     /* 로그인 상단 */
     .login-top {
-        margin-bottom: 35px;
-        padding-bottom: 35px;
+        margin: 0 0 35px 0;
+        padding: 35px 0;
     }
 
     .login-title {
@@ -430,7 +466,7 @@ main {
 
     .login-title h2 {
         margin-bottom: 20px;
-        font-size: 24px;
+        font-size: 1.25em;
     }
 
     .page-link ul {
@@ -448,9 +484,10 @@ main {
         font-size: 27px;
     }
 
-    /* 로그인, 회원가입 */
+
+    /* 로그인 / 회원가입 */
     .login-wrap {
-        margin: 35px 0;
+        margin: 0 0 35px 0;
         padding: 35px 0;
     }
 
@@ -473,16 +510,18 @@ main {
 
     .login-box h3,
     .join-box h3 {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .login-box>p,
     .join-box>p {
         min-height: 45px;
         margin: 12px 0;
-        font-size: 15px;
+        font-size: 16px;
     }
 
+
+    /* 로그인 폼 */
     .login-form {
         width: 320px;
         max-width: 100%;
@@ -499,6 +538,8 @@ main {
         font-size: 14px;
     }
 
+
+    /* 로그인 옵션 */
     .login-option {
         margin: 12px 0;
         font-size: 14px;
@@ -517,11 +558,14 @@ main {
         gap: 12px;
     }
 
+
+    /* 로그인 버튼 */
     .login-btn {
         height: 45px;
         min-height: 45px;
-        font-size: 15px;
+        font-size: 16px;
     }
+
 
     /* 회원서비스 */
     .join-service {
@@ -540,22 +584,28 @@ main {
         font-size: 14px;
     }
 
+
+    /* 회원가입 버튼 */
     .join-btn {
         width: 320px;
         max-width: 100%;
         height: 45px;
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 
-/* 모바일 */
+
+/* ==================================================
+   모바일
+================================================== */
+
 @media screen and (max-width: 767px) {
+
     .inner {
         width: calc(100% - 40px);
     }
 
     main {
-        padding-top: 60px;
     }
 
     .page-header {
@@ -563,26 +613,58 @@ main {
         padding-bottom: 10px;
     }
 
-    /* 현재 위치 */
-    .nav-location li {
+
+    /* 베너 */
+    .banner {
+        width: 100%;
+        height: 420px;
+        max-height: none;
+        background: url(../images/login/banner.png) no-repeat center 70% / cover;
+    }
+
+    .banner-title {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .banner-title h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .banner-title p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* 브레드크럼 */
+    .breadcrumb {
+        top: 80px;
+    }
+
+    .breadcrumb>ol {
         font-size: 13px;
     }
 
-    .nav-location li+li::before {
+    .breadcrumb>ol>li:nth-child(2)::before,
+    .breadcrumb>ol>li:nth-child(3)::before,
+    .breadcrumb>ol>li:nth-child(4)::before {
         width: 18px;
         height: 18px;
-        margin: 0 1px;
     }
 
-    .nav-location img {
-        width: 17px;
-        height: 17px;
+    .breadcrumb>ol>li:first-child img {
+        width: 16px;
+        height: 16px;
     }
+
 
     /* 로그인 상단 */
     .login-top {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
+        margin: 0 0 30px 0;
+        padding: 30px 0;
     }
 
     .login-title {
@@ -591,7 +673,7 @@ main {
 
     .login-title h2 {
         margin-bottom: 15px;
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .page-link ul {
@@ -609,21 +691,22 @@ main {
         font-size: 20px;
     }
 
-    /* 로그인, 회원가입 */
+
+    /* 로그인 / 회원가입 */
     .login-wrap {
         flex-direction: column;
-        margin: 30px 0;
-        padding: 0;
+        margin: 0;
+        padding: 30px 0;
     }
 
     .login-wrap::before {
-        /* top: -30px; */
         display: none;
     }
 
     .login-wrap::after {
         display: none;
     }
+
 
     .login-box,
     .join-box {
@@ -633,7 +716,6 @@ main {
     }
 
     .login-box {
-        /* padding-top: 20px; */
         padding-bottom: 30px;
         border-bottom: 1px solid #aaa;
     }
@@ -642,17 +724,20 @@ main {
         padding-top: 30px;
     }
 
+
+    /* 제목 */
     .login-box h3,
     .join-box h3 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .login-box p,
     .join-box p {
         min-height: 0;
         margin: 12px 0;
-        font-size: 16px;
+        font-size: 14px;
     }
+
 
     /* 로그인 폼 */
     .login-form {
@@ -670,9 +755,11 @@ main {
         width: 100%;
         height: 48px;
         padding: 0 12px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
+
+    /* 로그인 옵션 */
     .login-option {
         margin: 15px 0;
         font-size: 14px;
@@ -691,11 +778,14 @@ main {
         gap: 10px;
     }
 
+
+    /* 로그인 버튼 */
     .login-btn {
         height: 48px;
         min-height: 48px;
         font-size: 16px;
     }
+
 
     /* 회원가입 안내 */
     .join-service {
@@ -714,11 +804,12 @@ main {
         font-size: 14px;
     }
 
+
+    /* 회원가입 버튼 */
     .join-btn {
         width: 360px;
         max-width: 100%;
         height: 48px;
         font-size: 16px;
     }
-
 }
