@@ -463,13 +463,13 @@ main {
     border-top: 0.5px solid var(--border-color);
 }
 
-
 /* 지역국립박물관 내부 목록 */
 .filter-list>li>ul {
     display: none;
 
     width: 100%;
     height: 250px;
+    max-height: 250px;
 
     margin: 0;
     padding: 0;
@@ -510,9 +510,39 @@ main {
 
     margin: 0;
 
-    appearance: auto;
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #fff;
+    border: 2px solid #111;
+    border-radius: 2px;
+
+    position: relative;
+}
+
+/* 체크된 체크박스 */
+.filter-list>li>ul>li>input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-color: #111;
+}
+
+/* 검은색 체크 표시 */
+.filter-list>li>ul>li>input[type="checkbox"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    top: -1px;
+
+    width: 5px;
+    height: 9px;
+
+    border: solid #111;
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
 }
 
 .filter-list>li>ul>li>label {
