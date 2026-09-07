@@ -272,7 +272,7 @@
        카드 호버 제거
     ------------------------- */
 
-    .content-detail {
+    /* .content-detail {
         display: none;
     }
 
@@ -281,8 +281,8 @@
     }
 
     .content-list>li>a:hover .content-title {
-        text-decoration: none;
-    }
+        font-weight: 500;
+    } */
 
 
     /* -------------------------

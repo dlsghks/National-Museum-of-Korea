@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 button.setAttribute("aria-expanded", "false");
 
                 if (icon) {
-                    icon.src = "./images-sub/icon/filter-plus.svg";
+                    icon.src = "./images/event-performance/icon/filter-plus.svg";
                 }
 
                 return;
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (otherIcon) {
                         otherIcon.src =
-                            "./images-sub/icon/filter-plus.svg";
+                            "./images/event-performance/icon/filter-plus.svg";
                     }
 
                 });
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (otherIcon) {
                             otherIcon.src =
-                                "./images-sub/icon/filter-plus.svg";
+                                "./images/event-performance/icon/filter-plus.svg";
                         }
 
                     });
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (icon) {
                 icon.src =
-                    "./images-sub/icon/filter-minus.svg";
+                    "./images/event-performance/icon/filter-minus.svg";
             }
 
         });
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             checkbox.value;
 
 
-                        tag.innerHTML = `${label}<span aria-hidden="true"><img src="./images-sub/icon/filter-delete.svg" alt=""></span>`;
+                        tag.innerHTML = `${label}<span aria-hidden="true"><img src="./images/event-performance/icon/filter-delete.svg" alt=""></span>`;
 
 
                         /* -------------------------
@@ -453,7 +453,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (icon) {
                     icon.src =
-                        "./images-sub/icon/filter-plus.svg";
+                        "./images/event-performance/icon/filter-plus.svg";
                 }
 
             });
@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (icon) {
                     icon.src =
-                        "./images-sub/icon/filter-plus.svg";
+                        "./images/event-performance/icon/filter-plus.svg";
                 }
 
             });
