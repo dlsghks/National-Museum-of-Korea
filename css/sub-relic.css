@@ -545,7 +545,7 @@
     }
 
     .banner-wrap .channel {
-        top: 76px;
+        top: 120px;
     }
 
 
@@ -581,6 +581,11 @@
 
     body {
         font-size: 0.75em;
+    }
+
+    .banner-wrap .channel {
+        font-size: 1em;
+        top: 90px;
     }
 
     /* 검색창 */
@@ -812,7 +817,8 @@
     }
 
     .banner-wrap .channel {
-        font-size: 0.7em;
+        top: 75px;
+        font-size: 0.9em;
         gap: 0.5em;
     }
 
