@@ -57,14 +57,23 @@ document.addEventListener("DOMContentLoaded", function () {
                이미 열려 있는 카테고리 → 닫기
             ------------------------------------------ */
 
-            if (list.style.display === "block") {
+            if (button.getAttribute("aria-expanded") === "true") {
 
-                list.style.display = "none";
+                gsap.to(list, {
+                    height: 0,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    onComplete: function () {
+                        list.style.display = "none";
+                        list.style.height = "";
+                    }
+                });
 
                 button.setAttribute("aria-expanded", "false");
 
                 if (icon) {
-                    icon.src = "./images-sub/icon/filter-plus.svg";
+                    icon.src =
+                        "./images/event-performance/icon/filter-plus.svg";
                 }
 
                 return;
@@ -93,8 +102,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     const otherIcon =
                         otherButton.querySelector("img");
 
-                    if (otherList) {
-                        otherList.style.display = "none";
+                    if (
+                        otherButton.getAttribute("aria-expanded") === "true"
+                        && otherList
+                    ) {
+
+                        gsap.killTweensOf(otherList);
+
+                        gsap.to(otherList, {
+                            height: 0,
+                            duration: 0.25,
+                            ease: "power2.out",
+                            onComplete: function () {
+                                otherList.style.display = "none";
+                                otherList.style.height = "";
+                            }
+                        });
+
                     }
 
                     otherButton.setAttribute(
@@ -104,12 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (otherIcon) {
                         otherIcon.src =
-                            "./images-sub/icon/filter-plus.svg";
+                            "./images/event-performance/icon/filter-plus.svg";
                     }
 
                 });
 
             }
+
 
             // 하위 필터
             else {
@@ -134,8 +159,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         const otherIcon =
                             otherButton.querySelector("img");
 
-                        if (otherList) {
-                            otherList.style.display = "none";
+                        if (
+                            otherButton.getAttribute("aria-expanded") === "true"
+                            && otherList
+                        ) {
+
+                            gsap.killTweensOf(otherList);
+
+                            gsap.to(otherList, {
+                                height: 0,
+                                duration: 0.25,
+                                ease: "power2.out",
+                                onComplete: function () {
+                                    otherList.style.display = "none";
+                                    otherList.style.height = "";
+                                }
+                            });
+
                         }
 
                         otherButton.setAttribute(
@@ -145,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (otherIcon) {
                             otherIcon.src =
-                                "./images-sub/icon/filter-plus.svg";
+                                "./images/event-performance/icon/filter-plus.svg";
                         }
 
                     });
@@ -161,6 +201,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
             list.style.display = "block";
 
+            /* 현재 실제 높이 가져오기 */
+            const listHeight = list.scrollHeight;
+
+            /* 처음에는 높이 0 */
+            gsap.set(list, {
+                height: 0,
+                overflow: "hidden"
+            });
+
+            /* 스르륵 내려오기 */
+            gsap.to(list, {
+                height: listHeight,
+                duration: 0.3,
+                ease: "power2.out",
+                onComplete: function () {
+                    list.style.height = "auto";
+                }
+            });
+
             button.setAttribute(
                 "aria-expanded",
                 "true"
@@ -168,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (icon) {
                 icon.src =
-                    "./images-sub/icon/filter-minus.svg";
+                    "./images/event-performance/icon/filter-minus.svg";
             }
 
         });
@@ -285,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             checkbox.value;
 
 
-                        tag.innerHTML = `${label}<span aria-hidden="true"><img src="./images-sub/icon/filter-delete.svg" alt=""></span>`;
+                        tag.innerHTML = `${label}<span aria-hidden="true"><img src="./images/event-performance/icon/filter-delete.svg" alt=""></span>`;
 
 
                         /* -------------------------
@@ -453,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (icon) {
                     icon.src =
-                        "./images-sub/icon/filter-plus.svg";
+                        "./images/event-performance/icon/filter-plus.svg";
                 }
 
             });
@@ -513,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (icon) {
                     icon.src =
-                        "./images-sub/icon/filter-plus.svg";
+                        "./images/event-performance/icon/filter-plus.svg";
                 }
 
             });
@@ -590,9 +649,9 @@ document.addEventListener("DOMContentLoaded", function () {
        행사 / 공연 탭
     ================================================== */
 
-        /* ==================================================
-       행사 / 공연 탭
-    ================================================== */
+    /* ==================================================
+   행사 / 공연 탭
+================================================== */
 
     tabs.forEach(function (tab, index) {
 
