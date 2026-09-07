@@ -33,14 +33,14 @@
 body {
     width: 100%;
     margin: 0;
-    padding-bottom: 117px;
 }
 
 main {
     width: 100%;
     max-width: 1394px;
     margin: 0 auto;
-    padding-top: 80px;
+    padding: 80px 0;
+    
 }
 
 
@@ -153,14 +153,14 @@ main {
 
 /* 제목 */
 .sub-banner-title h2 {
-    font-size: clamp(2rem, 3.42vw, 3.25rem);
+    font-size: clamp(1.875rem, 3.71vw, 3.25rem);
     font-weight: var(--font-w-B);
 }
 
 /* 설명 */
 .sub-banner-title p {
     max-width: 90%;
-    font-size: clamp(1.125rem, 1.57vw, 1.4rem);
+    font-size: clamp(1rem, 1.28vw, 1.125rem);
     font-weight: var(--font-w-R);
     line-height: 1.25;
     word-break: keep-all;
@@ -222,6 +222,7 @@ main {
     color: #fff;
 }
 
+
 /* =========================================================
    검색
 ========================================================= */
@@ -230,23 +231,7 @@ main {
     position: relative;
     width: 250px;
     height: 61px;
-}
-
-.filter-header h2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 250px;
-    height: 61px;
-    margin: 0;
-    padding: 0 12px;
-    box-sizing: border-box;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
     background-color: var(--Primary-color);
-    
-    /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 .filter-header .search-box {
@@ -267,14 +252,14 @@ main {
     height: 37px;
 
     padding-left: 8px;
-    background-color: rgba(0,0,0, 0.2);
+    background-color: #fff;
 
     border: 0.2px solid var(--border-color);
     border-radius: 4px;
-    color: rgba(255,255,255,0.8)
+    /* color: rgba(255,255,255,0.8) */
     /* color: rgba(0,0,0,0.3); */
     /* color:#fff; */
-    /* color: var(--border-color); */
+    color: var(--border-color);
     
 }
 
@@ -314,53 +299,7 @@ main {
     width: 250px;
     flex: 0 0 250px;
     margin-top: 2px;
-
-    
 }
-/* 필터 제목 */
-.filter>h2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 250px;
-    height: 61px;
-
-    padding: 0 15px;
-
-    font-size: 18px;
-    font-weight: 500;
-
-    color: #fff;
-    background-color: var(--Primary-color);
-}
-
-/* 필터 아이콘 + 글자 */
-.filter>h2>span {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-/* 모바일 필터 닫기 */
-.filter-close {
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 30px;
-    height: 30px;
-
-    padding: 0;
-
-    color: #fff;
-    background: transparent;
-
-    font-size: 28px;
-    line-height: 1;
-}
-
 
 /* =========================================================
    필터 카테고리
@@ -787,8 +726,9 @@ main {
 }
 
 .content-list>li>a:hover .content-title {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    /* text-decoration: 0.5px underline var(--border-color);
+    text-underline-offset: 4px; */
+    font-weight: 600;
 }
 
 
@@ -808,7 +748,7 @@ main {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
 }
 

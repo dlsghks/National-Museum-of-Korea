@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /* ==================================================
+       배너 애니메이션
+    ================================================== */
+
+    const bannerText = gsap.timeline();
+
+    bannerText.from(".banner-wrap .page", {
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+    });
+
+    bannerText.from(".banner-wrap .text-box .dec", {
+        y: 80,
+        opacity: 0,
+        duration: 0.5,
+    });
+
+
+
     // ================= 필터 아코디언 및 태그 연동 =================
     const filterButtons = document.querySelectorAll(".filter-button");
     const optionButtons = document.querySelectorAll(".filter-list button");

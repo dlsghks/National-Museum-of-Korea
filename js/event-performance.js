@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0,
         duration: 0.5,
     });
-    
+
     /* ==================================================
        기본 요소
     ================================================== */
@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const mobileFilterBtn =
         document.querySelector(".mobile-filter-btn");
-
-    const filterCloseBtns =
-        document.querySelectorAll(".filter-close");
 
 
     /* ==================================================
@@ -288,8 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             checkbox.value;
 
 
-                        tag.innerHTML = `${label}<span aria-hidden="true">
-                        <img src="./images-sub/icon/filter-delete.svg" alt=""></span>`;
+                        tag.innerHTML = `${label}<span aria-hidden="true"><img src="./images-sub/icon/filter-delete.svg" alt=""></span>`;
 
 
                         /* -------------------------
@@ -318,7 +314,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (window.innerWidth <= 900) {
 
-                            // 모바일/태블릿 → selected-filter까지 이동
                             const selectedFilter =
                                 wrap.querySelector(
                                     ".selected-filter"
@@ -340,7 +335,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         } else {
 
-                            // PC → 탭 버튼까지 이동
                             const pagetab =
                                 document.querySelector(".pagetab");
 
@@ -428,8 +422,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function resetAllFilters() {
 
-        /* 체크박스 초기화 */
-
         document
             .querySelectorAll(
                 '.filter input[type="checkbox"]'
@@ -439,9 +431,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 checkbox.checked = false;
 
             });
-
-
-        /* 아코디언 초기화 */
 
         document
             .querySelectorAll(".filter-category")
@@ -458,7 +447,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const icon =
                     button.querySelector("img");
 
-
                 if (list) {
                     list.style.display = "none";
                 }
@@ -469,9 +457,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             });
-
-
-        /* 태그 초기화 */
 
         document
             .querySelectorAll(".filter-tags")
@@ -494,7 +479,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "mobile-filter-active"
         );
 
-
         if (mobileFilterBtn) {
 
             mobileFilterBtn.classList.remove(
@@ -508,9 +492,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
-        /* 필터 아코디언 초기화 */
-
         document
             .querySelectorAll(".filter-category")
             .forEach(function (button) {
@@ -520,7 +501,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     "false"
                 );
 
-
                 const list =
                     button.nextElementSibling;
 
@@ -528,10 +508,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     list.style.display = "none";
                 }
 
-
                 const icon =
                     button.querySelector("img");
-
 
                 if (icon) {
                     icon.src =
@@ -574,8 +552,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                /* 현재 활성화된 영역 찾기 */
-
                 const activeWrap =
                     document.querySelector(
                         ".event-content-wrap.tab-active"
@@ -584,27 +560,16 @@ document.addEventListener("DOMContentLoaded", function () {
                         ".perform-content-wrap.tab-active"
                     );
 
-
                 if (!activeWrap) return;
-
-
-                /* 현재 활성화된 필터 확인 */
 
                 const activeFilter =
                     activeWrap.querySelector(".filter");
 
-
                 if (!activeFilter) return;
-
-
-                /* 필터 열기 */
 
                 document.body.classList.add(
                     "mobile-filter-active"
                 );
-
-
-                /* 버튼 숨기기 */
 
                 mobileFilterBtn.classList.add(
                     "filter-btn-hidden"
@@ -622,24 +587,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ==================================================
-       모바일 필터 닫기 버튼
+       행사 / 공연 탭
     ================================================== */
 
-    filterCloseBtns.forEach(function (closeBtn) {
-
-        closeBtn.addEventListener(
-            "click",
-            function () {
-
-                closeMobileFilter();
-
-            }
-        );
-
-    });
-
-
-    /* ==================================================
+        /* ==================================================
        행사 / 공연 탭
     ================================================== */
 
@@ -651,10 +602,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 e.preventDefault();
 
+                /* 이미 선택된 탭이면 실행하지 않음 */
+                if (tab.classList.contains("tab-active")) {
+                    return;
+                }
 
-                /* -------------------------
-                   탭 글자
-                ------------------------- */
+
+                /* ------------------------------------------
+                   탭 상태 변경
+                ------------------------------------------ */
 
                 tabs.forEach(function (t) {
 
@@ -669,23 +625,96 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /* -------------------------
-                   모바일 필터 닫기
-                ------------------------- */
-
                 closeMobileFilter();
-
-
-                /* -------------------------
-                   필터 초기화
-                ------------------------- */
 
                 resetAllFilters();
 
 
-                /* -------------------------
-                   행사
-                ------------------------- */
+                /* ------------------------------------------
+                   현재 / 다음 콘텐츠
+                ------------------------------------------ */
+
+                const previousWrap =
+                    index === 0
+                        ? performWrap
+                        : eventWrap;
+
+                const nextWrap =
+                    index === 0
+                        ? eventWrap
+                        : performWrap;
+
+
+                /* ------------------------------------------
+                   기존 콘텐츠 숨기기
+                ------------------------------------------ */
+
+                if (previousWrap) {
+
+                    gsap.killTweensOf(previousWrap);
+
+                    gsap.to(previousWrap, {
+
+                        opacity: 0,
+
+                        duration: 0.15,
+
+                        ease: "power1.out",
+
+                        onComplete: function () {
+
+                            previousWrap.classList.remove(
+                                "tab-active"
+                            );
+
+                            previousWrap.style.opacity = "";
+
+                        }
+
+                    });
+
+                }
+
+
+                /* ------------------------------------------
+                   새 콘텐츠 표시
+                ------------------------------------------ */
+
+                if (nextWrap) {
+
+                    /* display: block */
+
+                    nextWrap.classList.add(
+                        "tab-active"
+                    );
+
+                    /* 처음에는 투명 */
+
+                    gsap.killTweensOf(nextWrap);
+
+                    gsap.set(nextWrap, {
+                        opacity: 0
+                    });
+
+
+                    /* 스르륵 나타나기 */
+
+                    gsap.to(nextWrap, {
+
+                        opacity: 1,
+
+                        duration: 0.2,
+
+                        ease: "power1.out"
+
+                    });
+
+                }
+
+
+                /* ------------------------------------------
+                   행사 / 공연에 따른 설정
+                ------------------------------------------ */
 
                 if (index === 0) {
 
@@ -697,16 +726,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }
 
-
-                    eventWrap.classList.add(
-                        "tab-active"
-                    );
-
-                    performWrap.classList.remove(
-                        "tab-active"
-                    );
-
-
                     if (breadcrumbCurrent) {
 
                         breadcrumbCurrent.textContent =
@@ -715,11 +734,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
                 }
-
-
-                /* -------------------------
-                   공연
-                ------------------------- */
 
                 else {
 
@@ -730,16 +744,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
 
                     }
-
-
-                    eventWrap.classList.remove(
-                        "tab-active"
-                    );
-
-                    performWrap.classList.add(
-                        "tab-active"
-                    );
-
 
                     if (breadcrumbCurrent) {
 
