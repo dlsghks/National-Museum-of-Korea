@@ -70,7 +70,7 @@
   .header.is_hover .button-search {background-image: url(../images/header/search_bk.svg);}
   .header.is_open::before,
   .header.is_open .gnb-main::before,
-  .header.is_open .header-gnb .gnb-sub {visibility: visible; opacity: 1; height: 260px; z-index: 1000;}
+  .header.is_open .header-gnb .gnb-sub {visibility: visible; opacity: 1; height: 260px;}
   /* gnb-main-list:hover */
   .header-gnb .gnb-main-list:hover > a {font-weight: var(--font-w-SB);}
   .header-gnb .gnb-main-list:hover > a::after {transform: translate(-50%, 0); opacity: 1;}
