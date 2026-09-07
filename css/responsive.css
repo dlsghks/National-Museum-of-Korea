@@ -827,7 +827,14 @@
     }
 
     .filter-tag {
+        gap: 3px;
         font-size: 12px;
+        padding: 0 4px;
+    }
+
+    .filter-tag img {
+        width: 20px;
+        height: 20px;   
     }
 
     .content-list {
