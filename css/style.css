@@ -190,6 +190,13 @@
   border-radius: 10px;
 }
 
+@media screen and (min-width: 1280px) {
+    .header-gnb .gnb-sub {
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+}
 
 /* 반응형 */
 @media screen and (max-width: 1440px) {

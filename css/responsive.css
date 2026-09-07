@@ -272,7 +272,7 @@
        카드 호버 제거
     ------------------------- */
 
-    .content-detail {
+    /* .content-detail {
         display: none;
     }
 
@@ -281,8 +281,8 @@
     }
 
     .content-list>li>a:hover .content-title {
-        text-decoration: none;
-    }
+        font-weight: 500;
+    } */
 
 
     /* -------------------------
@@ -576,7 +576,7 @@
     .filter-list>li {
         width: 100%;
         height: 44px;
-        padding: 12px 25px;
+        padding: 12px 23px;
         box-sizing: border-box;
     }
 
@@ -589,7 +589,9 @@
 
     .filter-list>li>ul>li {
         height: 44px;
-        padding: 0 12px;
+        padding-right: 14px;
+        padding-left: 24px;
+       
     }
 
 
@@ -827,7 +829,14 @@
     }
 
     .filter-tag {
+        gap: 4px;
         font-size: 12px;
+        padding: 0 5px;
+    }
+
+    .filter-tag img {
+        width: 20px;
+        height: 20px;   
     }
 
     .content-list {
@@ -835,7 +844,7 @@
     }
 
     .content-title {
-        font-size: 13px;
+        font-size: 14px;
         -webkit-line-clamp: 1;
     }
 
