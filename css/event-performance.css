@@ -33,14 +33,14 @@
 body {
     width: 100%;
     margin: 0;
-    padding-bottom: 117px;
 }
 
 main {
     width: 100%;
     max-width: 1394px;
     margin: 0 auto;
-    padding-top: 80px;
+    padding: 80px 0;
+
 }
 
 
@@ -93,7 +93,7 @@ main {
     width: 24px;
     height: 24px;
 
-    background: url("../images-sub/icon/arrow-right.svg") no-repeat center;
+    background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
 }
 
 
@@ -104,9 +104,8 @@ main {
 
 .sub-banner {
     width: 100%;
-    height: 800px;
-    max-height: 70vh;
-    background: url("../images-sub/banner.png") no-repeat center / cover;
+    height: 720px;
+    background: url("../images/event-performance/banner.png") no-repeat center / cover;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -153,14 +152,14 @@ main {
 
 /* 제목 */
 .sub-banner-title h2 {
-    font-size: clamp(2rem, 3.42vw, 3.25rem);
+    font-size: clamp(1.875rem, 3.71vw, 3.25rem);
     font-weight: var(--font-w-B);
 }
 
 /* 설명 */
 .sub-banner-title p {
     max-width: 90%;
-    font-size: clamp(1.125rem, 1.57vw, 1.4rem);
+    font-size: clamp(1rem, 1.28vw, 1.125rem);
     font-weight: var(--font-w-R);
     line-height: 1.25;
     word-break: keep-all;
@@ -222,6 +221,7 @@ main {
     color: #fff;
 }
 
+
 /* =========================================================
    검색
 ========================================================= */
@@ -230,23 +230,7 @@ main {
     position: relative;
     width: 250px;
     height: 61px;
-}
-
-.filter-header h2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 250px;
-    height: 61px;
-    margin: 0;
-    padding: 0 12px;
-    box-sizing: border-box;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
     background-color: var(--Primary-color);
-    
-    /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 .filter-header .search-box {
@@ -256,7 +240,8 @@ main {
     transform: translateY(-50%);
 
     display: flex;
-    align-items: center; /* 추가 */
+    align-items: center;
+    /* 추가 */
     gap: 11px;
     width: auto;
     margin: 0;
@@ -267,15 +252,15 @@ main {
     height: 37px;
 
     padding-left: 8px;
-    background-color: rgba(0,0,0, 0.2);
+    background-color: #fff;
 
     border: 0.2px solid var(--border-color);
     border-radius: 4px;
-    color: rgba(255,255,255,0.8)
+    /* color: rgba(255,255,255,0.8) */
     /* color: rgba(0,0,0,0.3); */
     /* color:#fff; */
-    /* color: var(--border-color); */
-    
+    color: var(--border-color);
+
 }
 
 
@@ -301,7 +286,7 @@ main {
 .content {
     display: flex;
     justify-content: space-between;
-    
+
     gap: 40px;
 }
 
@@ -314,53 +299,7 @@ main {
     width: 250px;
     flex: 0 0 250px;
     margin-top: 2px;
-
-    
 }
-/* 필터 제목 */
-.filter>h2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 250px;
-    height: 61px;
-
-    padding: 0 15px;
-
-    font-size: 18px;
-    font-weight: 500;
-
-    color: #fff;
-    background-color: var(--Primary-color);
-}
-
-/* 필터 아이콘 + 글자 */
-.filter>h2>span {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-/* 모바일 필터 닫기 */
-.filter-close {
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 30px;
-    height: 30px;
-
-    padding: 0;
-
-    color: #fff;
-    background: transparent;
-
-    font-size: 28px;
-    line-height: 1;
-}
-
 
 /* =========================================================
    필터 카테고리
@@ -437,14 +376,44 @@ main {
 .filter-list>li>input[type="checkbox"] {
     order: 2;
 
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
 
     margin: 0;
 
-    appearance: auto;
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #fff;
+    border: 2px solid #111;
+    border-radius: 2px;
+
+    position: relative;
+}
+
+/* 체크된 체크박스 */
+.filter-list>li>input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-color: #111;
+}
+
+/* 검은색 체크 표시 */
+.filter-list>li>input[type="checkbox"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+    top: 0px;
+
+    width: 5px;
+    height: 9px;
+
+    border: solid #111;
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
 }
 
 /* 라벨 */
@@ -493,13 +462,13 @@ main {
     border-top: 0.5px solid var(--border-color);
 }
 
-
 /* 지역국립박물관 내부 목록 */
 .filter-list>li>ul {
     display: none;
 
     width: 100%;
     height: 250px;
+    max-height: 250px;
 
     margin: 0;
     padding: 0;
@@ -540,9 +509,39 @@ main {
 
     margin: 0;
 
-    appearance: auto;
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #fff;
+    border: 2px solid #111;
+    border-radius: 2px;
+
+    position: relative;
+}
+
+/* 체크된 체크박스 */
+.filter-list>li>ul>li>input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-color: #111;
+}
+
+/* 검은색 체크 표시 */
+.filter-list>li>ul>li>input[type="checkbox"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    top: -1px;
+
+    width: 5px;
+    height: 9px;
+
+    border: solid #111;
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
 }
 
 .filter-list>li>ul>li>label {
@@ -625,7 +624,7 @@ main {
 
     flex: 1;
 
-    gap: 8px 5px;
+    gap: 8px 0px;
 
     max-height: 96px;
 
@@ -660,7 +659,7 @@ main {
 
     padding: 0 10px;
 
-    gap: 9px;
+    gap: 8px;
 
     border-radius: 4px;
 
@@ -782,15 +781,19 @@ main {
 
 
 /* PC hover */
-.content-list>li>a:hover .content-detail {
-    opacity: 1;
-}
+@media (min-width: 1025px) {
 
-.content-list>li>a:hover .content-title {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
+    .content-list>li>a:hover .content-detail {
+        opacity: 1;
+    }
 
+    .content-list>li>a:hover .content-title {
+        text-decoration: 1px underline var(--border-color);
+        text-underline-offset: 5px;
+        /* font-weight: 600; */
+    }
+
+}
 
 /* 카드 텍스트 */
 .content-text {
