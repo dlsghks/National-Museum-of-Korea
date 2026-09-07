@@ -68,34 +68,18 @@
     padding: 50px 0;
 }
 
-.search-wrap {
-    width: 100%;
-    display: flex;
-    height: 90px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;
-    margin-bottom: 40px;
-    box-sizing: border-box;
-    gap: 15px;
-}
-
 .relic-wrap .input-wrap {
     flex: 1;
     min-width: 0;
-    height: 40%;
+    height: 37px;
     background-color: #e9eaeb;
     border: 1px solid #b8b8b8;
     display: flex;
     align-items: center;
-    gap: 8px;
     color: var(--color-typo-sec);
-    border-radius: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
+    border-radius: 4px;
     box-sizing: border-box;
+    padding-left: 0.5em;
 }
 
 .relic-wrap .input-wrap label {
@@ -224,7 +208,7 @@
     align-items: center;
     width: inherit;
     height: 57px;
-    padding-left: 20px;
+    padding-left: 12px;
 
     color: #fff;
     background-color: var(--color-pri);
@@ -256,7 +240,7 @@
     width: inherit;
     height: 57px;
 
-    padding: 0 20px;
+    padding: 0 15px;
 
     border: 1px solid var(--color-typo-sec);
     border-bottom: none;
@@ -561,7 +545,7 @@
     }
 
     .banner-wrap .channel {
-        top: 76px;
+        top: 120px;
     }
 
 
@@ -597,6 +581,11 @@
 
     body {
         font-size: 0.75em;
+    }
+
+    .banner-wrap .channel {
+        font-size: 1em;
+        top: 90px;
     }
 
     /* 검색창 */
@@ -688,7 +677,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 12px;
         background-color: var(--color-pri);
         border-radius: 20px 20px 0 0;
         box-sizing: border-box;
@@ -715,13 +704,14 @@
 
     .relic-wrap .filter-wrap {
         position: fixed;
-        left: 0;
         bottom: 0;
         top: auto;
         width: 100vw;
-        max-height: 80vh;
+        width: calc(100vw - 20px);
         overflow-y: auto;
         z-index: 1001;
+        left: 10px;
+        right: 10px;
         background-color: #fff;
         border-radius: 20px 20px 0 0;
         box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.2);
@@ -745,7 +735,7 @@
         top: 0;
         z-index: 10;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 18px 0 12px;
         border-radius: 20px 20px 0 0;
     }
 
@@ -796,7 +786,7 @@
     }
 
     .relic-wrap .btn-wrap {
-        padding: 10px 0 10px 10px;
+        padding: 10px 0 10px 15px;
     }
 
     .relic-wrap .desc-box-left>h3 {
@@ -827,7 +817,8 @@
     }
 
     .banner-wrap .channel {
-        font-size: 0.7em;
+        top: 75px;
+        font-size: 0.9em;
         gap: 0.5em;
     }
 

@@ -82,7 +82,7 @@
 }
 
 /* is_scroll */
-.header.is_scroll {background-color: #fff; color: var(--color-typo-pri); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}
+.header.is_scroll {background-color: #fff; color: var(--color-typo-pri); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); z-index: 101;}
 .header.is_scroll .header-top {max-height: 0; padding: 0; transform: scaleY(0);}
 .header.is_scroll .button-m-menu:not(.on) .menu-item > span {background-color: var(--color-typo-pri);}
 
@@ -190,6 +190,13 @@
   border-radius: 10px;
 }
 
+@media screen and (min-width: 1280px) {
+    .header-gnb .gnb-sub {
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+}
 
 /* 반응형 */
 @media screen and (max-width: 1440px) {
