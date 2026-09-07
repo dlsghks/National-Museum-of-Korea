@@ -827,9 +827,9 @@
     }
 
     .filter-tag {
-        gap: 3px;
+        gap: 4px;
         font-size: 12px;
-        padding: 0 4px;
+        padding: 0 5px;
     }
 
     .filter-tag img {
@@ -842,7 +842,7 @@
     }
 
     .content-title {
-        font-size: 13px;
+        font-size: 14px;
         -webkit-line-clamp: 1;
     }
 
