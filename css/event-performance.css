@@ -377,14 +377,44 @@ main {
 .filter-list>li>input[type="checkbox"] {
     order: 2;
 
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
 
     margin: 0;
 
-    appearance: auto;
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #fff;
+    border: 2px solid #111;
+    border-radius: 2px;
+
+    position: relative;
+}
+
+/* 체크된 체크박스 */
+.filter-list>li>input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-color: #111;
+}
+
+/* 검은색 체크 표시 */
+.filter-list>li>input[type="checkbox"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+    top: 0px;
+
+    width: 5px;
+    height: 9px;
+
+    border: solid #111;
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
 }
 
 /* 라벨 */
