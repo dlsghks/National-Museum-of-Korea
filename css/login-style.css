@@ -25,6 +25,7 @@
 .inner {
     max-width: 1400px;
     margin: 0 auto;
+    /* background: rgba(0,0,0,0.5); */
 }
 
 
@@ -127,7 +128,7 @@ main {
     display: flex;
     position: relative;
     margin: 40px 0;
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 
@@ -171,7 +172,7 @@ main {
     content: "";
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 70px;
     left: 50%;
     width: 1px;
     background: #d5d5d5;
@@ -189,7 +190,8 @@ main {
 
 /* 제목 아래 설명 */
 .login-box>p,
-.join-box>p {
+.join-box>p,
+.login-desc {
     min-height: 48px;
     margin: 15px 0;
     font-size: 16px;
@@ -294,42 +296,83 @@ main {
     background: #1b2e50;
 }
 
-/* SNS 간편 로그인 */
-.sns-login {
-    margin-top: 16px;
-}
-
-.sns-list {
+/* 로그인 탭 */
+.login-tabs {
     display: flex;
-    justify-content: center;
+    width: 360px;
+    height: 48px;
+    margin-bottom: 15px;
+}
+
+.login-tab {
+    flex: 1;
+    border: 1px solid #243B66;
+    background: #fff;
+    color: #243B66;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-tab.active {
+    background: #243B66;
+    color: #fff;
+}
+
+
+/* 로그인 패널 */
+.login-panel {
+    width: 360px;
+    height: 200px;
+}
+
+.login-panel:not(.active) {
+    display: none;
+}
+
+
+/* SNS 설명 */
+.sns-info {
+    margin: 0 0 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #999;
+    text-align: center;
+}
+
+
+/* SNS 로그인 버튼 */
+.sns-login-list {
+    margin: 0;
+    padding: 0;
+}
+
+.sns-login-list li {
+    margin-bottom: 8px;
+}
+
+.sns-login-list li:last-child {
+    margin-bottom: 0;
+}
+
+.sns-login-list a {
+    display: flex;
     align-items: center;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-.sns-list li {
-    margin: 0;
-    padding: 0;
-}
-
-.sns-list a {
-    display: block;
-    width: 46px;
-    height: 46px;
-}
-
-.sns-list img {
-    display: block;
+    justify-content: center;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.sns-login-list img {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
-
-.sns-list li:nth-child(3) img {
-    transform: scale(0.8);
-}
-
 
 /* 회원가입 안내 */
 .join-service {
