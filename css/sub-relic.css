@@ -734,10 +734,15 @@
         font-size: 0.5em;
     }
 
-    .banner-wrap .banner>img {
-        height: 626px;
-        object-fit: cover;
-        object-position: 0 center;
+    .banner-wrap .banner > img {
+        height: auto;
+        min-height: 250px;
+    }
+    
+    /* 텍스트 박스 위치 재조정 */
+    .banner-wrap .text-box {
+        top: 50%;
+        width: 90%;
     }
 
 
