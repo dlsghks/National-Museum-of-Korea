@@ -99,6 +99,93 @@
 .gallery-list:hover .gallery-tit {font-size: clamp(1.25rem, 2.14vw, 1.875rem); font-weight: var(--font-w-B); line-height: 1.5;}
 .gallery-list:hover .gallery-txt {display: block;}
 
+/* ==========================================================================
+   Top Button Style (Simple Circle) - PC 기본 스타일
+   ========================================================================== */
+.btn-top {
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+    z-index: 99;
+    width: 54px;
+    /* 크기 고정 */
+    height: 54px;
+    /* 크기 고정 */
+    background-color: var(--color-pri, #243B66);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    /* 정원 유지 */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease,
+        background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.25s ease;
+}
+
+/* 스크롤 시 활성화 */
+.btn-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 푸터 영역 도달 시 색상 반전 (Inverted Style) */
+.btn-top.is-inverted {
+    background-color: #ffffff;
+    color: var(--color-pri, #243B66);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn-top.is-inverted .btn-top__arrow,
+.btn-top.is-inverted .btn-top__text {
+    color: var(--color-pri, #243B66);
+}
+
+.btn-top.is-inverted:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 화살표 아이콘 크기 고정 */
+.btn-top__arrow {
+    width: 11px;
+    height: 9px;
+    color: #ffffff;
+    transition: transform 0.25s ease, color 0.3s ease;
+}
+
+/* TOP 텍스트 크기 고정 */
+.btn-top__text {
+    font-family: var(--font-main, 'Pretendard', sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* 호버 효과 */
+.btn-top:not(.is-inverted):hover {
+    background-color: var(--color-sec, #3F0B9F);
+    box-shadow: 0 6px 20px rgba(63, 11, 159, 0.35);
+    transform: translateY(-3px);
+}
+
+.btn-top:hover .btn-top__arrow {
+    transform: translateY(-1px);
+}
+
+
 /* 반응형 */
 
 /* 반응형 */
