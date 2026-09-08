@@ -183,6 +183,19 @@
             </div>
         </section>
 
+        <!-- 브레드크럼 -->
+        <nav class="breadcrumb" aria-label="현재 위치">
+            <ol>
+                <li>
+                    <a href="#">
+                        <img src="./images/event-performance/icon/page-home.svg" alt="홈 페이지로 가기">
+                    </a>
+                </li>
+                <li><a href="#">박물관 소개</a></li>
+                <li><a href="#">역사·연혁</a></li>
+            </ol>
+        </nav>
+
         <nav class="history-nav">
             <ul class="history-nav__list inner">
                 <li class="history-nav__item"><a href="#history-1">경복궁 1기</a></li>
@@ -834,6 +847,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
     <script src="./js/header_footer_main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
@@ -845,6 +862,19 @@
             const navList = document.querySelector(".history-nav__list");
             const sections = document.querySelectorAll(".history-section");
             const navItems = document.querySelectorAll(".history-nav__item");
+
+            // 베너
+            const TextTime = gsap.timeline();
+            TextTime.from(".history-hero__title", {
+                y: 100,
+                opacity: 0,
+                duration: .5,
+            })
+            TextTime.from(".history-hero__desc", {
+                y: 80,
+                opacity: 0,
+                duration: .5,
+            })
 
             // [탭 중앙 정렬 함수]
             const scrollTabToCenter = (activeItem) => {

@@ -19,7 +19,7 @@
 
 .banner-wrap .channel {
     position: absolute;
-    top: 118px;
+    top: 130px;
     display: flex;
     gap: 0.1em;
     font-size: 0.94em;
@@ -704,6 +704,16 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .btn-top {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .btn-top {
+        right: 20px;
+        bottom: 20px;
+    }
+
 
 }
 
@@ -777,22 +787,21 @@
         align-items: center;
         justify-content: center;
         position: fixed;
-        right: 40px;          /* TOP 버튼과 X축 위치 일치 */
-        bottom: 96px;         /* TOP 버튼(30px + 54px) 위로 12px 간격 */
+        right: 20px;
+        bottom: 96px;
         z-index: 99;
         padding: 0;
         background-color: var(--color-pri);
         color: #fff;
-        border-radius: 50%;   /* 정원 유지 */
+        border-radius: 50%;
+        /* 정원 유지 */
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
         cursor: pointer;
-
-        /* 초기 상태: 숨김 & 스크롤 애니메이션 설정 (btn-top과 일치) */
         opacity: 0;
         visibility: hidden;
         transform: translateY(15px);
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease,
-                    background-color 0.3s ease, box-shadow 0.25s ease;
+            background-color 0.3s ease, box-shadow 0.25s ease;
     }
 
     .floating-filter-btn img {
@@ -923,6 +932,7 @@
         font-size: 0.8em;
     }
 
+    
 
 
 }
@@ -1026,4 +1036,6 @@
         width: 16px;
         height: 20px;
     }
+
+    
 }
