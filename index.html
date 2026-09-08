@@ -40,7 +40,8 @@
         <div class="header-bottom">
             <div class="header-inner inner">
                 <div class="header-left">
-                    <h1 class="header-logo"><a href="./index.html"><img src="./images/logo/logo-W.svg" alt="국립중앙박물관 로고"></a></h1>
+                    <h1 class="header-logo"><a href="./index.html"><img src="./images/logo/logo-W.svg"
+                                alt="국립중앙박물관 로고"></a></h1>
                     <nav class="header-gnb" aria-label="주 메뉴">
                         <ul class="gnb-main">
                             <li class="gnb-main-list">
@@ -81,7 +82,7 @@
                                 <a href="#">문화행사 · 교육</a>
                                 <div class="gnb-sub-wrap">
                                     <ul class="gnb-sub">
-                                        <li class="gnb-sub-list"><a href="./sub-event-performance-index.html">행사 · 공연</a></li>
+                                        <li class="gnb-sub-list"><a href="./sub-event-performance.html">행사 · 공연</a></li>
                                         <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
                                         <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
                                     </ul>
@@ -1343,9 +1344,19 @@
         </div>
     </footer>
 
+    <button type="button" class="btn-top" aria-label="최상단으로 이동">
+        <svg class="btn-top__arrow" width="12" height="10" viewBox="0 0 12 10" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 0L11.1962 9H0.803848L6 0Z" fill="currentColor" />
+        </svg>
+        <span class="btn-top__text">TOP</span>
+    </button>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="./js/header_footer_main.js"></script>
 
 <script>
@@ -1499,6 +1510,44 @@
         })
     })
 
+</script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 탑버튼 제어 및 푸터 반전 처리
+    const btnTop = document.querySelector(".btn-top");
+    const footer = document.querySelector(".footer");
+
+    if (btnTop) {
+        // 1. 200px 이상 스크롤 시 버튼 노출
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 200) {
+                btnTop.classList.add("is-visible");
+            } else {
+                btnTop.classList.remove("is-visible");
+            }
+        });
+
+        // 2. 클릭 시 최상단으로 부드럽게 스크롤 이동
+        btnTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // 3. ScrollTrigger를 활용하여 푸터 영역 감지 및 탑버튼 색상 반전
+        if (footer) {
+            ScrollTrigger.create({
+                trigger: footer,
+                start: "top bottom-=80px", // 푸터의 상단이 화면 하단(탑버튼 위치) 근처에 닿을 때
+                end: "bottom top",
+                onEnter: () => btnTop.classList.add("is-inverted"),
+                onLeaveBack: () => btnTop.classList.remove("is-inverted")
+            });
+        }
+    }
 </script>
 
 </html>
