@@ -16,7 +16,7 @@
 .perform-content-wrap {
     display: none;
     position: relative;
-    margin-top: 40px;
+    margin-top: 56px;
 }
 
 /* 현재 선택된 영역만 표시 */
@@ -467,13 +467,13 @@ main {
     display: none;
 
     width: 100%;
-    height: 250px !important;
+    height: 250px;
 
     margin: 0;
     padding: 0;
 
     overflow-x: hidden;
-    overflow-y: scroll !important;
+    overflow-y: scroll;
 
     border-bottom: 2px solid #222;
 
@@ -488,7 +488,8 @@ main {
     width: 100%;
     height: 50px;
 
-    padding: 0 15px;
+    padding: 0 13px;
+    padding-right: 10px;
 
     border-bottom: 0.5px solid var(--border-color);
 
@@ -555,7 +556,7 @@ main {
 
 /* 지역국립박물관 스크롤바 */
 .filter-list>li>ul::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 .filter-list>li>ul::-webkit-scrollbar-track {
