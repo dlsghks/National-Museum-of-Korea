@@ -198,8 +198,8 @@
 
 }
 
-@media screen and (max-width: 1020px) {
-
+@media screen and (max-width: 1024px) {
+  .btn-top {bottom: 20px; right: 20px;}
 }
 
 /* 모바일 */
@@ -214,6 +214,5 @@
   .gallery-tit {font-size: clamp(1rem, 2.86vw, 1.375rem);}
   .gallery-txt {font-size: clamp(1rem, 2.47vw, 1.188rem);}
   .gallery-list:hover .gallery-tit {font-size: clamp(1.25rem, 3.91vw, 1.875rem);}
-
 }
 

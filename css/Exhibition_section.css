@@ -886,11 +886,6 @@
 
 @media (min-width: 1025px) {
 
-    .section {
-        padding: 40px 0;
-    }
-
-
     .exhibition-layout {
         display: flex;
         justify-content: space-between;
