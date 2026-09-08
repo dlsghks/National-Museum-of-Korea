@@ -19,7 +19,7 @@
 
 .banner-wrap .channel {
     position: absolute;
-    top: 118px;
+    top: 130px;
     display: flex;
     gap: 0.1em;
     font-size: 0.94em;
@@ -704,6 +704,16 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .btn-top {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .btn-top {
+        right: 20px;
+        bottom: 20px;
+    }
+
 
 }
 
@@ -771,21 +781,56 @@
 
 
     .floating-filter-btn {
+        width: 54px;
+        height: 54px;
         display: flex;
         align-items: center;
         justify-content: center;
         position: fixed;
         right: 20px;
-        bottom: 30px;
+        bottom: 96px;
         z-index: 99;
-        padding: 14.5px 12px;
+        padding: 0;
         background-color: var(--color-pri);
         color: #fff;
-        border-radius: 75px;
-        font-size: 1.1em;
-        font-weight: 600;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        /* 정원 유지 */
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
         cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease,
+            background-color 0.3s ease, box-shadow 0.25s ease;
+    }
+
+    .floating-filter-btn img {
+        width: 20px;
+        height: 20px;
+        transition: filter 0.3s ease;
+    }
+
+    /* 2. 200px 스크롤 시 화면에 등장 (is-visible) */
+    .floating-filter-btn.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* 3. 푸터 영역 감지 시 배경 흰색 반전 (is-inverted) */
+    .floating-filter-btn.is-inverted {
+        background-color: #ffffff;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    /* 배경이 흰색이 될 때 내부 SVG/PNG 아이콘을 검은색으로 변경 */
+    .floating-filter-btn.is-inverted img {
+        filter: brightness(0);
+    }
+
+    /* 푸터 위에서의 호버 효과 */
+    .floating-filter-btn.is-inverted:hover {
+        background-color: #f0f0f0;
     }
 
     .relic-wrap .filter-wrap {
@@ -887,6 +932,7 @@
         font-size: 0.8em;
     }
 
+    
 
 
 }
@@ -990,4 +1036,6 @@
         width: 16px;
         height: 20px;
     }
+
+    
 }
