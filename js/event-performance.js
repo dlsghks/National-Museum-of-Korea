@@ -141,22 +141,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (button.getAttribute("aria-expanded") === "true") {
 
+                gsap.killTweensOf(list);
+
                 gsap.to(list, {
                     height: 0,
                     duration: 0.3,
                     ease: "power2.out",
+
                     onComplete: function () {
+
                         list.style.display = "none";
-                        list.style.height = "";
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        if (icon) {
+                            icon.src =
+                                "./images/event-performance/icon/filter-plus.svg";
+                        }
+
                     }
+
                 });
-
-                button.setAttribute("aria-expanded", "false");
-
-                if (icon) {
-                    icon.src =
-                        "./images/event-performance/icon/filter-plus.svg";
-                }
 
                 return;
             }
@@ -278,29 +286,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             /* ------------------------------------------
-               현재 카테고리 열기
-            ------------------------------------------ */
+   현재 카테고리 열기
+------------------------------------------ */
 
             list.style.display = "block";
 
-            /* 현재 실제 높이 가져오기 */
-            const listHeight = list.scrollHeight;
+            gsap.killTweensOf(list);
 
-            /* 처음에는 높이 0 */
-            gsap.set(list, {
-                height: 0,
-                overflow: "hidden"
-            });
+            /* 지역국립박물관 하위 목록인지 확인 */
+            const isMuseumList =
+                button.classList.contains("list-category-btn");
 
-            /* 스르륵 내려오기 */
-            gsap.to(list, {
-                height: listHeight,
-                duration: 0.3,
-                ease: "power2.out",
-                onComplete: function () {
-                    list.style.height = "auto";
-                }
-            });
+
+            /* ------------------------------------------
+               지역국립박물관
+            ------------------------------------------ */
+
+            if (isMuseumList) {
+
+                gsap.set(list, {
+                    height: 0,
+                    overflow: "hidden"
+                });
+
+                gsap.to(list, {
+                    height: 250,
+                    duration: 0.3,
+                    ease: "power2.out",
+
+                    onComplete: function () {
+
+                        list.style.height = "250px";
+                        list.style.overflowY = "scroll";
+
+                    }
+
+                });
+
+            }
+
+
+            /* ------------------------------------------
+               일반 필터
+            ------------------------------------------ */
+
+            else {
+
+                const listHeight = list.scrollHeight;
+
+                gsap.set(list, {
+                    height: 0,
+                    overflow: "hidden"
+                });
+
+                gsap.to(list, {
+                    height: listHeight,
+                    duration: 0.3,
+                    ease: "power2.out",
+
+                    onComplete: function () {
+
+                        list.style.height = "auto";
+
+                    }
+
+                });
+
+            }
 
             button.setAttribute(
                 "aria-expanded",
