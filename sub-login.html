@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./css/section.css">
     <link rel="stylesheet" href="./css/login-style.css">
     <link rel="icon" href="./images/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -82,7 +84,7 @@
                                 <a href="#">문화행사 · 교육</a>
                                 <div class="gnb-sub-wrap">
                                     <ul class="gnb-sub">
-                                        <li class="gnb-sub-list"><a href="./sub-event-performanc-index.html">행사 · 공연</a>
+                                        <li class="gnb-sub-list"><a href="./sub-event-performance.html">행사 · 공연</a>
                                         </li>
                                         <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
                                         <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
@@ -200,57 +202,102 @@
 
             <!-- 로그인 / 회원가입 -->
             <div class="login-wrap">
+                <!-- SNS 간편 로그인 -->
                 <!-- 로그인 -->
                 <div class="login-box">
-                    <h3>회원 로그인</h3>
-                    <p>모든 서비스를 제한없이 이용하시려면 로그인해주세요.</p>
-                    <form action="" class="login-form">
-                        <div class="input-wrap">
-                            <label for="user-id">아이디</label>
-                            <input type="text" id="user-id" placeholder="아이디 입력">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="user-password">비밀번호</label>
-                            <input type="password" id="user-password" placeholder="비밀번호 입력">
-                        </div>
-                        <div class="login-option">
-                            <label for="save-id">
-                                <input type="checkbox">
-                                <span>아이디 저장</span>
-                            </label>
-                            <div class="login-links">
-                                <a href="#">아이디 찾기</a>
-                                <a href="#">비밀번호 재설정</a>
-                            </div>
-                        </div>
-                        <button type="submit" class="login-btn">
-                            로그인
+
+                    <!-- 로그인 탭 -->
+                    <div class="login-tabs" role="tablist">
+                        <button type="button" class="login-tab active" role="tab" aria-selected="true"
+                            aria-controls="login-panel">
+                            회원 로그인
                         </button>
-                        <!-- SNS 간편 로그인 -->
-                        <div class="sns-login">
-                            <!-- <p class="sns-title">SNS 간편 로그인</p> -->
 
-                            <ul class="sns-list">
-                                <li>
-                                    <a href="#" aria-label="네이버 로그인">
-                                        <img src="./images/login/naver.svg" alt="네이버">
-                                    </a>
-                                </li>
+                        <button type="button" class="login-tab" role="tab" aria-selected="false"
+                            aria-controls="sns-panel">
+                            간편 로그인
+                        </button>
+                    </div>
 
-                                <li>
-                                    <a href="#" aria-label="카카오 로그인">
-                                        <img src="./images/login/kakao.svg" alt="카카오">
-                                    </a>
-                                </li>
 
-                                <li>
-                                    <a href="#" aria-label="구글 로그인">
-                                        <img src="./images/login/google.png" alt="구글">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </form>
+                    <!-- 회원 로그인 -->
+                    <div class="login-panel active" id="login-panel">
+
+                        <p class="login-desc">
+                            모든 서비스를 제한없이 이용하시려면 로그인해주세요.
+                        </p>
+
+                        <form action="" class="login-form">
+
+                            <div class="input-wrap">
+                                <label for="user-id">아이디</label>
+                                <input type="text" id="user-id" placeholder="아이디 입력">
+                            </div>
+
+                            <div class="input-wrap">
+                                <label for="user-password">비밀번호</label>
+                                <input type="password" id="user-password" placeholder="비밀번호 입력">
+                            </div>
+
+                            <div class="login-option">
+                                <label for="save-id">
+                                    <input type="checkbox" id="save-id">
+                                    <span>아이디 저장</span>
+                                </label>
+
+                                <div class="login-links">
+                                    <a href="#">아이디 찾기</a>
+                                    <a href="#">비밀번호 재설정</a>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="login-btn">
+                                로그인
+                            </button>
+
+                        </form>
+                    </div>
+
+
+                    <!-- 간편 로그인 -->
+                    <div class="login-panel sns-panel" id="sns-panel">
+
+                        <p class="login-desc">
+                            간편한 SNS 로그인으로 국립중앙박물관의 다양한 서비스를 만나보세요.
+                        </p>
+
+                        <p class="sns-info">
+                            사용하고 계신 SNS 계정으로 간편하게 로그인하여<br>
+                            전시, 교육, 문화행사 등의 서비스를 편리하게 이용하실 수 있습니다.
+                        </p>
+
+                        <ul class="sns-login-list">
+
+                            <li>
+                                <a href="#" class="sns-naver">
+                                    <img src="./images/login/naver.svg" alt="네이버">
+                                    <span>네이버 간편 로그인</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="sns-google">
+                                    <img src="./images/login/google.png" alt="구글">
+                                    <span>구글 간편 로그인</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="sns-kakao">
+                                    <img src="./images/login/kakao.svg" alt="카카오">
+                                    <span>카카오톡 간편 로그인</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
                 </div>
 
                 <!-- 회원가입 -->
@@ -410,6 +457,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 <script src="./js/header_footer_main.js"></script>
+<script defer src="./js/sub-login.js"></script>
 
 <script>
     var swiper = new Swiper('.online-contents-wrap', {

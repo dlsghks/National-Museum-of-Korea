@@ -100,3 +100,9 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;            /* Chrome, Safari, Opera */
 }
+
+.header .gnb-sub a[href="#"] {
+  pointer-events: none; /* 클릭 이벤트 차단 */
+  cursor: default;       /* 포인터 커서 원복 */
+  opacity: 0.5;          /* 흐리게 표시 (선택 사항) */
+}
