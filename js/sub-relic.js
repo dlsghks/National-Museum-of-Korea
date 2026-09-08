@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    gsap.registerPlugin(ScrollTrigger);
+    /* ==================================================
+       배너 애니메이션
+    ================================================== */
+
+    const bannerText = gsap.timeline();
+
+    bannerText.from(".banner-wrap .page", {
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+    });
+
+    bannerText.from(".banner-wrap .text-box .dec", {
+        y: 80,
+        opacity: 0,
+        duration: 0.5,
+    });
+
+
+
     // ================= 필터 아코디언 및 태그 연동 =================
     const filterButtons = document.querySelectorAll(".filter-button");
     const optionButtons = document.querySelectorAll(".filter-list button");
@@ -35,6 +57,40 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // 탑버튼 제어 및 푸터 반전 처리
+            const btnTop = document.querySelector(".btn-top");
+            const footer = document.querySelector(".footer");
+
+            if (btnTop) {
+                // 1. 200px 이상 스크롤 시 버튼 노출
+                window.addEventListener("scroll", () => {
+                    if (window.pageYOffset > 200) {
+                        btnTop.classList.add("is-visible");
+                    } else {
+                        btnTop.classList.remove("is-visible");
+                    }
+                });
+
+                // 2. 클릭 시 최상단으로 부드럽게 스크롤 이동
+                btnTop.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+
+                // 3. ScrollTrigger를 활용하여 푸터 영역 감지 및 탑버튼 색상 반전
+                if (footer) {
+                    ScrollTrigger.create({
+                        trigger: footer,
+                        start: "top bottom-=80px", // 푸터의 상단이 화면 하단(탑버튼 위치) 근처에 닿을 때
+                        end: "bottom top",
+                        onEnter: () => btnTop.classList.add("is-inverted"),
+                        onLeaveBack: () => btnTop.classList.remove("is-inverted")
+                    });
+                }
+            }
 
     // 태그 추가 함수
     function addTag(value) {

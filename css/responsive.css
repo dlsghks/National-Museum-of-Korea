@@ -29,7 +29,12 @@
         top: 90px;
     }
 
-
+    /* -------------------------
+        배너
+    ------------------------- */
+    /* .sub-banner-title p {
+        font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+    } */
     /* -------------------------
        탭
     ------------------------- */
@@ -76,19 +81,14 @@
     }
 
     /* ------------------------- 
-   검색창
-------------------------- */
+       검색창
+    ------------------------- */
 
     .filter-header {
         position: relative;
         width: 100%;
         height: 61px;
-    }
-
-    .filter-header h2 {
-        width: 100%;
-        height: 61px;
-        box-sizing: border-box;
+        background-color: var(--Primary-color);
     }
 
     .filter-header .search-box {
@@ -118,7 +118,7 @@
         min-width: 0;
 
         width: auto;
-        height: 40px;
+        height: 35px;
 
         box-sizing: border-box;
     }
@@ -161,13 +161,6 @@
         transform: translateY(2px);
 
         max-height: 60vh;
-    }
-
-    .filter>h2 {
-        width: 100%;
-        height: 52px;
-
-        font-size: 19px;
     }
 
     .filter-category {
@@ -279,7 +272,7 @@
        카드 호버 제거
     ------------------------- */
 
-    .content-detail {
+    /* .content-detail {
         display: none;
     }
 
@@ -288,8 +281,8 @@
     }
 
     .content-list>li>a:hover .content-title {
-        text-decoration: none;
-    }
+        font-weight: 500;
+    } */
 
 
     /* -------------------------
@@ -329,10 +322,6 @@
     ------------------------- */
 
     .mobile-filter-btn {
-        display: none;
-    }
-
-    .filter-close {
         display: none;
     }
 }
@@ -398,24 +387,9 @@
         position: relative;
 
         width: 100%;
-        height: 115px;
+        height: 70px;
 
         background: var(--Primary-color);
-    }
-
-    .filter-header h2 {
-        position: relative;
-
-        width: 100%;
-        height: 55px;
-
-        padding: 0 15px 0 20px;
-
-        box-sizing: border-box;
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
     }
 
     .filter-header .search-box {
@@ -423,7 +397,7 @@
 
         left: 0;
         right: 0;
-        bottom: 15px;
+        top: 15px;
 
         width: 100%;
         height: 40px;
@@ -570,61 +544,6 @@
 
 
     /* ==================================================
-       필터 제목
-    ================================================== */
-
-    .filter-header>h2 {
-        width: 100%;
-        height: 55px;
-
-        padding: 0 15px 0 20px;
-
-        box-sizing: border-box;
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        font-size: 17px;
-    }
-
-
-    /* 필터 아이콘 + 글자 */
-
-    .filter-header>h2>span {
-        display: none;
-    }
-
-
-    /* ==================================================
-       닫기 버튼
-    ================================================== */
-
-    .filter-close {
-        width: 35px;
-        height: 35px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        margin-left: auto;
-
-        padding: 0;
-
-        border: 0;
-        background: transparent;
-
-        color: #fff;
-
-        font-size: 28px;
-        line-height: 1;
-
-        cursor: pointer;
-    }
-
-
-    /* ==================================================
        필터 카테고리
     ================================================== */
 
@@ -657,7 +576,7 @@
     .filter-list>li {
         width: 100%;
         height: 44px;
-        padding: 12px 25px;
+        padding: 12px 23px;
         box-sizing: border-box;
     }
 
@@ -670,7 +589,9 @@
 
     .filter-list>li>ul>li {
         height: 44px;
-        padding: 0 12px;
+        padding-right: 14px;
+        padding-left: 24px;
+       
     }
 
 
@@ -851,7 +772,7 @@
 .pagination-list button {
     font-size: 14px;
 }
-}
+
 
 @media(max-width: 767px) {
 
@@ -908,7 +829,14 @@
     }
 
     .filter-tag {
+        gap: 4px;
         font-size: 12px;
+        padding: 0 5px;
+    }
+
+    .filter-tag img {
+        width: 20px;
+        height: 20px;   
     }
 
     .content-list {
@@ -916,7 +844,7 @@
     }
 
     .content-title {
-        font-size: 13px;
+        font-size: 14px;
         -webkit-line-clamp: 1;
     }
 

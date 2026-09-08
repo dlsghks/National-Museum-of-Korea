@@ -84,7 +84,7 @@
                                 <a href="#">문화행사 · 교육</a>
                                 <div class="gnb-sub-wrap">
                                     <ul class="gnb-sub">
-                                        <li class="gnb-sub-list"><a href="./sub-event-performanc-index.html">행사 · 공연</a>
+                                        <li class="gnb-sub-list"><a href="./sub-event-performance.html">행사 · 공연</a>
                                         </li>
                                         <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
                                         <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
@@ -539,163 +539,210 @@
             </div>
         </div>
     </footer>
-</body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-<script src="./js/header_footer_main.js"></script>
-<script defer src="./js/sub-info.js"></script>
+    <button type="button" class="btn-top" aria-label="최상단으로 이동">
+        <svg class="btn-top__arrow" width="12" height="10" viewBox="0 0 12 10" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 0L11.1962 9H0.803848L6 0Z" fill="currentColor" />
+        </svg>
+        <span class="btn-top__text">TOP</span>
+    </button>
 
-<script>
-    var swiper = new Swiper('.online-contents-wrap', {
-        loop: true,
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="./js/header_footer_main.js"></script>
+    <script defer src="./js/sub-info.js"></script>
 
-        slidesPerView: 1,
-        spaceBetween: 20,
-        centeredSlides: false,
+    <script>
+        var swiper = new Swiper('.online-contents-wrap', {
+            loop: true,
 
-        navigation: {
-            prevEl: '.prev-btn',
-            nextEl: '.next-btn',
-        },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: false,
 
-        breakpoints: {
-
-            // 아이패드
-            768: {
-                slidesPerView: 'auto',
-                spaceBetween: 50,
-                centeredSlides: true,
+            navigation: {
+                prevEl: '.prev-btn',
+                nextEl: '.next-btn',
             },
 
-            // PC
-            1280: {
-                slidesPerView: 'auto',
-                spaceBetween: 72,
-                centeredSlides: true,
-            }
+            breakpoints: {
 
-        },
+                // 아이패드
+                768: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 50,
+                    centeredSlides: true,
+                },
 
-        on: {
-            init: function () {
-                updateOnlineSlider(this);
+                // PC
+                1280: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 72,
+                    centeredSlides: true,
+                }
+
             },
 
-            slideChange: function () {
-                updateOnlineSlider(this);
+            on: {
+                init: function () {
+                    updateOnlineSlider(this);
+                },
+
+                slideChange: function () {
+                    updateOnlineSlider(this);
+                }
             }
+        });
+
+
+        function updateOnlineSlider(swiper) {
+
+            const current = swiper.realIndex + 1;
+            const total = 6;
+
+            document.querySelector('.current').textContent = current;
+            document.querySelector('.total').textContent = total;
+
+            const progress = (current / total) * 100;
+
+            document.querySelector('.progress').style.width =
+                progress + '%';
         }
-    });
+    </script>
 
+    <script>
+        const featuredSwiper = new Swiper('.M-exhibition-layout', {
+            slidesPerView: 1,
+            speed: 600,
+            loop: true,
+        });
 
-    function updateOnlineSlider(swiper) {
+        const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
+            slidesPerView: 1.8,
+            spaceBetween: 20,
+            centeredSlides: true,
+            speed: 600,
+            loop: true,
+            allowTouchMove: true,
 
-        const current = swiper.realIndex + 1;
-        const total = 6;
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.8,
+                    spaceBetween: 25,
+                    centeredSlides: true
+                },
 
-        document.querySelector('.current').textContent = current;
-        document.querySelector('.total').textContent = total;
+                // iPad (769px ~ 1024px)
+                769: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    initialSlide: 1,
+                    centeredSlides: false
+                },
 
-        const progress = (current / total) * 100;
-
-        document.querySelector('.progress').style.width =
-            progress + '%';
-    }
-</script>
-
-<script>
-    const featuredSwiper = new Swiper('.M-exhibition-layout', {
-        slidesPerView: 1,
-        speed: 600,
-        loop: true,
-    });
-
-    const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
-        slidesPerView: 1.8,
-        spaceBetween: 20,
-        centeredSlides: true,
-        speed: 600,
-        loop: true,
-        allowTouchMove: true,
-
-        breakpoints: {
-            0: {
-                slidesPerView: 1.8,
-                spaceBetween: 25,
-                centeredSlides: true
+                // PC
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 48,
+                    initialSlide: 1,
+                    centeredSlides: false
+                },
             },
+        });
 
-            // iPad (769px ~ 1024px)
-            769: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                initialSlide: 1,
-                centeredSlides: false
-            },
+        const sliderButtons = document.querySelectorAll('.slider-button');
+        const prevButton = sliderButtons[0];
+        const nextButton = sliderButtons[1];
 
-            // PC
-            1025: {
-                slidesPerView: 3,
-                spaceBetween: 48,
-                initialSlide: 1,
-                centeredSlides: false
-            },
-        },
-    });
+        const currentNumber = document.querySelector('.page-number strong');
+        const totalNumber = document.querySelector('.M-number');
+        const progressValue = document.querySelector('.progress-value');
 
-    const sliderButtons = document.querySelectorAll('.slider-button');
-    const prevButton = sliderButtons[0];
-    const nextButton = sliderButtons[1];
+        const totalSlides = Number(totalNumber.textContent);
 
-    const currentNumber = document.querySelector('.page-number strong');
-    const totalNumber = document.querySelector('.M-number');
-    const progressValue = document.querySelector('.progress-value');
+        function updateSliderInfo() {
+            const realIndex = exhibitionSwiper.realIndex;
 
-    const totalSlides = Number(totalNumber.textContent);
+            const currentPage = window.innerWidth >= 1024
+                ? (realIndex === 0 ? totalSlides : realIndex)
+                : realIndex + 1;
 
-    function updateSliderInfo() {
-        const realIndex = exhibitionSwiper.realIndex;
+            currentNumber.textContent = currentPage;
 
-        const currentPage = window.innerWidth >= 1024
-            ? (realIndex === 0 ? totalSlides : realIndex)
-            : realIndex + 1;
+            const progress = (currentPage / totalSlides) * 100;
+            progressValue.style.width = progress + '%';
+        }
 
-        currentNumber.textContent = currentPage;
+        nextButton.addEventListener('click', function () {
+            featuredSwiper.slideNext(600);
+            exhibitionSwiper.slideNext(600);
+        });
 
-        const progress = (currentPage / totalSlides) * 100;
-        progressValue.style.width = progress + '%';
-    }
+        prevButton.addEventListener('click', function () {
+            featuredSwiper.slidePrev(600);
+            exhibitionSwiper.slidePrev(600);
+        });
 
-    nextButton.addEventListener('click', function () {
-        featuredSwiper.slideNext(600);
-        exhibitionSwiper.slideNext(600);
-    });
+        exhibitionSwiper.on('slideChange', function () {
+            updateSliderInfo();
+        });
 
-    prevButton.addEventListener('click', function () {
-        featuredSwiper.slidePrev(600);
-        exhibitionSwiper.slidePrev(600);
-    });
-
-    exhibitionSwiper.on('slideChange', function () {
         updateSliderInfo();
-    });
 
-    updateSliderInfo();
+        // 알림 탭 메뉴 
 
-    // 알림 탭 메뉴 
+        const activeButton = document.querySelectorAll(".notice-tab button")
 
-    const activeButton = document.querySelectorAll(".notice-tab button")
+        activeButton.forEach(function (button) {
+            button.addEventListener("click", function () {
+                activeButton.forEach(function (button) {
+                    button.classList.remove("active");
+                });
 
-    activeButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            activeButton.forEach(function (button) {
-                button.classList.remove("active");
+                button.classList.add("active");
+            })
+        })
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 탑버튼 제어 및 푸터 반전 처리
+        const btnTop = document.querySelector(".btn-top");
+        const footer = document.querySelector(".footer");
+
+        if (btnTop) {
+            // 1. 200px 이상 스크롤 시 버튼 노출
+            window.addEventListener("scroll", () => {
+                if (window.pageYOffset > 200) {
+                    btnTop.classList.add("is-visible");
+                } else {
+                    btnTop.classList.remove("is-visible");
+                }
             });
 
-            button.classList.add("active");
-        })
-    })
+            // 2. 클릭 시 최상단으로 부드럽게 스크롤 이동
+            btnTop.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
 
-</script>
+            // 3. ScrollTrigger를 활용하여 푸터 영역 감지 및 탑버튼 색상 반전
+            if (footer) {
+                ScrollTrigger.create({
+                    trigger: footer,
+                    start: "top bottom-=80px", // 푸터의 상단이 화면 하단(탑버튼 위치) 근처에 닿을 때
+                    end: "bottom top",
+                    onEnter: () => btnTop.classList.add("is-inverted"),
+                    onLeaveBack: () => btnTop.classList.remove("is-inverted")
+                });
+            }
+        }
+    </script>
 
 </html>
