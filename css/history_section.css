@@ -29,7 +29,7 @@
 .history-hero__inner {
     position: relative;
     z-index: 2;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin: 0 auto;
 }
 
@@ -47,49 +47,13 @@
     font-size: clamp(1rem, 1.28vw, 1.125rem);
     font-weight: 300;
     line-height: 1.7;
-    color: #a0aec0;
+    color: #ffffff;
     word-break: keep-all;
 }
 
 .history-hero__desc .pc-only {
     display: block;
 }
-
-/* =========================================================
-   Breadcrumb
-========================================================= */
-
-.breadcrumb {
-    position: absolute;
-    top: 130px;
-}
-
-.breadcrumb>ol {
-    display: flex;
-    align-items: center;
-
-    font-size: 15px;
-    color: #fff;
-}
-
-.breadcrumb>ol>li {
-    display: flex;
-    align-items: center;
-}
-
-.breadcrumb>ol>li:nth-child(2)::before,
-.breadcrumb>ol>li:nth-child(3)::before,
-.breadcrumb>ol>li:nth-child(4)::before {
-    content: "";
-
-    display: block;
-
-    width: 24px;
-    height: 24px;
-
-    background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
-}
-
 
 /* ==========================================================================
    Navigation Bar (Sticky)

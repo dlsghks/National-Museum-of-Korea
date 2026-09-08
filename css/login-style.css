@@ -82,9 +82,9 @@
 
 
 /* 브레드크럼 */
-.breadcrumb {
+/* .breadcrumb {
     position: absolute;
-    top: 120px;
+    top: 130px;
 }
 
 .breadcrumb>ol {
@@ -107,7 +107,7 @@
     width: 24px;
     height: 24px;
     background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
-}
+} */
 
 
 main {
@@ -127,8 +127,9 @@ main {
 .login-wrap {
     display: flex;
     position: relative;
-    margin: 40px 0;
-    padding: 50px 0;
+    margin: 60px 0;
+    padding: 30px 0;
+    box-sizing: border-box;
 }
 
 
@@ -147,7 +148,7 @@ main {
 .login-box,
 .join-box {
     width: 50%;
-    min-height: 250px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,6 +157,7 @@ main {
 .login-box {
     padding-right: 30px;
     text-align: center;
+    /* transform: translateY(-5px); */
 }
 
 .join-box {
@@ -171,8 +173,8 @@ main {
 .login-wrap::after {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 70px;
+    top: 30px;
+    bottom: 30px;
     left: 50%;
     width: 1px;
     background: #d5d5d5;
@@ -190,15 +192,36 @@ main {
 
 /* 제목 아래 설명 */
 .login-box>p,
-.join-box>p,
-.login-desc {
+.join-box>p {
     min-height: 48px;
     margin: 15px 0;
     font-size: 16px;
-    color: #666;
+    color: var(--color-typo-sec);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 로그인 설명 */
+.login-desc {
+    min-height: 48px;
+    margin: 5px 0;
+    font-size: 16px;
+    color: var(--color-typo-sec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 간편로그인 설명 */
+.sns-panel .login-desc {
+    margin: 21px 0;
+    word-break: keep-all;
+}
+
+/* 로그인 탭과 설명 사이 간격 */
+.login-box>p {
+    margin-top: 5px;
 }
 
 
@@ -244,9 +267,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 15px 0;
+    margin: 10px 0 15px;
     font-size: 14px;
-    color: #666;
+    color: var(--color-typo-sec);
 }
 
 .login-option label {
@@ -274,7 +297,7 @@ main {
 }
 
 .login-links a {
-    color: #666;
+    color: var(--color-typo-sec);
 }
 
 
@@ -283,10 +306,10 @@ main {
     width: 100%;
     height: 48px;
     min-height: 48px;
-    margin-top: 0;
+    /* margin-top: 10px; */
     border: 0;
     border-radius: 3px;
-    background: #243B66;
+    background: var(--color-pri);
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -301,20 +324,29 @@ main {
     display: flex;
     width: 360px;
     height: 48px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 
 .login-tab {
     flex: 1;
-    border: 1px solid #243B66;
+    border: 1px solid var(--color-pri);
     background: #fff;
-    color: #243B66;
-    font-size: 16px;
+    color: var(--color-pri);
+    font-size: 18px;
+    font-weight: var(--font-w-B);
     cursor: pointer;
 }
 
+.login-tab:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.login-tab:last-child {
+    border-radius: 0 3px 3px 0;
+}
+
 .login-tab.active {
-    background: #243B66;
+    background: var(--color-pri);
     color: #fff;
 }
 
@@ -322,7 +354,7 @@ main {
 /* 로그인 패널 */
 .login-panel {
     width: 360px;
-    height: 200px;
+    min-height: 200px;
 }
 
 .login-panel:not(.active) {
@@ -330,24 +362,19 @@ main {
 }
 
 
-/* SNS 설명 */
-.sns-info {
-    margin: 0 0 20px;
-    font-size: 13px;
-    line-height: 1.6;
-    color: #999;
-    text-align: center;
-}
+
 
 
 /* SNS 로그인 버튼 */
 .sns-login-list {
-    margin: 0;
+    width: 360px;
+    margin: 0 auto;
     padding: 0;
 }
 
 .sns-login-list li {
-    margin-bottom: 8px;
+    width: 100%;
+    margin-bottom: 12px;
 }
 
 .sns-login-list li:last-child {
@@ -358,26 +385,50 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     width: 100%;
-    height: 40px;
+    height: 48px;
     border: 1px solid #ddd;
     border-radius: 3px;
-    font-size: 13px;
+    font-size: 16px;
+    transition: 0.2s;
 }
 
+.sns-login-list a:hover {
+    background: var(--color-pri);
+    border-color: var(--color-pri);
+    color: #fff;
+}
+
+/* SNS 로그인 아이콘 */
 .sns-login-list img {
-    position: absolute;
-    left: 15px;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+    margin-right: 10px;
+}
+
+/* 네이버 */
+.sns-login-list .sns-naver img {
+    width: 28px;
+    height: 28px;
+}
+
+/* 지메일 */
+.sns-login-list .sns-google img {
+    width: 28px;
+    height: 28px;
+}
+
+/* 카카오 */
+.sns-login-list .sns-kakao img {
+    width: 28px;
+    height: 28px;
 }
 
 /* 회원가입 안내 */
 .join-service {
     width: 360px;
-    margin: 0 auto 10px;
+    margin: 0 auto;
     padding: 20px;
     background: #f5f5f5;
     border-radius: 4px;
@@ -416,18 +467,19 @@ main {
     justify-content: center;
     width: 360px;
     height: 48px;
-    margin: auto auto 0;
-    border: 1px solid #243B66;
+    margin: 20px 0 0;
+    border: 1px solid var(--color-pri);
     border-radius: 3px;
-    color: #243B66;
+    color: var(--color-pri);
     font-size: 16px;
     transition: 0.2s;
 }
 
 .join-btn:hover {
-    background: #243B66;
+    background: var(--color-pri);
     color: #fff;
 }
+
 
 
 /* ==================================================
@@ -436,12 +488,9 @@ main {
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 
-    .inner {
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
         width: calc(100% - 80px);
         max-width: none;
-    }
-
-    main {
     }
 
     .page-header {
@@ -449,8 +498,7 @@ main {
         padding-bottom: 20px;
     }
 
-
-    /* 베너 */
+    /* 배너 */
     .banner {
         width: 100%;
         height: 550px;
@@ -474,9 +522,8 @@ main {
         line-height: 1.6;
     }
 
-
     /* 브레드크럼 */
-    .breadcrumb {
+    /* .breadcrumb {
         top: 100px;
     }
 
@@ -494,7 +541,7 @@ main {
     .breadcrumb>ol>li:first-child img {
         width: 18px;
         height: 18px;
-    }
+    } */
 
 
     /* 로그인 상단 */
@@ -530,25 +577,27 @@ main {
 
     /* 로그인 / 회원가입 */
     .login-wrap {
-        margin: 0 0 35px 0;
-        padding: 35px 0;
+        margin: 40px 0;
+        padding: 30px 0;
     }
 
-    .login-wrap::before {
-        top: -35px;
+    /* 가운데 구분선 */
+    .login-wrap::after {
+        top: 30px;
+        bottom: 30px;
     }
 
     .login-box,
     .join-box {
-        min-height: 230px;
+        min-height: 200px;
     }
 
     .login-box {
-        padding-right: 40px;
+        padding-right: 30px;
     }
 
     .join-box {
-        padding-left: 40px;
+        padding-left: 30px;
     }
 
     .login-box h3,
@@ -556,70 +605,118 @@ main {
         font-size: 20px;
     }
 
+    /* 제목 아래 설명 */
     .login-box>p,
-    .join-box>p {
-        min-height: 45px;
-        margin: 12px 0;
-        font-size: 16px;
+    .join-box>p,
+    .login-desc {
+        white-space: nowrap;
+        font-size: 14px;
+        letter-spacing: -0.3px;
     }
+
+    /* 간편로그인 설명 */
+   .sns-panel .login-desc {
+    margin: 20px 0;
+    white-space: normal;
+}
 
 
     /* 로그인 폼 */
     .login-form {
-        width: 320px;
+        width: 360px;
         max-width: 100%;
         height: auto;
     }
 
     .input-wrap {
-        margin-bottom: 7px;
+        margin-bottom: 8px;
     }
 
     .input-wrap input {
-        height: 45px;
-        padding: 0 13px;
+        height: 48px;
+        padding: 0 15px;
         font-size: 14px;
     }
 
 
     /* 로그인 옵션 */
     .login-option {
-        margin: 12px 0;
+        margin: 10px 0 15px;
         font-size: 14px;
     }
 
     .login-option label {
-        gap: 5px;
+        gap: 6px;
     }
 
     .login-option input[type="checkbox"] {
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
     }
 
     .login-links {
-        gap: 12px;
+        gap: 18px;
     }
 
 
     /* 로그인 버튼 */
     .login-btn {
-        height: 45px;
-        min-height: 45px;
+        height: 48px;
+        min-height: 48px;
         font-size: 16px;
     }
 
 
-    /* 회원서비스 */
-    .join-service {
-        width: 320px;
+    /* 로그인 탭 */
+    .login-tabs {
+        width: 360px;
+        height: 48px;
+    }
+
+    .login-tab {
+        font-size: 16px;
+    }
+
+
+    /* 로그인 패널 */
+    .login-panel {
+        width: 360px;
+        min-height: 200px;
+    }
+
+
+    /* SNS 로그인 */
+    .sns-login-list {
+        width: 360px;
         max-width: 100%;
-        margin-bottom: 10px;
-        padding: 18px;
+    }
+
+    .sns-login-list li {
+        margin-bottom: 12px;
+    }
+
+    .sns-login-list a {
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .sns-login-list img {
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+    }
+
+
+    /* 회원가입 안내 */
+    .join-service {
+        width: 360px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
     }
 
     .join-service h4 {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         font-size: 15px;
     }
 
@@ -630,10 +727,36 @@ main {
 
     /* 회원가입 버튼 */
     .join-btn {
-        width: 320px;
+        width: 360px;
         max-width: 100%;
-        height: 45px;
+        height: 48px;
+        margin: 20px 0 0;
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    .login-box {
+        padding-right: 20px;
+    }
+
+    .join-box {
+        padding-left: 20px;
+    }
+
+    .login-form,
+    .login-tabs,
+    .login-panel,
+    .sns-login-list,
+    .join-service,
+    .join-btn {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .login-links {
+        gap: 8px;
+        font-size: 13px;
     }
 }
 
@@ -644,11 +767,8 @@ main {
 
 @media screen and (max-width: 767px) {
 
-    .inner {
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
         width: calc(100% - 40px);
-    }
-
-    main {
     }
 
     .page-header {
@@ -657,7 +777,7 @@ main {
     }
 
 
-    /* 베너 */
+    /* 배너 */
     .banner {
         width: 100%;
         height: 420px;
@@ -683,7 +803,7 @@ main {
 
 
     /* 브레드크럼 */
-    .breadcrumb {
+    /* .breadcrumb {
         top: 80px;
     }
 
@@ -701,7 +821,7 @@ main {
     .breadcrumb>ol>li:first-child img {
         width: 16px;
         height: 16px;
-    }
+    } */
 
 
     /* 로그인 상단 */
@@ -738,12 +858,8 @@ main {
     /* 로그인 / 회원가입 */
     .login-wrap {
         flex-direction: column;
-        margin: 0;
+        margin: 30px 0;
         padding: 30px 0;
-    }
-
-    .login-wrap::before {
-        display: none;
     }
 
     .login-wrap::after {
@@ -774,9 +890,15 @@ main {
         font-size: 18px;
     }
 
-    .login-box p,
-    .join-box p {
+    .login-box>p,
+    .join-box>p {
         min-height: 0;
+        margin: 12px 0;
+        font-size: 14px;
+    }
+
+    /* 간편로그인 설명 */
+    .sns-panel .login-desc {
         margin: 12px 0;
         font-size: 14px;
     }
@@ -804,7 +926,7 @@ main {
 
     /* 로그인 옵션 */
     .login-option {
-        margin: 15px 0;
+        margin: 10px 0 15px;
         font-size: 14px;
     }
 
@@ -830,16 +952,58 @@ main {
     }
 
 
+    /* 로그인 탭 */
+    .login-tabs {
+        width: 360px;
+        max-width: 100%;
+        height: 48px;
+    }
+
+    .login-tab {
+        font-size: 15px;
+    }
+
+
+    /* 로그인 패널 */
+    .login-panel {
+        width: 360px;
+        max-width: 100%;
+        min-height: 0;
+    }
+
+
+    /* SNS 로그인 */
+    .sns-login-list {
+        width: 360px;
+        max-width: 100%;
+    }
+
+    .sns-login-list li {
+        margin-bottom: 8px;
+    }
+
+    .sns-login-list a {
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .sns-login-list img {
+        width: 26px;
+        height: 26px;
+        margin-right: 8px;
+    }
+
+
     /* 회원가입 안내 */
     .join-service {
         width: 360px;
         max-width: 100%;
-        margin: 0 auto 15px;
+        margin: 0 auto;
         padding: 20px;
     }
 
     .join-service h4 {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
         font-size: 15px;
     }
 
@@ -853,6 +1017,7 @@ main {
         width: 360px;
         max-width: 100%;
         height: 48px;
+        margin: 20px 0 0;
         font-size: 16px;
     }
 }

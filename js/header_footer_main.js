@@ -13,7 +13,7 @@ const videoProgress = document.getElementById("video-progress");
 const videoProgressBar = document.getElementById("video-progress-bar");
 // 1280px 이상일 때만 true를 반환하는 미디어 쿼리 설정
 const pcMedia = window.matchMedia('(min-width: 1280px)');
-
+const breadcrumb = document.querySelector(".breadcrumb");
 
 function updateLogo() {
   const isScrolled = window.scrollY > 50;
@@ -142,6 +142,18 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// breadcrumb
+function breadcrumbResize() {
+  let headerHeight = header.offsetHeight;
+  if(pcMedia.matches) {
+    breadcrumb.style.top = `calc(${headerHeight + 10}px)`
+  } else {
+    breadcrumb.style.top = `calc(${headerHeight + 5}px)`
+  }
+}
+window.addEventListener('resize', breadcrumbResize);
+breadcrumbResize();
+
 // 비디오
 // 1. 재생 / 일시정지 토글
 function videoPlay() {
@@ -176,4 +188,3 @@ videoPlayBtn.addEventListener('click', videoPlay);
 video.addEventListener('timeupdate', videoPlayProgress); // 재생 시간 변경 이벤트
 videoProgress.addEventListener('click', setProgress);
 
-//////////////////////////////////// 스크롤 스냅 ////////////////////////////////////
