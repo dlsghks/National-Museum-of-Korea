@@ -5,6 +5,11 @@
 
 @media (max-width: 1024px) {
 
+    /* 헤더값 */
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
+        width: calc(100% - 40px);
+    }
+
     /* -------------------------
        전체
     ------------------------- */
@@ -16,7 +21,7 @@
     main {
         width: calc(100% - 60px);
         max-width: none;
-        padding-top: 60px;
+        padding-top: 25px;
         box-sizing: border-box;
     }
 
@@ -173,6 +178,7 @@
     .filter-list>li {
         width: 100%;
         font-size: 15px;
+        padding: 0 14px 0 15px;
     }
 
     .filter-list label {
@@ -253,7 +259,7 @@
         display: flex;
         flex-direction: column;
 
-        gap: 15px;
+        gap: 10px;
     }
 
     .content-list>li>a>img {
@@ -459,22 +465,47 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid #fff;
+        /* border: 1px solid #fff; */
         border-radius: 50%;
         background: var(--Primary-color);
         z-index: 999;
         cursor: pointer;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+        transform: translateY(30px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease,
+            background-color 0.3s ease,
+            border-color 0.3s ease;
     }
 
+
+    /* 스크롤 200px 이상 → 아래에서 위로 등장 */
     .mobile-filter-btn.is-visible {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+        transform: translateY(0);
+    }
+
+
+    /* 푸터 → 배경 반전 */
+    .mobile-filter-btn.is-inverted {
+        background: #fff;
+        border-color: var(--Primary-color);
+        border: #fff;
+    }
+
+
+    /* 푸터 → 아이콘 색상 반전 */
+    .mobile-filter-btn.is-inverted img {
+        filter: invert(1);
     }
 
 
@@ -496,12 +527,20 @@
         transform: translateY(20px);
     }
 
+    /* 필터 열렸을 때 TOP 버튼 숨김 */
+
+    body.mobile-filter-active .btn-top {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
 
     .filter-overlay {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
+        z-index: 1000;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -525,7 +564,7 @@
         left: 10px;
         right: 10px;
         bottom: 0;
-        z-index: 2;
+        z-index: 1001;
         width: auto;
         max-height: 80vh;
         overflow-y: auto;
@@ -546,6 +585,7 @@
     }
 
 
+
     /* -------------------------
        필터 열림
     ------------------------- */
@@ -554,6 +594,8 @@
     body.mobile-filter-active .perform-content-wrap.tab-active .filter {
         transform: translateY(0);
     }
+
+
 
 
     /* ==================================================
@@ -589,7 +631,7 @@
     .filter-list>li {
         width: 100%;
         height: 44px;
-        padding: 12px 23px;
+        padding: 12px 24px;
         box-sizing: border-box;
     }
 
@@ -597,12 +639,12 @@
     /* 지역 박물관 */
 
     .filter-list>li>ul {
-        height: 220px;
+        height: 200px !important
     }
 
     .filter-list>li>ul>li {
         height: 44px;
-        padding-right: 14px;
+        padding-right: 20px;
         padding-left: 24px;
 
     }
@@ -615,7 +657,7 @@
     .result {
         order: 2;
         width: 100%;
-        padding-top: 0;
+        padding-top: 8px;
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -714,6 +756,7 @@
         display: block;
         width: 100%;
         height: auto;
+        
     }
 
 
