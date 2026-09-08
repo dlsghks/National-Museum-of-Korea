@@ -17,23 +17,35 @@
 
 
 
-.banner-wrap .channel {
+.breadcrumb {
     position: absolute;
     top: 130px;
+}
+
+.breadcrumb>ol {
     display: flex;
-    gap: 0.1em;
-    font-size: 0.94em;
     align-items: center;
+
+    font-size: 15px;
     color: #fff;
 }
 
-.banner-wrap .channel img {
-    filter: brightness(0) invert();
+.breadcrumb>ol>li {
+    display: flex;
+    align-items: center;
 }
 
-.banner-wrap .channel .arrow {
+.breadcrumb>ol>li:nth-child(2)::before,
+.breadcrumb>ol>li:nth-child(3)::before,
+.breadcrumb>ol>li:nth-child(4)::before {
+    content: "";
+
+    display: block;
+
     width: 24px;
     height: 24px;
+
+    background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
 }
 
 .banner-wrap .text-box {
@@ -44,6 +56,8 @@
     gap: 1.5em;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5);
     color: #fff;
     word-break: keep-all;
@@ -54,6 +68,8 @@
     font-weight: 700;
     margin-bottom: 5px;
     text-align: center;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
 }
 
 .banner-wrap .text-box .dec {
@@ -631,10 +647,6 @@
         padding: 0 20px;
     }
 
-    .banner-wrap .channel {
-        top: 120px;
-    }
-
 
     .banner-wrap {
         margin-bottom: 40px;
@@ -670,9 +682,9 @@
         font-size: 0.75em;
     }
 
-    .banner-wrap .channel {
-        font-size: 1em;
+    .breadcrumb {
         top: 90px;
+        font-size: 15px;
     }
 
     /* 검색창 */
@@ -743,6 +755,10 @@
 
     body {
         font-size: 0.5em;
+    }
+
+    .banner-wrap .channel {
+        font-size: 12px;
     }
 
     .banner-wrap .banner>img {
@@ -933,7 +949,7 @@
         font-size: 0.8em;
     }
 
-    
+
 
 
 }
@@ -949,11 +965,11 @@
         font-size: 0.875em;
     }
 
-    .banner-wrap .channel {
+    .breadcrumb {
+        position: absolute;
         top: 75px;
-        font-size: 0.9em;
-        gap: 0.5em;
     }
+
 
     .banner-wrap .channel>img {
         width: 16px;
@@ -1038,5 +1054,5 @@
         height: 20px;
     }
 
-    
+
 }
