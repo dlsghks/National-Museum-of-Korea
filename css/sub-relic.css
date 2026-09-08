@@ -39,7 +39,7 @@
 .banner-wrap .text-box {
     position: absolute;
     left: 50%;
-    top: 34%;
+    top: 34.3%;
     transform: translateX(-50%);
     gap: 1.5em;
     display: flex;
