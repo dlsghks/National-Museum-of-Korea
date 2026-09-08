@@ -58,40 +58,52 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 탑버튼 제어 및 푸터 반전 처리
-            const btnTop = document.querySelector(".btn-top");
-            const footer = document.querySelector(".footer");
+    // 탑버튼 및 플로팅 필터버튼 제어 / 푸터 반전 처리
+const btnTop = document.querySelector(".btn-top");
+const btnFilter = document.querySelector(".floating-filter-btn"); // 필터 버튼 선택
+const footer = document.querySelector(".footer");
 
-            if (btnTop) {
-                // 1. 200px 이상 스크롤 시 버튼 노출
-                window.addEventListener("scroll", () => {
-                    if (window.pageYOffset > 200) {
-                        btnTop.classList.add("is-visible");
-                    } else {
-                        btnTop.classList.remove("is-visible");
-                    }
-                });
+// 제어할 버튼들을 배열로 관리 (존재하는 버튼만 추출)
+const floatingBtns = [btnTop, btnFilter].filter(Boolean);
 
-                // 2. 클릭 시 최상단으로 부드럽게 스크롤 이동
-                btnTop.addEventListener("click", () => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-                });
-
-                // 3. ScrollTrigger를 활용하여 푸터 영역 감지 및 탑버튼 색상 반전
-                if (footer) {
-                    ScrollTrigger.create({
-                        trigger: footer,
-                        start: "top bottom-=80px", // 푸터의 상단이 화면 하단(탑버튼 위치) 근처에 닿을 때
-                        end: "bottom top",
-                        onEnter: () => btnTop.classList.add("is-inverted"),
-                        onLeaveBack: () => btnTop.classList.remove("is-inverted")
-                    });
-                }
+if (floatingBtns.length > 0) {
+    // 1. 200px 이상 스크롤 시 모든 플로팅 버튼 노출
+    window.addEventListener("scroll", () => {
+        const isScrolled = window.pageYOffset > 200;
+        floatingBtns.forEach(btn => {
+            if (isScrolled) {
+                btn.classList.add("is-visible");
+            } else {
+                btn.classList.remove("is-visible");
             }
+        });
+    });
 
+    // 2. 탑버튼 클릭 시 최상단으로 부드럽게 스크롤 이동
+    if (btnTop) {
+        btnTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
+    // 3. ScrollTrigger를 활용하여 푸터 영역 감지 및 버튼 색상 반전
+    if (footer) {
+        ScrollTrigger.create({
+            trigger: footer,
+            start: "top bottom-=80px", // 푸터의 상단이 화면 하단 근처에 닿을 때
+            end: "bottom top",
+            onEnter: () => {
+                floatingBtns.forEach(btn => btn.classList.add("is-inverted"));
+            },
+            onLeaveBack: () => {
+                floatingBtns.forEach(btn => btn.classList.remove("is-inverted"));
+            }
+        });
+    }
+}
     // 태그 추가 함수
     function addTag(value) {
         // 중복 방지
