@@ -82,9 +82,9 @@
 
 
 /* 브레드크럼 */
-.breadcrumb {
+/* .breadcrumb {
     position: absolute;
-    top: 120px;
+    top: 130px;
 }
 
 .breadcrumb>ol {
@@ -107,7 +107,7 @@
     width: 24px;
     height: 24px;
     background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
-}
+} */
 
 
 main {
@@ -191,12 +191,12 @@ main {
 
 
 /* 제목 아래 설명 */
-.login-box > p,
-.join-box > p {
+.login-box>p,
+.join-box>p {
     min-height: 48px;
     margin: 15px 0;
     font-size: 16px;
-    color: #666;
+    color: var(--color-typo-sec);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,7 +207,7 @@ main {
     min-height: 48px;
     margin: 5px 0;
     font-size: 16px;
-    color: #666;
+    color: var(--color-typo-sec);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,10 +216,11 @@ main {
 /* 간편로그인 설명 */
 .sns-panel .login-desc {
     margin: 21px 0;
+    word-break: keep-all;
 }
 
 /* 로그인 탭과 설명 사이 간격 */
-.login-box > p {
+.login-box>p {
     margin-top: 5px;
 }
 
@@ -268,7 +269,7 @@ main {
     justify-content: space-between;
     margin: 10px 0 15px;
     font-size: 14px;
-    color: #666;
+    color: var(--color-typo-sec);
 }
 
 .login-option label {
@@ -296,7 +297,7 @@ main {
 }
 
 .login-links a {
-    color: #666;
+    color: var(--color-typo-sec);
 }
 
 
@@ -308,7 +309,7 @@ main {
     /* margin-top: 10px; */
     border: 0;
     border-radius: 3px;
-    background: #243B66;
+    background: var(--color-pri);
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -328,15 +329,24 @@ main {
 
 .login-tab {
     flex: 1;
-    border: 1px solid #243B66;
+    border: 1px solid var(--color-pri);
     background: #fff;
-    color: #243B66;
-    font-size: 16px;
+    color: var(--color-pri);
+    font-size: 18px;
+    font-weight: var(--font-w-B);
     cursor: pointer;
 }
 
+.login-tab:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.login-tab:last-child {
+    border-radius: 0 3px 3px 0;
+}
+
 .login-tab.active {
-    background: #243B66;
+    background: var(--color-pri);
     color: #fff;
 }
 
@@ -380,12 +390,19 @@ main {
     border: 1px solid #ddd;
     border-radius: 3px;
     font-size: 16px;
+    transition: 0.2s;
+}
+
+.sns-login-list a:hover {
+    background: var(--color-pri);
+    border-color: var(--color-pri);
+    color: #fff;
 }
 
 /* SNS 로그인 아이콘 */
 .sns-login-list img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     margin-right: 10px;
 }
@@ -450,18 +467,19 @@ main {
     justify-content: center;
     width: 360px;
     height: 48px;
-     margin: 20px 0 0;
-    border: 1px solid #243B66;
+    margin: 20px 0 0;
+    border: 1px solid var(--color-pri);
     border-radius: 3px;
-    color: #243B66;
+    color: var(--color-pri);
     font-size: 16px;
     transition: 0.2s;
 }
 
 .join-btn:hover {
-    background: #243B66;
+    background: var(--color-pri);
     color: #fff;
 }
+
 
 
 /* ==================================================
@@ -470,7 +488,7 @@ main {
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 
-    .inner {
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
         width: calc(100% - 80px);
         max-width: none;
     }
@@ -505,7 +523,7 @@ main {
     }
 
     /* 브레드크럼 */
-    .breadcrumb {
+    /* .breadcrumb {
         top: 100px;
     }
 
@@ -523,7 +541,7 @@ main {
     .breadcrumb>ol>li:first-child img {
         width: 18px;
         height: 18px;
-    }
+    } */
 
 
     /* 로그인 상단 */
@@ -588,18 +606,18 @@ main {
     }
 
     /* 제목 아래 설명 */
-   .login-box > p,
-.join-box > p,
-.login-desc {
-    white-space: nowrap;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-}
+    .login-box>p,
+    .join-box>p,
+    .login-desc {
+        white-space: nowrap;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+    }
 
     /* 간편로그인 설명 */
-.sns-panel .login-desc {
-    margin: 21px 0;
-    white-space: nowrap;
+   .sns-panel .login-desc {
+    margin: 20px 0;
+    white-space: normal;
 }
 
 
@@ -717,6 +735,31 @@ main {
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    .login-box {
+        padding-right: 20px;
+    }
+
+    .join-box {
+        padding-left: 20px;
+    }
+
+    .login-form,
+    .login-tabs,
+    .login-panel,
+    .sns-login-list,
+    .join-service,
+    .join-btn {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .login-links {
+        gap: 8px;
+        font-size: 13px;
+    }
+}
+
 
 /* ==================================================
    모바일
@@ -724,7 +767,7 @@ main {
 
 @media screen and (max-width: 767px) {
 
-    .inner {
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
         width: calc(100% - 40px);
     }
 
@@ -760,7 +803,7 @@ main {
 
 
     /* 브레드크럼 */
-    .breadcrumb {
+    /* .breadcrumb {
         top: 80px;
     }
 
@@ -778,7 +821,7 @@ main {
     .breadcrumb>ol>li:first-child img {
         width: 16px;
         height: 16px;
-    }
+    } */
 
 
     /* 로그인 상단 */
@@ -847,8 +890,8 @@ main {
         font-size: 18px;
     }
 
-    .login-box > p,
-    .join-box > p {
+    .login-box>p,
+    .join-box>p {
         min-height: 0;
         margin: 12px 0;
         font-size: 14px;
@@ -856,7 +899,8 @@ main {
 
     /* 간편로그인 설명 */
     .sns-panel .login-desc {
-        margin: 10px 0 15px;
+        margin: 12px 0;
+        font-size: 14px;
     }
 
 
