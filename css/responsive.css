@@ -21,7 +21,7 @@
     main {
         width: calc(100% - 60px);
         max-width: none;
-        padding-top: 25px;
+        padding-top: 40px;
         box-sizing: border-box;
     }
 
@@ -34,12 +34,6 @@
         top: 90px;
     }
 
-    /* -------------------------
-        배너
-    ------------------------- */
-    /* .sub-banner-title p {
-        font-size: clamp(1.2rem, 1.7vw, 1.45rem);
-    } */
     /* -------------------------
        탭
     ------------------------- */
@@ -82,7 +76,7 @@
 
     .event-content-wrap,
     .perform-content-wrap {
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     /* ------------------------- 
@@ -273,24 +267,6 @@
         object-fit: cover;
     }
 
-
-    /* -------------------------
-       카드 호버 제거
-    ------------------------- */
-
-    /* .content-detail {
-        display: none;
-    }
-
-    .content-list>li>a:hover .content-detail {
-        opacity: 0;
-    }
-
-    .content-list>li>a:hover .content-title {
-        font-weight: 500;
-    } */
-
-
     /* -------------------------
        카드 글자
     ------------------------- */
@@ -333,8 +309,8 @@
 }
 
 /* ==================================================
-   MOBILE
-   ~767px
+   MOBILE 레이아웃 카드 3열
+   ~900px
 ================================================== */
 
 @media (max-width: 900px) {
@@ -351,7 +327,7 @@
     main {
         width: calc(100% - 30px);
         max-width: none;
-        padding-top: 8px;
+        padding-top: 40px;
         box-sizing: border-box;
     }
 
@@ -572,7 +548,7 @@
 
         border-radius: 20px 20px 0 0;
 
-        background-color: #fff;
+        background-color: rgba(0, 0, 0, 0.3);
 
         box-shadow: 0 -5px 20px rgba(0, 0, 0, .15);
 
@@ -658,7 +634,7 @@
     .result {
         order: 2;
         width: 100%;
-        padding-top: 8px;
+        padding-top: 20px;
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -830,6 +806,7 @@
     font-size: 14px;
 }
 
+/* 모바일 레이아웃 카드 2열 */
 
 @media(max-width: 767px) {
 
