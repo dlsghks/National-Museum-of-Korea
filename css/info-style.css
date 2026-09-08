@@ -80,9 +80,9 @@
     color: #ddd
 }
 
-.breadcrumb {
+/* .breadcrumb {
     position: absolute;
-    top: 120px;
+    top: 130px;
 }
 
 .breadcrumb>li>img {}
@@ -111,7 +111,7 @@
     height: 24px;
 
     background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
-}
+} */
 
 main {
     padding-top: 0;
@@ -119,8 +119,8 @@ main {
 
 /* 관람 정보 */
 .content {
-    margin: 40px 0;
-    padding: 40px 0;
+    /* margin: 40px 0; */
+    padding: 100px 0 50px;
 }
 
 .content>ul {
@@ -185,8 +185,8 @@ main {
 
 /* 관람시 유의사항 */
 .note {
-    margin: 40px 0;
-    padding: 40px 0;
+    margin: 50px 0;
+    padding: 50px 0;
 
 }
 
@@ -245,7 +245,7 @@ main {
     width: 100%;
     background: #f4f4f4;
     height: 300px;
-    margin: 50px 0;
+    margin: 50px 0 0 0;
     padding: 50px 0
 }
 
@@ -391,6 +391,11 @@ main {
     transform: translateY(-1px);
 }
 
+@media screen and (max-width: 1024px) {
+    .btn-top {
+        right: 20px;
+    }
+}
 
 /* 아이패드 */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -418,7 +423,7 @@ main {
     }
 
     /* 브레드크럼 */
-    .breadcrumb {
+    /* .breadcrumb {
         top: 70px;
     }
 
@@ -436,10 +441,10 @@ main {
     .breadcrumb>ol>li:first-child img {
         width: 18px;
         height: 18px;
-    }
+    } */
 
 
-    .inner {
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
         width: calc(100% - 80px);
         max-width: none;
     }
@@ -449,7 +454,7 @@ main {
 
     .content {
         margin:  0 0 35px 0;
-        padding: 35px 0;
+        padding: 70px 0 35px;
     }
 
     .content ul {
@@ -578,7 +583,7 @@ main {
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
-    .inner {
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
         width: calc(100% - 40px);
     }
 
@@ -605,7 +610,7 @@ main {
     }
 
     /* 브레드크럼 */
-    .breadcrumb {
+    /* .breadcrumb {
         top: 70px;
     }
 
@@ -623,7 +628,7 @@ main {
     .breadcrumb>ol>li:first-child img {
         width: 16px;
         height: 16px;
-    }
+    } */
 
 
     main {
@@ -631,7 +636,7 @@ main {
 
     .content {
         margin: 0 0 30px 0;
-        padding: 30px 0;
+        padding: 60px 0 30px;
     }
 
     .content ul {
