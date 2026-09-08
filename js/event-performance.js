@@ -36,6 +36,88 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileFilterBtn =
         document.querySelector(".mobile-filter-btn");
 
+    const footer =
+        document.querySelector(".footer");
+
+
+    /* ==================================================
+       모바일 필터 버튼 스크롤 제어
+    ================================================== */
+
+    if (mobileFilterBtn) {
+
+        window.addEventListener("scroll", function () {
+
+            /* 필터가 열려 있으면 버튼 숨김 유지 */
+            if (
+                document.body.classList.contains(
+                    "mobile-filter-active"
+                )
+            ) {
+                return;
+            }
+
+            /* 200px 이상 스크롤 */
+            if (window.pageYOffset > 200) {
+
+                mobileFilterBtn.classList.add(
+                    "is-visible"
+                );
+
+            }
+
+            /* 200px 이하 */
+            else {
+
+                mobileFilterBtn.classList.remove(
+                    "is-visible"
+                );
+
+                mobileFilterBtn.classList.remove(
+                    "is-inverted"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* ==================================================
+       모바일 필터 버튼 푸터 반전
+    ================================================== */
+
+    if (mobileFilterBtn && footer) {
+
+        ScrollTrigger.create({
+
+            trigger: footer,
+
+            start: "top bottom-=80px",
+
+            end: "bottom top",
+
+            onEnter: function () {
+
+                mobileFilterBtn.classList.add(
+                    "is-inverted"
+                );
+
+            },
+
+            onLeaveBack: function () {
+
+                mobileFilterBtn.classList.remove(
+                    "is-inverted"
+                );
+
+            }
+
+        });
+
+    }
+
 
     /* ==================================================
        필터 아코디언
@@ -549,6 +631,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 "false"
             );
 
+            /* 200px 이하에서는 다시 숨김 */
+            if (window.pageYOffset <= 200) {
+
+                mobileFilterBtn.classList.remove(
+                    "is-visible"
+                );
+
+            }
+
         }
 
         document
@@ -650,8 +741,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ================================================== */
 
     /* ==================================================
-   행사 / 공연 탭
-================================================== */
+       행사 / 공연 탭
+    ================================================== */
 
     tabs.forEach(function (tab, index) {
 
