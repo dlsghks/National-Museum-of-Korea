@@ -80,7 +80,7 @@
                                 <a href="#">문화행사 · 교육</a>
                                 <div class="gnb-sub-wrap">
                                     <ul class="gnb-sub">
-                                        <li class="gnb-sub-list"><a href="./sub-event-performanc-index.html">행사 · 공연</a>
+                                        <li class="gnb-sub-list"><a href="./sub-event-performance.html">행사 · 공연</a>
                                         </li>
                                         <li class="gnb-sub-list"><a href="#">일반교육(MODU)</a></li>
                                         <li class="gnb-sub-list"><a href="#">전문교육(뮤지엄 아카데미)</a></li>
@@ -1013,7 +1013,8 @@
                         <!-- 공연 2 -->
                         <li>
                             <a href="#">
-                                <img src="./images/event-performance/perform/perform2.svg" alt="유물로 읽는 삶 21세기, 어른으로 살아가는 법 포스터">
+                                <img src="./images/event-performance/perform/perform2.svg"
+                                    alt="유물로 읽는 삶 21세기, 어른으로 살아가는 법 포스터">
 
                                 <div class="content-detail">
 
@@ -1051,7 +1052,8 @@
                         <!-- 공연 3 -->
                         <li>
                             <a href="#">
-                                <img src="./images/event-performance/perform/perform3.svg" alt="뮤지엄 모먼트 유물로 만나는 흑역사 포스터">
+                                <img src="./images/event-performance/perform/perform3.svg"
+                                    alt="뮤지엄 모먼트 유물로 만나는 흑역사 포스터">
 
                                 <div class="content-detail">
 
@@ -1207,7 +1209,8 @@
                         <!-- 공연 7 -->
                         <li>
                             <a href="#">
-                                <img src="./images/event-performance/perform/perform7.svg" alt="토닥토닥 예술나눔 세계의 춤, 하나의 무대 포스터">
+                                <img src="./images/event-performance/perform/perform7.svg"
+                                    alt="토닥토닥 예술나눔 세계의 춤, 하나의 무대 포스터">
 
                                 <div class="content-detail">
 
@@ -1441,10 +1444,57 @@
             </div>
         </div>
     </footer>
+    
+    <button type="button" class="btn-top" aria-label="최상단으로 이동">
+        <svg class="btn-top__arrow" width="12" height="10" viewBox="0 0 12 10" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 0L11.1962 9H0.803848L6 0Z" fill="currentColor" />
+        </svg>
+        <span class="btn-top__text">TOP</span>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/event-performance.js"></script>
     <script src="./js/header_footer_main.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 탑버튼 제어 및 푸터 반전 처리
+        const btnTop = document.querySelector(".btn-top");
+        const footer = document.querySelector(".footer");
+
+        if (btnTop) {
+            // 1. 200px 이상 스크롤 시 버튼 노출
+            window.addEventListener("scroll", () => {
+                if (window.pageYOffset > 200) {
+                    btnTop.classList.add("is-visible");
+                } else {
+                    btnTop.classList.remove("is-visible");
+                }
+            });
+
+            // 2. 클릭 시 최상단으로 부드럽게 스크롤 이동
+            btnTop.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+
+            // 3. ScrollTrigger를 활용하여 푸터 영역 감지 및 탑버튼 색상 반전
+            if (footer) {
+                ScrollTrigger.create({
+                    trigger: footer,
+                    start: "top bottom-=80px", // 푸터의 상단이 화면 하단(탑버튼 위치) 근처에 닿을 때
+                    end: "bottom top",
+                    onEnter: () => btnTop.classList.add("is-inverted"),
+                    onLeaveBack: () => btnTop.classList.remove("is-inverted")
+                });
+            }
+        }
+    </script>
 </body>
 
 </html>
