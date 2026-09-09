@@ -10,9 +10,9 @@
     margin: 0 auto;
 }
 
-.section {
+/* .section {
     padding: 180px 0;
-}
+} */
 
 .section-heading {
     display: flex;
@@ -553,7 +553,7 @@
 @media (min-width: 820px) and (max-width: 821px) {
 
     .exhibition-section {
-        padding: 100px 0;
+        padding: 40px 0;
     }
 
     .exhibition-section .inner {
