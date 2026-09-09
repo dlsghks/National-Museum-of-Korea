@@ -576,6 +576,7 @@
         gsap.registerPlugin(ScrollTrigger);
 
         window.addEventListener("load", () => {
+
             const header = document.querySelector(".header");
             const headerTop = document.querySelector(".header-top");
             const historyNav = document.querySelector(".history-nav");
@@ -620,19 +621,15 @@
             const updateOffsets = () => {
                 if (!header || !historyNav) return;
 
-                if (header.classList.contains("is_active")) return;
+                // 헤더의 현재 실제 높이 계산 (스크롤 시 header-top이 사라지거나 헤더가 줄어드는 경우 반영)
+                const headerHeight = header.offsetHeight;
 
-                const fullHeaderHeight = header.offsetHeight;
-                const headerTopHeight = headerTop ? headerTop.offsetHeight : 0;
+                // CSS 변수에 헤더 높이 적용 (history-nav의 top 위치 지정용)
+                document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
 
-                const collapsedHeaderHeight = header.classList.contains("is_scroll")
-                    ? fullHeaderHeight
-                    : fullHeaderHeight - headerTopHeight;
-
-                historyNav.style.top = `${collapsedHeaderHeight}px`;
-
+                // 탭 메뉴의 높이
                 const navHeight = historyNav.offsetHeight;
-                const totalOffset = collapsedHeaderHeight + navHeight;
+                const totalOffset = headerHeight + navHeight;
 
                 // CSS 변수 갱신
                 document.documentElement.style.setProperty('--nav-offset', `${totalOffset}px`);
@@ -653,6 +650,9 @@
 
                 ScrollTrigger.refresh();
             };
+
+            // 스크롤 이벤트 발생 시 헤더 높이가 변하는 경우를 대비해 오프셋 재계산
+            window.addEventListener("scroll", updateOffsets);
 
             // 초기 계산 실행
             updateOffsets();
