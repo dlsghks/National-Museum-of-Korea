@@ -840,7 +840,7 @@
         justify-content: center;
         position: fixed;
         right: 20px;
-        bottom: 96px;
+        bottom: 80px;
         z-index: 99;
         padding: 0;
         background-color: var(--color-pri);
