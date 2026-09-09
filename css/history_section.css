@@ -5,6 +5,7 @@
     position: relative;
     width: 100%;
     height: 720px;
+    max-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -450,12 +451,6 @@
         font-size: 14px;
     }
 
-    .history-hero {
-        padding: 80px 20px 60px;
-        height: auto;
-        min-height: 360px;
-    }
-
     /* 반응형에서 clamp() 값이 자동 정산되도록 개별 font-size 제거 및 여백 조정 */
     .history-hero__title {
         margin-bottom: 16px;
@@ -465,9 +460,9 @@
         line-height: 1.4;
     }
 
-    .history-hero__desc .pc-only {
+    /* .history-hero__desc .pc-only {
         display: none;
-    }
+    } */
 
     .history-content {
         padding-block: 40px;
@@ -562,5 +557,17 @@
         /* 모바일 화면 밖으로 나가거나 여백이 부족하지 않게 우측/하단 여백만 살짝 조정 */
         right: 20px;
         bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* .history-hero {
+        min-height: 360px;
+        height: auto;
+        padding: 80px 20px 60px;
+    } */
+
+    .history-hero__desc .pc-only {
+        display: none;
     }
 }
