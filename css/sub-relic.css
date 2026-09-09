@@ -685,6 +685,7 @@
     .breadcrumb {
         top: 90px;
         font-size: 15px;
+        padding-left: 20px;
     }
 
     /* 검색창 */
