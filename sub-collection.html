@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./font/font.css">
+  <link rel="stylesheet" href="./css/header-footer-common.css">
+  <link rel="stylesheet" href="./css/sub-collection.css">
+
+  <!-- gsap -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./js/header-footer-fetch.js"></script>
+  <script defer src="./js/header-footer-common.js"></script>
+  <title>국립중앙박물관 상설전시</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header id="header" class="header"></header>
+
+  <main class="container">
+    <section class="banner">
+
+      <!-- 브레드크럼 -->
+      <nav class="breadcrumb inner" aria-label="현재 위치">
+        <ol>
+          <li><a href="./index.html"><img src="./images/event-performance/icon/page-home.svg" alt="홈 페이지로 가기"></a></li>
+          <li><a href="#">전시</a></li>
+          <li><a href="#">상설 전시</a></li>
+        </ol>
+      </nav>
+
+      <div class="banner-top">
+        <div class="banner-title">
+          <h2 class="tit">상설 전시</h2>
+          <p class="txt">
+            국립중앙박물관의 상설전시장은 총 7개의 관과 39개의 실로 구성되어 9,884점의 유물을 전시하여 제공하고 있으며 전시물은 외부전시 일정 및 유물의 보존 상태를 위하여 주기적으로 교체하고
+            있습니다. 상설 전시장은 누구나 무료로 관람하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <nav class="banner-bottom" aria-label="전시 유형 선택">
+        <ul class="collection-tab inner">
+          <li class="tab-list"><a class="tab-list-btn on" href="#" aria-current="page"><span>상설 전시</span></a></li>
+          <li class="tab-list"><a class="tab-list-btn" href="#"><span>특별 전시</span></a></li>
+          <li class="tab-list"><a class="tab-list-btn" href="#"><span>온라인 전시</span></a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <ul class="inner-tab" role="tablist" aria-label="층별 전시관 선택">
+      <li class="tab-list" role="presentation">
+        <button class="tab-list-btn on" id="tab-btn-1" type="button" role="tab" aria-controls="tab-content-1"
+          aria-selected="true">1층</button>
+      </li>
+      <li class="tab-list" role="presentation">
+        <button class="tab-list-btn" id="tab-btn-2" type="button" role="tab" aria-controls="tab-content-2"
+          aria-selected="false" tabindex="-1">2층</button>
+      </li>
+      <li class="tab-list" role="presentation">
+        <button class="tab-list-btn" id="tab-btn-3" type="button" role="tab" aria-controls="tab-content-3"
+          aria-selected="false" tabindex="-1">3층</button>
+      </li>
+    </ul>
+
+    <div class="tab-wrap">
+      <!-- 1 -->
+      <section class="tab-content on" id="tab-content-1" role="tabpanel" aria-labelledby="tab-btn-1" tabindex="0"
+        aria-hidden="false">
+        <div class="map inner">
+          <div class="map-img">
+            <div class="map-img-cover">
+              <img src="./images/sub_collection/map01.svg" alt="1층 평면 안내도">
+              <span class="map-txt-num num1" data-num-target="1"><span>1</span></span>
+              <span class="map-txt-num num2-1" data-num-target="2"><span>2</span></span>
+              <span class="map-txt-num num2-2" data-num-target="2"><span>2</span></span>
+              <span class="map-txt-num num3 disable" data-num-target="3"><span>3</span></span>
+              <span class="map-txt-num num4 disable" data-num-target="4"><span>4</span></span>
+              <span class="map-txt-num num5 disable" data-num-target="5"><span>5</span></span>
+            </div>
+          </div>
+          <div class="map-txt-wrap">
+            <ul class="map-txt" aria-label="1층 주요 시설 목록">
+              <li data-num="1"><span class="map-txt-num"><span>1</span></span> 중 · 근세관</li>
+              <li data-num="2"><span class="map-txt-num"><span>2</span></span> 선사 · 고대관</li>
+              <li class="disable" data-num="3"><span class="map-txt-num"><span>3</span></span> 특별전시관2</li>
+              <li class="disable" data-num="4"><span class="map-txt-num"><span>4</span></span> 디지털 실감 영상관1</li>
+              <li class="disable" data-num="5"><span class="map-txt-num"><span>5</span></span> 디지털 실감 영상관3</li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="gallery inner">
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room01_1.svg" alt="중·근세관 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">중 · 근세관</h3>
+                <p class="gallery-txt">
+                  고려, 조선, 대한제국실로 꾸며진 북쪽 전시공간은 당시의 역사자료를 관람객이 쉽게 이해하고 흥미를 느낄 수 있도록 전시되어 있습니다.
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room01_2.svg" alt="선사·고대관 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">선사 · 고대관</h3>
+                <p class="gallery-txt">
+                  인류가 한반도에 살기 시작한 구석기시대부터 통일신라와 발해가 공존한 남북국시대까지 우리나라의 역사와 문화를 시간의 흐름에 따라 보여주는 통사적 전시 공간입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 2 -->
+      <section class="tab-content" id="tab-content-2" role="tabpanel" aria-labelledby="tab-btn-2" aria-hidden="true">
+        <div class="map inner">
+          <div class="map-img">
+            <div class="map-img-cover">
+              <img src="./images/sub_collection/map02.svg" alt="2층 평면 안내도">
+              <span class="map-txt-num num1" data-num-target="1"><span>1</span></span>
+              <span class="map-txt-num num2" data-num-target="2"><span>2</span></span>
+              <span class="map-txt-num num3 disable" data-num-target="3"><span>3</span></span>
+              <span class="map-txt-num num4 disable" data-num-target="4"><span>4</span></span>
+            </div>
+          </div>
+          <div class="map-txt-wrap">
+            <ul class="map-txt" aria-label="2층 주요 시설 목록">
+              <li data-num="1"><span class="map-txt-num"><span>1</span></span> 서화관</li>
+              <li data-num="2"><span class="map-txt-num"><span>2</span></span> 기증관</li>
+              <li data-num="3" class="disable"><span class="map-txt-num"><span>3</span></span> 사유의 방</li>
+              <li data-num="4" class="disable"><span class="map-txt-num"><span>4</span></span> 실감2관</li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="gallery inner">
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room02_1.svg" alt="서화관 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">서화관</h3>
+                <p class="gallery-txt">
+                  서화, 불교 회화, 목칠공예 등 선과 색채로 발휘된 한국전통문화의 아름다움을 감상할 수 있는 공간입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room02_2.svg" alt="기증관 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">기증관</h3>
+                <p class="gallery-txt">
+                  국립중앙박물관에 기증된 문화유산을 전시하여 기증자들을 기리며 기증의 의미와 가치를 헤아리는 공간입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room02_3.svg" alt="사유의 방 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">사유의 방</h3>
+                <p class="gallery-txt">
+                  사유의 방은 우리나라의 국보 반가사유상 두 점이 나란히 전시된 공간입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 3 -->
+      <section class="tab-content" id="tab-content-3" role="tabpanel" aria-labelledby="tab-btn-3" aria-hidden="true">
+        <div class="map inner">
+          <div class="map-img">
+            <div class="map-img-cover">
+              <img src="./images/sub_collection/map03.svg" alt="3층 평면 안내도">
+              <span class="map-txt-num num1" data-num-target="1"><span>1</span></span>
+              <span class="map-txt-num num2" data-num-target="2"><span>2</span></span>
+              <span class="map-txt-num num3 disable" data-num-target="3"><span>3</span></span>
+            </div>
+          </div>
+          <div class="map-txt-wrap">
+            <ul class="map-txt" aria-label="3층 주요 시설 목록">
+              <li data-num="1"><span class="map-txt-num"><span>1</span></span> 조각 · 공예관</li>
+              <li data-num="2"><span class="map-txt-num"><span>2</span></span> 세계문화관</li>
+              <li data-num="3" class="disable"><span class="map-txt-num"><span>3</span></span> 감각전시실 공간 사이</li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="gallery inner">
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room03_1.svg" alt="조각·공예관 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">조각 · 공예관</h3>
+                <p class="gallery-txt">
+                  한국 불교조각과 고려청자와 조선 백자 등의 도자공예 그리고 금속 공예문화의 진수를 감상할 수 있는 전시공간입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="gallery-list">
+            <a herf="#">
+              <img src="./images/sub_collection/room03_2.svg" alt="세계문화관 전경">
+              <div class="gallery-text">
+                <h3 class="gallery-tit">세계문화관</h3>
+                <p class="gallery-txt">
+                  중국, 일본, 중앙아시아, 인도•동남아시아 등 세계 각 지역의 다양한 문화를 전시한 공간입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="footer" class="footer"></footer>
+
+  <button type="button" class="btn-top" aria-label="최상단으로 이동">
+    <svg class="btn-top__arrow" width="12" height="10" viewBox="0 0 12 10" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 0L11.1962 9H0.803848L6 0Z" fill="currentColor" />
+    </svg>
+    <span class="btn-top__text">TOP</span>
+  </button>
+
+  <!-- js -->
+  <script src="./js/sub-collection.js"></script>
+</body>
+
+</html>

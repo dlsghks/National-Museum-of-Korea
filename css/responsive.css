@@ -5,10 +5,10 @@
 
 @media (max-width: 1024px) {
 
-    /* 헤더값 */
-    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner) {
+    /* 헤더값  */
+    .inner:not(.header-inner):not(.footer-top .inner):not(.footer-bottom .inner):not(.breadcrumb) {
         width: calc(100% - 40px);
-    }
+    } 
 
     /* -------------------------
        전체
@@ -23,15 +23,6 @@
         max-width: none;
         padding-top: 40px;
         box-sizing: border-box;
-    }
-
-
-    /* -------------------------
-       브레드크럼
-    ------------------------- */
-
-    .breadcrumb {
-        top: 90px;
     }
 
     /* -------------------------
@@ -331,25 +322,7 @@
         box-sizing: border-box;
     }
 
-
-    /* ==================================================
-       브레드크럼
-    ================================================== */
-
-    .breadcrumb {
-        top: 75px;
-    }
-
-    .breadcrumb>ol {
-        font-size: 12px;
-    }
-
-    .breadcrumb>ol>li::before {
-        width: 18px;
-        height: 18px;
-    }
-
-
+  
     /* ==================================================
        행사 / 공연 영역
     ================================================== */
