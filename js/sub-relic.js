@@ -35,12 +35,25 @@ document.addEventListener("DOMContentLoaded", function () {
         clearBtn.insertAdjacentElement("afterend", filterTags);
     }
 
-    // 아코디언 열기/닫기
+    // 아코디언 열기/닫기 (하나만 열리도록 수정)
     filterButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             const filterList = button.nextElementSibling;
-            filterList.classList.toggle("active");
-            button.classList.toggle("active");
+            const isOpen = button.classList.contains("active");
+
+            // 1. 모든 필터 버튼 및 리스트 열림(active) 상태 해제
+            filterButtons.forEach(function (otherBtn) {
+                otherBtn.classList.remove("active");
+                if (otherBtn.nextElementSibling) {
+                    otherBtn.nextElementSibling.classList.remove("active");
+                }
+            });
+
+            // 2. 클릭했던 필터가 닫혀있던 상태였다면 해당 필터만 열기
+            if (!isOpen) {
+                button.classList.add("active");
+                filterList.classList.add("active");
+            }
         });
     });
 
