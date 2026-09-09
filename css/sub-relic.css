@@ -782,10 +782,10 @@
 
     /* 텍스트 박스를 배너 내부 중앙으로 정렬 */
     .banner-wrap .text-box {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 2;
         width: 100%;
         max-width: 990px;
