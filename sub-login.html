@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/event-section.css">
-    <link rel="stylesheet" href="./css/Exhibition_section.css">
-    <link rel="stylesheet" href="./css/Notice_section.css">
-    <link rel="stylesheet" href="./css/section.css">
     <link rel="stylesheet" href="./css/login-style.css">
     <link rel="icon" href="./images/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
@@ -172,6 +168,18 @@
 
     <main class="login">
         <section class="banner">
+            <!-- 브레드크럼 -->
+            <nav class="breadcrumb inner" aria-label="현재 위치">
+                <ol>
+                    <li>
+                        <a href="./index.html">
+                            <img src="./images/event-performance/icon/page-home.svg" alt="홈 페이지로 가기">
+                        </a>
+                    </li>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">로그인</a></li>
+                </ol>
+            </nav>
 
             <div class="banner-top">
                 <div class="banner-title">
@@ -184,16 +192,7 @@
             </div>
         </section>
         <div class="inner">
-            <!-- 브레드크럼 -->
-            <nav class="breadcrumb inner" aria-label="현재 위치">
-                <ol>
-                    <li><a href="./index.html"><img src="./images/event-performance/icon/page-home.svg"
-                                alt="홈 페이지로 가기"></a></li>
-                    <li><a href="#">마이 페이지</a></li>
-                    <li><a href="#">로그인</a></li>
-                </ol>
-            </nav>
-
+            
             <!-- 로그인 / 회원가입 -->
             <div class="login-wrap">
                 <!-- SNS 간편 로그인 -->
@@ -202,12 +201,12 @@
 
                     <!-- 로그인 탭 -->
                     <div class="login-tabs" role="tablist">
-                        <button type="button" class="login-tab active" role="tab" aria-selected="true"
+                        <button type="button" class="login-tab active" id="login-tab" role="tab" aria-selected="true"
                             aria-controls="login-panel">
                             회원 로그인
                         </button>
 
-                        <button type="button" class="login-tab" role="tab" aria-selected="false"
+                        <button type="button" class="login-tab" id="sns-tab" role="tab" aria-selected="false"
                             aria-controls="sns-panel">
                             간편 로그인
                         </button>
@@ -215,13 +214,13 @@
 
 
                     <!-- 회원 로그인 -->
-                    <div class="login-panel active" id="login-panel">
+                    <div class="login-panel active" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
 
                         <p class="login-desc">
                             모든 서비스를 제한없이 이용하시려면 로그인해주세요.
                         </p>
 
-                        <form action="" class="login-form">
+                        <form class="login-form">
 
                             <div class="input-wrap">
                                 <label for="user-id">아이디</label>
@@ -442,164 +441,164 @@
             </div>
         </div>
     </footer>
-</body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-<script src="./js/header_footer_main.js"></script>
-<script defer src="./js/sub-login.js"></script>
 
-<script>
-    var swiper = new Swiper('.online-contents-wrap', {
-        loop: true,
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="./js/header_footer_main.js"></script>
+    <script defer src="./js/sub-login.js"></script>
 
-        slidesPerView: 1,
-        spaceBetween: 20,
-        centeredSlides: false,
+    <script>
+        var swiper = new Swiper('.online-contents-wrap', {
+            loop: true,
 
-        navigation: {
-            prevEl: '.prev-btn',
-            nextEl: '.next-btn',
-        },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: false,
 
-        breakpoints: {
-
-            // 아이패드
-            768: {
-                slidesPerView: 'auto',
-                spaceBetween: 50,
-                centeredSlides: true,
+            navigation: {
+                prevEl: '.prev-btn',
+                nextEl: '.next-btn',
             },
 
-            // PC
-            1280: {
-                slidesPerView: 'auto',
-                spaceBetween: 72,
-                centeredSlides: true,
-            }
+            breakpoints: {
 
-        },
+                // 아이패드
+                768: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 50,
+                    centeredSlides: true,
+                },
 
-        on: {
-            init: function () {
-                updateOnlineSlider(this);
+                // PC
+                1280: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 72,
+                    centeredSlides: true,
+                }
+
             },
 
-            slideChange: function () {
-                updateOnlineSlider(this);
+            on: {
+                init: function () {
+                    updateOnlineSlider(this);
+                },
+
+                slideChange: function () {
+                    updateOnlineSlider(this);
+                }
             }
+        });
+
+
+        function updateOnlineSlider(swiper) {
+
+            const current = swiper.realIndex + 1;
+            const total = 6;
+
+            document.querySelector('.current').textContent = current;
+            document.querySelector('.total').textContent = total;
+
+            const progress = (current / total) * 100;
+
+            document.querySelector('.progress').style.width =
+                progress + '%';
         }
-    });
+    </script>
 
+    <script>
+        const featuredSwiper = new Swiper('.M-exhibition-layout', {
+            slidesPerView: 1,
+            speed: 600,
+            loop: true,
+        });
 
-    function updateOnlineSlider(swiper) {
+        const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
+            slidesPerView: 1.8,
+            spaceBetween: 20,
+            centeredSlides: true,
+            speed: 600,
+            loop: true,
+            allowTouchMove: true,
 
-        const current = swiper.realIndex + 1;
-        const total = 6;
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.8,
+                    spaceBetween: 25,
+                    centeredSlides: true
+                },
 
-        document.querySelector('.current').textContent = current;
-        document.querySelector('.total').textContent = total;
+                // iPad (769px ~ 1024px)
+                769: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    initialSlide: 1,
+                    centeredSlides: false
+                },
 
-        const progress = (current / total) * 100;
-
-        document.querySelector('.progress').style.width =
-            progress + '%';
-    }
-</script>
-
-<script>
-    const featuredSwiper = new Swiper('.M-exhibition-layout', {
-        slidesPerView: 1,
-        speed: 600,
-        loop: true,
-    });
-
-    const exhibitionSwiper = new Swiper('.exhibition-list-wrap', {
-        slidesPerView: 1.8,
-        spaceBetween: 20,
-        centeredSlides: true,
-        speed: 600,
-        loop: true,
-        allowTouchMove: true,
-
-        breakpoints: {
-            0: {
-                slidesPerView: 1.8,
-                spaceBetween: 25,
-                centeredSlides: true
+                // PC
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 48,
+                    initialSlide: 1,
+                    centeredSlides: false
+                },
             },
+        });
 
-            // iPad (769px ~ 1024px)
-            769: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                initialSlide: 1,
-                centeredSlides: false
-            },
+        const sliderButtons = document.querySelectorAll('.slider-button');
+        const prevButton = sliderButtons[0];
+        const nextButton = sliderButtons[1];
 
-            // PC
-            1025: {
-                slidesPerView: 3,
-                spaceBetween: 48,
-                initialSlide: 1,
-                centeredSlides: false
-            },
-        },
-    });
+        const currentNumber = document.querySelector('.page-number strong');
+        const totalNumber = document.querySelector('.M-number');
+        const progressValue = document.querySelector('.progress-value');
 
-    const sliderButtons = document.querySelectorAll('.slider-button');
-    const prevButton = sliderButtons[0];
-    const nextButton = sliderButtons[1];
+        const totalSlides = Number(totalNumber.textContent);
 
-    const currentNumber = document.querySelector('.page-number strong');
-    const totalNumber = document.querySelector('.M-number');
-    const progressValue = document.querySelector('.progress-value');
+        function updateSliderInfo() {
+            const realIndex = exhibitionSwiper.realIndex;
 
-    const totalSlides = Number(totalNumber.textContent);
+            const currentPage = window.innerWidth >= 1024
+                ? (realIndex === 0 ? totalSlides : realIndex)
+                : realIndex + 1;
 
-    function updateSliderInfo() {
-        const realIndex = exhibitionSwiper.realIndex;
+            currentNumber.textContent = currentPage;
 
-        const currentPage = window.innerWidth >= 1024
-            ? (realIndex === 0 ? totalSlides : realIndex)
-            : realIndex + 1;
+            const progress = (currentPage / totalSlides) * 100;
+            progressValue.style.width = progress + '%';
+        }
 
-        currentNumber.textContent = currentPage;
+        nextButton.addEventListener('click', function () {
+            featuredSwiper.slideNext(600);
+            exhibitionSwiper.slideNext(600);
+        });
 
-        const progress = (currentPage / totalSlides) * 100;
-        progressValue.style.width = progress + '%';
-    }
+        prevButton.addEventListener('click', function () {
+            featuredSwiper.slidePrev(600);
+            exhibitionSwiper.slidePrev(600);
+        });
 
-    nextButton.addEventListener('click', function () {
-        featuredSwiper.slideNext(600);
-        exhibitionSwiper.slideNext(600);
-    });
+        exhibitionSwiper.on('slideChange', function () {
+            updateSliderInfo();
+        });
 
-    prevButton.addEventListener('click', function () {
-        featuredSwiper.slidePrev(600);
-        exhibitionSwiper.slidePrev(600);
-    });
-
-    exhibitionSwiper.on('slideChange', function () {
         updateSliderInfo();
-    });
 
-    updateSliderInfo();
+        // 알림 탭 메뉴 
 
-    // 알림 탭 메뉴 
+        const activeButton = document.querySelectorAll(".notice-tab button")
 
-    const activeButton = document.querySelectorAll(".notice-tab button")
+        activeButton.forEach(function (button) {
+            button.addEventListener("click", function () {
+                activeButton.forEach(function (button) {
+                    button.classList.remove("active");
+                });
 
-    activeButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            activeButton.forEach(function (button) {
-                button.classList.remove("active");
-            });
-
-            button.classList.add("active");
+                button.classList.add("active");
+            })
         })
-    })
 
-</script>
-
+    </script>
+</body>
 
 </html>
