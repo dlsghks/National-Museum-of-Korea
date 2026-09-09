@@ -61,15 +61,15 @@
    ========================================================================== */
 .history-nav {
     position: sticky;
-    top: 0;
-    z-index: 100;
+    top: var(--header-height, 120px);
+    /* 스크롤 시 헤더 높이만큼 띄워 고정 */
+    z-index: 99;
+    /* header보다는 아래, 본문(content)보다는 위에 배치 */
     background: var(--color-pri, #243B66);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: opacity 0.2s ease;
+    transition: top 0.3s ease, opacity 0.2s ease;
     width: 100%;
-    /* 너비 명시 */
     overflow: hidden;
-    /* 자식 스크롤 영역 제어 */
 }
 
 .history-nav__list {
@@ -415,16 +415,15 @@
    ========================================================================== */
 @media screen and (max-width: 1024px) {
     .history-nav {
-        /* 기존 z-index: 1000에서 헤더 레이어보다 낮게 조절 */
         z-index: 90;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+        top: var(--header-height, 60px);
+        /* 모바일 헤더 높이에 맞춤 */
     }
 
-    /* 햄버거 메뉴가 열렸을 때 (header 또는 body에 활성화 클래스가 붙는 경우) */
+    /* 모바일 햄버거 메뉴 열릴 때만 숨김 */
     .header.is_active~main .history-nav,
-    .header.is_active .history-nav,
-    body.menu-open .history-nav,
-    .header.is-open~main .history-nav {
+    .header.is_active+.history-nav,
+    body.menu-open .history-nav {
         position: static !important;
         z-index: 1 !important;
         opacity: 0 !important;
