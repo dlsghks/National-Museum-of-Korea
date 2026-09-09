@@ -43,14 +43,17 @@
     background-image: url(../images/Online_section/background.svg);
     background-repeat: repeat;
     background-size: auto;
+
     overflow: hidden;
     width: 100%;
-    height: 90vh;
+    min-height: 100vh;
+    height: auto;
+
     padding: 70px 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 .online-contents-wrap {
@@ -71,6 +74,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .online-contents-list>li .img-box {
@@ -97,7 +101,7 @@
 
 .play-btn {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -229,15 +233,18 @@
     object-fit: contain;
 }
 
-/* 아이패드 */
+/* =========================
+   아이패드
+========================= */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 
     .online-exhibition-wrap {
         width: 100%;
-        height: 60vh;
-        min-height: 400px;
+        min-height: 60vh;
+        height: auto;
         padding: 40px 0;
         overflow: hidden;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -264,17 +271,18 @@
         align-items: center;
     }
 
-    /*  슬라이드 자체 */
+    /* 슬라이드 */
     .online-contents-list > li {
-    width: 80vw !important;
-    max-width: none !important;
-    height: auto !important;
-    flex-shrink: 0;
-}
+        position: relative;
+        width: 80vw !important;
+        max-width: none !important;
+        height: auto !important;
+        flex-shrink: 0;
+    }
 
-    /*  이미지 박스 */
-    .online-contents-list>li .img-box,
-    .online-contents-list>li.swiper-slide-active .img-box {
+    /* 이미지 */
+    .online-contents-list > li .img-box,
+    .online-contents-list > li.swiper-slide-active .img-box {
         width: 100% !important;
         max-width: none !important;
         height: auto !important;
@@ -283,20 +291,27 @@
         box-shadow: none;
     }
 
-    .online-contents-list>li>a {
+    .online-contents-list > li > a {
         display: block;
         width: 100%;
     }
 
-    .online-contents-list>li .img-box>img {
+    .online-contents-list > li .img-box > img {
         display: block;
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;
     }
 
-    /* 아이패드에서는 텍스트 항상 표시 */
-    .online-contents-list>li .text-box {
+    /* 플레이 버튼 */
+    .play-btn {
+        top: 45%;
+        width: 90px;
+        height: 90px;
+    }
+
+    /* 텍스트 */
+    .online-contents-list > li .text-box {
         width: 100%;
         padding: 18px 0 0;
         opacity: 1;
@@ -305,23 +320,19 @@
         font-size: 1.3em;
     }
 
-    .online-contents-list>li .text-box h3 {
+    .online-contents-list > li .text-box h3 {
         margin: 0;
         font-size: 1.18em;
         font-weight: 600;
     }
 
-    .online-contents-list>li .text-box p {
+    .online-contents-list > li .text-box p {
         margin: 3px 0 0;
         font-size: 0.8em;
         color: #666;
     }
 
-    .play-btn {
-        width: 90px;
-        height: 90px;
-    }
-
+    /* 컨트롤 */
     .online-control {
         display: flex;
         width: 80vw;
@@ -330,7 +341,8 @@
         justify-content: flex-start;
         gap: 10px;
     }
-    .online-control .progress-bar{
+
+    .online-control .progress-bar {
         order: 2;
         position: relative;
         flex: 1 1 auto;
@@ -340,7 +352,7 @@
         background: #ddd;
     }
 
-    .online-control .progress-bar .progress{
+    .online-control .progress-bar .progress {
         position: absolute;
         top: 0;
         left: 0;
@@ -352,13 +364,16 @@
         transition: width 0.3s ease;
     }
 
-    .slider-counter{
+    .slider-counter {
         order: 1;
         flex-shrink: 0;
     }
 }
 
-/* 모바일 */
+
+/* =========================
+   모바일
+========================= */
 @media screen and (max-width: 767px) {
 
     .online-exhibition-wrap {
@@ -380,7 +395,6 @@
         flex-shrink: 0;
     }
 
-    /* 모바일 제목 크기 유지 */
     .section-title {
         font-size: 2em;
         padding: 10px 0;
@@ -397,8 +411,9 @@
         align-items: flex-start;
     }
 
-    /* 첫 번째 콘텐츠 다음 콘텐츠 일부 노출 */
+    /* 슬라이드 */
     .online-contents-list > li {
+        position: relative;
         width: 100% !important;
         height: auto !important;
         padding: 0 20px;
@@ -429,10 +444,17 @@
         object-fit: cover;
     }
 
+    /* 플레이 버튼 */
+    .play-btn {
+        top: 45%;
+        width: 70px;
+        height: 70px;
+    }
+
     /* 텍스트 */
     .online-contents-list > li .text-box {
         width: 100%;
-        padding: 0.8em 0 0;
+        padding: 0.8em 0;
 
         font-size: 1.1em;
 
@@ -456,13 +478,7 @@
         color: #666;
     }
 
-    /* 모바일 플레이 버튼 */
-    .play-btn {
-        width: 70px;
-        height: 70px;
-    }
-
-    /* 카운터만 표시 */
+    /* 컨트롤 */
     .online-control {
         display: flex;
         width: calc(100% - 40px);
@@ -473,7 +489,7 @@
         gap: 12px;
     }
 
-    .slider-counter{
+    .slider-counter {
         order: 1;
         display: flex;
         align-items: center;
@@ -481,24 +497,24 @@
         flex-shrink: 0;
     }
 
-    .slider-counter .current{
+    .slider-counter .current {
         font-size: 14px;
     }
 
-    .slider-counter .dot{
+    .slider-counter .dot {
         font-size: 14px;
     }
 
-    .slider-counter .total{
+    .slider-counter .total {
         font-size: 14px;
     }
 
-    .slider-counter button{
+    .slider-counter button {
         width: 8px;
         height: 15px;
     }
 
-    .progress-bar{
+    .progress-bar {
         order: 2;
         position: relative;
         flex: 1;
@@ -508,7 +524,7 @@
         display: block;
     }
 
-    .progress-bar .progress{
+    .progress-bar .progress {
         width: 16.6667%;
         height: 2px;
     }
