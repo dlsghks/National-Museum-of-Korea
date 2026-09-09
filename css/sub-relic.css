@@ -685,6 +685,7 @@
     .breadcrumb {
         top: 90px;
         font-size: 15px;
+        padding-left: 20px;
     }
 
     /* 검색창 */
@@ -757,14 +758,49 @@
         font-size: 0.5em;
     }
 
-    .banner-wrap .channel {
-        font-size: 12px;
+    .banner-wrap {
+        position: relative;
+        width: 100%;
+        height: 626px;
+        overflow: hidden;
+    }
+
+    .banner-wrap .banner {
+        width: 100%;
+        height: 626px;
     }
 
     .banner-wrap .banner>img {
+        display: block;
+        width: 100vw;
+        max-width: none;
         height: 626px;
         object-fit: cover;
-        object-position: 0 center;
+        object-position: center;
+        margin-left: calc(-50vw + 50%);
+        margin-right: 0;
+    }
+
+    /* 텍스트 박스를 배너 내부 중앙으로 정렬 */
+    .banner-wrap .text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        width: 100%;
+        max-width: 990px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .banner-wrap .page h2 {
+        font-size: clamp(1.875rem, 3.71vw, 3.25rem);
+        margin-bottom: 16px;
+    }
+
+    .banner-wrap .text-box .dec {
+        font-size: clamp(1rem, 1.28vw, 1.125rem);
     }
 
 
@@ -805,7 +841,7 @@
         justify-content: center;
         position: fixed;
         right: 20px;
-        bottom: 96px;
+        bottom: 80px;
         z-index: 99;
         padding: 0;
         background-color: var(--color-pri);
@@ -970,10 +1006,6 @@
         top: 75px;
     }
 
-
-    .banner-wrap .channel>img {
-        width: 16px;
-    }
 
     .banner-wrap .page {
         font-size: 2em;
