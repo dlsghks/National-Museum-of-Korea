@@ -148,6 +148,24 @@
     white-space: nowrap;
 }
 
+.inner-right .notice-list .notice-wrap .notice-type.notice {
+    background: var(--Primary-color);
+}
+
+.inner-right .notice-list .notice-wrap .notice-type.announcement {
+    background: var(--Typo-Secondary);
+}
+
+.inner-right .notice-list .notice-wrap .notice-type.employment {
+    background: #d8b96a
+}
+
+.inner-right .notice-list .notice-wrap .notice-type.Release {
+    background: var(--Typo-Primary);
+}
+
+
+
 .inner-right .notice-list .notice-wrap .notice-title {
     flex: 1;
     min-width: 0;
@@ -155,6 +173,14 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.inner-right .notice-list {
+    display: none; /* 기본적으로 모든 리스트 숨김 */
+}
+
+.inner-right .notice-list.active {
+    display: block; /* active 클래스가 붙은 리스트만 표시 */
 }
 
 /* =========================
