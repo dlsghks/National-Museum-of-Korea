@@ -48,8 +48,9 @@
 }
 
 .banner-wrap .text-box {
+    display: flex;
+    flex-direction: column;
     gap: 1.5em;
-
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5);
     color: #fff;
     word-break: keep-all;
