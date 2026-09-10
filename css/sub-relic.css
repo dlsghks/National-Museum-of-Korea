@@ -16,36 +16,6 @@
 }
 
 
-.breadcrumb {
-    position: absolute;
-    top: 130px;
-}
-
-.breadcrumb>ol {
-    display: flex;
-    align-items: center;
-
-    font-size: 15px;
-    color: #fff;
-}
-
-.breadcrumb>ol>li {
-    display: flex;
-    align-items: center;
-}
-
-.breadcrumb>ol>li:nth-child(2)::before,
-.breadcrumb>ol>li:nth-child(3)::before,
-.breadcrumb>ol>li:nth-child(4)::before {
-    content: "";
-
-    display: block;
-
-    width: 24px;
-    height: 24px;
-
-    background: url("../images/event-performance/icon/arrow-right.svg") no-repeat center;
-}
 
 .banner-wrap .text-box {
     display: flex;
@@ -639,7 +609,6 @@
 @media screen and (max-width: 1440px) {
 
     .inner {
-        position: relative;
         margin: 0 auto;
         padding: 0 20px;
     }
@@ -679,11 +648,6 @@
         font-size: 0.75em;
     }
 
-    .breadcrumb {
-        top: 90px;
-        font-size: 15px;
-        padding-left: 20px;
-    }
 
     /* 검색창 */
 
@@ -998,10 +962,6 @@
         font-size: 0.875em;
     }
 
-    .breadcrumb {
-        position: absolute;
-        top: 75px;
-    }
 
 
     .banner-wrap .page {
