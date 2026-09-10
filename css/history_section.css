@@ -61,15 +61,16 @@
    ========================================================================== */
 .history-nav {
     position: sticky;
-    top: var(--header-height, 120px);
-    /* 스크롤 시 헤더 높이만큼 띄워 고정 */
+    top: var(--header-height, 80px);
+    /* JS에서 계산된 header-bottom 바로 아래 위치 */
     z-index: 99;
-    /* header보다는 아래, 본문(content)보다는 위에 배치 */
     background: var(--color-pri, #243B66);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: top 0.3s ease, opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+    /* top 트랜지션을 제거하여 헤더 스크롤에 즉시 반응 */
     width: 100%;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .history-nav__list {
