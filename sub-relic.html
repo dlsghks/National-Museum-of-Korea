@@ -54,8 +54,8 @@
 
                     <div class="filter-top">
                         <div class="input-wrap">
-                            <label for="search">검색하기</label>
-                            <input type="text" id="search">
+                            <label for="search" class="blind">검색하기</label>
+                            <input type="text" id="search" placeholder="검색하기">
                         </div>
                         <div class="btn-wrap">
                             <button>
@@ -67,17 +67,18 @@
                     <div class="filter-button-wrap">
                         <button class="filter-button">
                             <span>국적</span>
-                        </button>
+                            <span class="icon"></span>
+                          </button>
                         <div class="filter-list">
                             <ul>
-                                <li><button>한국</button></li>
-                                <li><button>중국</button></li>
-                                <li><button>일본</button></li>
-                                <li><button>아시아</button></li>
-                                <li><button>유럽</button></li>
-                                <li><button>기타</button></li>
-                                <li><button>아메리카</button></li>
-                                <li><button>중동</button></li>
+                                <li><button>한국 <span class=checkbox></span></button></li>
+                                <li><button>중국 <span class=checkbox></span></button></li>
+                                <li><button>일본 <span class=checkbox></span></button></li>
+                                <li><button>아시아 <span class=checkbox></span></button></li>
+                                <li><button>유럽 <span class=checkbox></span></button></li>
+                                <li><button>기타 <span class=checkbox></span></button></li>
+                                <li><button>아메리카 <span class=checkbox></span></button></li>
+                                <li><button>중동 <span class=checkbox></span></button></li>
                             </ul>
                         </div>
                     </div>
@@ -85,62 +86,63 @@
                     <div class="filter-button-wrap">
                         <button class="filter-button">
                             <span>시대</span>
-                        </button>
+                            <span class="icon"></span>
+                          </button>
                         <div class="filter-list">
                             <ul>
-                                <li><button>조선</button></li>
-                                <li><button>일제강점</button></li>
-                                <li><button>원</button></li>
-                                <li><button>고려</button></li>
-                                <li><button>청동기</button></li>
-                                <li><button>신라</button></li>
-                                <li><button>시대미상</button></li>
-                                <li><button>통일신라</button></li>
-                                <li><button>백제</button></li>
-                                <li><button>원삼국</button></li>
-                                <li><button>신석기</button></li>
-                                <li><button>낙랑</button></li>
-                                <li><button>삼국</button></li>
-                                <li><button>구석기</button></li>
-                                <li><button>광복이후</button></li>
-                                <li><button>대한제국</button></li>
-                                <li><button>가야</button></li>
-                                <li><button>고구려</button></li>
-                                <li><button>초기철기</button></li>
-                                <li><button>송</button></li>
-                                <li><button>청</button></li>
-                                <li><button>려말선초</button></li>
-                                <li><button>근대</button></li>
-                                <li><button>에도</button></li>
-                                <li><button>라말여초</button></li>
-                                <li><button>야요이</button></li>
-                                <li><button>당</button></li>
-                                <li><button>전국</button></li>
-                                <li><button>남북조</button></li>
-                                <li><button>1945년이후</button></li>
-                                <li><button>전한</button></li>
-                                <li><button>고훈</button></li>
-                                <li><button>후한</button></li>
-                                <li><button>발해</button></li>
-                                <li><button>진</button></li>
-                                <li><button>조몬</button></li>
-                                <li><button>2000년 이후</button></li>
-                                <li><button>명</button></li>
-                                <li><button>모모야마</button></li>
-                                <li><button>나라</button></li>
-                                <li><button>가마쿠라</button></li>
-                                <li><button>무로마치</button></li>
-                                <li><button>하쿠호</button></li>
-                                <li><button>오대</button></li>
-                                <li><button>상</button></li>
-                                <li><button>춘추</button></li>
-                                <li><button>서주</button></li>
-                                <li><button>동진</button></li>
-                                <li><button>신</button></li>
-                                <li><button>남진</button></li>
-                                <li><button>아스카</button></li>
-                                <li><button>수</button></li>
-                                <li><button>헤이안</button></li>
+                                <li><button>조선 <span class=checkbox></span></button></li>
+                                <li><button>일제강점 <span class=checkbox></span></button></li>
+                                <li><button>원 <span class=checkbox></span></button></li>
+                                <li><button>고려 <span class=checkbox></span></button></li>
+                                <li><button>청동기 <span class=checkbox></span></button></li>
+                                <li><button>신라 <span class=checkbox></span></button></li>
+                                <li><button>시대미상 <span class=checkbox></span></button></li>
+                                <li><button>통일신라 <span class=checkbox></span></button></li>
+                                <li><button>백제 <span class=checkbox></span></button></li>
+                                <li><button>원삼국 <span class=checkbox></span></button></li>
+                                <li><button>신석기 <span class=checkbox></span></button></li>
+                                <li><button>낙랑 <span class=checkbox></span></button></li>
+                                <li><button>삼국 <span class=checkbox></span></button></li>
+                                <li><button>구석기 <span class=checkbox></span></button></li>
+                                <li><button>광복이후 <span class=checkbox></span></button></li>
+                                <li><button>대한제국 <span class=checkbox></span></button></li>
+                                <li><button>가야 <span class=checkbox></span></button></li>
+                                <li><button>고구려 <span class=checkbox></span></button></li>
+                                <li><button>초기철기 <span class=checkbox></span></button></li>
+                                <li><button>송 <span class=checkbox></span></button></li>
+                                <li><button>청 <span class=checkbox></span></button></li>
+                                <li><button>려말선초 <span class=checkbox></span></button></li>
+                                <li><button>근대 <span class=checkbox></span></button></li>
+                                <li><button>에도 <span class=checkbox></span></button></li>
+                                <li><button>라말여초 <span class=checkbox></span></button></li>
+                                <li><button>야요이 <span class=checkbox></span></button></li>
+                                <li><button>당 <span class=checkbox></span></button></li>
+                                <li><button>전국 <span class=checkbox></span></button></li>
+                                <li><button>남북조 <span class=checkbox></span></button></li>
+                                <li><button>1945년이후 <span class=checkbox></span></button></li>
+                                <li><button>전한 <span class=checkbox></span></button></li>
+                                <li><button>고훈 <span class=checkbox></span></button></li>
+                                <li><button>후한 <span class=checkbox></span></button></li>
+                                <li><button>발해 <span class=checkbox></span></button></li>
+                                <li><button>진 <span class=checkbox></span></button></li>
+                                <li><button>조몬 <span class=checkbox></span></button></li>
+                                <li><button>2000년 이후 <span class=checkbox></span></button></li>
+                                <li><button>명 <span class=checkbox></span></button></li>
+                                <li><button>모모야마 <span class=checkbox></span></button></li>
+                                <li><button>나라 <span class=checkbox></span></button></li>
+                                <li><button>가마쿠라 <span class=checkbox></span></button></li>
+                                <li><button>무로마치 <span class=checkbox></span></button></li>
+                                <li><button>하쿠호 <span class=checkbox></span></button></li>
+                                <li><button>오대 <span class=checkbox></span></button></li>
+                                <li><button>상 <span class=checkbox></span></button></li>
+                                <li><button>춘추 <span class=checkbox></span></button></li>
+                                <li><button>서주 <span class=checkbox></span></button></li>
+                                <li><button>동진 <span class=checkbox></span></button></li>
+                                <li><button>신 <span class=checkbox></span></button></li>
+                                <li><button>남진 <span class=checkbox></span></button></li>
+                                <li><button>아스카 <span class=checkbox></span></button></li>
+                                <li><button>수 <span class=checkbox></span></button></li>
+                                <li><button>헤이안 <span class=checkbox></span></button></li>
                             </ul>
                         </div>
                     </div>
@@ -148,25 +150,26 @@
                     <div class="filter-button-wrap">
                         <button class="filter-button">
                             <span>출토지</span>
-                        </button>
+                            <span class="icon"></span>
+                          </button>
                         <div class="filter-list">
                             <ul>
-                                <li><button>경기도</button></li>
-                                <li><button>전라남도</button></li>
-                                <li><button>경상북도</button></li>
-                                <li><button>서울특별시</button></li>
-                                <li><button>경상남도</button></li>
-                                <li><button>충청남도</button></li>
-                                <li><button>인천광역시</button></li>
-                                <li><button>부산광역시</button></li>
-                                <li><button>강원도</button></li>
-                                <li><button>충청북도</button></li>
-                                <li><button>전라북도</button></li>
-                                <li><button>대구광역시</button></li>
-                                <li><button>울산광역시</button></li>
-                                <li><button>제주도</button></li>
-                                <li><button>대전광역시</button></li>
-                                <li><button>광주광역시</button></li>
+                                <li><button>경기도 <span class=checkbox></span></button></li>
+                                <li><button>전라남도 <span class=checkbox></span></button></li>
+                                <li><button>경상북도 <span class=checkbox></span></button></li>
+                                <li><button>서울특별시 <span class=checkbox></span></button></li>
+                                <li><button>경상남도 <span class=checkbox></span></button></li>
+                                <li><button>충청남도 <span class=checkbox></span></button></li>
+                                <li><button>인천광역시 <span class=checkbox></span></button></li>
+                                <li><button>부산광역시 <span class=checkbox></span></button></li>
+                                <li><button>강원도 <span class=checkbox></span></button></li>
+                                <li><button>충청북도 <span class=checkbox></span></button></li>
+                                <li><button>전라북도 <span class=checkbox></span></button></li>
+                                <li><button>대구광역시 <span class=checkbox></span></button></li>
+                                <li><button>울산광역시 <span class=checkbox></span></button></li>
+                                <li><button>제주도 <span class=checkbox></span></button></li>
+                                <li><button>대전광역시 <span class=checkbox></span></button></li>
+                                <li><button>광주광역시 <span class=checkbox></span></button></li>
                             </ul>
                         </div>
                     </div>
@@ -174,222 +177,223 @@
                     <div class="filter-button-wrap">
                         <button class="filter-button">
                             <span>출토지 (시·군·구)</span>
-                        </button>
+                            <span class="icon"></span>
+                          </button>
                         <div class="filter-list">
                             <ul>
-                                <li><button>신안군</button></li>
-                                <li><button>화성군</button></li>
-                                <li><button>용인시</button></li>
-                                <li><button>파주시</button></li>
-                                <li><button>경주시</button></li>
-                                <li><button>김포시</button></li>
-                                <li><button>개성부근</button></li>
-                                <li><button>강진군</button></li>
-                                <li><button>안성시</button></li>
-                                <li><button>여주군</button></li>
-                                <li><button>가평군</button></li>
-                                <li><button>오산시</button></li>
-                                <li><button>평택시</button></li>
-                                <li><button>은평구</button></li>
-                                <li><button>광주군</button></li>
-                                <li><button>강동구</button></li>
-                                <li><button>하남시</button></li>
-                                <li><button>남양주시</button></li>
-                                <li><button>고양시</button></li>
-                                <li><button>옹진군</button></li>
-                                <li><button>영도구</button></li>
-                                <li><button>시흥시</button></li>
-                                <li><button>부여군</button></li>
-                                <li><button>동래구</button></li>
-                                <li><button>송파구</button></li>
-                                <li><button>창녕군</button></li>
-                                <li><button>김해시</button></li>
-                                <li><button>공주시</button></li>
-                                <li><button>연천군</button></li>
-                                <li><button>양주군</button></li>
-                                <li><button>종로구</button></li>
-                                <li><button>중구</button></li>
-                                <li><button>양평군</button></li>
-                                <li><button>광진구</button></li>
-                                <li><button>포천군</button></li>
-                                <li><button>이천시</button></li>
-                                <li><button>고령군</button></li>
-                                <li><button>구리시</button></li>
-                                <li><button>천안시</button></li>
-                                <li><button>서구</button></li>
-                                <li><button>울릉군</button></li>
-                                <li><button>청주시</button></li>
-                                <li><button>수원시</button></li>
-                                <li><button>성남시</button></li>
-                                <li><button>춘천시</button></li>
-                                <li><button>고성군</button></li>
-                                <li><button>양산시</button></li>
-                                <li><button>나주시</button></li>
-                                <li><button>강북구</button></li>
-                                <li><button>과천시</button></li>
-                                <li><button>중랑구</button></li>
-                                <li><button>함안군</button></li>
-                                <li><button>강화군</button></li>
-                                <li><button>의성군</button></li>
-                                <li><button>안산시</button></li>
-                                <li><button>평창군</button></li>
-                                <li><button>서산시</button></li>
-                                <li><button>울주군</button></li>
-                                <li><button>강릉시</button></li>
-                                <li><button>부안군</button></li>
-                                <li><button>보령시</button></li>
-                                <li><button>안양시</button></li>
-                                <li><button>군포시</button></li>
-                                <li><button>부천시</button></li>
-                                <li><button>청원군</button></li>
-                                <li><button>보은군</button></li>
-                                <li><button>화성시</button></li>
-                                <li><button>원주시</button></li>
-                                <li><button>충주시</button></li>
-                                <li><button>양양군</button></li>
-                                <li><button>밀양시</button></li>
-                                <li><button>성북구</button></li>
-                                <li><button>남구</button></li>
-                                <li><button>홍천군</button></li>
-                                <li><button>횡성군</button></li>
-                                <li><button>성주군</button></li>
-                                <li><button>영주시</button></li>
-                                <li><button>옥천군</button></li>
-                                <li><button>달성군</button></li>
-                                <li><button>익산시</button></li>
-                                <li><button>안동시</button></li>
-                                <li><button>영천시</button></li>
-                                <li><button>의정부시</button></li>
-                                <li><button>삼척시</button></li>
-                                <li><button>정선군</button></li>
-                                <li><button>철원군</button></li>
-                                <li><button>양구군</button></li>
-                                <li><button>창원시</button></li>
-                                <li><button>영동군</button></li>
-                                <li><button>진주시</button></li>
-                                <li><button>음성군</button></li>
-                                <li><button>상주시</button></li>
-                                <li><button>노원구</button></li>
-                                <li><button>아산시</button></li>
-                                <li><button>김천시</button></li>
-                                <li><button>관악구</button></li>
-                                <li><button>청양군</button></li>
-                                <li><button>제천시</button></li>
-                                <li><button>청도군</button></li>
-                                <li><button>사하구</button></li>
-                                <li><button>서대문구</button></li>
-                                <li><button>예천군</button></li>
-                                <li><button>합천군</button></li>
-                                <li><button>인제군</button></li>
-                                <li><button>화천군</button></li>
-                                <li><button>진천군</button></li>
-                                <li><button>용산구</button></li>
-                                <li><button>산청군</button></li>
-                                <li><button>고창군</button></li>
-                                <li><button>남원시</button></li>
-                                <li><button>장성군</button></li>
-                                <li><button>거창군</button></li>
-                                <li><button>평택군</button></li>
-                                <li><button>성동구</button></li>
-                                <li><button>영월군</button></li>
-                                <li><button>울산시</button></li>
-                                <li><button>장흥군</button></li>
-                                <li><button>정읍시</button></li>
-                                <li><button>양주시</button></li>
-                                <li><button>부평구</button></li>
-                                <li><button>당진군</button></li>
-                                <li><button>제주시</button></li>
-                                <li><button>김해군</button></li>
-                                <li><button>유성구</button></li>
-                                <li><button>예산군</button></li>
-                                <li><button>강서구</button></li>
-                                <li><button>김제시</button></li>
-                                <li><button>괴산군</button></li>
-                                <li><button>함양군</button></li>
-                                <li><button>문경시</button></li>
-                                <li><button>화순군</button></li>
-                                <li><button>홍성군</button></li>
-                                <li><button>장수군</button></li>
-                                <li><button>칠곡군</button></li>
-                                <li><button>연기군</button></li>
-                                <li><button>동해시</button></li>
-                                <li><button>영덕군</button></li>
-                                <li><button>강남구</button></li>
-                                <li><button>전주시</button></li>
-                                <li><button>도봉구</button></li>
-                                <li><button>무안군</button></li>
-                                <li><button>광양시</button></li>
-                                <li><button>금천구</button></li>
-                                <li><button>하동군</button></li>
-                                <li><button>의령군</button></li>
-                                <li><button>동구</button></li>
-                                <li><button>봉화군</button></li>
-                                <li><button>금산군</button></li>
-                                <li><button>논산시</button></li>
-                                <li><button>진해시</button></li>
-                                <li><button>태백시</button></li>
-                                <li><button>남해군</button></li>
-                                <li><button>속초시</button></li>
-                                <li><button>곡성군</button></li>
-                                <li><button>포항시</button></li>
-                                <li><button>서천군</button></li>
-                                <li><button>동대문구</button></li>
-                                <li><button>달서구</button></li>
-                                <li><button>진도군</button></li>
-                                <li><button>완주군</button></li>
-                                <li><button>순창군</button></li>
-                                <li><button>순천시</button></li>
-                                <li><button>마산시</button></li>
-                                <li><button>진안군</button></li>
-                                <li><button>보성군</button></li>
-                                <li><button>단양군</button></li>
-                                <li><button>영등포구</button></li>
-                                <li><button>고흥군</button></li>
-                                <li><button>영암군</button></li>
-                                <li><button>동작구</button></li>
-                                <li><button>여천시</button></li>
-                                <li><button>임실군</button></li>
-                                <li><button>구미시</button></li>
-                                <li><button>양천구</button></li>
-                                <li><button>사천시</button></li>
-                                <li><button>완도군</button></li>
-                                <li><button>북제주군</button></li>
-                                <li><button>영광군</button></li>
-                                <li><button>북구</button></li>
-                                <li><button>태안군</button></li>
-                                <li><button>광산구</button></li>
-                                <li><button>무주군</button></li>
-                                <li><button>동두천시</button></li>
-                                <li><button>경산시</button></li>
-                                <li><button>송탄시</button></li>
-                                <li><button>사상구</button></li>
-                                <li><button>해남군</button></li>
-                                <li><button>군위군</button></li>
-                                <li><button>거제시</button></li>
-                                <li><button>대덕구</button></li>
-                                <li><button>울진군</button></li>
-                                <li><button>목포시</button></li>
-                                <li><button>광명시</button></li>
-                                <li><button>천안군</button></li>
-                                <li><button>남제주군</button></li>
-                                <li><button>구례군</button></li>
-                                <li><button>통영시</button></li>
-                                <li><button>마포구</button></li>
-                                <li><button>서초구</button></li>
-                                <li><button>서귀포시</button></li>
-                                <li><button>담양군</button></li>
-                                <li><button>의왕시</button></li>
-                                <li><button>청송군</button></li>
-                                <li><button>여수시</button></li>
-                                <li><button>부산진구</button></li>
-                                <li><button>삼천포시</button></li>
-                                <li><button>해운대구</button></li>
-                                <li><button>함평군</button></li>
-                                <li><button>여천군</button></li>
-                                <li><button>영양군</button></li>
-                                <li><button>계룡시</button></li>
-                                <li><button>금정구</button></li>
-                                <li><button>구로구</button></li>
+                                <li><button>신안군 <span class=checkbox></span></button></li>
+                                <li><button>화성군 <span class=checkbox></span></button></li>
+                                <li><button>용인시 <span class=checkbox></span></button></li>
+                                <li><button>파주시 <span class=checkbox></span></button></li>
+                                <li><button>경주시 <span class=checkbox></span></button></li>
+                                <li><button>김포시 <span class=checkbox></span></button></li>
+                                <li><button>개성부근 <span class=checkbox></span></button></li>
+                                <li><button>강진군 <span class=checkbox></span></button></li>
+                                <li><button>안성시 <span class=checkbox></span></button></li>
+                                <li><button>여주군 <span class=checkbox></span></button></li>
+                                <li><button>가평군 <span class=checkbox></span></button></li>
+                                <li><button>오산시 <span class=checkbox></span></button></li>
+                                <li><button>평택시 <span class=checkbox></span></button></li>
+                                <li><button>은평구 <span class=checkbox></span></button></li>
+                                <li><button>광주군 <span class=checkbox></span></button></li>
+                                <li><button>강동구 <span class=checkbox></span></button></li>
+                                <li><button>하남시 <span class=checkbox></span></button></li>
+                                <li><button>남양주시 <span class=checkbox></span></button></li>
+                                <li><button>고양시 <span class=checkbox></span></button></li>
+                                <li><button>옹진군 <span class=checkbox></span></button></li>
+                                <li><button>영도구 <span class=checkbox></span></button></li>
+                                <li><button>시흥시 <span class=checkbox></span></button></li>
+                                <li><button>부여군 <span class=checkbox></span></button></li>
+                                <li><button>동래구 <span class=checkbox></span></button></li>
+                                <li><button>송파구 <span class=checkbox></span></button></li>
+                                <li><button>창녕군 <span class=checkbox></span></button></li>
+                                <li><button>김해시 <span class=checkbox></span></button></li>
+                                <li><button>공주시 <span class=checkbox></span></button></li>
+                                <li><button>연천군 <span class=checkbox></span></button></li>
+                                <li><button>양주군 <span class=checkbox></span></button></li>
+                                <li><button>종로구 <span class=checkbox></span></button></li>
+                                <li><button>중구 <span class=checkbox></span></button></li>
+                                <li><button>양평군 <span class=checkbox></span></button></li>
+                                <li><button>광진구 <span class=checkbox></span></button></li>
+                                <li><button>포천군 <span class=checkbox></span></button></li>
+                                <li><button>이천시 <span class=checkbox></span></button></li>
+                                <li><button>고령군 <span class=checkbox></span></button></li>
+                                <li><button>구리시 <span class=checkbox></span></button></li>
+                                <li><button>천안시 <span class=checkbox></span></button></li>
+                                <li><button>서구 <span class=checkbox></span></button></li>
+                                <li><button>울릉군 <span class=checkbox></span></button></li>
+                                <li><button>청주시 <span class=checkbox></span></button></li>
+                                <li><button>수원시 <span class=checkbox></span></button></li>
+                                <li><button>성남시 <span class=checkbox></span></button></li>
+                                <li><button>춘천시 <span class=checkbox></span></button></li>
+                                <li><button>고성군 <span class=checkbox></span></button></li>
+                                <li><button>양산시 <span class=checkbox></span></button></li>
+                                <li><button>나주시 <span class=checkbox></span></button></li>
+                                <li><button>강북구 <span class=checkbox></span></button></li>
+                                <li><button>과천시 <span class=checkbox></span></button></li>
+                                <li><button>중랑구 <span class=checkbox></span></button></li>
+                                <li><button>함안군 <span class=checkbox></span></button></li>
+                                <li><button>강화군 <span class=checkbox></span></button></li>
+                                <li><button>의성군 <span class=checkbox></span></button></li>
+                                <li><button>안산시 <span class=checkbox></span></button></li>
+                                <li><button>평창군 <span class=checkbox></span></button></li>
+                                <li><button>서산시 <span class=checkbox></span></button></li>
+                                <li><button>울주군 <span class=checkbox></span></button></li>
+                                <li><button>강릉시 <span class=checkbox></span></button></li>
+                                <li><button>부안군 <span class=checkbox></span></button></li>
+                                <li><button>보령시 <span class=checkbox></span></button></li>
+                                <li><button>안양시 <span class=checkbox></span></button></li>
+                                <li><button>군포시 <span class=checkbox></span></button></li>
+                                <li><button>부천시 <span class=checkbox></span></button></li>
+                                <li><button>청원군 <span class=checkbox></span></button></li>
+                                <li><button>보은군 <span class=checkbox></span></button></li>
+                                <li><button>화성시 <span class=checkbox></span></button></li>
+                                <li><button>원주시 <span class=checkbox></span></button></li>
+                                <li><button>충주시 <span class=checkbox></span></button></li>
+                                <li><button>양양군 <span class=checkbox></span></button></li>
+                                <li><button>밀양시 <span class=checkbox></span></button></li>
+                                <li><button>성북구 <span class=checkbox></span></button></li>
+                                <li><button>남구 <span class=checkbox></span></button></li>
+                                <li><button>홍천군 <span class=checkbox></span></button></li>
+                                <li><button>횡성군 <span class=checkbox></span></button></li>
+                                <li><button>성주군 <span class=checkbox></span></button></li>
+                                <li><button>영주시 <span class=checkbox></span></button></li>
+                                <li><button>옥천군 <span class=checkbox></span></button></li>
+                                <li><button>달성군 <span class=checkbox></span></button></li>
+                                <li><button>익산시 <span class=checkbox></span></button></li>
+                                <li><button>안동시 <span class=checkbox></span></button></li>
+                                <li><button>영천시 <span class=checkbox></span></button></li>
+                                <li><button>의정부시 <span class=checkbox></span></button></li>
+                                <li><button>삼척시 <span class=checkbox></span></button></li>
+                                <li><button>정선군 <span class=checkbox></span></button></li>
+                                <li><button>철원군 <span class=checkbox></span></button></li>
+                                <li><button>양구군 <span class=checkbox></span></button></li>
+                                <li><button>창원시 <span class=checkbox></span></button></li>
+                                <li><button>영동군 <span class=checkbox></span></button></li>
+                                <li><button>진주시 <span class=checkbox></span></button></li>
+                                <li><button>음성군 <span class=checkbox></span></button></li>
+                                <li><button>상주시 <span class=checkbox></span></button></li>
+                                <li><button>노원구 <span class=checkbox></span></button></li>
+                                <li><button>아산시 <span class=checkbox></span></button></li>
+                                <li><button>김천시 <span class=checkbox></span></button></li>
+                                <li><button>관악구 <span class=checkbox></span></button></li>
+                                <li><button>청양군 <span class=checkbox></span></button></li>
+                                <li><button>제천시 <span class=checkbox></span></button></li>
+                                <li><button>청도군 <span class=checkbox></span></button></li>
+                                <li><button>사하구 <span class=checkbox></span></button></li>
+                                <li><button>서대문구 <span class=checkbox></span></button></li>
+                                <li><button>예천군 <span class=checkbox></span></button></li>
+                                <li><button>합천군 <span class=checkbox></span></button></li>
+                                <li><button>인제군 <span class=checkbox></span></button></li>
+                                <li><button>화천군 <span class=checkbox></span></button></li>
+                                <li><button>진천군 <span class=checkbox></span></button></li>
+                                <li><button>용산구 <span class=checkbox></span></button></li>
+                                <li><button>산청군 <span class=checkbox></span></button></li>
+                                <li><button>고창군 <span class=checkbox></span></button></li>
+                                <li><button>남원시 <span class=checkbox></span></button></li>
+                                <li><button>장성군 <span class=checkbox></span></button></li>
+                                <li><button>거창군 <span class=checkbox></span></button></li>
+                                <li><button>평택군 <span class=checkbox></span></button></li>
+                                <li><button>성동구 <span class=checkbox></span></button></li>
+                                <li><button>영월군 <span class=checkbox></span></button></li>
+                                <li><button>울산시 <span class=checkbox></span></button></li>
+                                <li><button>장흥군 <span class=checkbox></span></button></li>
+                                <li><button>정읍시 <span class=checkbox></span></button></li>
+                                <li><button>양주시 <span class=checkbox></span></button></li>
+                                <li><button>부평구 <span class=checkbox></span></button></li>
+                                <li><button>당진군 <span class=checkbox></span></button></li>
+                                <li><button>제주시 <span class=checkbox></span></button></li>
+                                <li><button>김해군 <span class=checkbox></span></button></li>
+                                <li><button>유성구 <span class=checkbox></span></button></li>
+                                <li><button>예산군 <span class=checkbox></span></button></li>
+                                <li><button>강서구 <span class=checkbox></span></button></li>
+                                <li><button>김제시 <span class=checkbox></span></button></li>
+                                <li><button>괴산군 <span class=checkbox></span></button></li>
+                                <li><button>함양군 <span class=checkbox></span></button></li>
+                                <li><button>문경시 <span class=checkbox></span></button></li>
+                                <li><button>화순군 <span class=checkbox></span></button></li>
+                                <li><button>홍성군 <span class=checkbox></span></button></li>
+                                <li><button>장수군 <span class=checkbox></span></button></li>
+                                <li><button>칠곡군 <span class=checkbox></span></button></li>
+                                <li><button>연기군 <span class=checkbox></span></button></li>
+                                <li><button>동해시 <span class=checkbox></span></button></li>
+                                <li><button>영덕군 <span class=checkbox></span></button></li>
+                                <li><button>강남구 <span class=checkbox></span></button></li>
+                                <li><button>전주시 <span class=checkbox></span></button></li>
+                                <li><button>도봉구 <span class=checkbox></span></button></li>
+                                <li><button>무안군 <span class=checkbox></span></button></li>
+                                <li><button>광양시 <span class=checkbox></span></button></li>
+                                <li><button>금천구 <span class=checkbox></span></button></li>
+                                <li><button>하동군 <span class=checkbox></span></button></li>
+                                <li><button>의령군 <span class=checkbox></span></button></li>
+                                <li><button>동구 <span class=checkbox></span></button></li>
+                                <li><button>봉화군 <span class=checkbox></span></button></li>
+                                <li><button>금산군 <span class=checkbox></span></button></li>
+                                <li><button>논산시 <span class=checkbox></span></button></li>
+                                <li><button>진해시 <span class=checkbox></span></button></li>
+                                <li><button>태백시 <span class=checkbox></span></button></li>
+                                <li><button>남해군 <span class=checkbox></span></button></li>
+                                <li><button>속초시 <span class=checkbox></span></button></li>
+                                <li><button>곡성군 <span class=checkbox></span></button></li>
+                                <li><button>포항시 <span class=checkbox></span></button></li>
+                                <li><button>서천군 <span class=checkbox></span></button></li>
+                                <li><button>동대문구 <span class=checkbox></span></button></li>
+                                <li><button>달서구 <span class=checkbox></span></button></li>
+                                <li><button>진도군 <span class=checkbox></span></button></li>
+                                <li><button>완주군 <span class=checkbox></span></button></li>
+                                <li><button>순창군 <span class=checkbox></span></button></li>
+                                <li><button>순천시 <span class=checkbox></span></button></li>
+                                <li><button>마산시 <span class=checkbox></span></button></li>
+                                <li><button>진안군 <span class=checkbox></span></button></li>
+                                <li><button>보성군 <span class=checkbox></span></button></li>
+                                <li><button>단양군 <span class=checkbox></span></button></li>
+                                <li><button>영등포구 <span class=checkbox></span></button></li>
+                                <li><button>고흥군 <span class=checkbox></span></button></li>
+                                <li><button>영암군 <span class=checkbox></span></button></li>
+                                <li><button>동작구 <span class=checkbox></span></button></li>
+                                <li><button>여천시 <span class=checkbox></span></button></li>
+                                <li><button>임실군 <span class=checkbox></span></button></li>
+                                <li><button>구미시 <span class=checkbox></span></button></li>
+                                <li><button>양천구 <span class=checkbox></span></button></li>
+                                <li><button>사천시 <span class=checkbox></span></button></li>
+                                <li><button>완도군 <span class=checkbox></span></button></li>
+                                <li><button>북제주군 <span class=checkbox></span></button></li>
+                                <li><button>영광군 <span class=checkbox></span></button></li>
+                                <li><button>북구 <span class=checkbox></span></button></li>
+                                <li><button>태안군 <span class=checkbox></span></button></li>
+                                <li><button>광산구 <span class=checkbox></span></button></li>
+                                <li><button>무주군 <span class=checkbox></span></button></li>
+                                <li><button>동두천시 <span class=checkbox></span></button></li>
+                                <li><button>경산시 <span class=checkbox></span></button></li>
+                                <li><button>송탄시 <span class=checkbox></span></button></li>
+                                <li><button>사상구 <span class=checkbox></span></button></li>
+                                <li><button>해남군 <span class=checkbox></span></button></li>
+                                <li><button>군위군 <span class=checkbox></span></button></li>
+                                <li><button>거제시 <span class=checkbox></span></button></li>
+                                <li><button>대덕구 <span class=checkbox></span></button></li>
+                                <li><button>울진군 <span class=checkbox></span></button></li>
+                                <li><button>목포시 <span class=checkbox></span></button></li>
+                                <li><button>광명시 <span class=checkbox></span></button></li>
+                                <li><button>천안군 <span class=checkbox></span></button></li>
+                                <li><button>남제주군 <span class=checkbox></span></button></li>
+                                <li><button>구례군 <span class=checkbox></span></button></li>
+                                <li><button>통영시 <span class=checkbox></span></button></li>
+                                <li><button>마포구 <span class=checkbox></span></button></li>
+                                <li><button>서초구 <span class=checkbox></span></button></li>
+                                <li><button>서귀포시 <span class=checkbox></span></button></li>
+                                <li><button>담양군 <span class=checkbox></span></button></li>
+                                <li><button>의왕시 <span class=checkbox></span></button></li>
+                                <li><button>청송군 <span class=checkbox></span></button></li>
+                                <li><button>여수시 <span class=checkbox></span></button></li>
+                                <li><button>부산진구 <span class=checkbox></span></button></li>
+                                <li><button>삼천포시 <span class=checkbox></span></button></li>
+                                <li><button>해운대구 <span class=checkbox></span></button></li>
+                                <li><button>함평군 <span class=checkbox></span></button></li>
+                                <li><button>여천군 <span class=checkbox></span></button></li>
+                                <li><button>영양군 <span class=checkbox></span></button></li>
+                                <li><button>계룡시 <span class=checkbox></span></button></li>
+                                <li><button>금정구 <span class=checkbox></span></button></li>
+                                <li><button>구로구 <span class=checkbox></span></button></li>
                             </ul>
                         </div>
                     </div>
@@ -397,26 +401,27 @@
                     <div class="filter-button-wrap">
                         <button class="filter-button">
                             <span>재질</span>
-                        </button>
+                            <span class="icon"></span>
+                          </button>
                         <div class="filter-list">
                             <ul>
-                                <li><button>도자기</button></li>
-                                <li><button>흙</button></li>
-                                <li><button>유리/보석</button></li>
-                                <li><button>금속</button></li>
-                                <li><button>종이</button></li>
-                                <li><button>돌</button></li>
-                                <li><button>나무</button></li>
-                                <li><button>섬유</button></li>
-                                <li><button>뼈/뿔/조개</button></li>
-                                <li><button>기타</button></li>
-                                <li><button>칠기</button></li>
-                                <li><button>가죽/털</button></li>
-                                <li><button>씨앗</button></li>
-                                <li><button>풀</button></li>
-                                <li><button>합성재질</button></li>
-                                <li><button>광물</button></li>
-                                <li><button>고무</button></li>
+                                <li><button>도자기 <span class=checkbox></span></button></li>
+                                <li><button>흙 <span class=checkbox></span></button></li>
+                                <li><button>유리/보석 <span class=checkbox></span></button></li>
+                                <li><button>금속 <span class=checkbox></span></button></li>
+                                <li><button>종이 <span class=checkbox></span></button></li>
+                                <li><button>돌 <span class=checkbox></span></button></li>
+                                <li><button>나무 <span class=checkbox></span></button></li>
+                                <li><button>섬유 <span class=checkbox></span></button></li>
+                                <li><button>뼈/뿔/조개 <span class=checkbox></span></button></li>
+                                <li><button>기타 <span class=checkbox></span></button></li>
+                                <li><button>칠기 <span class=checkbox></span></button></li>
+                                <li><button>가죽/털 <span class=checkbox></span></button></li>
+                                <li><button>씨앗 <span class=checkbox></span></button></li>
+                                <li><button>풀 <span class=checkbox></span></button></li>
+                                <li><button>합성재질 <span class=checkbox></span></button></li>
+                                <li><button>광물 <span class=checkbox></span></button></li>
+                                <li><button>고무 <span class=checkbox></span></button></li>
                             </ul>
                         </div>
                     </div>
@@ -424,122 +429,123 @@
                     <div class="filter-button-wrap">
                         <button class="filter-button">
                             <span>상세 재질</span>
-                        </button>
+                            <span class="icon"></span>
+                          </button>
                         <div class="filter-list">
                             <ul>
-                                <li><button>유리</button></li>
-                                <li><button>청자</button></li>
-                                <li><button>연질</button></li>
-                                <li><button>백자</button></li>
-                                <li><button>경질</button></li>
-                                <li><button>동합금</button></li>
-                                <li><button>철</button></li>
-                                <li><button>분청</button></li>
-                                <li><button>청동</button></li>
-                                <li><button>청백자</button></li>
-                                <li><button>와질</button></li>
-                                <li><button>잡유</button></li>
-                                <li><button>견</button></li>
-                                <li><button>수골</button></li>
-                                <li><button>흑유</button></li>
-                                <li><button>금동</button></li>
-                                <li><button>합성수지</button></li>
-                                <li><button>은</button></li>
-                                <li><button>양지</button></li>
-                                <li><button>옥</button></li>
-                                <li><button>화강암</button></li>
-                                <li><button>패각</button></li>
-                                <li><button>금</button></li>
-                                <li><button>사암</button></li>
-                                <li><button>갈유</button></li>
-                                <li><button>점판암</button></li>
-                                <li><button>편마암</button></li>
-                                <li><button>백탁유</button></li>
-                                <li><button>수각</button></li>
-                                <li><button>대나무</button></li>
-                                <li><button>마</button></li>
-                                <li><button>옹기</button></li>
-                                <li><button>흑칠</button></li>
-                                <li><button>저</button></li>
-                                <li><button>천목</button></li>
-                                <li><button>동</button></li>
-                                <li><button>연유</button></li>
-                                <li><button>소조</button></li>
-                                <li><button>마노</button></li>
-                                <li><button>수정</button></li>
-                                <li><button>면</button></li>
-                                <li><button>자단목</button></li>
-                                <li><button>조골</button></li>
-                                <li><button>나전</button></li>
-                                <li><button>주석</button></li>
-                                <li><button>안산암</button></li>
-                                <li><button>어골</button></li>
-                                <li><button>황동</button></li>
-                                <li><button>인골</button></li>
-                                <li><button>대리석</button></li>
-                                <li><button>박달나무</button></li>
-                                <li><button>응회암</button></li>
-                                <li><button>저지</button></li>
-                                <li><button>주칠</button></li>
-                                <li><button>혈암</button></li>
-                                <li><button>백동</button></li>
-                                <li><button>석간주</button></li>
-                                <li><button>복합금속</button></li>
-                                <li><button>화각</button></li>
-                                <li><button>오동나무</button></li>
-                                <li><button>백태청유자</button></li>
-                                <li><button>소나무</button></li>
-                                <li><button>합성섬유</button></li>
-                                <li><button>현무암</button></li>
-                                <li><button>삼채</button></li>
-                                <li><button>상아</button></li>
-                                <li><button>호박</button></li>
-                                <li><button>섬록암</button></li>
-                                <li><button>납</button></li>
-                                <li><button>느티나무</button></li>
-                                <li><button>과실</button></li>
-                                <li><button>곡물</button></li>
-                                <li><button>오채</button></li>
-                                <li><button>대모</button></li>
-                                <li><button>볏짚</button></li>
-                                <li><button>피나무</button></li>
-                                <li><button>인모</button></li>
-                                <li><button>비취</button></li>
-                                <li><button>천하석</button></li>
-                                <li><button>먹</button></li>
-                                <li><button>석회암</button></li>
-                                <li><button>알루미늄</button></li>
-                                <li><button>싸리나무</button></li>
-                                <li><button>모직</button></li>
-                                <li><button>코코낫열매</button></li>
-                                <li><button>인주</button></li>
-                                <li><button>고리버들</button></li>
-                                <li><button>감나무</button></li>
-                                <li><button>향나무</button></li>
-                                <li><button>은행나무</button></li>
-                                <li><button>어피</button></li>
-                                <li><button>말총</button></li>
-                                <li><button>배나무</button></li>
-                                <li><button>산호</button></li>
-                                <li><button>등나무</button></li>
-                                <li><button>상지</button></li>
-                                <li><button>석고</button></li>
-                                <li><button>참나무</button></li>
-                                <li><button>표피</button></li>
-                                <li><button>숯</button></li>
-                                <li><button>밤나무</button></li>
-                                <li><button>인조가죽</button></li>
-                                <li><button>밀랍</button></li>
-                                <li><button>원소</button></li>
-                                <li><button>주목</button></li>
-                                <li><button>양피</button></li>
-                                <li><button>느릅나무</button></li>
-                                <li><button>알껍질</button></li>
-                                <li><button>안피지</button></li>
-                                <li><button>가죽나무</button></li>
-                                <li><button>왕골</button></li>
-                                <li><button>밀화</button></li>
-                                <li><button>호도나무</button></li>
+                                <li><button>유리 <span class=checkbox></span></button></li>
+                                <li><button>청자 <span class=checkbox></span></button></li>
+                                <li><button>연질 <span class=checkbox></span></button></li>
+                                <li><button>백자 <span class=checkbox></span></button></li>
+                                <li><button>경질 <span class=checkbox></span></button></li>
+                                <li><button>동합금 <span class=checkbox></span></button></li>
+                                <li><button>철 <span class=checkbox></span></button></li>
+                                <li><button>분청 <span class=checkbox></span></button></li>
+                                <li><button>청동 <span class=checkbox></span></button></li>
+                                <li><button>청백자 <span class=checkbox></span></button></li>
+                                <li><button>와질 <span class=checkbox></span></button></li>
+                                <li><button>잡유 <span class=checkbox></span></button></li>
+                                <li><button>견 <span class=checkbox></span></button></li>
+                                <li><button>수골 <span class=checkbox></span></button></li>
+                                <li><button>흑유 <span class=checkbox></span></button></li>
+                                <li><button>금동 <span class=checkbox></span></button></li>
+                                <li><button>합성수지 <span class=checkbox></span></button></li>
+                                <li><button>은 <span class=checkbox></span></button></li>
+                                <li><button>양지 <span class=checkbox></span></button></li>
+                                <li><button>옥 <span class=checkbox></span></button></li>
+                                <li><button>화강암 <span class=checkbox></span></button></li>
+                                <li><button>패각 <span class=checkbox></span></button></li>
+                                <li><button>금 <span class=checkbox></span></button></li>
+                                <li><button>사암 <span class=checkbox></span></button></li>
+                                <li><button>갈유 <span class=checkbox></span></button></li>
+                                <li><button>점판암 <span class=checkbox></span></button></li>
+                                <li><button>편마암 <span class=checkbox></span></button></li>
+                                <li><button>백탁유 <span class=checkbox></span></button></li>
+                                <li><button>수각 <span class=checkbox></span></button></li>
+                                <li><button>대나무 <span class=checkbox></span></button></li>
+                                <li><button>마 <span class=checkbox></span></button></li>
+                                <li><button>옹기 <span class=checkbox></span></button></li>
+                                <li><button>흑칠 <span class=checkbox></span></button></li>
+                                <li><button>저 <span class=checkbox></span></button></li>
+                                <li><button>천목 <span class=checkbox></span></button></li>
+                                <li><button>동 <span class=checkbox></span></button></li>
+                                <li><button>연유 <span class=checkbox></span></button></li>
+                                <li><button>소조 <span class=checkbox></span></button></li>
+                                <li><button>마노 <span class=checkbox></span></button></li>
+                                <li><button>수정 <span class=checkbox></span></button></li>
+                                <li><button>면 <span class=checkbox></span></button></li>
+                                <li><button>자단목 <span class=checkbox></span></button></li>
+                                <li><button>조골 <span class=checkbox></span></button></li>
+                                <li><button>나전 <span class=checkbox></span></button></li>
+                                <li><button>주석 <span class=checkbox></span></button></li>
+                                <li><button>안산암 <span class=checkbox></span></button></li>
+                                <li><button>어골 <span class=checkbox></span></button></li>
+                                <li><button>황동 <span class=checkbox></span></button></li>
+                                <li><button>인골 <span class=checkbox></span></button></li>
+                                <li><button>대리석 <span class=checkbox></span></button></li>
+                                <li><button>박달나무 <span class=checkbox></span></button></li>
+                                <li><button>응회암 <span class=checkbox></span></button></li>
+                                <li><button>저지 <span class=checkbox></span></button></li>
+                                <li><button>주칠 <span class=checkbox></span></button></li>
+                                <li><button>혈암 <span class=checkbox></span></button></li>
+                                <li><button>백동 <span class=checkbox></span></button></li>
+                                <li><button>석간주 <span class=checkbox></span></button></li>
+                                <li><button>복합금속 <span class=checkbox></span></button></li>
+                                <li><button>화각 <span class=checkbox></span></button></li>
+                                <li><button>오동나무 <span class=checkbox></span></button></li>
+                                <li><button>백태청유자 <span class=checkbox></span></button></li>
+                                <li><button>소나무 <span class=checkbox></span></button></li>
+                                <li><button>합성섬유 <span class=checkbox></span></button></li>
+                                <li><button>현무암 <span class=checkbox></span></button></li>
+                                <li><button>삼채 <span class=checkbox></span></button></li>
+                                <li><button>상아 <span class=checkbox></span></button></li>
+                                <li><button>호박 <span class=checkbox></span></button></li>
+                                <li><button>섬록암 <span class=checkbox></span></button></li>
+                                <li><button>납 <span class=checkbox></span></button></li>
+                                <li><button>느티나무 <span class=checkbox></span></button></li>
+                                <li><button>과실 <span class=checkbox></span></button></li>
+                                <li><button>곡물 <span class=checkbox></span></button></li>
+                                <li><button>오채 <span class=checkbox></span></button></li>
+                                <li><button>대모 <span class=checkbox></span></button></li>
+                                <li><button>볏짚 <span class=checkbox></span></button></li>
+                                <li><button>피나무 <span class=checkbox></span></button></li>
+                                <li><button>인모 <span class=checkbox></span></button></li>
+                                <li><button>비취 <span class=checkbox></span></button></li>
+                                <li><button>천하석 <span class=checkbox></span></button></li>
+                                <li><button>먹 <span class=checkbox></span></button></li>
+                                <li><button>석회암 <span class=checkbox></span></button></li>
+                                <li><button>알루미늄 <span class=checkbox></span></button></li>
+                                <li><button>싸리나무 <span class=checkbox></span></button></li>
+                                <li><button>모직 <span class=checkbox></span></button></li>
+                                <li><button>코코낫열매 <span class=checkbox></span></button></li>
+                                <li><button>인주 <span class=checkbox></span></button></li>
+                                <li><button>고리버들 <span class=checkbox></span></button></li>
+                                <li><button>감나무 <span class=checkbox></span></button></li>
+                                <li><button>향나무 <span class=checkbox></span></button></li>
+                                <li><button>은행나무 <span class=checkbox></span></button></li>
+                                <li><button>어피 <span class=checkbox></span></button></li>
+                                <li><button>말총 <span class=checkbox></span></button></li>
+                                <li><button>배나무 <span class=checkbox></span></button></li>
+                                <li><button>산호 <span class=checkbox></span></button></li>
+                                <li><button>등나무 <span class=checkbox></span></button></li>
+                                <li><button>상지 <span class=checkbox></span></button></li>
+                                <li><button>석고 <span class=checkbox></span></button></li>
+                                <li><button>참나무 <span class=checkbox></span></button></li>
+                                <li><button>표피 <span class=checkbox></span></button></li>
+                                <li><button>숯 <span class=checkbox></span></button></li>
+                                <li><button>밤나무 <span class=checkbox></span></button></li>
+                                <li><button>인조가죽 <span class=checkbox></span></button></li>
+                                <li><button>밀랍 <span class=checkbox></span></button></li>
+                                <li><button>원소 <span class=checkbox></span></button></li>
+                                <li><button>주목 <span class=checkbox></span></button></li>
+                                <li><button>양피 <span class=checkbox></span></button></li>
+                                <li><button>느릅나무 <span class=checkbox></span></button></li>
+                                <li><button>알껍질 <span class=checkbox></span></button></li>
+                                <li><button>안피지 <span class=checkbox></span></button></li>
+                                <li><button>가죽나무 <span class=checkbox></span></button></li>
+                                <li><button>왕골 <span class=checkbox></span></button></li>
+                                <li><button>밀화 <span class=checkbox></span></button></li>
+                                <li><button>호도나무 <span class=checkbox></span></button></li>
                             </ul>
                         </div>
                     </div>
@@ -550,7 +556,7 @@
                     <div class="filter-list-wrap">
                         <button class="clear-btn">
                             <p>초기화</p>
-                            <img src="./images/icon/clear.svg" alt="">
+                            <img src="./images/icon/clear_w.svg" alt="">
                         </button>
                     </div>
 

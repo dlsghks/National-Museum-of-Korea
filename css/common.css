@@ -106,3 +106,12 @@ body::-webkit-scrollbar {
   cursor: default;       /* 포인터 커서 원복 */
   opacity: 0.5;          /* 흐리게 표시 (선택 사항) */
 }
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  margin: -1px;
+}
